@@ -1,0 +1,27 @@
+.header{
+    width: 100vw;
+    height: 120px;
+    background-color: rgb(69, 174, 216);
+    display: flex;
+
+}
+.logoHeader{
+    width:28%;
+    height: 100%;
+    display: flex;
+    
+    align-items: center;
+  
+}
+.logoHeader ion-icon{
+    width:40%;
+    font-size: 100px;
+    color: rgb(193, 255, 70);
+    
+}
+.logoHeader h1{
+    width:50%;
+    color: #4b4b4b;
+    border-right: solid ;
+    padding-left: 4%;
+}
