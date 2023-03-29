@@ -1,0 +1,113 @@
+.section{
+    width: 100vw;
+    height: auto;
+    background-color: rgb(255, 251, 240);
+}
+.containerCarrousel{
+    margin:20px auto;
+    width: 80%;
+    height: 400px;
+   
+}
+.containerCarrousel h1{
+    width: 70%;
+    border-top: solid rgb(122, 122, 122);
+    color: rgb(255, 103, 103);
+}
+.containerCarrousel img{
+    margin:20px 80px;
+    width: 80%;
+    height:300px;
+    border-radius: 10px;
+}
+
+.infoGray{
+    width: 100%;
+    height: 400px;
+    background-color:rgb(44, 44, 44);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 40px;
+    gap: 40px;;
+    
+}
+.infoGray img {
+    width: 30%;
+    margin-left: 15%;
+    border-radius: 20px;
+
+}
+
+.infoGray .containerInfo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:20px;
+}
+.infoGray .containerInfo h3{
+    font-size:30px;
+    color: rgb(47, 255, 220);
+}
+.infoGray .containerInfo p{
+    width: 50%;
+    font-size:20px;
+    color: #fff;
+}
+.infoGray .containerInfo h5{
+    font-size: 15px;
+    width: 40%;
+    color: gray;
+    border-bottom:solid greenyellow;
+}
+
+.containerPlaces{
+    width: 100%;
+    margin-top: 40px ;
+   
+    height: auto;
+}
+.containerPlaces h2{
+    width: 80%;
+    font-size: 35px;
+    padding-left:10px ;
+    border-top: solid rgb(36, 204, 255);
+    margin: 0 auto;
+}
+.containerPlaces h4{
+    width: 80%;
+    font-size: 25px;
+    color: gray;
+    padding-left:10px ;
+    margin: 0 auto;
+}
+
+.containerItems{
+    margin: 60px auto;
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content:space-between;
+}
+.item{
+    width: 23%;
+}
+
+.item img{
+    border-radius: 10px;
+    height: 170px;
+}
+.item h3{
+    
+    font-size: 20px;
+    color: rgb(73, 56, 56);
+}
+.item .stars ion-icon{
+    color: rgb(233, 233, 61);
+}
+.item h5{
+    width:50%;
+    font-size: 15px;
+    color: gray;
+}
