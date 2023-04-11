@@ -1,3 +1,23 @@
 div{
   overflow-x: hidden;
 }
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgb(134, 134, 134);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(25, 192, 243);
+  border-radius: 20px;
+  
+}

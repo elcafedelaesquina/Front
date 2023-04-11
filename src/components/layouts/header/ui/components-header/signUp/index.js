@@ -4,8 +4,8 @@ import './style.css'
 const BtnSignUp  = () => {
   return (
     <>
-        <h2>Sign Up</h2>
-        <h2>Help</h2>
+        <h2 className="h">Sign Up</h2>
+        <h2 className="h">Help</h2>
 
     </>
       

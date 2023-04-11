@@ -1,4 +1,8 @@
-h2{
+.h{
     margin-right: 50px;
     color: #585858;
+    cursor: pointer;
+}
+.h:hover{
+    color: greenyellow;
 }
