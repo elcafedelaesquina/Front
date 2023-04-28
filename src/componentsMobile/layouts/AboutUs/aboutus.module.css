@@ -1,0 +1,28 @@
+.aboutus{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subtitle{
+    color: #7C4A39;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.imgMain{
+    width: 100vw;
+    height: 100;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.txt{
+    width: 80%;
+    color:#7C4A39
+}

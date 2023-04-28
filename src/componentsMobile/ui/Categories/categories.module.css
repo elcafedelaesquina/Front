@@ -1,0 +1,54 @@
+.containerProducts{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.breakfast {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+}
+
+.breakfast > .breakfast1, 
+.breakfast > .breakfast2 {
+    width: 50;
+    height: 12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titleMenu{
+    font-size: 100%;
+    color: #7C4A39;
+    display: flex;
+    justify-content: center;
+}
+
+.subtitle{
+    font-size: 100%;
+    color: #7C4A39; 
+    margin: 5%;
+}
+
+.icon{
+    width: 60%;
+    height: 50%;
+    border-radius: 50%;
+    border: none;
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.type{
+    font-size: 100%;
+    color: #7C4A39;
+}

@@ -1,0 +1,152 @@
+.footer-distributed {
+  background: #7c4a39;
+  box-shadow: 0 1px 1px 0 #0000001f;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  padding: 50px 60px 40px;
+  overflow: hidden;
+}
+
+.footer-distributed .footer-left {
+  /* float: left; */
+  display: flex;
+}
+
+.footer-distributed h3 {
+  color: #f5e1ce;
+  font-size: 20px;
+  margin-right: 30px;
+}
+
+.footer-distributed h3 span {
+  color: #5383d3;
+}
+
+.footer-distributed .footer-icons {
+  margin-top: 15px;
+}
+
+.footer-distributed .footer-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 15px;
+  cursor: pointer;
+  border-radius: 2px;
+  font-size: 20px;
+  color: #f5e1ce;
+  line-height: 35px;
+  margin-right: 3px;
+}
+
+.footer-distributed .footer-right {
+  float: right;
+  font-size: 1.2rem;
+}
+
+.footer-distributed .footer-right p {
+  display: inline-block;
+  vertical-align: top;
+  color: #f5e1ce;
+}
+
+.footer-distributed form {
+  display: inline-block;
+}
+
+.footer-distributed form input,
+.footer-distributed form textarea {
+  display: block;
+  border-radius: 3px;
+  box-sizing: border-box;
+  background-color: #f5e1ce;
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+  border: none;
+  resize: none;
+  border: solid 2px #000;
+
+  font: inherit;
+  font-size: 14px;
+  font-weight: normal;
+  color: #d1d2d2;
+
+  width: 400px;
+  padding: 18px;
+}
+
+.footer-distributed ::-webkit-input-placeholder {
+  color: #000;
+}
+
+.footer-distributed ::-moz-placeholder {
+  color: #000;
+  opacity: 1;
+}
+
+.footer-distributed :-ms-input-placeholder {
+  color: #000;
+}
+
+.footer-distributed form input {
+  height: 55px;
+  margin-bottom: 10px;
+}
+
+.footer-distributed form textarea {
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.footer-distributed form button {
+  border-radius: 3px;
+  background-color: #33383b;
+  color: #ffffff;
+  border: 0;
+  padding: 15px 50px;
+  font-weight: bold;
+  float: right;
+}
+
+@media (max-width: 1000px) {
+  .footer-distributed {
+    font: bold 14px sans-serif;
+  }
+
+  .footer-distributed form input,
+  .footer-distributed form textarea {
+    width: 250px;
+  }
+
+  .footer-distributed form button {
+    padding: 10px 35px;
+  }
+}
+
+@media (max-width: 800px) {
+  .footer-distributed {
+    padding: 30px;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-right {
+    float: none;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .footer-distributed .footer-left {
+    margin-bottom: 40px;
+  }
+
+  .footer-distributed form {
+    margin-top: 30px;
+  }
+
+  .footer-distributed form {
+    display: block;
+  }
+
+  .footer-distributed form button {
+    float: none;
+  }
+}
