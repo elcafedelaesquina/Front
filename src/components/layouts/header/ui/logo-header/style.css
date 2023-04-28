@@ -12,6 +12,7 @@ img{
 h1{
     width:55%;
     color: #4b4b4b;
-    border-right: solid ;
+    border-right: 2px  solid greenyellow ;
     padding-left: 5%;
+    padding-right: 2px;
 }

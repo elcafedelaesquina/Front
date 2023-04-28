@@ -1,8 +1,12 @@
 .header{
     width: 100vw;
-    height: 120px;
-    background-color: rgb(69, 174, 216);
+    height: 100px;
+    background-color: rgba(34, 34, 34, 0.692);
     display: flex;
+    font-family: "Abril Fatface","Times New Roman",Times,serif;
+    position:fixed;
+    z-index: 5;
+    
 
 }
 .logoHeader{
@@ -21,7 +25,8 @@
 }
 .logoHeader h1{
     width:50%;
-    color: #4b4b4b;
-    border-right: solid ;
-    padding-left: 4%;
+    color: #e2e2e2;
+    border-right: solid greenyellow ;
+    padding:0 4%;
+    padding-right: 5px;
 }
