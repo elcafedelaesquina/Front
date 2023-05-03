@@ -1,13 +1,13 @@
 import React from 'react'
-import'./header.css';
+import styles from './header.module.css';
 import { ComponentsHeader } from './ui/components-header'
 
 
 
 const Header = () => {
   return (
-    <div className="header">
-        <div className='logoHeader'>
+    <div className={styles.header}>
+        <div className={styles.logoHeader}>
         <ion-icon name="logo-gitlab"></ion-icon>
           
 
