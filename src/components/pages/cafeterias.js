@@ -1,7 +1,8 @@
 import React from 'react'
 import'./cafeterias.css'
 import { Comments } from './cafeterias/comments'
-
+import { Header } from '../layouts/header/header'
+import { Footer } from '../layouts/footer/footer'
 import { Menu } from '../layouts/menu'
 import { SearchCafeterias } from './cafeterias/search'
 import { Item } from './cafeterias/items'
@@ -11,6 +12,7 @@ import { FilterCafeterias } from './cafeterias/filter'
 const Cafeterias = () => {
   return (
     <div className="sectionCafeterias">
+      <Header/>
       <div className='whatsapp'><ion-icon name="chatbubble-ellipses-outline"></ion-icon>Contactanos </div>
     <Menu></Menu>
       <div className="searchImg">
@@ -116,7 +118,7 @@ const Cafeterias = () => {
       </div>
       <Comments></Comments>
       
-      
+      <Footer/>
 
     </div>
     

@@ -1,11 +1,12 @@
 import React from 'react'
 import './style.css'
+import {Link} from 'react-router-dom'
 
 const BtnSingIn = () => {
   return (
-    
-      <button>Sign In</button>
-    
+
+    <Link to={`/PagesRegistration`}><button>Sign In</button></Link>
+
   )
 }
 

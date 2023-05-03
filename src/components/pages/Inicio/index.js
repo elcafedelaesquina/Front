@@ -1,4 +1,6 @@
 import React from 'react'
+import { Header } from '../../layouts/header/header'
+import { Footer } from '../../layouts/footer/footer'
 import './style.css'
 
 import {Link} from 'react-router-dom'
@@ -6,6 +8,7 @@ import {Link} from 'react-router-dom'
 const ContentHome = () => {
   return (
     <div className="content-home">
+        <Header/>
         <div className='containerMenu'>
             <div className='itemMenu'>
                 <img src='https://www.fcmmobiliario.com/blog/wp-content/uploads/2019/04/mobiliario-cafeterias-vintage.jpg' alt=""></img>
@@ -117,7 +120,7 @@ const ContentHome = () => {
           
             </div>
         </div>
-       
+       <Footer/>
     </div>
   )
 }
