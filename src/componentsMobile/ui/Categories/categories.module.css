@@ -24,14 +24,14 @@
 
 .titleMenu{
     font-size: 100%;
-    color: #7C4A39;
+    color: #fff;
     display: flex;
     justify-content: center;
 }
 
 .subtitle{
     font-size: 100%;
-    color: #7C4A39; 
+    color: #fff; 
     margin: 5%;
 }
 
@@ -50,5 +50,5 @@
 
 .type{
     font-size: 100%;
-    color: #7C4A39;
+    color: #fff;
 }

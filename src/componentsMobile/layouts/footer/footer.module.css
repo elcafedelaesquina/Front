@@ -1,4 +1,4 @@
-.footer-distributed {
+.footerDistributed {
   background: #7c4a39;
   box-shadow: 0 1px 1px 0 #0000001f;
   box-sizing: border-box;
@@ -8,26 +8,26 @@
   overflow: hidden;
 }
 
-.footer-distributed .footer-left {
+.footerDistributed .footerLeft {
   /* float: left; */
   display: flex;
 }
 
-.footer-distributed h3 {
+.footerDistributed h3 {
   color: #f5e1ce;
   font-size: 20px;
   margin-right: 30px;
 }
 
-.footer-distributed h3 span {
+.footerDistributed h3 span {
   color: #5383d3;
 }
 
-.footer-distributed .footer-icons {
+.footerDistributed .footerIcons {
   margin-top: 15px;
 }
 
-.footer-distributed .footer-icons a {
+.footerDistributed .footerIcons a {
   display: inline-block;
   width: 35px;
   height: 15px;
@@ -39,23 +39,23 @@
   margin-right: 3px;
 }
 
-.footer-distributed .footer-right {
+.footerDistributed .footerRight {
   float: right;
   font-size: 1.2rem;
 }
 
-.footer-distributed .footer-right p {
+.footerRistributed .footerRight p {
   display: inline-block;
   vertical-align: top;
   color: #f5e1ce;
 }
 
-.footer-distributed form {
+.footerDistributed form {
   display: inline-block;
 }
 
-.footer-distributed form input,
-.footer-distributed form textarea {
+.footerDistributed form input,
+.footerDistributed form textarea {
   display: block;
   border-radius: 3px;
   box-sizing: border-box;
@@ -74,30 +74,30 @@
   padding: 18px;
 }
 
-.footer-distributed ::-webkit-input-placeholder {
+.footerDistributed ::-webkit-input-placeholder {
   color: #000;
 }
 
-.footer-distributed ::-moz-placeholder {
+.footerDistributed ::-moz-placeholder {
   color: #000;
   opacity: 1;
 }
 
-.footer-distributed :-ms-input-placeholder {
+.footerDistributed :-ms-input-placeholder {
   color: #000;
 }
 
-.footer-distributed form input {
+.footerDistributed form input {
   height: 55px;
   margin-bottom: 10px;
 }
 
-.footer-distributed form textarea {
+.footerDistributed form textarea {
   height: 100px;
   margin-bottom: 10px;
 }
 
-.footer-distributed form button {
+.footerDistributed form button {
   border-radius: 3px;
   background-color: #33383b;
   color: #ffffff;
@@ -108,45 +108,45 @@
 }
 
 @media (max-width: 1000px) {
-  .footer-distributed {
+  .footerDistributed {
     font: bold 14px sans-serif;
   }
 
-  .footer-distributed form input,
-  .footer-distributed form textarea {
+  .footerDistributed form input,
+  .footerDistributed form textarea {
     width: 250px;
   }
 
-  .footer-distributed form button {
+  .footerDistributed form button {
     padding: 10px 35px;
   }
 }
 
 @media (max-width: 800px) {
-  .footer-distributed {
+  .footerDistributed {
     padding: 30px;
   }
 
-  .footer-distributed .footer-left,
-  .footer-distributed .footer-right {
+  .footerDistributed .footerLeft,
+  .footerDistributed .footerRight {
     float: none;
     max-width: 300px;
     margin: 0 auto;
   }
 
-  .footer-distributed .footer-left {
+  .footerDistributed .footerLeft {
     margin-bottom: 40px;
   }
 
-  .footer-distributed form {
+  .footerDistributed form {
     margin-top: 30px;
   }
 
-  .footer-distributed form {
+  .footerDistributed form {
     display: block;
   }
 
-  .footer-distributed form button {
+  .footerDistributed form button {
     float: none;
   }
 }
