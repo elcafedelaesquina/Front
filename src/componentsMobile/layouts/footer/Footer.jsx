@@ -1,5 +1,5 @@
 import React from "react";
-import "./footer.css";
+import  Style  from "./footer.module.css";
 import { BsFacebook } from "react-icons/bs";
 import { FaTwitter } from "react-icons/fa";
 import { BsInstagram } from "react-icons/bs";
@@ -8,13 +8,13 @@ import { SiTiktok } from "react-icons/si";
 export const Footer = () => {
   return (
     <>
-      <footer className="footer-distributed">
-        <div className="footer-left">
+      <footer className={Style.footerDistributed}>
+        <div className={Style.footerLeft}>
           <h3>
             La esquina <br /> del cafe
           </h3>
 
-          <div className="footer-icons">
+          <div className={Style.footerIcons}>
             <a href="#">
               <BsFacebook />
             </a>
