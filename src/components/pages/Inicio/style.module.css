@@ -1,0 +1,201 @@
+
+.containerMenu{
+    margin:auto 0;
+    padding-top: 100px;
+   
+    width: 100%;
+    height: 350px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+   
+    
+    
+   
+}
+.itemMenu{
+  width: 24%;
+  height:250px;
+  background-color:rgb(41, 41, 41);
+  overflow: hidden;
+
+
+
+}
+.itemMenu:hover>img{
+  height:0;
+  border:none;
+}
+.itemMenu:hover>.link{
+  
+  height:210px;
+}
+.itemMenu img{
+  width: 100%;
+  height:210px;
+  border-bottom: 2px solid rgb(32, 110, 255);
+  transition: all 0.6s;
+}
+.itemMenu .link{
+  margin: 0;
+  width: 100%;
+  height:35px ;
+  transition: all 0.6s;
+  padding: 0px 10px;
+  color: greenyellow;
+  overflow: hidden;
+}
+.itemMenu .link h2{
+  color: rgb(255, 206, 47);
+
+}
+.itemMenu .link p{
+  font-size:15px;
+  margin-top: 10px;
+  color: rgb(223, 223, 223);
+}
+.imgInicio{
+  margin:0px auto 0px;
+  width: 100%;
+  height: 440px;
+  background-image: url('https://i.pinimg.com/originals/d6/49/48/d64948463ed288a6105c49177316ef1e.jpg');
+  background-size: cover;
+  
+ 
+}
+.filtro{
+  width: 100%;
+  height: 100%;
+  background-color:rgba(0, 0, 0, 0.527) ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.filtro{
+  font-size:25px;
+  color: azure;
+}
+
+
+.infoGray{
+    width: 100%;
+    height: 400px;
+    background: rgba(52, 52, 52, 1.0);
+    background: linear-gradient(250deg, rgb(20, 20, 20), rgb(8, 107, 114));
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 40px;
+    gap: 40px;;
+    
+}
+.infoGray img {
+    width: 30%;
+    margin-left: 15%;
+    border-radius: 20px;
+
+}
+
+.infoGray .containerInfo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:20px;
+}
+.infoGray .containerInfo h3{
+    font-size:30px;
+    color: rgb(47, 255, 220);
+}
+.infoGray .containerInfo p{
+    width: 50%;
+    font-size:20px;
+    color: #c7c7c7;
+}
+.infoGray .containerInfo h5{
+    font-size: 15px;
+    width: 40%;
+    color: gray;
+    border-bottom:solid greenyellow;
+}
+
+.containerPlaces{
+    width: 100%;
+    margin-top: 40px ;
+   
+    height: auto;
+}
+.containerPlaces h2{
+    width: 80%;
+    font-size: 35px;
+    padding-left:10px ;
+    color: rgb(212, 212, 212);
+    border-top: solid rgb(36, 204, 255);
+    margin: 0 auto;
+}
+.containerPlaces h4{
+    width: 80%;
+    font-size: 25px;
+    color: gray;
+    padding-left:10px ;
+    margin: 0 auto;
+}
+
+.containerItems{
+    margin: 60px auto;
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content:space-between;
+    padding: 5px;
+   
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.item{
+    width: 23%;
+    padding: 8px;
+
+    margin-top: 10px;
+    transition: all 0.4s;
+    cursor: pointer;
+    border-radius: 20px;
+    text-align: center;
+
+
+    
+    
+}
+.item:hover{
+   
+    box-shadow: 0px 3px 8px  rgba(41, 41, 41, 0.534);
+    transform: scale(1.01);
+}
+
+
+.item img{
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    height: 170px;
+    transition: all 0.5s;
+}
+.item:hover > img{
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+
+}
+.item h3{
+    
+    font-size: 20px;
+    color: rgb(253, 189, 69);
+}
+.item .stars ion-icon{
+    color: rgb(192, 192, 0);
+}
+.item h5{
+    width:50%;
+    margin: 0 auto;
+    font-size: 15px;
+    color: rgb(128, 128, 128);
+}
