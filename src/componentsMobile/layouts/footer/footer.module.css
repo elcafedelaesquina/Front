@@ -1,11 +1,11 @@
 .footerDistributed {
-  background: #7c4a39;
+  background: #353535;
   box-shadow: 0 1px 1px 0 #0000001f;
-  box-sizing: border-box;
   width: 100%;
   text-align: left;
-  padding: 50px 60px 40px;
-  overflow: hidden;
+  /* box-sizing: border-box; */
+  /* padding: 50px 60px 40px; */
+  /* overflow: hidden; */
 }
 
 .footerDistributed .footerLeft {
@@ -14,13 +14,10 @@
 }
 
 .footerDistributed h3 {
-  color: #f5e1ce;
+  color: #fff;
   font-size: 20px;
   margin-right: 30px;
-}
-
-.footerDistributed h3 span {
-  color: #5383d3;
+  margin-top: 15px;
 }
 
 .footerDistributed .footerIcons {
@@ -34,12 +31,12 @@
   cursor: pointer;
   border-radius: 2px;
   font-size: 20px;
-  color: #f5e1ce;
+  color: #fff;
   line-height: 35px;
   margin-right: 3px;
 }
 
-.footerDistributed .footerRight {
+/* .footerDistributed .footerRight {
   float: right;
   font-size: 1.2rem;
 }
@@ -64,15 +61,13 @@
   border: none;
   resize: none;
   border: solid 2px #000;
-
   font: inherit;
   font-size: 14px;
   font-weight: normal;
   color: #d1d2d2;
-
   width: 400px;
   padding: 18px;
-}
+} */
 
 .footerDistributed ::-webkit-input-placeholder {
   color: #000;
@@ -86,7 +81,7 @@
 .footerDistributed :-ms-input-placeholder {
   color: #000;
 }
-
+/* 
 .footerDistributed form input {
   height: 55px;
   margin-bottom: 10px;
@@ -105,7 +100,7 @@
   padding: 15px 50px;
   font-weight: bold;
   float: right;
-}
+} */
 
 @media (max-width: 1000px) {
   .footerDistributed {
