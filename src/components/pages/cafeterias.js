@@ -1,7 +1,8 @@
 import React from 'react'
-import'./cafeterias.css'
+import styles from'./cafeterias.module.css'
 import { Comments } from './cafeterias/comments'
-
+import { Header } from '../layouts/header/header'
+import { Footer } from '../layouts/footer/footer'
 import { Menu } from '../layouts/menu'
 import { SearchCafeterias } from './cafeterias/search'
 import { Item } from './cafeterias/items'
@@ -10,27 +11,29 @@ import { FilterCafeterias } from './cafeterias/filter'
 
 const Cafeterias = () => {
   return (
-    <div className="sectionCafeterias">
-      <div className='whatsapp'><ion-icon name="chatbubble-ellipses-outline"></ion-icon>Contactanos </div>
+    <>
+    <Header></Header>
+    <div className={styles.sectionCafeterias}>
+      <div className={styles.whatsapp}><ion-icon name="chatbubble-ellipses-outline"></ion-icon>Contactanos </div>
     <Menu></Menu>
-      <div className="searchImg">
-        <div className='filter'>
+      <div className={styles.searchImg}>
+        <div className={styles.filter}>
           <SearchCafeterias></SearchCafeterias>
         </div>
       </div>
-      <div className="itemsContainer">
+      <div className={styles.itemsContainer}>
         
-        <div className="filter">
+        <div className={styles.filter}>
         <FilterCafeterias></FilterCafeterias>
 
         </div>
-        <div className="container">
+        <div className={styles.container}>
           <Item></Item>
 
         </div>
 
       </div>
-      <div className="containerImg">
+      <div className={styles.containerImg}>
         <h2>Otros sitios que te van a interesar para visitar</h2>
        <div className='' >
        <img alt='' src="https://www.comparaonline.cl/blog-statics/cl/uploads/2016/12/lugares-turisticos-de-colombia.png">
@@ -75,42 +78,42 @@ const Cafeterias = () => {
 
 
       </div>
-      <div className="containerSubs">
+      <div className={styles.containerSubs}>
       
-        <div className="sub">
-          <div className="headerSub sub1"><ion-icon name="rocket-outline"></ion-icon></div>
+        <div className={styles.sub}>
+          <div className={styles.sub1} ><ion-icon name="rocket-outline"></ion-icon></div>
           <h3>Prueba Gratis por un mes</h3>
-          <ul className="listSub">
+          <ul className={styles.listSub}>
             <li><ion-icon name="checkmark-outline"></ion-icon>crear productos</li>
             <li><ion-icon name="checkmark-outline"></ion-icon>crear productos</li>
             <li><ion-icon name="close-outline"></ion-icon>crear productos</li>
             <li><ion-icon name="close-outline"></ion-icon>crear productos</li>
           </ul>
-          <button className='buttonSub btnSub1'>$0/Month</button>
+          <button className={styles.btnSub1 }>$0/Month</button>
 
         </div>
-        <div className="sub">
-          <div className="headerSub sub2"><ion-icon name="telescope-outline"></ion-icon></div>
-          <h3>Suscripción Basic</h3>
-          <ul className="listSub">
+        <div className={styles.sub}>
+          <div className={styles.sub2}><ion-icon name="telescope-outline"></ion-icon></div>
+          <h3>Suscripción   Basica</h3>
+          <ul className={styles.listSub}>
             <li><ion-icon name="checkmark-outline"></ion-icon>crear productos</li>
             <li><ion-icon name="checkmark-outline"></ion-icon>crear productos</li>
             <li><ion-icon name="checkmark-outline"></ion-icon>crear productos</li>
             <li><ion-icon name="close-outline"></ion-icon>crear productos</li>
           </ul>
-          <button className='buttonSub btnSub2'>$30/Month</button>
+          <button className={styles.btnSub2 }>$30/Month</button>
 
         </div>
-        <div className="sub">
-          <div className="headerSub"><ion-icon name="diamond-outline"></ion-icon></div>
+        <div className={styles.sub}>
+          <div className={styles.headerSub}><ion-icon name="diamond-outline"></ion-icon></div>
           <h3>Suscripción premium</h3>
-          <ul className="listSub">
+          <ul className={styles.listSub}>
             <li><ion-icon name="checkmark-outline"></ion-icon>crear productos</li>
             <li><ion-icon name="checkmark-outline"></ion-icon>crear productos</li>
             <li><ion-icon name="checkmark-outline"></ion-icon>crear productos</li>
             <li><ion-icon name="checkmark-outline"></ion-icon>crear productos</li>
           </ul>
-          <button className='buttonSub'>$50/Month</button>
+          <button className={styles.buttonSub }>$50/Month</button>
 
         </div>
       </div>
@@ -119,6 +122,8 @@ const Cafeterias = () => {
       
 
     </div>
+    <Footer></Footer>
+    </>
     
   )
 }

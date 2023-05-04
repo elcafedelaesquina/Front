@@ -1,9 +1,9 @@
 import React from 'react'
-import'./footer.css'
+import styles from'./footer.module.css'
 
 const Footer = () => {
   return (
-    <div className='footer'>
+    <div className={styles.footer}>
         <ul>
             <li ><ion-icon name="logo-gitlab"></ion-icon></li>
             <li>
@@ -14,7 +14,7 @@ const Footer = () => {
             </li>
             <li>
               <h3>Siguenos</h3>
-              <div className='icons'>
+              <div className={styles.icons}>
               <ion-icon name="logo-twitter"></ion-icon>
               <ion-icon name="logo-youtube"></ion-icon>
               <ion-icon name="logo-github"></ion-icon>

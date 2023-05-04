@@ -11,18 +11,5 @@
   height: 8px;
 }
 
-*::-webkit-scrollbar-track {
-  background: rgba(52, 52, 52, 1.0);
-}
 
-*::-webkit-scrollbar-thumb {
-  background-color: rgb(29, 72, 85);
-  border-radius: 20px;
-  
-}
-body{/*
-  * Created with https://www.css-gradient.com
-  * Gradient link: https://www.css-gradient.com/?c1=343434&c2=010101&gt=r&gd=dbb
-  */
-  background: rgba(52, 52, 52, 1.0);
-  background: radial-gradient(at center bottom, rgb(77, 77, 77), rgb(36, 36, 36));}
+
