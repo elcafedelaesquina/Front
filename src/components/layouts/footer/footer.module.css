@@ -1,0 +1,116 @@
+.footer {
+    width: 99vw;
+    height: 200px;
+    background-color: #353535;
+    display: column;
+    
+}
+.footer ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    list-style: none;
+   
+    
+}
+.footer ul li h3{
+    margin-bottom:14px;
+    color: rgb(65, 65, 65);
+
+}
+.footer ul li p{
+    margin-bottom:5px
+    
+
+}
+.footer ul li p span{
+    margin-left: 10px;
+    color: #8a8989;
+
+}
+.footer ul li{
+    width: 20%;
+    height: auto;
+    color: #fff;
+
+    
+    
+}
+.footer ul li ion-icon{
+    
+    font-size:120px;
+    color: rgb(202, 255, 96);
+
+    border-right: solid white;
+    
+}
+.footer ul li .icons{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+   
+}
+.footer ul li .icons ion-icon{
+    width: 17%;
+    padding: 5px;
+    height: 40px;
+    font-size:30px;
+    margin: 5px;
+    border:none;
+    background-color:rgb(0, 183, 255);
+    border-radius:50%;
+    cursor: pointer;
+
+}
+
+.footer ul li .icons ion-icon:nth-child(1){
+    background-color:rgb(24, 152, 202);
+    color: #fff;
+
+}
+.footer ul li .icons ion-icon:nth-child(2){
+    background-color:rgb(255, 255, 255);
+    color: #fa2424;
+
+}
+.footer ul li .icons ion-icon:nth-child(3){
+    background-color:rgb(255, 255, 255);
+    color: #000000;
+
+}
+
+.footer ul li .icons ion-icon:nth-child(4){
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    color: white;
+
+}
+.footer ul li .icons ion-icon:nth-child(5){
+    background-color:rgb(255, 255, 255);
+    color: #eaff32;
+
+}
+.footer ul li .icons ion-icon:nth-child(6){
+    background-color:rgb(255, 255, 255);
+    color: #327aff;
+
+}
+.footer ul li .icons ion-icon:nth-child(7){
+    background-color:rgb(48, 48, 48);
+    color: #32adff;
+
+}
+.footer ul li .icons ion-icon:nth-child(8){
+    background-color:rgb(255, 255, 255);
+    color: #edf102;
+
+}
+
+
+
+
