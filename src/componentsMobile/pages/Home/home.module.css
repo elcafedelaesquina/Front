@@ -1,46 +1,48 @@
 .main {
-  width: 100%;
+  width: 100vw;
   height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: relative;
   top: 135px;
-  margin: auto 2px;
 }
 
 .imgInicio {
-  width: 100%;
+  width: 100vw;
   height: 80vh;
   margin: auto 2px;
   background-image: url("https://res.cloudinary.com/dmrq9n2im/image/upload/v1683151601/El%20caf%C3%A9%20de%20la%20esquina/Icons/cocora_snamp7.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
- 
+
 .filter {
-  width: 100%;
+  width: 100vw;
   height: 100%;
-  background-color:rgba(0, 0, 0, 0.327) ;
+  background-color: rgba(0, 0, 0, 0.327);
   display: flex;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
   text-align: center;
-  position: absolute;
-  font-size:1.2rem;
+  font-size: 1.2rem;
   color: #fff;
 }
 
-.content{
-    position: absolute;
-    top: 250px;
-    left: 35px;
+.content {
+  width: auto;
+  height: auto;
+  margin: auto 4px;
 }
 
-.title{
-    width: 350px;
-    height: 80px;
+.title {
+  width: 100%;
+  height: 80px;
 }
 
-.btnStart{
-    width: 350px;
-    height: 60px;
-    margin: 20px 20px 20px 0px;
+.btnStart {
+  width: 350px;
+  height: 60px;
+  margin: auto 4px;
 }
