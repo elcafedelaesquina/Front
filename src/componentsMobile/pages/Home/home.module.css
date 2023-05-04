@@ -3,11 +3,13 @@
   height: auto;
   position: relative;
   top: 135px;
+  margin: auto 2px;
 }
 
 .imgInicio {
   width: 100%;
   height: 80vh;
+  margin: auto 2px;
   background-image: url("https://res.cloudinary.com/dmrq9n2im/image/upload/v1683151601/El%20caf%C3%A9%20de%20la%20esquina/Icons/cocora_snamp7.png");
   background-size: cover;
   background-repeat: no-repeat;
