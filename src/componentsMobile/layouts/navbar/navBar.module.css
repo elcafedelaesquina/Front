@@ -1,5 +1,4 @@
 :root {
-  --header: #7c4a39;
   --fondo: #f5e1ce;
 }
 
@@ -8,7 +7,10 @@
   height: 100px;
   display: flex;
   align-items: center;
-  background-color: var(--header);
+  position: fixed;
+  z-index: 1;
+  background: rgba(52, 52, 52, 1.0);
+  background: radial-gradient(at center bottom, rgb(77, 77, 77), rgb(36, 36, 36));
 }
 
 .nav {

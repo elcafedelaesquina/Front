@@ -12,8 +12,8 @@ export const Slider = () => {
   let intervalTime = 5000;
 
   const nextSlide = () => {
-    console.log(slideLength);
-    console.log(currentSlide);
+    // console.log(slideLength);
+    // console.log(currentSlide);
     setCurrentSlide(currentSlide === slideLength - 1 ? 0 : currentSlide + 1);
   };
 
@@ -37,10 +37,7 @@ export const Slider = () => {
       <div className="slider">
         {imagen.map((slide, index) => {
           return (
-            <div
-              className={index === currentSlide ? "slide current" : "slide"}
-              key={index}
-            >
+            <div className={index === currentSlide ? "slide current" : "slide"} key={index} >
               {index === currentSlide && (
                 <div>
                   <img src={slide.img} alt="slide" />
@@ -48,7 +45,7 @@ export const Slider = () => {
                     <h2>hola</h2>
                     <p>{slide.title}</p>
                     <hr />
-                    <button className="--btn --btn-primary">Get Started</button>
+                    <button className="NN">Get Started</button>
                   </div>
                 </div>
               )}
