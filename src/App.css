@@ -1,6 +1,4 @@
-div{
-  overflow-x: hidden;
-}
+
 /* Works on Firefox */
 * {
   scrollbar-width: thin;

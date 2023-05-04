@@ -1,4 +1,6 @@
 .footer-distributed {
+  display: flex;
+  z-index: 2;
   background: #7c4a39;
   box-shadow: 0 1px 1px 0 #0000001f;
   box-sizing: border-box;

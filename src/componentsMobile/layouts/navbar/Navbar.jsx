@@ -23,7 +23,7 @@ export const NavBar = () => {
           <div className={Style.containerLogoTitle}>
             <img className={Style.logo} src={Logo} alt="" />
             <h2 className={Style.title}>
-              La Esquina Del Cafe
+              Eje Travel
             </h2>
           </div>
           <div className={Style.containerMenu}>
