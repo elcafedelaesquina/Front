@@ -6,6 +6,7 @@ import { Footer } from "../../layouts/footer/Footer";
 import { Menu } from "../../layouts/Menu/Menu";
 import { NavBar } from "../../layouts/navbar/Navbar";
 import { Slider } from "../../layouts/slider/Slider";
+import { Comments } from "../../layouts/Comments/Comments";
 
 export const Cafeteria = () => {
   return (
@@ -15,6 +16,7 @@ export const Cafeteria = () => {
       <CategoriesProducts />
       <Menu />
       <AboutUs />
+      <Comments />
       <CarProducts />
       <Footer />
     </div>

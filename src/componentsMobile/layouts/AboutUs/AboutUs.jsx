@@ -3,7 +3,7 @@ import Style from './aboutus.module.css'
 
 export const AboutUs = () => {
 
-const imgtest = 'https://res.cloudinary.com/dmrq9n2im/image/upload/v1680140690/El%20caf%C3%A9%20de%20la%20esquina/download_xgx6xl.jpg'
+const imgtest = 'https://res.cloudinary.com/dmrq9n2im/image/upload/v1683225148/El%20caf%C3%A9%20de%20la%20esquina/Finca-tematica-Quindio-Colombia_oj1lyo.jpg'
 
   return (
     <div className={Style.aboutus}>
