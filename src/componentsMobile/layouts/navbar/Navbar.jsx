@@ -9,7 +9,7 @@ import { AiOutlineLogin } from "react-icons/ai";
 import { CiCoffeeCup } from "react-icons/ci";
 import { GiFarmer } from "react-icons/gi";
 
-const Logo = "https://res.cloudinary.com/dqzq2hemz/image/upload/v1676059971/Notas-react/learning_x0evwu.png";
+const Logo = "https://res.cloudinary.com/dmrq9n2im/image/upload/v1683321911/El%20caf%C3%A9%20de%20la%20esquina/ejeTravel_nnf3ra.png";
 const Items = [
   {title: "Inicio", url : "/", ic: <AiOutlineHome className={ Style.iconMenu } /> },
   {title: "Iniciar Sesión", url : "#", ic: <AiOutlineLogin className={ Style.iconMenu } /> },
