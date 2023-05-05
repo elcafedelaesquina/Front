@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import "./slider.css";
+import Style from  "./slider.module.css";
 import { imagen } from "./data";
 
 export const Slider = () => {
@@ -32,20 +32,21 @@ export const Slider = () => {
 
     return () => clearInterval(slideInterval);
   }, [currentSlide]);
+  
   return (
     <>
-      <div className="slider">
+      <div className={Style.slider}>
         {imagen.map((slide, index) => {
           return (
-            <div className={index === currentSlide ? "slide current" : "slide"} key={index} >
+            <div className={index === currentSlide ? `${Style.slide} ${Style.current}` : `${Style.slide}`} key={index} >
               {index === currentSlide && (
-                <div>
+                <div className={Style.card}>
                   <img src={slide.img} alt="slide" />
-                  <div className="content">
+                  <div className={Style.content}>
                     <h2>hola</h2>
                     <p>{slide.title}</p>
                     <hr />
-                    <button className="NN">Get Started</button>
+                    <button className={Style.btnStart}>Get Started</button>
                   </div>
                 </div>
               )}
