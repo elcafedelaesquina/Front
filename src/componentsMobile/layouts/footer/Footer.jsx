@@ -11,7 +11,7 @@ export const Footer = () => {
       <footer className={Style.footerDistributed}>
         <div className={Style.footerLeft}>
           <h3>
-            La esquina <br /> del cafe
+           Eje Travel
           </h3>
 
           <div className={Style.footerIcons}>
