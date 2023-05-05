@@ -1,0 +1,88 @@
+.containerComments{
+    width: 100vw;
+    height: 100vh;
+}
+
+.title{
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.containerInfo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+
+.subTitle{
+    color: #fff;
+    margin: 10px;
+}
+
+.ubicationSite{
+    color: #fff;
+}
+
+.imgSite{
+    width:80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+ .rating{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    } 
+
+  .rating:not(:checked) > input {
+    position: absolute;
+    appearance: none;
+  }
+  
+  .rating:not(:checked) > label {
+    float: right;
+    cursor: pointer;
+    font-size: 35px;
+    color: #666;
+  }
+  
+  .rating:not(:checked) > label:before {
+    content: '★';
+  }
+  
+  .rating > input:checked + label:hover,
+  .rating > input:checked + label:hover ~ label,
+  .rating > input:checked ~ label:hover,
+  .rating > input:checked ~ label:hover ~ label,
+  .rating > label:hover ~ input:checked ~ label {
+    color: #ffff60;
+  }
+  
+  .rating:not(:checked) > label:hover,
+  .rating:not(:checked) > label:hover ~ label {
+    color:#ffff60;
+  }
+  
+  .rating > input:checked ~ label {
+    color: #ffff60;
+}
+
+.comment{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+textarea{
+    margin-bottom: 15px;
+}
+
+

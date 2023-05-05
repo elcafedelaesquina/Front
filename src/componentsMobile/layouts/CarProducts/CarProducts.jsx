@@ -2,8 +2,7 @@ import React from "react";
 import Style from "./carproducts.module.css";
 
 export const CarProducts = () => {
-  const imgtest =
-    "https://res.cloudinary.com/dmrq9n2im/image/upload/v1680041398/El%20caf%C3%A9%20de%20la%20esquina/download_lhgibn.jpg";
+  const imgtest = "https://res.cloudinary.com/dmrq9n2im/image/upload/v1680041398/El%20caf%C3%A9%20de%20la%20esquina/download_lhgibn.jpg";
 
   return (
     <div className={Style.carproducts}>
