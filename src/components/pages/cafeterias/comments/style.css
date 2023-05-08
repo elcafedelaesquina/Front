@@ -64,10 +64,11 @@
     height: 50px;
     border-radius:15px;
     padding: 5px;
+    font-size: 16px;
     border:none;
     outline: none;
     background-color: rgb(255, 255, 255);
-    width: 60%;
+    width: 80%;
 }
 .commentsGenerator .choose select:focus{
     border:solid rgb(49, 143, 252);
@@ -75,7 +76,7 @@
 .commentsGenerator h3{
     width: 100%;
     color: rgb(255, 255, 255);
-    font-size: 18px;
+    font-size: 22px;
     
 }
 .commentsGenerator h3 span{
@@ -144,13 +145,13 @@
     width: 35%;
     background-color: rgba(190, 190, 190, 0);
     padding: 10px;
-    border-radius: 20px;
-    max-height: 550px;
+   
+    max-height: 600px;
     overflow: hidden;
     
 }
 .comments .comment{
-    margin-top: 15px;
+    margin-top: 10px;
     width: 100%;
     height: auto;
     background-color: rgba(255, 255, 255, 0);
@@ -163,7 +164,9 @@
     flex-wrap: wrap;
 }
 .comments .comment:hover{
-    transform: scale(1.01)
+    transform: scale(1.01);
+    box-shadow: 0px 3px 8px  rgba(248, 142, 56, 0.534);
+
 }
 .comment img{
     width: 80px;
@@ -178,7 +181,7 @@
     margin:15px 15px;
 }
 .comment .commentUser h3 {
-    color: rgb(61, 47, 255);
+    color: rgb(253, 151, 67);
     font-size:20px
 }
 .comment .commentUser p{

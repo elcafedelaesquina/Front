@@ -89,30 +89,48 @@ const ContentHome = () => {
             <h2>Tal vez te gusten </h2>
             <h4>visita estos sitios y haz tours cafeteros</h4>
             <div className={styles.containerItems}>
-                <div className={styles.item}>
+            <div className={styles.item}>
                     <img src='https://www.altonivel.com.mx/wp-content/uploads/2018/03/cafeteria.jpg' alt='hola'></img>
-                    <h3>El Ocaso finca café</h3>
-                    <div class="stars"><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon></div>
-                    <h5>visita estos sitios y haz tours cafeteros</h5>
+                    <div className={styles.infoPlaces}>
+                        <h3>El Ocaso finca café</h3>
+                        <div class="stars"><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon></div>
+                      <h5>visita estos sitios y haz tours cafeteros</h5>
+
+                    </div>
+                    
                 </div>
                 <div className={styles.item}>
                     <img src='https://www.altonivel.com.mx/wp-content/uploads/2018/03/cafeteria.jpg' alt='hola'></img>
-                    <h3>El Ocaso finca café</h3>
-                    <div class="stars"><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon></div>
-                    <h5>visita estos sitios y haz tours cafeteros</h5>
+                    <div className={styles.infoPlaces}>
+                        <h3>El Ocaso finca café</h3>
+                        <div class="stars"><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon></div>
+                      <h5>visita estos sitios y haz tours cafeteros</h5>
+
+                    </div>
+                    
                 </div>
                 <div className={styles.item}>
                     <img src='https://www.altonivel.com.mx/wp-content/uploads/2018/03/cafeteria.jpg' alt='hola'></img>
-                    <h3>El Ocaso finca café</h3>
-                    <div class="stars"><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon></div>
-                    <h5>visita estos sitios y haz tours cafeteros</h5>
+                    <div className={styles.infoPlaces}>
+                        <h3>El Ocaso finca café</h3>
+                        <div class="stars"><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon></div>
+                      <h5>visita estos sitios y haz tours cafeteros</h5>
+
+                    </div>
+                    
                 </div>
                 <div className={styles.item}>
                     <img src='https://www.altonivel.com.mx/wp-content/uploads/2018/03/cafeteria.jpg' alt='hola'></img>
-                    <h3>El Ocaso finca café</h3>
-                    <div class="stars"><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon></div>
-                    <h5>visita estos sitios y haz tours cafeteros</h5>
+                    <div className={styles.infoPlaces}>
+                        <h3>El Ocaso finca café</h3>
+                        <div class="stars"><ion-icon name="star" ></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon></div>
+                      <h5>visita estos sitios y haz tours cafeteros</h5>
+
+                    </div>
+                   
+                    
                 </div>
+
                
           
             </div>

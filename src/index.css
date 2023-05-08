@@ -2,8 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
   scrollbar-width: thin;
+  
 
 }
 body{/*
@@ -12,6 +12,7 @@ body{/*
   */
   background: rgba(52, 52, 52, 1.0);
   background: radial-gradient(at center bottom, rgb(77, 77, 77), rgb(36, 36, 36));
+  overflow-x: hidden;
 }
 *::-webkit-scrollbar {
   width: 8px;
