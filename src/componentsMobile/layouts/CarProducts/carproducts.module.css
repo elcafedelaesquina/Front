@@ -4,7 +4,7 @@
 }
 
 .subtitle{
-    color: #7C4A39;
+    color: #fff;
     display: flex;
     justify-content: center;
     margin: 10px;
@@ -27,12 +27,12 @@
 }
 
 .nameProduct{
-    color: #7C4A39;
+    color: #fff;
     margin: 5px;
 }
 
 .descriptionProduct{
-    color:#7C4A39;
+    color:#fff;
     margin: 5px;
 }
 
@@ -41,7 +41,7 @@
     width: 6rem;
     border-radius: 30px;
     background-color: #C8723D;
-    color: #F5E1CE;
+    color: #fff;
     border: none;
     margin: 5px;
 }
@@ -57,7 +57,7 @@
 }
 
 .txt{
-    color: #7C4A39;
+    color: #fff;
     font-size: 20px;
     margin-left: 15px;
 }

@@ -56,15 +56,12 @@ const Comments = () => {
                     </div>
                     <p>Sunday 21-03 at 9:30 PM</p>
                 </div>
-                
                 <p>La comida estaba 
                     exquisita, y la gente de los 
                     cafes eran muy amables con 
                     nosotros cuando necesitabamos 
                     algo.
                 </p>
-
-
             </div>
             <div class="comment">
                 <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt=''></img>

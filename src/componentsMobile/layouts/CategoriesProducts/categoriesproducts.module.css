@@ -11,6 +11,7 @@
     height: 15%;
     display: flex;
     justify-content: center;
+    margin-left: 50px;
 }
 
 .breakfast > .breakfast1, 
@@ -24,15 +25,15 @@
 
 .titleMenu{
     font-size: 100%;
-    color: #7C4A39;
+    color: #fff;
     display: flex;
     justify-content: center;
 }
 
 .subtitle{
     font-size: 100%;
-    color: #7C4A39; 
-    margin: 5%;
+    color: #fff; 
+    margin: 4%;
 }
 
 .icon{
@@ -50,5 +51,5 @@
 
 .type{
     font-size: 100%;
-    color: #7C4A39;
+    color: #fff;
 }

@@ -1,11 +1,4 @@
-
-/* Works on Firefox */
-* {
-  scrollbar-width: thin;
-  font-family:"Roboto Mono",monospace;
-}
-
-/* Works on Chrome, Edge, and Safari */
+*{overflow-x: hidden;}
 
 
 

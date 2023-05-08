@@ -1,0 +1,147 @@
+.containerComments{
+    width: 100%;
+    height: 100vh;
+}
+
+.title{
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.containerInfo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+
+.subTitle{
+    color: #fff;
+    margin: 10px;
+}
+
+.ubicationSite{
+    color: #fff;
+}
+
+.imgSite{
+    width:80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+ .rating{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    } 
+
+  .rating:not(:checked) > input {
+    position: absolute;
+    appearance: none;
+  }
+  
+  .rating:not(:checked) > label {
+    float: right;
+    cursor: pointer;
+    font-size: 35px;
+    color: #666;
+  }
+  
+  .rating:not(:checked) > label:before {
+    content: '★';
+  }
+  
+  .rating > input:checked + label:hover,
+  .rating > input:checked + label:hover ~ label,
+  .rating > input:checked ~ label:hover,
+  .rating > input:checked ~ label:hover ~ label,
+  .rating > label:hover ~ input:checked ~ label {
+    color: #ffff60;
+  }
+  
+  .rating:not(:checked) > label:hover,
+  .rating:not(:checked) > label:hover ~ label {
+    color:#ffff60;
+  }
+  
+  .rating > input:checked ~ label {
+    color: #ffff60;
+}
+
+.comment{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+textarea{
+    margin-bottom: 15px;
+}
+
+.comments{
+  width: 100vw;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+.comments .comment1{
+  margin-top: 15px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: 0px 3px 8px  rgba(46, 46, 46, 0.534);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.comments .comment1:hover{
+  transform: scale(1.01)
+}
+
+.comment1 img{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color:aqua;
+}
+
+.comment1 .commentUser{
+  width: 60%;
+  margin:15px 15px;
+}
+
+.comment1 .commentUser h3 {
+  color: rgb(61, 47, 255);
+  font-size:20px
+}
+
+.comment1 .commentUser p{
+  font-size: 12px;
+  color: #c7c7c7;
+}
+
+.comment1 .commentUser ion-icon{
+  color: yellow;
+}
+
+.comment1 p{
+  width: 100%;
+  max-height: 90px;
+  overflow: hidden;
+  margin-top: px;
+}
+
+.text{
+  color: #fff;
+}
+
