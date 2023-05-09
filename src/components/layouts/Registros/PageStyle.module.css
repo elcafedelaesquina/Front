@@ -1,4 +1,4 @@
-body{
+.cn{
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -130,4 +130,16 @@ body{
 .container .card .face.face2 .content .boton.buttons:hover::after {
 	transform: scale(400);
 	background: #ffa844;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .container .card {   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }

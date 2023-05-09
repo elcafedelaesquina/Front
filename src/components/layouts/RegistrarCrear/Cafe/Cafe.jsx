@@ -8,7 +8,8 @@ import {faUser} from '@fortawesome/free-solid-svg-icons'
 
 export function Cafe() {
   return (
-    <div className={styles.container}>
+    <div className={styles.cn}>
+          <div className={styles.container}>
     <input type="checkbox" id="flip" />
     <div className={styles.cover}>
       <div className={styles.front}>
@@ -76,5 +77,6 @@ export function Cafe() {
       </div>
     </form>
   </div>
+    </div>
     )
 }
