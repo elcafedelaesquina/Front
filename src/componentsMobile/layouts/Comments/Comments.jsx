@@ -34,6 +34,29 @@ export const Comments = () => {
             <textarea name="" id="" cols="30" rows="10" />
             <button>Enviar</button>
         </section>
+
+        <section className={Style.comments}>
+            <section className={Style.comment1}>
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt=''></img>
+                <div className={Style.commentUser}>
+                    <p className={Style.text}>Juan</p>
+                    <div>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    </div>
+                    <p>Sunday 21-03 at 9:30 PM</p>
+                </div>
+                <p className={Style.text}>La comida estaba 
+                    exquisita, y la gente de los 
+                    cafes eran muy amables con 
+                    nosotros cuando necesitabamos 
+                    algo.
+                </p>
+            </section>
+        </section>
     </div>
   )
 }

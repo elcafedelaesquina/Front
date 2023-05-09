@@ -1,0 +1,276 @@
+.home{
+    width: 100vw;
+    height:auto;
+    background-color: aliceblue;
+    box-sizing: border-box;
+}
+.section{
+    width: 90%;
+    margin: 0 auto;
+    height: auto;
+}
+
+.slider{
+    width: 100%;
+    height: 500px;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    
+}
+.slide{
+    width: 100%;
+    overflow: hidden;
+    height: 500px;
+    position: absolute;
+    filter: blur(2px);
+    filter: brightness(100%);
+    
+    
+}
+
+.slider .slide:nth-child(1){
+    background-color:red;
+    animation: slider infinite  8s ease-in-out;
+    animation-delay: 4s;
+
+}
+.slider .slide:nth-child(2){
+    background-color:rgb(135, 219, 25);
+    animation: slider 8s infinite ease-in-out;
+    animation-delay: 8s;
+
+}
+.slider .slide:nth-child(3){
+    background-color:rgb(0, 0, 0);
+    animation: slider 8s infinite   ease-in-out;
+    animation-delay: 12s;
+
+}
+.slider .slide:nth-child(4){
+    background-color:rgb(156, 156, 156);
+    animation: slider  8s infinite  ease-in-out;
+    animation-delay: 16s;
+}
+
+.slider .slide:nth-child(5){
+    background-color:rgba(39, 39, 39, 0.336);
+    text-align: center;
+    padding-top:18%;
+
+
+}
+.slide .cafeteriaTitle {
+    font-size:50px;
+    color: rgb(255, 117, 82);
+    background-color: rgb(240, 248, 255);
+}
+.slider .slide:nth-child(5) h3{
+    font-size: 35px;
+    margin-top:10px;
+    color: orange;
+}
+
+
+
+@keyframes slider{
+    from {
+        opacity: 1;
+    }
+    to{
+        opacity: 0.01
+    }
+}
+
+.infoCafeteria{
+    width:100%;
+    height:auto;
+    padding: 70px 20px;
+    text-align:center;
+    position: relative;
+    background-color:aliceblue;
+}
+.infoCafeteria h2 {
+
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: rgb(207, 157, 96);
+
+}
+.infoCafeteria p {
+    border-top: 2px dashed  rgb(207, 157, 96);
+    padding-top: 50px;
+    font-size: 27px;
+    color: gray;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 80%;
+    
+
+}
+.ImgHome{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.imgHome{
+    width: 80%;
+    margin: 0 auto;
+    height: 350px;
+    background-color:red;
+    filter: blur(2px) brightness(80%);
+    
+}
+.filterHome{
+    background-color: rgba(255, 0, 0, 0.205);
+    position: absolute;
+    z-index: 5;
+    font-size:40px;
+    color: rgb(253, 227, 154);
+    
+}
+.homeCarta{
+    width: 100%;
+    padding-top:25px;
+    text-align: center;
+    font-size:36px;
+    color: rgb(104, 104, 104);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color:rgb(248, 245, 245);
+    gap: 80px;
+}
+
+.homeCarta h3{
+    width: 100%;
+}
+
+.homeCarta h3 span{
+
+    height: 50px;
+    color: rgb(214, 184, 119);
+    padding-top:10px
+}
+
+.itemHome{
+    margin-top: 10px;
+    width: 200px;
+    height: 200px;
+    background-color:rgb(75, 73, 73);
+    border-radius:50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:3px dashed rgb(250, 124, 22);
+
+    
+    
+}
+.itemHome img{
+    filter: brightness(70%);
+    transition: all 0.4s;
+    cursor: pointer;
+
+}
+.itemHome:hover img{
+    transform: scale(1.1);
+    filter: brightness(100%);
+}
+.itemHome h4{
+    cursor: pointer;
+    font-size: 30px;
+    width: 20%;
+    height: auto;
+    color: antiquewhite;
+    position: absolute;
+}
+.homeProduct{
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding-top: 20px;
+    justify-content: center;
+    padding:50px;
+    gap:50px;
+    flex-wrap: wrap;
+    background-color:rgb(248, 245, 245);
+}
+.homeProduct .imgProduct{
+    width: 380px;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.homeProduct .infoProduct{
+    text-align: center;
+
+    width: 480px;
+    height: 280px;
+}
+.infoProduct h3{
+    font-size:35px;
+    color: rgb(255, 211, 153);
+}
+.infoProduct h4{
+    font-size: 24px;
+    margin: 20px;
+    color: gray;
+
+}
+.infoProduct button{
+    background-color:rgb(131, 54, 54);
+}
+.infoProduct button:hover{
+    background-color:rgb(145, 70, 70);
+
+}
+
+
+.ads{
+    width: 100%;
+    height: 60px;
+    background-color: rgba(248, 217, 42, 0.87);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    
+}
+.ads a{
+    width: auto;
+    animation: ads  infinite ease-in-out;
+    animation-delay: 0.1s;
+    animation-duration: 20s;
+    animation-play-state: running;
+    color: rgb(68, 68, 68);
+}
+.ads a:hover{
+    animation-play-state: paused;
+    text-decoration: underline;
+    
+}
+
+@keyframes ads {
+    0%{
+        transform:translateX(-110%)
+    }
+    
+    100%{
+        transform:translateX(110%)
+    }
+
+}
+@media screen and (min-width:1400px) {
+    .section{
+        width: 70%;
+        margin: 0 auto;
+        height: auto;
+    }
+    
+}

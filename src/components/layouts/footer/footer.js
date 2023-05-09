@@ -1,15 +1,17 @@
 import React from 'react'
 import styles from'./footer.module.css'
+import logo from './Logo.png'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
     <div className={styles.footer}>
         <ul>
-            <li ><ion-icon name="logo-gitlab"></ion-icon></li>
+            <li><Link to={'/'}><img src={logo} alt=''></img></Link>  </li>
             <li>
              <h3>Contactanos</h3>  
               <p>Call Us<span>+57 36455411</span></p>
-              <p>E-mail<span>Punto@gmail.com</span></p>
+              <p>E-mail<span>Ejetravel@gmail.com</span></p>
               <p>Call Us<span>+57 36455411</span></p>
             </li>
             <li>
@@ -17,10 +19,15 @@ const Footer = () => {
               <div className={styles.icons}>
               <ion-icon name="logo-twitter"></ion-icon>
               <ion-icon name="logo-youtube"></ion-icon>
-              <ion-icon name="logo-github"></ion-icon>
-              <ion-icon name="logo-instagram"></ion-icon>
-              <ion-icon name="logo-google"></ion-icon>
               <ion-icon name="logo-facebook"></ion-icon>
+
+
+              </div>
+            </li>
+            <li>
+              <h3>Herramientas</h3>
+              <div className={styles.iconsCreators}>
+              <ion-icon name="logo-github"></ion-icon>
               <ion-icon name="logo-react"></ion-icon>
               <ion-icon name="logo-javascript"></ion-icon>
 
