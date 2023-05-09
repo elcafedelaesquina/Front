@@ -5,12 +5,15 @@ import './App.css';
 import {Routes} from 'react-router-dom'
 import {Route} from 'react-router-dom'
 import { Cafeteria } from './components/pages/cafeteria';
+import { CartaCafeteria } from './components/pages/cafeteria/pagesCafeteria/carta';
 
 function App() {
   return (
   <div>
     
     <Routes>
+    
+    <Route path="/cafeterias/cafeteria/carta" element={<CartaCafeteria></CartaCafeteria>}></Route>
       <Route path="/cafeterias/cafeteria" element={<Cafeteria></Cafeteria>}></Route>
       <Route path="/" element={<Inicio></Inicio>}></Route>
       <Route path="/cafeterias" element={<Cafeterias></Cafeterias>}></Route>

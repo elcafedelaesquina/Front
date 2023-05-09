@@ -31,7 +31,7 @@
     justify-content: flex-end;
     align-items: center;
 }
-.li{
+.li,.li a {
     font-size: 25px;
     color: rgb(58, 58, 58);
     cursor: pointer;
@@ -42,9 +42,10 @@
     transition: all .4s;
     color: bisque;
     padding: 10px;
-    border-bottom:2px solid rgb(131, 54, 54);
+    
     
 }
+
 .li:hover{
     background: rgb(255, 186, 121);
     color: rgb(37, 37, 37);

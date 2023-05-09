@@ -2,6 +2,8 @@ import React from 'react'
 import { Header } from '../../layouts/header/header';
 import { HeaderCafeteria } from './headerCafeteria';
 import { HomeCafeteria } from './pagesCafeteria/home';
+import { FooterCafeteria } from './footerCafeteria';
+
 
  const Cafeteria = () => {
   return (
@@ -9,6 +11,8 @@ import { HomeCafeteria } from './pagesCafeteria/home';
         <Header></Header>
         <HeaderCafeteria></HeaderCafeteria>
         <HomeCafeteria></HomeCafeteria>
+        <FooterCafeteria></FooterCafeteria>
+        
         
         
     </>

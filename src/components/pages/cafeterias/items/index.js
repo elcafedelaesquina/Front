@@ -1,9 +1,11 @@
 import React from 'react'
 import styles from'./item.module.css'
+import { Link } from 'react-router-dom'
 
 const Item = () => {
   return (
   <>
+    <Link to={'/cafeterias/cafeteria'}>
     <div className={styles.itemCafeterias}>
         <div className={styles.imgItem}><img className={styles.img} src='https://concesionariodealimentoscanreyna.com/wp-content/uploads/2021/12/Cafeter%C3%ADas-para-Empresas.jpg' alt=''></img></div>
         <div className={styles.infoItem}>
@@ -17,6 +19,8 @@ const Item = () => {
         </div>
       
     </div>
+    </Link>
+    
     <div className={styles.itemCafeterias}>
         <div className={styles.imgItem}><img src='https://concesionariodealimentoscanreyna.com/wp-content/uploads/2021/12/Cafeter%C3%ADas-para-Empresas.jpg' alt=''></img></div>
         <div className={styles.infoItem}>

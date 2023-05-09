@@ -1,15 +1,16 @@
 import React from 'react'
 import styles from './style.module.css'
+import { Link } from 'react-router-dom'
 
  const HomeCafeteria = () => {
   return (
     <div className={styles.home}>
       <div className={styles.section}>
           <div className={styles.slider}>
-          <div className={styles.slide}><img src='https://empresas.blogthinkbig.com/wp-content/uploads/2019/11/Imagen3-245003649.jpg?w=800' alt=''></img></div>
-          <div className={styles.slide}><img src='https://cdn.pixabay.com/photo/2014/12/16/22/25/woman-570883_1280.jpg' alt=''></img></div>
-          <div className={styles.slide}><img src='https://us.123rf.com/450wm/aprillrain/aprillrain2209/aprillrain220900194/191556087-imagen-abstracta-de-los-cielos-abiertos-el-camino-el-camino-al-cielo-ilustraci%C3%B3n-de-alta-calidad.jpg?ver=6' alt=''></img></div>
-          <div className={styles.slide}><img src='https://i.pinimg.com/736x/b0/e9/11/b0e91175f0772af0f80ab3a544587443.jpg' alt=''></img></div>
+          <div className={styles.slide}><img src='https://mexicorutamagica.mx/wp-content/uploads/2021/06/cafeterias-mas-famosas-del-mundo.jpg' alt=''></img></div>
+          <div className={styles.slide}><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQpxk5bSlsWR5Hxe3TwkRtW3FwCqwYpA29iA&usqp=CAU' alt=''></img></div>
+          <div className={styles.slide}><img src='https://m.media-amazon.com/images/I/81+fcigeNMS._AC_UF894,1000_QL80_.jpg' alt=''></img></div>
+          <div className={styles.slide}><img src='https://ae01.alicdn.com/kf/Sbb35b5f72e95428ea498d4252b4f952d6/Papel-Tapiz-de-caf-pintado-a-mano-Mural-de-decoraci-n-Industrial-caf-t-de-la.jpg' alt=''></img></div>
           <div className={styles.slide}>
             <h2 className={styles.cafeteriaTitle}>El cafe de la esquina</h2>
             <h3>los mejores cafes de colombia a tu alcance</h3>
@@ -56,10 +57,12 @@ import styles from './style.module.css'
               <h4>Desayunos</h4>
 
             </div>
+            <h3> .............   <span >Productos Destacados</span>   ..............</h3>
            
             
         </div>
         <div className={styles.homeProduct}>
+        
           <div className={styles.imgProduct}>
             <img src='https://revistadiners.com.co/wp-content/uploads/2022/10/cafe_taza_receta_1200x800_2022-1-optimized.jpg' alt=''></img>
           </div>
@@ -78,7 +81,7 @@ import styles from './style.module.css'
       </div>
 
       <div className={styles.ads}>
-        <h2>¿Te interesa tener una Página Web como esta? Pues empieza ya con Nosotros... </h2>
+      <Link to={'/'}><h2>¿Te interesa tener una Página Web como esta? Pues empieza ya con Nosotros... </h2></Link> 
         
       </div>
       

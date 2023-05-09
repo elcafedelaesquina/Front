@@ -14,6 +14,8 @@
 .itemCafeterias .imgItem{
 
     width: 42%;
+    overflow: hidden;
+
   
     
 }
@@ -21,23 +23,27 @@
     
     width:100%;
     height: 100%;
+   
     
 }
 .itemCafeterias .infoItem{
     width: 58%;
+    
 }
 .itemCafeterias .infoItem .title{
     padding: 10px 10px 0px 10px;
     width: 100%;
-    height: 50px;;
+    height: auto;
     display: flex;
     justify-content: space-between;
+    
 
 }
 .itemCafeterias .infoItem .title h4{
     color: rgb(255, 168, 37);
     font-size:22px;
     cursor: pointer;
+    
     transition: all 0.8s;
 }
 .itemCafeterias .infoItem .title h4:hover{
