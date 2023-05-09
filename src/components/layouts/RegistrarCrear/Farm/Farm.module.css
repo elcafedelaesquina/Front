@@ -1,3 +1,11 @@
+.cn{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffa844;
+}
+
 .container{
     position: relative;
     max-width: 850px;

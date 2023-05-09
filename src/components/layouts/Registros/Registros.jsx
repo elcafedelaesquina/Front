@@ -7,7 +7,8 @@ import { Link } from 'react-router-dom';
 
 export function Registros() {
   return (
-      <div className={PageStyle.container}>
+      <div className={PageStyle.cn}>
+        <div className={PageStyle.container}>
         <div className={PageStyle.card}>
           <div className={`${PageStyle.face} ${PageStyle.face1}`}>
             <div className={PageStyle.content}>
@@ -50,6 +51,7 @@ export function Registros() {
             </div>
           </div>
         </div>
+      </div>
       </div>
   )
 }

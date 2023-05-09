@@ -1,3 +1,13 @@
+.cn{
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .container{
   width: 1000px;
   position: relative;

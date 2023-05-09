@@ -7,7 +7,8 @@ import {faUser} from '@fortawesome/free-solid-svg-icons'
 
 export function Farm() {
   return (
-    <div className={styles.container}>
+    <div className={styles.cn}>
+          <div className={styles.container}>
     <input type="checkbox" id="flip" />
     <div className={styles.cover}>
       <div className={styles.front}>
@@ -75,5 +76,6 @@ export function Farm() {
       </div>
     </form>
   </div>
+    </div>
     )
 }

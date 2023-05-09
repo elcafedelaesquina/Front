@@ -8,6 +8,7 @@ import {faUser} from '@fortawesome/free-solid-svg-icons'
 
 export function User() {
   return (
+<div className={styles.cn}>
     <div className={styles.container}>
     <input type="checkbox" id="flip" />
     <div className={styles.cover}>
@@ -66,5 +67,6 @@ export function User() {
       </div>
     </form>
   </div>
+</div>
     )
 }
