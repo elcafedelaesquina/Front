@@ -1,4 +1,4 @@
-button{
+.BtnSingIn{
     margin-right: 50px;
     width: 10rem;
     height: 3rem;
@@ -9,7 +9,7 @@ button{
     color: rgb(255, 255, 255);
     cursor: pointer;
 }
-button:hover{
+.BtnSingIn:hover{
     background-color: rgb(255, 168, 68)
 
 }
