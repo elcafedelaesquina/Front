@@ -65,7 +65,7 @@ const ContentHome = () => {
             <div className={styles.filtro}>
                 <h2>Crea tu Tienda virtual con nosotros</h2> 
                 <h3>lorem ipsum dolor sit amet, consectet</h3>
-                <button>Empieza con nosotros</button>
+                <Link to={'/PageRegistros'}><button className={styles.BtnEmpieza}>Empieza con nosotros</button></Link>
 
             </div>
             
