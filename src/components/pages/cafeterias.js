@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from'./cafeterias.module.css'
 import { Comments } from './cafeterias/comments'
 import { Header } from '../layouts/header/header'
@@ -10,6 +10,17 @@ import { FilterCafeterias } from './cafeterias/filter'
 
 
 const Cafeterias = () => {
+
+  const [data,setData]=useState([])
+
+  useEffect(()=>{
+    fetch('https://apimainejetravel.azurewebsites.net/api/Coffee/Lista')
+    .then(response => response.json())
+    .then(data => {
+      const {coffeeList}=data
+      setData(coffeeList[0])})
+      
+  },[])
   return (
     <>
     <Header></Header>
@@ -28,7 +39,18 @@ const Cafeterias = () => {
 
         </div>
         <div className={styles.container}>
-          <Item></Item>
+          {data.map(item=>{
+            return (<Item 
+              key={item.id_coffee} 
+              name={item.name} 
+              description={item.description} 
+              image={item.image} 
+              address={item.address}>
+
+            </Item>)
+
+          })}
+          
 
         </div>
 

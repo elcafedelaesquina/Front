@@ -33,7 +33,7 @@
 .itemCafeterias .infoItem .title{
     padding: 10px 10px 0px 10px;
     width: 100%;
-    height: auto;
+    min-height: 50px;
     display: flex;
     justify-content: space-between;
     
@@ -66,6 +66,8 @@
 }
 .itemCafeterias .infoItem  p{
     font-size:16px;
+    min-height: 70px;
+    overflow: hidden;
     padding: 5px 10px;
     color: rgb(221, 221, 221);
 }
