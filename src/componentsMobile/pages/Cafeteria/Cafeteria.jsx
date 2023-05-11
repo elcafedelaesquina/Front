@@ -7,12 +7,14 @@ import { Menu } from "../../layouts/Menu/Menu";
 import { NavBar } from "../../layouts/navbar/Navbar";
 import { Slider } from "../../layouts/slider/Slider";
 import { Comments } from "../../layouts/Comments/Comments";
+import { HomeCafeteria } from "../../layouts/homeCafeteria/HomeCafeteria";
 
 export const Cafeteria = () => {
   return (
     <div>
       <NavBar />
       <Slider />
+      <HomeCafeteria />
       <CategoriesProducts />
       <Menu />
       <AboutUs />
