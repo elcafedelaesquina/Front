@@ -5,16 +5,18 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import {faLock} from '@fortawesome/free-solid-svg-icons'
 import {faUser} from '@fortawesome/free-solid-svg-icons'
+import logo from "./Logo.png"
 
 export function Cafe() {
   return (
     <div className={styles.cn}>
           <div className={styles.container}>
-    <input type="checkbox" id="flip" />
+    <input type="checkbox"  className={styles.flip} id="flip" />
     <div className={styles.cover}>
       <div className={styles.front}>
-        <img className={styles['img-container']} src='' alt="" />
+        <img className={styles['imgContainer']} src='https://metropoliabierta.elespanol.com/uploads/s1/83/27/49/cafeteri-a.jpeg' alt="" />
         <div className={styles.text}>
+          <img src={logo}  className={styles.logoForm} alt=''></img>
           <span className={styles['text-1']}>Every new friend is <br /> a new adventure</span>
           <span className={styles['text-2']}>Let's get connected</span>
         </div>

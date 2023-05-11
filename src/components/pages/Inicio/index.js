@@ -113,7 +113,7 @@ const ContentHome = () => {
                     <img src='https://www.altonivel.com.mx/wp-content/uploads/2018/03/cafeteria.jpg' alt='hola'></img>
                     <div className={styles.infoPlaces}>
                         <h3>El Ocaso finca café</h3>
-                        <div class="stars"><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon></div>
+                        <div className="stars"><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon></div>
                       <h5>visita estos sitios y haz tours cafeteros</h5>
 
                     </div>
