@@ -38,16 +38,19 @@
     z-index: 100;
 }
 
-.container #flip:checked ~ .cover{
+.container .flip:checked ~ .cover{
     transform: rotateY(-180deg);
 }
 
-.container #flip:checked ~ .cover .back{
+.container .flip:checked ~ .cover .back{
     transform: rotateY(-180deg);
+}
+.container .flip:checked ~ .cover .text{
+    transform: rotateY(180deg);
 }
 
 
-.container .cover img{
+.container .cover .imgContainer{
     position: absolute;
     height: 100%;
     width: 100%;
@@ -70,6 +73,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: all 0.9s;
+}
+.logoForm{
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0);
+    height: 200px;
+    position: relative;
 }
 
 .cover .text .text-1,
@@ -84,6 +94,7 @@
 .cover .text .text-2{
     font-size: 15px;
     font-weight: 500;
+    color: #ffa844;
 }
 
 
@@ -169,10 +180,12 @@ form .form-content .text{
 
 form .form-content .text a{
     text-decoration: none;
+    color: #000;
 }
 
 form .form-content .text a:hover{
     text-decoration: underline;
+    
 }
 
 form .form-content .button{
@@ -221,7 +234,7 @@ form .form-content .signup-text{
     margin-top: 25px;
 }
 
-.container #flip{
+.container .flip{
     display: none;
 }
 
@@ -236,10 +249,10 @@ form .form-content .signup-text{
     .form-content .signup-form{
         display: none;
     }
-    .container #flip:checked ~ form .signup-form{
+    .container .flip:checked ~ form .signup-form{
         display: block;
     }
-    .container #flip:checked ~ form .login-form{
+    .container .flip:checked ~ form .login-form{
         display: none;
     }
 }
