@@ -9,10 +9,12 @@ import { AiOutlineLogin } from "react-icons/ai";
 import { CiCoffeeCup } from "react-icons/ci";
 import { GiFarmer } from "react-icons/gi";
 
+// components/pages/PageRegistros/PageRegistros
+
 const Logo = "https://res.cloudinary.com/dmrq9n2im/image/upload/v1683321911/El%20caf%C3%A9%20de%20la%20esquina/ejeTravel_nnf3ra.png";
 const Items = [
   {title: "Inicio", url : "/", ic: <AiOutlineHome className={ Style.iconMenu } /> },
-  {title: "Iniciar Sesión", url : "#", ic: <AiOutlineLogin className={ Style.iconMenu } /> },
+  {title: "Iniciar Sesión", url : "/PageRegistros", ic: <AiOutlineLogin className={ Style.iconMenu } /> },
   {title: "Cafeterias", url : "/Cafeteria", ic: <CiCoffeeCup className={ Style.iconMenu } /> },
   {title: "Fincas", url : "#", ic: <GiFarmer className={ Style.iconMenu } /> },
 ]
