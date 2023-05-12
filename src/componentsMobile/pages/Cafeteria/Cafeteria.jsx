@@ -6,7 +6,7 @@ import { HomeCafeteria } from "../../layouts/homeCafeteria/HomeCafeteria";
 import { CategoriesProducts } from "../../layouts/CategoriesProducts/CategoriesProducts";
 import { FeaturedProducts } from "../../layouts/featuredproducts/FeaturedProducts";
 import { CarProducts } from "../../layouts/CarProducts/CarProducts";
-import { Footer } from "../../layouts/footer/Footer";
+import { FooterCafeteria } from "../../layouts/footercafeteria/FooterCafeteria";
 
 export const Cafeteria = () => {
   return (
@@ -17,7 +17,7 @@ export const Cafeteria = () => {
       <CategoriesProducts />
       <FeaturedProducts />
       <CarProducts />
-      <Footer />
+      <FooterCafeteria />
     </div>
   );
 };
