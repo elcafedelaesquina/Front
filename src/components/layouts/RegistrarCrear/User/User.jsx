@@ -5,9 +5,32 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import {faLock} from '@fortawesome/free-solid-svg-icons'
 import {faUser} from '@fortawesome/free-solid-svg-icons'
+import {faCloudArrowUp} from '@fortawesome/free-solid-svg-icons'
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import logo from "./Logo.png"
+import { Link } from 'react-router-dom'
+
 
 export function User() {
+  const [imagePreview, setImagePreview] = useState('');
+  function handleImageInputChange(e) {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setImagePreview(reader.result);
+    };
+    reader.readAsDataURL(file);
+  }
+  function handleImageClear() {
+    setImagePreview('');
+  }
+  
+  //boton images
+ const fileInputRef = useRef(null);
+ const handleButtonClick = () => {
+   image.current.click();
+ }
+  //
   const [userName,setUserName]=useState('')
   const [userEmail,setUserEmail]=useState('')
   const [userPassword,setUserPassword]=useState('')
@@ -64,28 +87,10 @@ function register(){
   
 }
 
-
-
-
-
-
-
   // Agregar los datos a enviar en la petición
 
 
-
-
-
-
-
-
-  
   // Realizar la petición POST
-
-
-
-
-
 
 
 return (
@@ -97,7 +102,7 @@ return (
         <img className={styles.imgContainer} src={img_front} alt="" />
         
         <div className={styles.text}>
-          <img src={logo}  className={styles.logoForm} alt=''></img>
+          <li><Link to={'/'}><img src={logo}  className={styles.logoForm} alt=''></img></Link></li>
           <span className={styles['text-1']}>Every new friend is <br /> a new adventure</span>
           <span className={styles['text-2']}>Let's get connected</span>
         </div>
@@ -141,10 +146,21 @@ return (
               <i className='fas fa-lock icon'><FontAwesomeIcon icon={faLock} /></i>
               <input type="password" ref={password} name="Password"  placeholder='Enter your password' required />
             </div>
-            <div className={styles['input-box']}>
-              <i className='fas fa-user icon'><FontAwesomeIcon icon={faUser} /></i>
-              <input type="file" alt='' ref={image} name="Image"  placeholder='Choose your image' required />
+
+            <div className={styles['container-file']}>
+            <div className={`${styles['input-boxx']} ${styles.box}`} onClick={handleButtonClick}>
+              <i className={styles['icon']} class="fa-solid fa-cloud-arrow-up"><FontAwesomeIcon icon={faCloudArrowUp} /></i>
+              <input type="file" alt='' ref={image} name="Image" hidden placeholder='Choose your image' required onChange={handleImageInputChange} />
+              {imagePreview && (
+                <div className={styles['image-preview']}>
+                  <img className={styles.imgPreview} src={imagePreview} alt="Imagen seleccionada" />
+                  <button className={styles.btnPreview} onClick={handleImageClear}><i className={styles.iconX} class="fa-solid fa-circle-xmark"><FontAwesomeIcon icon={faCircleXmark} /></i></button>
+                </div>
+              )}
             </div>
+            </div>
+
+            <div id='selectedFile'></div>
             <div className={`${styles['button']} ${styles['input-box']}`}>
               <button className={styles['button-form']} type='submit' onClick={register}  ref={btnRegister}>Sig Up</button>
             </div>

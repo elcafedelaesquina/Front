@@ -18,12 +18,6 @@ const Item = (props) => {
       
     </div>
     </Link>
-    
-   
-
-    
-    
-
   </>
     
     

@@ -133,12 +133,28 @@
     height: 160px;
     overflow: hidden;
 }
-.commentsGenerator button{
+
+.btnEnviarComments{
+    margin-right: 50px;
+    width: 10rem;
+    height: 3rem;
+    border-radius: 5px;
+    background-color: rgb(255, 167, 66);
+    border: none;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+.btnEnviarComments:hover{
+    background-color: rgb(255, 168, 68)
+
+}
+.commentsGenerator .btnEnviarComments{
     cursor: pointer;
    margin: 50px auto;
     
 }
-.commentsGenerator button:hover{
+.commentsGenerator .btnEnviarComments:hover{
     background-color:orange;
 }
 .containerComments .container .comments{

@@ -41,7 +41,7 @@ import { Link } from 'react-router-dom'
 
             </div>
             <div className={styles.itemHome}>
-              <img src='https://media-cdn.tripadvisor.com/media/photo-s/1b/bf/56/03/nuestras-bebidas-frias.jpg' alt=''></img>
+              <img className={styles.imgitemHome} src='https://media-cdn.tripadvisor.com/media/photo-s/1b/bf/56/03/nuestras-bebidas-frias.jpg' alt=''></img>
               <h4>Otras 
                 bebidas
                 </h4>
@@ -64,7 +64,7 @@ import { Link } from 'react-router-dom'
         <div className={styles.homeProduct}>
         
           <div className={styles.imgProduct}>
-            <img src='https://revistadiners.com.co/wp-content/uploads/2022/10/cafe_taza_receta_1200x800_2022-1-optimized.jpg' alt=''></img>
+            <img className={styles.imgbbb} src='https://revistadiners.com.co/wp-content/uploads/2022/10/cafe_taza_receta_1200x800_2022-1-optimized.jpg' alt=''></img>
           </div>
           <div className={styles.infoProduct}>
             <h3>Prueba el mejor Café</h3>
@@ -72,7 +72,7 @@ import { Link } from 'react-router-dom'
               Cappuccino o Expresso, asi como los mejores acompañamientos 
               como Galletas o Kekes especiales que tenemos para ti .
             </h4>
-            <button>Conoce Más</button>
+            <button className={styles.btninfoProduct}>Conoce Más</button>
           </div>
 
 

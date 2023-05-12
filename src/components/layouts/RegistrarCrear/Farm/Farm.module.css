@@ -42,7 +42,7 @@
     transform: rotateY(-180deg);
 }
 
-.container .flip:checked ~ .cover .back{
+.container .flip:checked ~ .cover{
     transform: rotateY(-180deg);
 }
 .container .flip:checked ~ .cover .text{
@@ -58,11 +58,6 @@
     z-index: 12;
     backface-visibility: hidden;
 }
-
-/* .container .cover .back .backImg{
-    transform: rotateY(180deg);
-}
- */
 
 .container .cover .text{
     position: absolute;
@@ -233,6 +228,62 @@ form .form-content .signup-text{
     text-align: center;
     margin-top: 25px;
 }
+
+.input-boxx {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #ffa844;
+    height: 500px;
+    width: 500px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.input-boxes .container-file{
+    display: flex;
+    justify-content: center;
+}
+
+.form-content .input-boxx i{
+    position: absolute;
+    color: #ffa844;
+    font-size: 17px;
+}
+
+.image-preview {
+    position: relative;
+    
+}
+.image-preview .imgPreview {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.image-preview .btnPreview {
+    position: absolute;
+    top: 0px;
+    right: 18px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form .form-content .input-boxx {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 130px;
+    width: 130px;
+    margin: 10px 0;
+}
+
 
 .container .flip{
     display: none;
