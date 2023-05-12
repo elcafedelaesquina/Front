@@ -171,13 +171,13 @@
     
     
 }
-.itemHome img{
+.itemHome .imgitemHome{
     filter: brightness(70%);
     transition: all 0.4s;
     cursor: pointer;
 
 }
-.itemHome:hover img{
+.itemHome:hover .imgitemHome{
     transform: scale(1.1);
     filter: brightness(100%);
 }
@@ -222,14 +222,30 @@
     color: gray;
 
 }
-.infoProduct button{
+.infoProduct .btninfoProduct{
     background-color:rgb(131, 54, 54);
 }
-.infoProduct button:hover{
+.infoProduct .btninfoProduct:hover{
     background-color:rgb(145, 70, 70);
 
 }
 
+
+.btninfoProduct{
+    margin-right: 50px;
+    width: 10rem;
+    height: 3rem;
+    border-radius: 5px;
+    background-color: rgb(255, 167, 66);
+    border: none;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+.btninfoProduct:hover{
+    background-color: rgb(255, 168, 68)
+
+}
 
 .ads{
     width: 100%;
