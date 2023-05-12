@@ -2,6 +2,7 @@ import "./AppMobile.css";
 import { Route, Routes } from "react-router-dom";
 import { Home } from "./componentsMobile/pages/Home/Home";
 import { Cafeteria } from "./componentsMobile/pages/Cafeteria/Cafeteria";
+import { Cafeterias } from "./componentsMobile/pages/Cafeterias/Cafeterias";
 import { PageRegistros } from "./components/pages/PageRegistros/PageRegistros";
 import { User } from "./components/layouts/RegistrarCrear/User/User";
 import { Cafe } from "./components/layouts/RegistrarCrear/Cafe/Cafe";
@@ -13,6 +14,7 @@ function AppMobile() {
       <Routes>
         <Route path="/" element={ <Home /> } />
         <Route path="/Cafeteria" element={ <Cafeteria /> } />
+        <Route path="/cafeterias" element={ <Cafeterias /> } />
         <Route path="/PageRegistros" element={ <PageRegistros /> } />
         <Route path="/User" element={ <User /> } />
         <Route path="/Cafe" element={ <Cafe /> } />
