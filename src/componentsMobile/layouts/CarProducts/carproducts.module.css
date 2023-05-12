@@ -1,6 +1,6 @@
 .carproducts{
     width: 100vw;
-    height: 100vh;
+    height: auto;
 }
 
 .subtitle{
@@ -8,6 +8,7 @@
     display: flex;
     justify-content: center;
     margin: 10px;
+    font-size: 2rem;
 }
 
 .containerProduct{

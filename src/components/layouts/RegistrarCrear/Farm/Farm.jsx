@@ -4,16 +4,18 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import {faLock} from '@fortawesome/free-solid-svg-icons'
 import {faUser} from '@fortawesome/free-solid-svg-icons'
+import logo from "./Logo.png"
 
 export function Farm() {
   return (
     <div className={styles.cn}>
           <div className={styles.container}>
-    <input type="checkbox" id="flip" />
+    <input type="checkbox" className={styles.flip} id="flip" />
     <div className={styles.cover}>
       <div className={styles.front}>
-        <img className={styles['img-container']} src='' alt="" />
+        <img className={styles['imgContainer']} src='https://media-cdn.tripadvisor.com/media/photo-s/07/19/08/26/finca-el-ocaso-salento.jpg' alt="" />
         <div className={styles.text}>
+          <img src={logo}  className={styles.logoForm} alt=''></img>
           <span className={styles['text-1']}>Every new friend is <br /> a new adventure</span>
           <span className={styles['text-2']}>Let's get connected</span>
         </div>
@@ -22,7 +24,7 @@ export function Farm() {
     <form action="#">
       <div className={styles['form-content']}>
         <div className={styles['login-form']}>
-          <div className={styles.title}>Login User</div>
+          <div className={styles.title}>Login Farm</div>
           <div className={styles['input-boxes']}>
             <div className={styles['input-box']}>
               <i className={`fas fa-envelope ${styles['icon']}`}>
@@ -46,7 +48,7 @@ export function Farm() {
         </div>
 
         <div className={styles['signup-form']}>
-          <div className={styles.title}>SignUp User</div>
+          <div className={styles.title}>SignUp Farm</div>
           <div className={styles['input-boxes']}>
             <div className={styles['input-box']}>
               <i className={`fas fa-user ${styles['icon']}`}>

@@ -2,35 +2,27 @@ import React from 'react'
 import Style from './menu.module.css'
 
 export const Menu = () => {
-
-  const imgtest = 'https://res.cloudinary.com/dmrq9n2im/image/upload/v1680041398/El%20caf%C3%A9%20de%20la%20esquina/download_lhgibn.jpg'
-
   return (
-    <div>
-      <div className={Style.product}>
-      <h2 className={Style.subtitle}>Desayunos</h2>
-      <div className={Style.containerProductOne}>
-        <div className={Style.containerInfoOne}>
-          <p className={Style.nameProductOne}>Nombre producto</p>
-          <p className={Style.descriptionProductOne}>Breve descripción</p>
-          <button className={Style.btnPriceOne}>Precio</button>
-        </div>
-        <div className={Style.containerImageOne}>
-          <img className={Style.imageProductOne} src={imgtest} alt="" />
-        </div>
-      </div>
-      
-      <div className={Style.containerProductTwo}>
-        <div className={Style.containerImageTwo}>
-          <img className={Style.imageProductTwo} src={imgtest} alt="" />
-        </div>
-        <div className={Style.containerInfoTwo}>
-          <p className={Style.nameProductTwo}>Nombre producto</p>
-          <p className={Style.descriptionProductTwo}>Breve descripción</p>
-          <button className={Style.btnPriceTwo}>Precio</button>
-        </div>
-      </div>
-    </div>
-    </div>
+    <section className={Style.menu}>
+      <h2 className={Style.title}>Nuestra Carta</h2>
+      <table>
+        <h3 className={Style.subTitle}>Café</h3>
+        <tr className={Style.row}>
+          <td className={Style.item}>Product              $0.000</td>
+        </tr>
+        <tr className={Style.row2}>
+          <td className={Style.item}>Product              $0.000</td>
+        </tr>
+        <tr className={Style.row}>
+          <td className={Style.item}>Product              $0.000</td>
+        </tr>
+        <tr className={Style.row2}>
+          <td className={Style.item}>Product              $0.000</td>
+        </tr>
+        <tr className={Style.row}>
+          <td className={Style.item}>Product              $0.000</td>
+        </tr>
+      </table>
+    </section>
   )
 }
