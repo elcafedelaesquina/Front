@@ -108,6 +108,15 @@
     
 
 }
+.slideImg{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
 .ImgHome{
     width: 100%;
     height: auto;
@@ -171,13 +180,14 @@
     
     
 }
-.itemHome .imgitemHome{
+.itemHome .imgFocus {
     filter: brightness(70%);
     transition: all 0.4s;
     cursor: pointer;
+    height: 100%;
 
 }
-.itemHome:hover .imgitemHome{
+.itemHome:hover .imgFocus{
     transform: scale(1.1);
     filter: brightness(100%);
 }
