@@ -13,6 +13,7 @@
 }
 
 .line{
+    width: 80%;
     border: 2px #686868 dotted;
 }
 

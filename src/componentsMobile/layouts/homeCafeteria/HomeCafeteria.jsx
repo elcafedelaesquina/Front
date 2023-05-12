@@ -8,7 +8,7 @@ export const HomeCafeteria = () => {
   return (
     <div className={Style.homeCafeteria}>
         <h2 className={Style.title}>Pagina Web administrable</h2>
-        <hr className={Style.line}/>
+        <div className={Style.line}/>
         <p className={Style.text}>
         Un lugar agradable en donde podrá disfrutar el mejor Café… Demo de Página web administrable para Cafés o Restaurantes, desarrollada en WordPress, con páginas como La Carta, Reservas, Galería de imágenes y Página contactos con Formulario de consultas y mapa de ubicación, enlaces a Redes sociales y botón para Chat de Whatsapp.
         </p>

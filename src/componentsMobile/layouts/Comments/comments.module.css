@@ -1,11 +1,13 @@
 .containerComments{
     width: 100%;
     height: auto;
+    margin-bottom: 10px;
 }
 
 .title{
     color: #fff;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
+    width: 90%;
 }
 
 .containerInfo{
