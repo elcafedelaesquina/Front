@@ -6,6 +6,7 @@ import {faLock} from '@fortawesome/free-solid-svg-icons'
 import {faUser} from '@fortawesome/free-solid-svg-icons'
 import {faCloudArrowUp} from '@fortawesome/free-solid-svg-icons'
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import logo from "./Logo.png"
 import { Link } from 'react-router-dom';
 
@@ -35,9 +36,9 @@ export function Cafe() {
     <input type="checkbox"  className={styles.flip} id="flip" />
     <div className={styles.cover}>
       <div className={styles.front}>
-        <Link to={'/'}><img className={styles['imgContainer']} src='https://metropoliabierta.elespanol.com/uploads/s1/83/27/49/cafeteri-a.jpeg' alt="" /></Link>
+        <img className={styles['imgContainer']} src='https://metropoliabierta.elespanol.com/uploads/s1/83/27/49/cafeteri-a.jpeg' alt="" />
         <div className={styles.text}>
-          <img src={logo}  className={styles.logoForm} alt=''></img>
+          <Link to={'/'}><img src={logo}  className={styles.logoForm} alt=''></img></Link>
           <span className={styles['text-1']}>Every new friend is <br /> a new adventure</span>
           <span className={styles['text-2']}>Let's get connected</span>
         </div>
@@ -50,13 +51,13 @@ export function Cafe() {
           <div className={styles['input-boxes']}>
             <div className={styles['input-box']}>
               <i className={`fas fa-envelope ${styles['icon']}`}><FontAwesomeIcon icon={faEnvelope} /></i>
-              <input type="text" placeholder='Enter your email' required />
+              <input type="text" placeholder='Enter your email' />
             </div>
             <div className={styles['input-box']}>
               <i className={`fas fa-lock ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faLock} />
               </i>
-              <input type="password" placeholder='Enter your password' required />
+              <input type="password" placeholder='Enter your password'  />
             </div>
             <div className={styles.text}><a href=''>Forget password?</a></div>
             <div className={`${styles['button']} ${styles['input-box']}`}>
@@ -74,25 +75,35 @@ export function Cafe() {
               <i className={`fas fa-user ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faUser} />
               </i>
-              <input type="text" placeholder='Enter your name' required />
+              <input type="text" placeholder='Enter your name'  />
             </div>
             <div className={styles['input-box']}>
               <i className={`fas fa-envelope ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faEnvelope} />
               </i>
-              <input type="text" placeholder='Enter your email' required />
+              <input type="text" placeholder='Enter your email' />
+            </div>
+            <div className={styles['input-box']}>
+              <i className={`fas fa-Phone ${styles['icon']}`}>
+                <FontAwesomeIcon icon={faPhone} />
+              </i>
+              <input type="tel" placeholder='Enter your phone'  />
             </div>
             <div className={styles['input-box']}>
               <i className={`fas fa-lock ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faLock} />
               </i>
-              <input type="password" placeholder='Enter your password' required />
+              <input type="password" placeholder='Enter your password'  />
+            </div>
+
+            <div className={styles['input-box textarea-container']}>
+              <input type="textarea"  className={styles.textarea} placeholder='Enter your short description'  />
             </div>
             
             <div className={styles['container-file']}>
             <div className={`${styles['input-boxx']} ${styles.box}`} onClick={handleButtonClick}>
               <i className={styles['icon']} class="fa-solid fa-cloud-arrow-up"><FontAwesomeIcon icon={faCloudArrowUp} /></i>
-              <input type="file" alt='' ref={fileInputRef} name="Image" hidden placeholder='Choose your image' required onChange={handleImageInputChange} />
+              <input type="file" alt='' ref={fileInputRef} name="Image" hidden placeholder='Choose your image'  onChange={handleImageInputChange} />
               {imagePreview && (
                 <div className={styles['image-preview']}>
                   <img className={styles.imgPreview} src={imagePreview} alt="Imagen seleccionada" />

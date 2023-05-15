@@ -6,8 +6,10 @@ import {faLock} from '@fortawesome/free-solid-svg-icons'
 import {faUser} from '@fortawesome/free-solid-svg-icons'
 import {faCloudArrowUp} from '@fortawesome/free-solid-svg-icons'
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import logo from "./Logo.png"
 import { Link } from 'react-router-dom';
+
 
 export function Farm() {
   const [imagePreview, setImagePreview] = useState('');
@@ -85,10 +87,20 @@ export function Farm() {
               <input type="text" placeholder='Enter your email' required />
             </div>
             <div className={styles['input-box']}>
+              <i className={`fas fa-Phone ${styles['icon']}`}>
+                <FontAwesomeIcon icon={faPhone} />
+              </i>
+              <input type="tel" placeholder='Enter your phone' required />
+            </div>
+            <div className={styles['input-box']}>
               <i className={`fas fa-lock ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faLock} />
               </i>
               <input type="password" placeholder='Enter your password' required />
+            </div>
+
+            <div className={styles['input-box textarea-container']}>
+              <input type="textarea" className={styles.textarea} placeholder='Enter your short description' required />
             </div>
 
             <div className={styles['container-file']}>
