@@ -7,6 +7,7 @@ import {faUser} from '@fortawesome/free-solid-svg-icons'
 import {faCloudArrowUp} from '@fortawesome/free-solid-svg-icons'
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import logo from "./Logo.png"
 import { Link } from 'react-router-dom';
 
@@ -92,6 +93,14 @@ export function Farm() {
               </i>
               <input type="tel" placeholder='Enter your phone' required />
             </div>
+
+            <div className={styles['input-box']}>
+              <i className={`fas fa-Location-Dot ${styles['icon']}`}>
+                <FontAwesomeIcon icon={faLocationDot} />
+              </i>
+              <input type="tel" placeholder='Enter your address'  />
+            </div>
+
             <div className={styles['input-box']}>
               <i className={`fas fa-lock ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faLock} />
