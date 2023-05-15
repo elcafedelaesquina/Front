@@ -1,0 +1,22 @@
+.div {
+  background-color: #fff;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  margin: 20px auto;
+  margin-right: 20px;
+  margin-left: 2px;
+  border-radius: 50%;
+  outline: 2px solid rgba(84, 142, 252, 0.918);
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s;
+  object-fit: cover;
+}
+
+.img:hover {
+  transform: scale(1.2);
+}

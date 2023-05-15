@@ -36,3 +36,26 @@
   border-radius: 20px;
   overflow: auto;
 }
+
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 2px auto;
+}
+
+.containerImg{
+  width: 95%;
+  /* background-color: #fff; */
+  margin: 30px auto;
+  border-top: solid rgb(52, 189, 253);
+display: flex;
+  flex-wrap: wrap;
+  padding: 0px 40px;
+}
+
+.containerImg .h2{
+  width: 100%;
+  text-align: center;
+  margin:  10px 0px 40px 0;
+  color: rgb(195, 255, 56);
+}

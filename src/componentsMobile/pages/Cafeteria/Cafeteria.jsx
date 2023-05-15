@@ -7,7 +7,6 @@ import { Footer } from "../../layouts/footer/Footer";
 import { Menu } from "../../layouts/Menu/Menu";
 import { NavBar } from "../../layouts/navbar/Navbar";
 import { Slider } from "../../layouts/slider/Slider";
-import { Comments } from "../../layouts/Comments/Comments";
 import { HomeCafeteria } from "../../layouts/homeCafeteria/HomeCafeteria";
 
 export const Cafeteria = () => {
@@ -19,7 +18,6 @@ export const Cafeteria = () => {
       <CategoriesProducts />
       <Menu />
       <AboutUs />
-      <Comments />
       <CarProducts />
       <Footer />
     </div>
