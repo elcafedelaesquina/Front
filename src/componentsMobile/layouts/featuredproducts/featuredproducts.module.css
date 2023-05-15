@@ -8,15 +8,20 @@
     /* justify-content: center; */
 }
 
-.subtitle{
-    color: #fff;
-    font-size: 1.5rem;
+.title{
+    color: #d6b877;
+    font-size: 2rem;
     display: flex;
     justify-content: center;
 }
 
+.subtitle{
+    color: #ffd399; 
+    font-size: 1.5rem;
+}
+
 .imgMain{
-    width: 80%;
+    width: 70%;
     height: auto;
     display: flex;
     justify-content: center;
@@ -31,4 +36,11 @@
     width: 80%;
     color:#fff;
     margin-bottom: 10px;
+    text-align: justify;
+}
+
+.btn{
+   background-color: #ffd399;
+   color: #000;
+   font-size: 1rem; 
 }

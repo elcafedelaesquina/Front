@@ -37,7 +37,7 @@ const Comments = () => {
                 <h3>Tu opinion<span>(Obligatorio)</span></h3>
                 
                 <textarea></textarea>
-                <button>Enviar</button>
+                <button className='btnEnviarComments'>Enviar</button>
             </div>
 
             

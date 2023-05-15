@@ -1,13 +1,12 @@
 import React from "react";
 import Style from './cafeteria.module.css'
-import { AboutUs } from "../../layouts/AboutUs/AboutUs";
-import { CarProducts } from "../../layouts/CarProducts/CarProducts";
-import { CategoriesProducts } from "../../layouts/CategoriesProducts/CategoriesProducts";
-import { Footer } from "../../layouts/footer/Footer";
-import { Menu } from "../../layouts/Menu/Menu";
 import { NavBar } from "../../layouts/navbar/Navbar";
 import { Slider } from "../../layouts/slider/Slider";
 import { HomeCafeteria } from "../../layouts/homeCafeteria/HomeCafeteria";
+import { CategoriesProducts } from "../../layouts/CategoriesProducts/CategoriesProducts";
+import { FeaturedProducts } from "../../layouts/featuredproducts/FeaturedProducts";
+import { CarProducts } from "../../layouts/CarProducts/CarProducts";
+import { FooterCafeteria } from "../../layouts/footercafeteria/FooterCafeteria";
 
 export const Cafeteria = () => {
   return (
@@ -19,7 +18,7 @@ export const Cafeteria = () => {
       <Menu />
       <AboutUs />
       <CarProducts />
-      <Footer />
+      <FooterCafeteria />
     </div>
   );
 };
