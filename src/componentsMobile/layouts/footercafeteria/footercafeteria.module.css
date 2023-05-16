@@ -9,9 +9,9 @@
     cursor: pointer;
 }
 
-.ads a{
+.ads .advertisement{
     font-size: 10px;
-    width: 100vw;
+    width: 100%;
     animation: ads  infinite ease-in-out;
     animation-delay: 0.1s;
     animation-duration: 20s;
@@ -19,7 +19,7 @@
     color: #444444;
     }
 
-    .ads a:hover{
+    .ads .advertisement:hover{
     animation-play-state: paused;
     text-decoration: underline;
     }
@@ -52,22 +52,22 @@
     overflow: hidden;
 }
 
-.itemsFooter h3{
+.itemsFooter .subtitle{
     color:#ad4747;
     margin-bottom: 10px;
 }
 
-.itemsFooter h4{
+.itemsFooter .info{
     color:#ad4747;
 }
 
-.itemsFooter h4 span{
+.itemsFooter .info .textModified{
     margin-top: 10px;
     font-weight:lighter;
     margin-bottom: 0;
 }
 
-.itemsFooter p{
+.itemsFooter .text{
     color:#833636;
 }
 
