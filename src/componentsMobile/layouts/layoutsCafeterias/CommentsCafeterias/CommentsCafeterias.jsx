@@ -6,6 +6,9 @@ export const CommentsCafeterias = () => {
 
   const [data, setData] = useState([]);
 
+  const [dataComment,setDataComment]=useState('')
+  const [value,setValue]=useState([])
+
   const getCafeterias = async () => {
     await fetch("https://apimainejetravel.azurewebsites.net/api/Coffee/Lista")
       .then((response) => response.json())
@@ -14,10 +17,17 @@ export const CommentsCafeterias = () => {
         setData(coffeeList[0]);
       });
   };
+  const selectCafeteria=(e)=>{
+    const valor=e.target
+    console.log(dataComment)
+
+  }
 
   useEffect(() => {
     getCafeterias();
   }, []);
+
+
 
   return (
     <div className={Style.containerComments}>
@@ -26,17 +36,18 @@ export const CommentsCafeterias = () => {
           Tu opinion es importante para nosotros...
         </h2>
         <div className={Style.choose}>
-          <select className={Style.select}>
+          <select className={Style.select}  onChange={selectCafeteria} >
           {data.map((item) => {
+            
             return (
-            <option>{item.name}</option>
+            <option value={{item}} selected={()=>{setDataComment(item.image)}}>{item.name}</option>
             );
           })}
           </select>
         </div>
-        <h3 className={Style.subTitle}>El cafe de la esquina</h3>
-        <p className={Style.ubicationSite}>Salento, Quindio</p>
-        <img src={imgTest} alt="" className={Style.imgSite} />
+        <h3 className={Style.subTitle}>{dataComment}</h3>
+        <p className={Style.ubicationSite}>{dataComment}</p>
+        <img src={dataComment} alt="" className={Style.imgSite} />
         <h3 className={Style.subTitle}>Califica tu experiencia</h3>
       </section>
 

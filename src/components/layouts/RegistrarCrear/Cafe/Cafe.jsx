@@ -7,14 +7,15 @@ import {faUser} from '@fortawesome/free-solid-svg-icons'
 import {faCloudArrowUp} from '@fortawesome/free-solid-svg-icons'
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import logo from "./Logo.png"
 import { Link } from 'react-router-dom';
 
 export function Cafe() {
   const [imagePreview, setImagePreview] = useState('');
   function handleImageInputChange(e) {
-    const file = e.target.files[0];
-    const reader = new FileReader();
+  const file = e.target.files[0];
+  const reader = new FileReader();
     reader.onloadend = () => {
       setImagePreview(reader.result);
     };
@@ -23,7 +24,6 @@ export function Cafe() {
   function handleImageClear() {
     setImagePreview('');
   }
-  
   //boton images
  const fileInputRef = useRef(null);
  const handleButtonClick = () => {
@@ -89,6 +89,14 @@ export function Cafe() {
               </i>
               <input type="tel" placeholder='Enter your phone'  />
             </div>
+
+            <div className={styles['input-box']}>
+              <i className={`fas fa-Location-Dot ${styles['icon']}`}>
+                <FontAwesomeIcon icon={faLocationDot} />
+              </i>
+              <input type="tel" placeholder='Enter your address'  />
+            </div>
+
             <div className={styles['input-box']}>
               <i className={`fas fa-lock ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faLock} />
