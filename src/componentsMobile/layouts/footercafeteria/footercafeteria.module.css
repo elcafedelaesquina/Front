@@ -1,5 +1,5 @@
 .ads{
-    width: 100%;
+    width: 100vw;
     height: 60px;
     background-color: #f8d92ade;
     text-align: center;
@@ -12,7 +12,7 @@
 .ads .advertisement{
     font-size: 10px;
     width: 100%;
-    /* animation: ads  infinite ease-in-out; */
+    animation: ads  infinite ease-in-out;
     animation-delay: 0.1s;
     animation-duration: 20s;
     animation-play-state: running;
