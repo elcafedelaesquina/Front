@@ -16,6 +16,7 @@ export const Cafeteria = () => {
       <Slider />
       <HomeCafeteria />
       <CategoriesProducts />
+      <FeaturedProducts />
       <CarProducts />
       <FooterCafeteria />
     </div>
