@@ -34,7 +34,7 @@ const ContentHome = () => {
             <div className={styles.itemMenu}>
                 <img src='https://img.rezdy.com/PRODUCT_IMAGE/146961/Selina_Quindio_RoadTrip_03_2021__chrisgarzoncph__1__lg.jpg' alt=""></img>
                 <div className={styles.link}>
-                <Link to={`/`}><h2>Fincas</h2></Link>
+                <Link to={`/Fincas`}><h2>Fincas</h2></Link>
                     <p>
                         visita estos sitios y haz tours cafeteros
                         visita estos sitios y haz tours cafeteros
