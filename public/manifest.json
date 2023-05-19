@@ -1,6 +1,6 @@
 {
-  "short_name": "Eje tour",
-  "name": "Eje tour",
+  "short_name": "Eje Travel",
+  "name": "Eje Travel",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,7 +8,7 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "android-icon-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },

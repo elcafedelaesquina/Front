@@ -1,28 +1,41 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Style from './categoriesproducts.module.css'
 
 export const CategoriesProducts = () => {
 
-    const img1 = 'https://res.cloudinary.com/dymawfuwu/image/upload/v1680016625/download_xsap5q.jpg'
-    const img2 = 'https://res.cloudinary.com/dymawfuwu/image/upload/v1680017215/download_hxtf7p.jpg'
+    const [data, setData] = useState([]);
+
+    const getCategories = async () => {
+      await fetch("https://apimainejetravel.azurewebsites.net/api/MenuProduct/Lista")
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data.list);
+          const { list } = data;
+          setData(list[0]);
+        });
+    };
+  
+    useEffect(() => {
+        getCategories();
+    }, []);
 
     return (
-        <div className={Style.containerProducts}>
+        <>
             <h2 className={Style.titleMenu}>Nuestra carta</h2>
-            <div className={Style.breakfast} >
-                <div className={Style.breakfast1}>
-                    <button className={Style.icon}>
-                        <img className={Style.img} src={img1} alt="" />
-                    </button>
-                    <p className={Style.type}>Huevos</p>
-                </div>
-                <div className={Style.breakfast2}>
-                    <button className={Style.icon}>
-                        <img className={Style.img} src={img1} alt="" />
-                    </button>
-                    <p className={Style.type}>Caldos</p>
-                </div>
+            <div className={Style.containerProducts}>
+                {
+                    data.map((item) => (
+                        <div className={Style.breakfast} >
+                            <div className={Style.breakfast1}>
+                                <p className={Style.type}>{item.category}</p>
+                                <button className={Style.icon}>
+                                    <img className={Style.img} src={item.image} alt="" />
+                                </button>
+                            </div>
+                        </div>
+                    ))
+                }
             </div>
-        </div>
+        </>
     )
 }

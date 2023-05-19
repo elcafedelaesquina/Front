@@ -6,6 +6,7 @@ import { CategoriesProducts } from "../../layouts/CategoriesProducts/CategoriesP
 import { FeaturedProducts } from "../../layouts/featuredproducts/FeaturedProducts";
 import { CarProducts } from "../../layouts/CarProducts/CarProducts";
 import { FooterCafeteria } from "../../layouts/footercafeteria/FooterCafeteria";
+import { Menu } from "../../layouts/Menu/Menu"
 
 export const Cafeteria = () => {
   return (
@@ -15,6 +16,7 @@ export const Cafeteria = () => {
       <HomeCafeteria />
       <CategoriesProducts />
       <FeaturedProducts />
+      <Menu />
       <CarProducts />
       <FooterCafeteria />
     </div>
