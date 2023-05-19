@@ -1,0 +1,218 @@
+.containerComments{
+  width: 80%;
+  height: auto;
+  margin: 40px auto;
+}
+.containerComments h2{
+  width: 100%;
+  color: rgb(255, 255, 255);
+  padding:10px 8px;
+  border-top: 2px solid rgb(154, 255, 39);
+}
+.containerComments .container{
+  width: 100%;
+  display: flex;
+  gap:2%
+  
+}
+.containerComments .container .cafeteriaComments{
+  width: 65%;
+
+  background-image: url('https://www.franciscosegarra.com/wp-content/uploads/2020/08/proyectos-decoracion-para-cafeterias-modernas.jpg')  ;
+ background-size:cover;
+  
+  border-radius: 20px;
+  padding: 0px;
+  
+}
+
+.commentsGenerator{
+  width: 100%;
+  background-color: #0a0a0ab4;
+  
+ z-index: -2;
+
+ 
+ 
+  box-shadow: 0px 3px 8px  rgba(46, 46, 46, 0.534);
+ padding: 20px;
+  display: flex;
+  flex-wrap: wrap; 
+  gap:20px;
+}
+.commentsGenerator img{
+  width: 40%;
+  border-radius: 10px;
+  height: 180px;
+  
+}
+.commentsGenerator .choose{
+  margin-top: 20px;
+  width: 50%;
+}
+.commentsGenerator .choose h3{
+  font-size: 22px;
+  color: rgb(255, 192, 56);
+}
+.commentsGenerator .choose h4{
+  font-size: 20px;
+  text-decoration: underline;
+  color:rgb(50, 140, 243);;
+}
+.commentsGenerator .choose select{
+  margin-top: 50px;
+  height: 50px;
+  border-radius:15px;
+  padding: 5px;
+  font-size: 16px;
+  border:none;
+  outline: none;
+  background-color: rgb(255, 255, 255);
+  width: 80%;
+}
+.commentsGenerator .choose select:focus{
+  border:solid rgb(49, 143, 252);
+}
+.commentsGenerator h3{
+  width: 100%;
+  color: rgb(255, 255, 255);
+  font-size: 22px;
+  
+}
+.commentsGenerator h3 span{
+  color: rgb(50, 140, 243);
+  font-size: 15px;
+
+}
+
+
+
+.rating:not(:checked) > input {
+  position: absolute;
+  appearance: none;
+}
+
+.rating:not(:checked) > label {
+  float: right;
+  cursor: pointer;
+  font-size: 35px;
+  color: #666;
+}
+
+.rating:not(:checked) > label:before {
+  content: '★';
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+  color: rgb(255, 255, 96);
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+  color:rgb(255, 255, 96);
+}
+
+.rating > input:checked ~ label {
+  color: rgb(255, 255, 96);
+}
+
+.commentsGenerator textarea{
+  width: 60%;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+ 
+  resize: none;
+  height: 160px;
+  overflow: hidden;
+}
+
+.btnEnviarComments{
+  margin-right: 50px;
+  width: 10rem;
+  height: 3rem;
+  border-radius: 5px;
+  background-color: rgb(255, 167, 66);
+  border: none;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+.btnEnviarComments:hover{
+  background-color: rgb(255, 168, 68)
+
+}
+.commentsGenerator .btnEnviarComments{
+  cursor: pointer;
+ margin: 50px auto;
+  
+}
+.commentsGenerator .btnEnviarComments:hover{
+  background-color:orange;
+}
+.containerComments .container .comments{
+  width: 35%;
+  background-color: rgba(190, 190, 190, 0);
+  padding: 10px;
+ 
+  max-height: 600px;
+  overflow: hidden;
+  
+}
+.comments .comment{
+  margin-top: 10px;
+  width: 100%;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: 0px 3px 8px  rgba(46, 46, 46, 0.534);
+  padding: 10px;
+  border-radius: 10px;
+  
+  
+  display: flex;
+  flex-wrap: wrap;
+}
+.comments .comment:hover{
+  transform: scale(1.01);
+  box-shadow: 0px 3px 8px  rgba(248, 142, 56, 0.534);
+
+}
+.comment img{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color:aqua;
+}
+
+
+.comment .commentUser{
+  width: 60%;
+  margin:15px 15px;
+}
+.comment .commentUser h3 {
+  color: rgb(253, 151, 67);
+  font-size:20px
+}
+.comment .commentUser p{
+  font-size: 12px;
+  color: #c7c7c7;
+}
+.starsContainer ion-icon{
+  color: yellow;
+  font-size: 15px;
+
+}
+.comment p{
+  width: 100%;
+  max-height: 90px;
+  overflow: hidden;
+  margin-top: px;
+}
+

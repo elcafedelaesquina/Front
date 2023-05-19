@@ -14,23 +14,23 @@ const FilterCafeterias = () => {
         </select>
         <div className='check'>
          <input type="checkbox"></input> 
-         <p>cafes cerca</p>
+         <p>Cafes cerca</p>
         </div>
         <div className='check'>
          <input type="checkbox"></input> 
-         <p>cafes cerca</p>
+         <p>Cafes cerca</p>
         </div>
         <div className='check'>
          <input type="checkbox"></input> 
-         <p>cafes cerca</p>
+         <p>Cafes cerca</p>
         </div>
         <div className='check'>
          <input type="checkbox"></input> 
-         <p>cafes cerca</p>
+         <p>Cafes cerca</p>
         </div>
         <div className='check'>
          <input type="checkbox"></input> 
-         <p>cafes cerca</p>
+         <p>Cafes cerca</p>
         </div>
 
         <div className='iframe' >

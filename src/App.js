@@ -10,6 +10,7 @@ import { PageRegistros } from './components/pages/PageRegistros/PageRegistros'
 import { User } from './components/layouts/RegistrarCrear/User/User'
 import { Cafe } from './components/layouts/RegistrarCrear/Cafe/Cafe'
 import { Farm } from './components/layouts/RegistrarCrear/Farm/Farm'; 
+import { Fincas } from './components/pages/fincas';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <Route path='/User' element={<User></User>}></Route>
       <Route path='/Cafe' element={<Cafe></Cafe>}></Route>
       <Route path='/Farm' element={<Farm></Farm>}></Route>
+      <Route path='/Fincas' element={<Fincas></Fincas>}></Route>
     </Routes>
     
     
