@@ -34,7 +34,7 @@ export function User() {
   const [userName,setUserName]=useState('')
   const [userEmail,setUserEmail]=useState('')
   const [userPassword,setUserPassword]=useState('')
-  const [userImage,setUserImage]=useState('')
+  const [userImage,setUserImage]=useState('') 
   //botones enviar
   var btnRegister=useRef()
   var btnSingIn=useRef()
