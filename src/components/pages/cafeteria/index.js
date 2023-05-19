@@ -12,9 +12,6 @@ import { FooterCafeteria } from './footerCafeteria';
         <HeaderCafeteria></HeaderCafeteria>
         <HomeCafeteria></HomeCafeteria>
         <FooterCafeteria></FooterCafeteria>
-        
-        
-        
     </>
   )
 }

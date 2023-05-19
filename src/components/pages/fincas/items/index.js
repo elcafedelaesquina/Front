@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const ItemFincas = (props) => {
   return (
   <>
-    <Link to={'/cafeterias/cafeteria'}>
+    <Link to={'/fincas/finca'}>
     <div className={styles.itemCafeterias}>
         <div className={styles.imgItem}><img className={styles.img} src={props.image} alt=''></img></div>
         <div className={styles.infoItem}>

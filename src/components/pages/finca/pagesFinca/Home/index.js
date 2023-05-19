@@ -2,25 +2,24 @@ import React from 'react'
 import styles from './style.module.css'
 import { Link } from 'react-router-dom'
 
- const HomeCafeteria = () => {
+ const HomeFinca = () => {
   return (
     <div className={styles.home}>
-      <div className={styles.section}>
+{/*       <div className={styles.section}>
           <div className={styles.slider}>
-          <div className={styles.slide}><img className={styles.slideImg}  src='https://mexicorutamagica.mx/wp-content/uploads/2021/06/cafeterias-mas-famosas-del-mundo.jpg' alt=''></img></div>
+          <div className={styles.slide}><img className={styles.slideImg}  src='https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/06/f5/f9/finca-el-ocaso-salento.jpg?w=1200&h=-1&s=1' alt=''></img></div>
           <div className={styles.slide}><img className={styles.slideImg} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQpxk5bSlsWR5Hxe3TwkRtW3FwCqwYpA29iA&usqp=CAU' alt=''></img></div>
           <div className={styles.slide}><img className={styles.slideImg} src='https://m.media-amazon.com/images/I/81+fcigeNMS._AC_UF894,1000_QL80_.jpg' alt=''></img></div>
           <div className={styles.slide}><img className={styles.slideImg} src='https://ae01.alicdn.com/kf/Sbb35b5f72e95428ea498d4252b4f952d6/Papel-Tapiz-de-caf-pintado-a-mano-Mural-de-decoraci-n-Industrial-caf-t-de-la.jpg' alt=''></img></div>
           <div className={styles.slide}>
-            <h2 className={styles.cafeteriaTitle}>El Cáfe de la esquina</h2>
-            <h3>Los mejores cafés de colombia a tu alcance</h3>
-          </div>
-          
+            <h2 className={styles.cafeteriaTitle}>Finca El Ocaso</h2>
+            <h3>los mejores recorridos de colombia a tu alcance</h3>
+          </div>    
         </div>
         <div className={styles.infoCafeteria}>
-          <h2>Pagina Web administrable para Cafés, Pastelerías y Restaurantes</h2>
-          <p>Un lugar agradable en donde podrá disfrutar el mejor Café…             
-              Demo de Página web administrable para Cafés o Restaurantes, 
+          <h2>Pagina Web administrable para Fincas Caferetas</h2>
+          <p>Un lugar agradable en donde podrá disfrutar de los mejores recorridos…             
+              Demo de Página web administrable para Fincas, 
               desarrollada en WordPress, con páginas como La Carta, Reservas, 
               Galería de imágenes y Página contactos con Formulario de consultas y mapa de 
               ubicación, enlaces a Redes sociales y botón para Chat de Whatsapp.
@@ -37,13 +36,13 @@ import { Link } from 'react-router-dom'
             <h3> .............   <span >Nuestra Carta</span>   ..............</h3>
             <div className={styles.itemHome}>
               <img className={styles.imgFocus} src='https://www.elespectador.com/resizer/Z28ceEm87lkRDk4QKJtw55k0nQk=/arc-anglerfish-arc2-prod-elespectador/public/LY3ZTJZS5ZBUJL63BODAZ72L7U.png' alt=''></img>
-              <h4>Cafés</h4>
+              <h4>Cafes</h4>
 
             </div>
             <div className={styles.itemHome}>
               <img className={styles.imgFocus} src='https://media-cdn.tripadvisor.com/media/photo-s/1b/bf/56/03/nuestras-bebidas-frias.jpg' alt=''></img>
               <h4>Otras 
-                Bebidas
+                bebidas
                 </h4>
 
             </div>
@@ -74,12 +73,8 @@ import { Link } from 'react-router-dom'
             </h4>
             <button className={styles.btninfoProduct}>Conoce Más</button>
           </div>
-
-
-        </div>
-        
-      </div>
-
+        </div>  
+      </div> */}
       <div className={styles.ads}>
       <Link to={'/'}><h2>¿Te interesa tener una Página Web como esta? Pues empieza ya con Nosotros... </h2></Link> 
         
@@ -90,4 +85,4 @@ import { Link } from 'react-router-dom'
   )
 }
 
-export {HomeCafeteria};
+export {HomeFinca};
