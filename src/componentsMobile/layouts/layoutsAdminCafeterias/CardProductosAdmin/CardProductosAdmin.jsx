@@ -13,12 +13,18 @@ export const CardProductosAdmin = () => {
         console.log(data);
         const { list } = data;
         setData(list[0]);
+      })
+      .catch((error) => {
+        // Manejar el error
+        console.error(error);
       });
   };
 
   useEffect(() => {
     getProductsCafeterias();
   }, []);
+
+  const [createNewProduct, setCreateNewProduct] = useState(false);
 
   const responsive = {
     tablet: {
@@ -31,9 +37,13 @@ export const CardProductosAdmin = () => {
     },
   };
 
+  let img1 =
+    "https://res.cloudinary.com/dmrq9n2im/image/upload/v1683225617/El%20caf%C3%A9%20de%20la%20esquina/imgtest3_m4hqtw.jpg";
+
   return (
-    <Carousel className={Style.carousel} responsive={responsive}>
-      {data.map((item) => (
+    <>
+      <Carousel className={Style.carousel} responsive={responsive}>
+        {data.map((item) => (
         <div className={Style.card} key={item.cod_product}>
           <div>
             <img
@@ -51,6 +61,28 @@ export const CardProductosAdmin = () => {
           </p>
         </div>
       ))}
-    </Carousel>
+      </Carousel>
+
+      <div className={Style.adminContainerCreateProduct}>
+        <button
+          className={Style.btnAdminCreateProduct}
+          onClick={() => setCreateNewProduct(!createNewProduct)}
+        >
+          Crea un nuevo producto
+        </button>
+      </div>
+
+      {createNewProduct && (
+        <div>
+            <form className={Style.adminFormCreateProduct} method="POST">
+              <h1>
+                Hola mundo
+              </h1>
+            </form>
+        </div>
+      )}
+    </>
   );
 };
+
+// https://apimainejetravel.azurewebsites.net/api/Product/Guardar
