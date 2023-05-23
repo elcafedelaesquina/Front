@@ -13,7 +13,19 @@ import { Link } from 'react-router-dom';
 
 
 export function Farm() {
+
+  //inputs
   const [imagePreview, setImagePreview] = useState('');
+  const [loginEmail, setLoginEmail] = useState('');
+  const [loginPassword, setLoginPassword] = useState('');
+  const [signupName, setSignupName] = useState('');
+  const [signupEmail, setSignupEmail] = useState('');
+  const [signupPhone, setSignupPhone] = useState('');
+  const [signupAddress, setSignupAddress] = useState('');
+  const [signupPassword, setSignupPassword] = useState('');
+  const [signupDescription, setSignupDescription] = useState('');
+
+  
   function handleImageInputChange(e) {
     const file = e.target.files[0];
     const reader = new FileReader();
@@ -31,6 +43,49 @@ export function Farm() {
  const handleButtonClick = () => {
   fileInputRef.current.click();
  }
+
+ function handleLoginSubmit(e) {
+  e.preventDefault();
+  // Aquí puedes enviar los valores de inicio de sesión al backend
+  const loginData = {
+    email: loginEmail,
+    password: loginPassword
+  };
+  console.log(loginData)
+
+  // Aquí puedes realizar la llamada a la API del backend para el inicio de sesión
+  // backend.login(loginData);
+
+  // Limpiar los campos de entrada después de enviar los datos
+  setLoginEmail('');
+  setLoginPassword('');
+};
+
+function handleSignupSubmit(e) {
+  e.preventDefault();
+  // Aquí puedes enviar los valores de registro al backend
+  const signupData = {
+    name: signupName,
+    email: signupEmail,
+    phone: signupPhone,
+    address: signupAddress,
+    password: signupPassword,
+    description: signupDescription
+    
+  };
+  console.log(signupData)
+
+   // Aquí puedes realizar la llamada a la API del backend para el registro
+   // backend.signup(signupData);
+
+   // Limpiar los campos de entrada después de enviar los datos
+   setSignupName('');
+   setSignupEmail('');
+   setSignupPhone('');
+   setSignupAddress('');
+   setSignupPassword('');
+   setSignupDescription('');
+}
 
   return (
     <div className={styles.cn}>
@@ -55,18 +110,18 @@ export function Farm() {
               <i className={`fas fa-envelope ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faEnvelope} />
               </i>
-              <input type="text" placeholder='Enter your email' required />
+              <input type="text" placeholder='Enter your email' value={loginEmail} onChange={(e) => setLoginEmail(e.target.value)}/>
             </div>
             <div className={styles['input-box']}>
               <i className={`fas fa-lock ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faLock} />
               </i>
-              <input type="password" placeholder='Enter your password' required />
+              <input type="password" placeholder='Enter your password' value={loginPassword} onChange={(e) => setLoginPassword(e.target.value)} />
             </div>
             <div className={styles.text}><a href=''>Forget password?</a></div>
             <div className={`${styles['button']} ${styles['input-box']}`}>
               <i className={`fas fa-envelope ${styles['icon']}`}></i>
-              <button className={styles['button-form']} type='submit'>Log In</button>
+              <button className={styles['button-form']} type='submit'onClick={handleLoginSubmit}>Log In</button>
             </div>
             <div className={styles['text login-text']}>Don't have an account? <label htmlFor="flip">SigUp now</label></div>
           </div>
@@ -79,37 +134,37 @@ export function Farm() {
               <i className={`fas fa-user ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faUser} />
               </i>
-              <input type="text" placeholder='Enter your name' required />
+              <input type="text" placeholder='Enter your name' value={signupName} onChange={(e) => setSignupName(e.target.value)} />
             </div>
             <div className={styles['input-box']}>
               <i className={`fas fa-envelope ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faEnvelope} />
               </i>
-              <input type="text" placeholder='Enter your email' required />
+              <input type="text" placeholder='Enter your email' value={signupEmail} onChange={(e) => setSignupEmail(e.target.value)} />
             </div>
             <div className={styles['input-box']}>
               <i className={`fas fa-Phone ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faPhone} />
               </i>
-              <input type="tel" placeholder='Enter your phone' required />
+              <input type="tel" placeholder='Enter your phone' value={signupPhone} onChange={(e) => setSignupPhone(e.target.value)}/>
             </div>
 
             <div className={styles['input-box']}>
               <i className={`fas fa-Location-Dot ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faLocationDot} />
               </i>
-              <input type="tel" placeholder='Enter your address'  />
+              <input type="tel" placeholder='Enter your address' value={signupAddress} onChange={(e) => setSignupAddress(e.target.value)} />
             </div>
 
             <div className={styles['input-box']}>
               <i className={`fas fa-lock ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faLock} />
               </i>
-              <input type="password" placeholder='Enter your password' required />
+              <input type="password" placeholder='Enter your password' value={signupPassword} onChange={(e) => setSignupPassword(e.target.value)} />
             </div>
 
             <div className={styles['input-box textarea-container']}>
-              <input type="textarea" className={styles.textarea} placeholder='Enter your short description' required />
+              <input type="textarea" className={styles.textarea} placeholder='Enter your short description' value={signupDescription} onChange={(e) => setSignupDescription(e.target.value)} />
             </div>
 
             <div className={styles['container-file']}>
@@ -127,7 +182,7 @@ export function Farm() {
 
             <div className={`${styles['button']} ${styles['input-box']}`}>
               <i className={`fas fa-envelope ${styles['icon']}`}></i>
-              <button className={styles['button-form']} type='submit'>Sig Up</button>
+              <button className={styles['button-form']} type='submit' onClick={handleSignupSubmit}>Sig Up</button>
             </div>
             <div className={styles['text signup-text']}>Already have an account? <label htmlFor="flip">Login now</label></div>
           </div>

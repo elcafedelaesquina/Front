@@ -12,7 +12,15 @@ import { Link } from 'react-router-dom'
 
 
 export function User() {
+
+  //inputs
+  const [userName,setUserName]=useState('')
+  const [userEmail,setUserEmail]=useState('')
+  const [userPassword,setUserPassword]=useState('')
+  const [userImage,setUserImage]=useState('') 
   const [imagePreview, setImagePreview] = useState('');
+
+
   function handleImageInputChange(e) {
     const file = e.target.files[0];
     const reader = new FileReader();
@@ -31,10 +39,7 @@ export function User() {
    image.current.click();
  }
   //
-  const [userName,setUserName]=useState('')
-  const [userEmail,setUserEmail]=useState('')
-  const [userPassword,setUserPassword]=useState('')
-  const [userImage,setUserImage]=useState('') 
+
   //botones enviar
   var btnRegister=useRef()
   var btnSingIn=useRef()
@@ -60,13 +65,13 @@ export function User() {
 
   // Crear instancia de FormData
   var formulario=useRef(null)
-function register(){
-  formulario=formulario.current
-  formulario.addEventListener('submit',(e)=>{
-    e.preventDefault()
-    const formData=new FormData(formulario)
+  function register(){
+    formulario=formulario.current
+    formulario.addEventListener('submit',(e)=>{
+      e.preventDefault()
+      const formData=new FormData(formulario)
 
-    formData.forEach(function(value, key) {
+      formData.forEach(function(value, key) {
       console.log(key + ': ' + value);
     });
     
