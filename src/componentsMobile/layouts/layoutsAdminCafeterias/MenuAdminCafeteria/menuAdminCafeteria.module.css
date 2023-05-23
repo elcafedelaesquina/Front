@@ -1,0 +1,57 @@
+.carousel {
+    width: 100%;
+    position: absolute;
+    top: 180px;
+    z-index: 1;
+  }
+  
+  .productImage {
+    width: 100%;
+    height: 16em;
+    object-fit: cover;
+  }
+  
+  .card {
+    width: 98%;
+    height: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 320px;
+    margin: 10px auto;
+    text-align: center;
+    font-family: arial;
+  }
+  
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+  
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 50%;
+    font-size: 18px;
+    margin-top: 40px ;
+  }
+  
+  .adminContainerCreateProduct{
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btnAdminCreateProduct{
+    width: 65%;
+    height: 60px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+  }
