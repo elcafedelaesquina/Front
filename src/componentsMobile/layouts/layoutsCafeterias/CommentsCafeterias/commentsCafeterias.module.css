@@ -9,7 +9,6 @@
 }
 
 .title {
-  border-top: solid rgb(52, 189, 253);
   padding-top: 10px;
   color: #fff;
   font-size: 1.5rem;
@@ -33,12 +32,12 @@
   font-size: 20px;
   border:none;
   outline: none;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
   width: 90%;
 }
 
 .select:focus{
-  border:solid rgb(49, 143, 252);
+  border:solid #318ffc;
 }
 
 .containerInfo {
