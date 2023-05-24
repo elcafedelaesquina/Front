@@ -43,3 +43,7 @@
   background-color: #ccc;
   cursor: not-allowed;
 }
+
+.id{
+  display: none;
+}

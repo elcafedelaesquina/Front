@@ -9,10 +9,9 @@ export const CardProductosAdmin = () => {
   const [data, setData] = useState([]);
 
   const getProductsCafeterias = async () => {
-    await fetch("https://apimainejetravel.azurewebsites.net/api/Product/Lista")
+    await fetch("https://apimainejetravel.azurewebsites.net/api/Product/Lista/2")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         const { list } = data;
         setData(list[0]);
       })
@@ -38,6 +37,16 @@ export const CardProductosAdmin = () => {
       items: 1,
     },
   };
+  
+  const deleteProduct = async (id) => {
+    try {
+      const response = await fetch(`https://apimainejetravel.azurewebsites.net/api/Product/Eliminar/${id}`, { method: 'DELETE' });
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <>
@@ -56,7 +65,7 @@ export const CardProductosAdmin = () => {
             <p>{item.description}</p>
             <p className={Style.btns}>
               <button>Actualizar</button>
-              <button>Eliminar</button>
+              <button onClick={() => deleteProduct(item.cod_product)} >Eliminar</button>
             </p>
           </div>
         ))}
@@ -78,5 +87,3 @@ export const CardProductosAdmin = () => {
     </>
   );
 };
-
-// https://apimainejetravel.azurewebsites.net/api/Product/Guardar
