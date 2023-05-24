@@ -1,6 +1,8 @@
 .home{
     width: 100vw;
     height:auto;
+    min-height: 100vh;
+    
     background-color: aliceblue;
     box-sizing: border-box;
 }
@@ -8,6 +10,7 @@
     width: 90%;
     margin: 0 auto;
     height: auto;
+   
 }
 
 .slider{
@@ -284,17 +287,17 @@
 
 @keyframes ads {
     0%{
-        transform:translateX(-110%)
+        transform:translateX(-1150px)
     }
     
     100%{
-        transform:translateX(110%)
+        transform:translateX(1150px)
     }
 
 }
-@media screen and (min-width:1400px) {
+@media screen and (max-width:140px) {
     .section{
-        width: 70%;
+        width: 80%;
         margin: 0 auto;
         height: auto;
     }

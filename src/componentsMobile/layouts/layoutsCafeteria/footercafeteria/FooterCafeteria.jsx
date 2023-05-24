@@ -12,9 +12,9 @@ export const FooterCafeteria = () => {
         <ul className={Style.footerCafeteria}>
             <section className={Style.itemsFooter}>
                 <h3 className={Style.subtitle}>HORARIOS:</h3>
-                <p className={Style.text}>Lunes - Viernes: 7am - 6pm</p>
-                <p className={Style.text}>Sábado: 8am - 8pm</p>
-                <p className={Style.text}>Domingo: 8am - 6pm</p>
+                <p className={Style.text}>Lunes a Viernes: 7am a 6pm</p>
+                <p className={Style.text}>Sábado: 8am a 8pm</p>
+                <p className={Style.text}>Domingo y Festivos: 8am a 6pm</p>
             </section>
 
             <section className={Style.itemsFooter}>

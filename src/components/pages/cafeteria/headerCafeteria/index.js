@@ -1,14 +1,23 @@
-import React from 'react'
+import React,{useEffect,useState}from 'react'
 import styles from './style.module.css'
 import {Link} from 'react-router-dom'
 
  const HeaderCafeteria = () => {
+  const [coffee,setCoffee]=useState(JSON.parse(localStorage.getItem('coffee')))
+  useEffect(()=>{
+    let data=JSON.parse(localStorage.getItem('coffee'))
+    setCoffee(data)
+    console.log(data)
+    
+    
+  },[])
+  let name=coffee.name
   return (
     <div className={styles.header} >
         <div className={styles.logo}>
         
-           <img src='https://ir-dweb.com/webdemocafe/wp-content/uploads/logo-webdemocafe.png' alt=''></img>
-           <h3>El cafe de la esquina</h3>
+           <img src={coffee.image} className={styles.logoImg} alt=''></img>
+           <h3>{name.toUpperCase()}</h3>
           </div>
            
            

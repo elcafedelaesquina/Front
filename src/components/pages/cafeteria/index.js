@@ -6,6 +6,7 @@ import { FooterCafeteria } from './footerCafeteria';
 
 
  const Cafeteria = () => {
+  
   return (
     <>
         <Header></Header>

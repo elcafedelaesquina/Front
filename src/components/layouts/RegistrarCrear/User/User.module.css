@@ -149,7 +149,9 @@ form .form-content .input-box{
     margin: 10px 0;
     position: relative;
 }
-
+.type{
+    display: none;
+}
 .form-content .input-box input, .button-form{
     height: 100%;
     width: 100%;

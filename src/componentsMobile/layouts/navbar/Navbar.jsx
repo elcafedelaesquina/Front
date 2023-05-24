@@ -14,7 +14,7 @@ const Items = [
   {title: "Inicio", url : "/", ic: <AiOutlineHome className={ Style.iconMenu } /> },
   {title: "Iniciar Sesión", url : "/PageRegistros", ic: <AiOutlineLogin className={ Style.iconMenu } /> },
   {title: "Cafeterias", url : "/Cafeterias", ic: <CiCoffeeCup className={ Style.iconMenu } /> },
-  {title: "Fincas", url : "/Cafeteria", ic: <GiFarmer className={ Style.iconMenu } /> },
+  {title: "Fincas", url : "/Fincas", ic: <GiFarmer className={ Style.iconMenu } /> },
 ]
 
 export const NavBar = () => {

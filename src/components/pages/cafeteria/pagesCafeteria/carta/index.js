@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './style.module.css'
 import { HeaderCafeteria } from '../../headerCafeteria'
 import { FooterCafeteria } from '../../footerCafeteria'
@@ -7,6 +7,36 @@ import { Link } from 'react-router-dom'
 import animacion from '../home/style.module.css'
 
 const CartaCafeteria = () => {
+    let x=JSON.parse(localStorage.getItem('coffee'))
+    const [estado,setEstado]=useState([])
+    const categorizedData = {};
+    useEffect(()=>{
+        
+    fetch(`https://apimainejetravel.azurewebsites.net/api/MenuProduct/Lista/${x.id_coffee}`)
+    .then(response => response.json())
+    .then(data => {
+      data.list[0].forEach(item => {
+          const category = item.category;
+        
+          if (!categorizedData[category]) {
+            categorizedData[category] = [];
+          }
+        
+          categorizedData[category].push(item);
+        });
+        const array = Object.values(categorizedData)
+        setEstado(array)
+      
+    })
+    },[])
+   
+    estado.map((item,index)=>{
+        console.log(item)
+       /*  console.log(index) */
+    })
+  ;
+
+   
   return (
     <>  
         <Header></Header>
@@ -18,45 +48,26 @@ const CartaCafeteria = () => {
                 <h3>Para que disfrutes de nuestros mejores Productos...</h3>
             </div>
             <div className={styles.containerCarta}>
-                <div className={styles.itemCarta}>
-                    <h3 className={styles.titleCarta}>Café</h3>
-                    <div className={styles.itemPriceOne}><p>Latte</p><p>S/. 15.00</p></div>
-                    <div className={styles.itemPricetwo}><p>Latte</p><p>S/. 15.00</p></div>
-                    <div className={styles.itemPriceOne}><p>Latte</p><p>S/. 15.00</p></div>
-                    <div className={styles.itemPricetwo}><p>Latte</p><p>S/. 15.00</p></div>
-                    <div className={styles.itemPriceOne}><p>Latte</p><p>S/. 15.00</p></div>
-                    <div className={styles.itemPricetwo}><p>Latte</p><p>S/. 15.00</p></div>
+                    {
+                        estado.map(item =>(
+                            
+                            <div className={styles.itemCarta}> 
+                            <h3 className={styles.titleCarta}>{item[0].category}</h3>{
+                            item.map(producto=>(
+                                                  
+                                    
+                                    <div className={styles.itemPriceOne}><p>{producto.name}</p><p>${producto.price}</p></div>
+                                    
 
-                </div>
-                <div className={styles.itemCarta}>
-                    <h3 className={styles.titleCarta}>Panaderia</h3>
-                    <div className={styles.itemPriceOne}><p>Latte</p><p>S/. 15.00</p></div>
-                    <div className={styles.itemPricetwo}><p>Latte</p><p>S/. 15.00</p></div>
-                    <div className={styles.itemPriceOne}><p>Latte</p><p>S/. 15.00</p></div>
-                    <div className={styles.itemPricetwo}><p>Latte</p><p>S/. 15.00</p></div>
-                    <div className={styles.itemPriceOne}><p>Latte</p><p>S/. 15.00</p></div>
-                    <div className={styles.itemPricetwo}><p>Latte</p><p>S/. 15.00</p></div>
+                            )
+                            )}
+                            </div>
+                            
+                        ))
 
-                </div>
-                <div className={styles.itemCarta}>
-                    <h3 className={styles.titleCarta}>Bebidas Frias</h3>
-                    <div className={styles.itemPriceOne}><p>Latte</p><p>S/. 15.00</p></div>
-                    <div className={styles.itemPricetwo}><p>Latte</p><p>S/. 15.00</p></div>
-                    <div className={styles.itemPriceOne}><p>Latte</p><p>S/. 15.00</p></div>
-                    <div className={styles.itemPricetwo}><p>Latte</p><p>S/. 15.00</p></div>
-                    <div className={styles.itemPriceOne}><p>Latte</p><p>S/. 15.00</p></div>
-                    <div className={styles.itemPricetwo}><p>Latte</p><p>S/. 15.00</p></div>
-
-                </div>
-                <div className={styles.itemCarta}>
-                    <h3 className={styles.titleCarta}>Desayunos</h3>
-                    <div className={styles.itemPriceOne}><p>Latte</p><p>S/. 15.00</p></div>
-                    <div className={styles.itemPricetwo}><p>Latte</p><p>S/. 15.00</p></div>
-                    <div className={styles.itemPriceOne}><p>Latte</p><p>S/. 15.00</p></div>
-                    <div className={styles.itemPricetwo}><p>Latte</p><p>S/. 15.00</p></div>
-                    <div className={styles.itemPriceOne}><p>Latte</p><p>S/. 15.00</p></div>
-                    <div className={styles.itemPricetwo}><p>Latte</p><p>S/. 15.00</p></div>
-                </div>
+                    }
+                
+                
             </div>        
         </div>
         <div className={animacion.ads}>
