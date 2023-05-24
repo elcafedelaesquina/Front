@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import Style from "./menuAdminCafeteria.module.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { AiOutlineCloseCircle } from "react-icons/ai";
+import { FormAdmincafeteriaCreateMenuProducts } from "../FormAdmincafeteriaCreateMenuProducts/FormAdmincafeteriaCreateMenuProducts";
 
 export const MenuAdminCafeteria = () => {
   const [data, setData] = useState([]);
 
   const getProductCafeteria = async () => {
-    await fetch("https://apimainejetravel.azurewebsites.net/api/MenuProduct/Lista")
+    await fetch("https://apimainejetravel.azurewebsites.net/api/MenuProduct/Lista/3")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -36,6 +38,7 @@ export const MenuAdminCafeteria = () => {
       });
       const data = await response.json();
       console.log(data); 
+      window.location.reload();
     } catch (error) {
       console.error(error);
     }
@@ -53,9 +56,6 @@ export const MenuAdminCafeteria = () => {
       items: 1,
     },
   };
-
-  let img1 =
-    "https://res.cloudinary.com/dmrq9n2im/image/upload/v1683225617/El%20caf%C3%A9%20de%20la%20esquina/imgtest3_m4hqtw.jpg";
 
   return (
     <>
@@ -90,12 +90,11 @@ export const MenuAdminCafeteria = () => {
       </div>
 
       {createNewProduct && (
-        <div>
-            <form className={Style.adminFormCreateProduct} method="POST">
-              <h1>
-                Hola mundo
-              </h1>
-            </form>
+        <div className={Style.containerForm}>
+          <div className={Style.containerClose} onClick={() => setCreateNewProduct(!createNewProduct)}>
+            <AiOutlineCloseCircle className={Style.iconCLose} />
+          </div>
+          <FormAdmincafeteriaCreateMenuProducts />
         </div>
       )}
     </>

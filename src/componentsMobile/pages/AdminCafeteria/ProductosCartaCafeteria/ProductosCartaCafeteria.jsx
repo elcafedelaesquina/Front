@@ -1,13 +1,15 @@
-import React from 'react'
-import Style from "./ProductosCartaCafeteria.module.css"
-import { HeaderAdminCafeterias } from '../../../layouts/layoutsAdminCafeterias/HeaderAdminCafeterias/HeaderAdminCafeterias'
-import { MenuAdminCafeteria } from '../../../layouts/layoutsAdminCafeterias/MenuAdminCafeteria/MenuAdminCafeteria'
+import React from "react";
+import Style from "./ProductosCartaCafeteria.module.css";
+import { HeaderAdminCafeterias } from "../../../layouts/layoutsAdminCafeterias/HeaderAdminCafeterias/HeaderAdminCafeterias";
+import { MenuAdminCafeteria } from "../../../layouts/layoutsAdminCafeterias/MenuAdminCafeteria/MenuAdminCafeteria";
 
 export const ProductosCartaCafeteria = () => {
   return (
     <>
-    <HeaderAdminCafeterias />
-    <MenuAdminCafeteria/>
+      <HeaderAdminCafeterias />
+      <main className={Style.main}>
+        <MenuAdminCafeteria />
+      </main>
     </>
-  )
-}
+  );
+};

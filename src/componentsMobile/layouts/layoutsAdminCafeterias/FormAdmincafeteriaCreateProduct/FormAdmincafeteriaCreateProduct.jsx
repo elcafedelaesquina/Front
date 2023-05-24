@@ -24,6 +24,7 @@ export const FormAdmincafeteriaCreateProduct = () => {
       if (response.ok) {
         // Datos guardados exitosamente
         console.log("Datos guardados exitosamente");
+        window.location.reload();
       } else {
         // Error al guardar los datos
         console.log("Error al guardar los datos");

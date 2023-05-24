@@ -43,6 +43,7 @@ export const CardProductosAdmin = () => {
       const response = await fetch(`https://apimainejetravel.azurewebsites.net/api/Product/Eliminar/${id}`, { method: 'DELETE' });
       const data = await response.json();
       console.log(data);
+      window.location.reload();
     } catch (error) {
       console.error(error);
     }
