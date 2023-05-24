@@ -14,16 +14,23 @@
 .card {
   width: 98%;
   height: auto;
+  gap: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 320px;
   margin: 10px auto;
   text-align: center;
   font-family: arial;
+  color: #fff;
 }
 
 .price {
-  color: grey;
+  /* color: grey; */
+  padding: 10px;
   font-size: 22px;
+}
+
+.description{
+  font-size: 1.3rem;
 }
 
 .card button {
@@ -31,10 +38,10 @@
   outline: 0;
   padding: 12px;
   color: white;
-  background-color: #000;
+  background-color: #ce0404;
   text-align: center;
   cursor: pointer;
-  width: 50%;
+  width: 100%;
   font-size: 18px;
   margin-top: 40px ;
 }
