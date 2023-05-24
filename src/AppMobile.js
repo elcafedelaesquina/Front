@@ -16,6 +16,9 @@ import { User } from "./components/layouts/RegistrarCrear/User/User";
 import { Cafe } from "./components/layouts/RegistrarCrear/Cafe/Cafe";
 import { Farm } from "./components/layouts/RegistrarCrear/Farm/Farm";
 
+import { Fincas } from "./componentsMobile/pages/Fincas/Fincas";
+import { Finca } from "./componentsMobile/pages/Finca/Finca";
+
 export const AppMobile = () => {
   return (
     <>
@@ -34,6 +37,9 @@ export const AppMobile = () => {
         <Route path="/User" element={ <User /> } />
         <Route path="/Cafe" element={ <Cafe /> } />
         <Route path="/Farm" element={ <Farm /> } />
+
+        <Route path="/Fincas" element={ <Fincas />} />
+        <Route path="/Finca" element={ <Finca/>} />
       </Routes>
     </>
   );
