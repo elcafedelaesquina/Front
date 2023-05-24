@@ -6,10 +6,10 @@ export const CategoriesProducts = () => {
     const [data, setData] = useState([]);
 
     const getCategories = async () => {
-      await fetch("https://apimainejetravel.azurewebsites.net/api/MenuProduct/Lista")
+      await fetch("https://apimainejetravel.azurewebsites.net/api/MenuProduct/Lista/3")
         .then((response) => response.json())
         .then((data) => {
-            console.log(data.list);
+            console.log(data);
           const { list } = data;
           setData(list[0]);
         });
