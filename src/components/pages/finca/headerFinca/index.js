@@ -14,6 +14,7 @@ import {Link} from 'react-router-dom'
            
         <ul className={styles.ul}>
             <li className={styles.li}><Link to={`/fincas/finca`}><ion-icon name="storefront-outline"></ion-icon>Inicio</Link></li>
+            <li className={styles.li}><Link to={'/fincas/finca/tours'}><ion-icon name="accessibility-outline"></ion-icon>Tour</Link></li>
             <li className={styles.li}><ion-icon name="bag-add-outline"></ion-icon>Productos</li>
             <li className={styles.li}><ion-icon name="cart-outline"></ion-icon>Compras</li>
         </ul>

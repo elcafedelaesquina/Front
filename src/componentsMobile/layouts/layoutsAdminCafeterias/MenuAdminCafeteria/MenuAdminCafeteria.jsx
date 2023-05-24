@@ -101,5 +101,3 @@ export const MenuAdminCafeteria = () => {
     </>
   );
 };
-
-// https://apimainejetravel.azurewebsites.net/api/Product/Guardar
