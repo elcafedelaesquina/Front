@@ -14,8 +14,20 @@ import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
 
 export function Cafe() {
+
   const Swal = require('sweetalert2')
+
   const [imagePreview, setImagePreview] = useState('');
+  const [loginEmail, setLoginEmail] = useState('');
+  const [loginPassword, setLoginPassword] = useState('');
+  const [signupName, setSignupName] = useState('');
+  const [signupEmail, setSignupEmail] = useState('');
+  const [signupPhone, setSignupPhone] = useState('');
+  const [signupAddress, setSignupAddress] = useState('');
+  const [signupPassword, setSignupPassword] = useState('');
+  const [signupDescription, setSignupDescription] = useState('');
+
+
   function handleImageInputChange(e) {
   const file = e.target.files[0];
   const reader = new FileReader();
@@ -27,11 +39,56 @@ export function Cafe() {
   function handleImageClear() {
     setImagePreview('');
   }
-  //boton images
- const fileInputRef = useRef(null);
- const handleButtonClick = () => {
-   fileInputRef.current.click();
- }
+
+  const fileInputRef = useRef(null);
+  const handleButtonClick = () => {
+    fileInputRef.current.click();
+  }
+
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    // Capturar los valores de los campos de entrada
+    const loginData = {
+      email: loginEmail,
+      password: loginPassword
+    };
+    console.log(loginData)
+
+    // Aquí puedes realizar la llamada a la API del backend para el inicio de sesión
+    // backend.login(loginData);
+
+    // Limpiar los campos de entrada después de enviar los datos
+    setLoginEmail('');
+    setLoginPassword('');
+  };
+  console.log(loginEmail)
+
+  const handleSignupSubmit = (e) => {
+    e.preventDefault();
+    // Capturar los valores de los campos de entrada
+    const signupData = {
+      name: signupName,
+      email: signupEmail,
+      phone: signupPhone,
+      address: signupAddress,
+      password: signupPassword,
+      description: signupDescription
+
+    };
+    console.log(signupData)
+
+    // Aquí puedes realizar la llamada a la API del backend para el registro
+    // backend.signup(signupData);
+
+    // Limpiar los campos de entrada después de enviar los datos
+    setSignupName('');
+    setSignupEmail('');
+    setSignupPhone('');
+    setSignupAddress('');
+    setSignupPassword('');
+    setSignupDescription('');
+  };
+    
 
 
  const [loader,setLoader]=useState(false)
@@ -174,19 +231,25 @@ var formularioLogin=useRef(null)
           <div className={styles['input-boxes']}>
             <div className={styles['input-box']}>
               <i className={`fas fa-envelope ${styles['icon']}`}><FontAwesomeIcon icon={faEnvelope} /></i>
+
               <input type="text" className={styles.type} name="Type"  placeholder='Enter your name' value={1}/>
               <input type="text" name='Email' placeholder='Enter your email' />
+
             </div>
             <div className={styles['input-box']}>
               <i className={`fas fa-lock ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faLock} />
               </i>
+
               <input type="password" name='Password' placeholder='Enter your password'  />
+
             </div>
             <div className={styles.text}><a href=''>Forget password?</a></div>
             <div className={`${styles['button']} ${styles['input-box']}`}>
               <i className={`fas fa-envelope ${styles['icon']}`}></i>
+
               <button className={styles['button-form']} type='submit' onClick={login}>Log In</button>
+
             </div>
             <div className={styles['text login-text']}>Don't have an account? <label htmlFor="flip">SigUp now</label></div>
           </div>
@@ -199,39 +262,49 @@ var formularioLogin=useRef(null)
               <i className={`fas fa-user ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faUser} />
               </i>
+
               <input type="text" className={styles.type} name="Type"   value={1}/>
               <input type="text" className={styles.type} name="State"   value={'activo'}/>
               <input type="text" name='Name' placeholder='Enter your name'  />
+
             </div>
             <div className={styles['input-box']}>
               <i className={`fas fa-envelope ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faEnvelope} />
               </i>
+
               <input type="text" name='Email' placeholder='Enter your email' />
+
             </div>
             <div className={styles['input-box']}>
               <i className={`fas fa-Phone ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faPhone} />
               </i>
+
               <input type="tel" name='Phone' placeholder='Enter your phone'  />
+
             </div>
 
             <div className={styles['input-box']}>
               <i className={`fas fa-Location-Dot ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faLocationDot} />
               </i>
+
               <input type="tel" name='Address' placeholder='Enter your address'  />
+
             </div>
 
             <div className={styles['input-box']}>
               <i className={`fas fa-lock ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faLock} />
               </i>
+
               <input type="password" name='Password' placeholder='Enter your password'  />
             </div>
 
             <div className={styles['input-box textarea-container']}>
               <input type="textarea" name='Description' className={styles.textarea} placeholder='Enter your short description'  />
+
             </div>
             
             <div className={styles['container-file']}>
@@ -249,7 +322,9 @@ var formularioLogin=useRef(null)
 
             <div className={`${styles['button']} ${styles['input-box']}`}>
               <i className={`fas fa-envelope ${styles['icon']}`}></i>
+
               <button className={styles['button-form']} type='submit' onClick={register}>Sig Up</button>
+
             </div>
             <div className={styles['text signup-text']}>Already have an account? <label htmlFor="flip">Login now</label></div>
           </div>

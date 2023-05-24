@@ -6,7 +6,7 @@ export const Menu = () => {
   const [data, setData] = useState([]);
 
   const getCategories = async () => {
-    await fetch("https://apimainejetravel.azurewebsites.net/api/MenuProduct/Lista")
+    await fetch(`https://apimainejetravel.azurewebsites.net/api/MenuProduct/Lista/3`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data.list);
@@ -19,10 +19,24 @@ export const Menu = () => {
     getCategories();
   }, []);
 
+  // const categorizedData = {};
+
+  //   data.forEach(item => {
+  //   const category = item.category;
+
+  //   if (!categorizedData[category]) {
+  //     categorizedData[category] = [];
+  //   }
+
+  //   categorizedData[category].push(item); 
+  //   console.log(categorizedData);
+  // });
+
+
   return (
     <section className={Style.menu}>
       <h2 className={Style.title}>Nuestra Carta</h2>
-      {data.map((item =>
+       {data.map((item => 
 
         <table>
           <h3 className={Style.subTitle}>{item.category}</h3>
@@ -31,7 +45,7 @@ export const Menu = () => {
           </tr>
         </table>
 
-      ))
+       ))
       }
     </section>
   )

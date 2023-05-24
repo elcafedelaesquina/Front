@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Style from "./commentsCafeterias.module.css";
+import Style from "./commentsFincas.module.css";
 
-export const CommentsCafeterias = () => {
+export const CommentsFincas = () => {
   let imgTest = "https://res.cloudinary.com/dmrq9n2im/image/upload/v1683225617/El%20caf%C3%A9%20de%20la%20esquina/imgtest3_m4hqtw.jpg";
 
   const [data, setData] = useState([]);
@@ -9,22 +9,22 @@ export const CommentsCafeterias = () => {
   const [dataComment,setDataComment]=useState('')
   const [value,setValue]=useState([])
 
-  const getCafeterias = async () => {
-    await fetch("https://apimainejetravel.azurewebsites.net/api/Coffee/Lista")
+  const getFincas = async () => {
+    await fetch("https://apimainejetravel.azurewebsites.net/api/Farm/Lista")
       .then((response) => response.json())
       .then((data) => {
-        const { coffeeList } = data;
-        setData(coffeeList[0]);
+        const { farmList } = data;
+        setData(farmList[0]);
       });
   };
-  const selectCafeteria=(e)=>{
+  const selectFinca=(e)=>{
     const valor=e.target
     console.log(dataComment)
 
   }
 
   useEffect(() => {
-    getCafeterias();
+    getFincas();
   }, []);
 
 
@@ -36,7 +36,7 @@ export const CommentsCafeterias = () => {
             Tu opinion es importante para nosotros...
           </h2>
           <div className={Style.choose}>
-            <select className={Style.select}  onChange={selectCafeteria} >
+            <select className={Style.select}  onChange={selectFinca} >
             {data.map((item) => {
               
               return (

@@ -1,0 +1,56 @@
+.containerSearch {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 5%;
+  z-index: -1;
+}
+
+.containerSearch h3 {
+  width: 80%;
+  font-size: 35px;
+  border-top: solid rgb(40, 167, 252);
+  margin: 0 auto;
+  color: rgb(233, 255, 34);
+  color: rgb(255, 168, 68);
+}
+
+.containerSearch h5 {
+  font-size: 23px;
+  width: 80%;
+  margin: 0 auto;
+  color: rgb(255, 255, 255);
+}
+
+.containerInput {
+  width: 90%;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: space-between;
+}
+
+.containerInput input {
+  width: 75%;
+  border-radius: 10px;
+  height: 45px;
+  border: none;
+  background-color: white;
+  color:#000;
+  font-size: 20px;
+  padding-left: 9px;
+  outline: none;
+}
+
+.containerInput button {
+  width: 45%;
+  margin-top: 20px;
+  height: 45px;
+  background-color: rgb(65, 150, 248);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 22px;
+}

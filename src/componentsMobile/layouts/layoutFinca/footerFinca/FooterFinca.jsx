@@ -1,8 +1,8 @@
 import React from 'react'
-import Style from './footercafeteria.module.css'
+import Style from './footerFinca.module.css'
 import { Link } from 'react-router-dom'
 
-export const FooterCafeteria = () => {
+export const FooterFinca = () => {
   return (
     <footer>
         <section className={Style.ads}>
@@ -19,9 +19,9 @@ export const FooterCafeteria = () => {
 
             <section className={Style.itemsFooter}>
                 <h3 className={Style.subtitle}>ENCUÉNTRANOS EN:</h3>
-                <h4 className={Style.info}>Dirección:<span className={Style.textModified}>Cra5-Parque Principal-Salento</span></h4>
+                <h4 className={Style.info}>Dirección: <span className={Style.textModified}>Cra5-Parque Principal-Salento</span></h4>
                 <h4 className={Style.info}>Tel:<span className={Style.textModified}> 123456789</span></h4>
-                <h4 className={Style.info}>Email:<span className={Style.textModified}>ejetour@gmail.com</span></h4>
+                <h4 className={Style.info}>Email:<span className={Style.textModified}> ejetour@gmail.com</span></h4>
             </section>
 
             <section className={Style.itemsFooter}>

@@ -14,9 +14,13 @@ import Swal from 'sweetalert2'
 
 
 export function User() {
+
   
   const Swal = require('sweetalert2')
+
   const [imagePreview, setImagePreview] = useState('');
+
+
   function handleImageInputChange(e) {
     const file = e.target.files[0];
     const reader = new FileReader();
@@ -35,7 +39,9 @@ export function User() {
    image.current.click();
  }
   //
+
 const [loader,setLoader]=useState(false)
+
   //botones enviar
   var btnRegister=useRef()
   var btnSingIn=useRef()
@@ -48,6 +54,7 @@ const [loader,setLoader]=useState(false)
 
   // Crear instancia de FormData
   var formulario=useRef(null)
+
   const navigate = useNavigate();
   
 function register(){
@@ -56,7 +63,8 @@ function register(){
     e.preventDefault()
     const formData=new FormData(formulario)
 
-    formData.forEach(function(value, key) {
+
+      formData.forEach(function(value, key) {
       console.log(key + ': ' + value);
     });
     setLoader(true)
