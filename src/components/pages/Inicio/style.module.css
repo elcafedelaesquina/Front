@@ -1,59 +1,5 @@
 
-.containerMenu{
-    margin:auto 0;
-    padding-top: 100px;
-   
-    width: 100%;
-    height: 350px;
-    text-align: center;
-    display: flex;
-    justify-content: space-around;
-   
-    
-    
-   
-}
-.itemMenu{
-  width: 24%;
-  height:250px;
-  background-color:rgb(41, 41, 41);
-  overflow: hidden;
 
-
-
-}
-.itemMenu:hover>img{
-  height:0;
-  border:none;
-}
-.itemMenu:hover>.link{
-  
-  height:210px;
-}
-.itemMenu img{
-  width: 100%;
-  height:210px;
-  border-bottom: 2px solid rgb(32, 110, 255);
-  transition: all 0.6s;
-}
-.itemMenu .link{
-  margin: 0;
-  width: 100%;
-  height:35px ;
-  transition: all 0.6s;
-  padding: 0px 10px;
-  color: greenyellow;
-  overflow: hidden;
-}
-.itemMenu .link h2{
-  color: rgb(255, 206, 47);
-
-}
-.itemMenu .link p{
-  font-size:15px;
-  margin-top: 10px;
-  color: rgb(223, 223, 223);
-}
 .imgInicio{
   margin:0px auto 0px;
   width: 100%;
@@ -208,7 +154,7 @@
     font-size: 20px;
     color: rgb(44, 44, 44);
 }
-.item .infoPlaces .stars{
+.item .infoPlaces .stars  {
     color: rgb(192, 192, 0);
     height:20px;
 }
@@ -219,4 +165,119 @@
     margin: 0 auto;
     font-size: 15px;
     color: rgb(128, 128, 128);
+}
+.containerSubs{
+  /*
+* Created with https://www.css-gradient.com
+* Gradient link: https://www.css-gradient.com/?c1=343434&c2=066369&gt=l&gd=dcl
+*/
+background: rgba(52, 52, 52, 1.0);
+background: linear-gradient(300deg, rgba(52, 52, 52, 1.0), rgba(66, 57, 155, 0.911));
+   width: 100%;
+   height: auto;
+   padding: 50px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap:80px;
+}
+
+.sub{
+   width: 20%;
+   height:auto;
+   background-color:rgba(100, 100, 100, 0.164);
+   border-radius: 10px;
+   text-align: center;
+   transform: rotate3d(2, -1, -1, -0.08turn);
+   transition: all 0.2s;
+}
+.sub:hover{
+   transform: rotate3d(1, 1, 1, 0turn)
+  
+}
+.headerSub{
+   width: 100%;
+   height:auto;
+   border-top-left-radius:10px ;
+   border-top-right-radius:10px ;
+   padding: 20px ;
+   background-color:rgb(230, 253, 25);
+}
+.sub1{
+   width: 100%;
+   height:auto;
+   border-top-left-radius:10px ;
+   border-top-right-radius:10px ;
+   padding: 20px ;
+   background-color:rgb(255, 63, 63);
+   
+}
+.sub2{
+   width: 100%;
+   height:auto;
+   border-top-left-radius:10px;
+   border-top-right-radius:10px;
+   padding: 20px ;
+   background-color:rgb(236, 81, 241);
+}
+.headerSub ion-icon,.sub1  ion-icon, .sub2 ion-icon{
+   font-size: 50px;
+   color: rgb(71, 71, 71);
+}
+.sub h3{
+   font-size:28px;
+   margin-top: 18px;
+   color: rgb(39, 122, 248);
+}
+.sub .listSub{
+   list-style: none;
+   margin-top:10px;
+   font-size: 15px;
+   color: aliceblue;
+}
+.sub .buttonSub{
+   background-color:rgb(230, 253, 25);
+   height: 35px;
+   color: black;
+   margin: 20px auto;
+}
+.sub .btnSub1{
+   background-color:rgb(255, 63, 63);
+   height: 35px;
+   color: black;
+   margin: 20px auto;
+}
+
+.containerSubs .sub .btnSub1,
+.containerSubs .sub .btnSub2,
+.containerSubs .sub .buttonSub{
+   width: auto;
+   padding: 2px 5px;
+   height: 35px;
+   border-radius: 5px;
+   border: none;
+   font-size: 20px;
+   color: rgb(41, 41, 41);
+   cursor: pointer;
+}
+
+.containerSubs .sub .btnSub1:hover{
+  background-color:rgb(247, 36, 36);
+
+}
+.containerSubs .sub .btnSub2:hover{
+  background-color:rgb(247, 123, 252);
+
+}
+.containerSubs .sub .buttonSub:hover{
+  background-color:rgb(219, 235, 74)
+   
+
+}
+
+.sub .btnSub2{
+   background-color:rgb(236, 81, 241);
+   height: 35px;
+   color: black;
+   margin: 20px auto;
 }

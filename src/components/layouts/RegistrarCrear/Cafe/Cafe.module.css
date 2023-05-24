@@ -228,6 +228,9 @@ form .form-content .signup-text{
     text-align: center;
     margin-top: 25px;
 }
+.type{
+    display: none;
+}
 
 .input-boxx {
     display: flex;

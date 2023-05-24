@@ -22,10 +22,10 @@
 
 .searchImg .filter{
     width: 100%;
-    max-height: 100%;
+    height: 100%;
     border-radius: 20px;
     backdrop-filter: blur(3px);
-    background-color: rgba(56, 56, 56, 0.219);
+    background-color: rgba(56, 56, 56, 0.473);
     overflow: hidden;
 }
 .itemsContainer{
@@ -44,7 +44,7 @@
 }
 .itemsContainer .filter{
     width: 30%;
-    height: 400px;
+    height: auto;
     background-color: rgba(194, 194, 194, 0);
     border-radius: 20px;
     padding: 10px;
@@ -69,25 +69,26 @@
     margin: 30px auto;
     border-top: solid rgb(52, 189, 253);
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     padding: 0px 40px;
     
 
 }
-.containerImg div {
+.containerImg .divImg {
     overflow: hidden;
     margin: 20px;
     border-radius: 50%;
     outline: 2px solid rgba(84, 142, 252, 0.918);
     
 }
-.containerImg div img {
+.containerImg .divImg img {
     width: 200px;
     height: 200px;
     transition: all 0.2s;
     
 }
-.containerImg div img:hover{
+.containerImg .divImg img:hover{
 
     transform: scale(1.2);
    
@@ -97,111 +98,9 @@
 .containerImg h2{
     width: 100%;
     margin:  10px 0px 40px 0;
-    color: rgb(195, 255, 56);
+    color: rgb(240, 86, 47);
 }
 
-
-.containerSubs{
-   /*
-* Created with https://www.css-gradient.com
-* Gradient link: https://www.css-gradient.com/?c1=343434&c2=066369&gt=l&gd=dcl
-*/
-background: rgba(52, 52, 52, 1.0);
-background: linear-gradient(300deg, rgba(52, 52, 52, 1.0), rgba(66, 57, 155, 0.911));
-    width: 100%;
-    height: auto;
-    padding: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap:80px;
-}
-
-.sub{
-    width: 20%;
-    height:auto;
-    background-color:rgba(100, 100, 100, 0.164);
-    border-radius: 10px;
-    text-align: center;
-    transform: rotate3d(2, -1, -1, -0.08turn);
-    transition: all 0.2s;
-}
-.sub:hover{
-    transform: rotate3d(1, 1, 1, 0turn)
-   
-}
-.headerSub{
-    width: 100%;
-    height:auto;
-    padding: 20px ;
-    background-color:rgb(230, 253, 25);
-}
-.sub1{
-    width: 100%;
-    height:auto;
-    padding: 20px ;
-    background-color:rgb(255, 63, 63);
-    
-}
-.sub2{
-    width: 100%;
-    height:auto;
-    padding: 20px ;
-    background-color:rgb(236, 81, 241);
-}
-.headerSub ion-icon,.sub1  ion-icon, .sub2 ion-icon{
-    font-size: 50px;
-    color: rgb(71, 71, 71);
-}
-.sub h3{
-    font-size:28px;
-    margin-top: 18px;
-    color: rgb(39, 122, 248);
-}
-.sub .listSub{
-    list-style: none;
-    margin-top:10px;
-    font-size: 15px;
-    color: aliceblue;
-}
-.sub .buttonSub{
-    background-color:rgb(230, 253, 25);
-    height: 35px;
-    color: black;
-    margin: 20px auto;
-}
-.sub .btnSub1{
-    background-color:rgb(255, 63, 63);
-    height: 35px;
-    color: black;
-    margin: 20px auto;
-}
-
-.containerSubs .sub .btnSub1,
-.containerSubs .sub .btnSub2,
-.containerSubs .sub .buttonSub{
-    width: auto;
-    height: 35px;
-    border-radius: 5px;
-    border: none;
-    font-size: 20px;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-}
-
-.containerSubs .sub .btnSub1:hover,
-.containerSubs .sub .btnSub2:hover,
-.containerSubs .sub .buttonSub:hover{
-    background-color: initial;
-
-}
-
-.sub .btnSub2{
-    background-color:rgb(236, 81, 241);
-    height: 35px;
-    color: black;
-    margin: 20px auto;
-}
 .whatsapp {
     width: 160px;
     background-color:rgb(77, 77, 77);
@@ -215,8 +114,10 @@ background: linear-gradient(300deg, rgba(52, 52, 52, 1.0), rgba(66, 57, 155, 0.9
     right: 20px;
     font-size: 17px;
     cursor: pointer;
+ 
+ }
 
-}
+
 .whatsapp ion-icon{
     font-size:17px;
     margin-right: 5px;
