@@ -11,17 +11,17 @@
 }
 .containerSearch h3{
     font-size:33px;
-    border-top: solid rgb(40, 167, 252);
+    border-top: solid rgb(63, 63, 63);
     width: 60%;
     margin: 0 auto;
-    color: rgb(233, 255, 34); 
+    color: rgb(255, 197, 88); 
 }
 .containerSearch h5{
     font-size:22px;
     
     width: 60%;
     margin: 0 auto;
-    color: rgb(255, 255, 255); 
+    color: rgb(228, 228, 228); 
 }
 .containerInput{
     
@@ -46,7 +46,7 @@
 .containerInput button{
     width: 25%;
     height: 45px;
-    background-color: rgb(65, 150, 248);
+    background-color:  rgb(255, 167, 66);
     border: none;
     border-radius: 10px;
     color: white;

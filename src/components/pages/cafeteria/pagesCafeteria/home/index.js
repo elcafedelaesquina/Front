@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useEffect,useState } from 'react'
 import styles from './style.module.css'
 import { Link } from 'react-router-dom'
 
  const HomeCafeteria = () => {
+  const [coffee,setCoffee]=useState(JSON.parse(localStorage.getItem('coffee')))
+  useEffect(()=>{
+    let data=JSON.parse(localStorage.getItem('coffee'))
+    setCoffee(data)
+    console.log(data)
+    
+  },[])
   return (
     <div className={styles.home}>
       <div className={styles.section}>
@@ -12,7 +19,7 @@ import { Link } from 'react-router-dom'
           <div className={styles.slide}><img className={styles.slideImg} src='https://m.media-amazon.com/images/I/81+fcigeNMS._AC_UF894,1000_QL80_.jpg' alt=''></img></div>
           <div className={styles.slide}><img className={styles.slideImg} src='https://ae01.alicdn.com/kf/Sbb35b5f72e95428ea498d4252b4f952d6/Papel-Tapiz-de-caf-pintado-a-mano-Mural-de-decoraci-n-Industrial-caf-t-de-la.jpg' alt=''></img></div>
           <div className={styles.slide}>
-            <h2 className={styles.cafeteriaTitle}>El Cáfe de la esquina</h2>
+            <h2 className={styles.cafeteriaTitle}>{coffee.name}</h2>
             <h3>Los mejores cafés de colombia a tu alcance</h3>
           </div>
           

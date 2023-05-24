@@ -1,66 +1,13 @@
 import React from 'react'
 import styles from './style.module.css'
-
+import { Menu } from '../../layouts/menu'
 import {Link} from 'react-router-dom'
 
 const ContentHome = () => {
   return (
     <div className="content-home">
-        <div className={styles.containerMenu}>
-            <div className={styles.itemMenu}>
-                <img src='https://www.fcmmobiliario.com/blog/wp-content/uploads/2019/04/mobiliario-cafeterias-vintage.jpg' alt=""></img>
-                <div className={styles.link}>
-                <Link to={`/`}><h2>Inicio</h2></Link>
-                    <p>
-                        visita estos sitios y haz tours cafeteros
-                        visita estos sitios y haz tours cafeteros
-                        visita estos sitios y haz tours cafeteros
-                        visita estos sitios y haz tours cafeteros
-                    </p>
-                </div>
-            </div>
-            <div className={styles.itemMenu}>
-                <img src='https://t2.uc.ltmcdn.com/es/posts/6/7/0/nombres_para_cafeterias_en_ingles_51076_2_600.jpg' alt=""></img>
-                <div className={styles.link}>
-                <Link to={`/cafeterias`}><h2>Cafeterias</h2></Link>
-                    <p>
-                        visita estos sitios y haz tours cafeteros
-                        visita estos sitios y haz tours cafeteros
-                        visita estos sitios y haz tours cafeteros
-                        visita estos sitios y haz tours cafeteros
-                    </p>
-                </div>
-            </div>
-            <div className={styles.itemMenu}>
-                <img src='https://img.rezdy.com/PRODUCT_IMAGE/146961/Selina_Quindio_RoadTrip_03_2021__chrisgarzoncph__1__lg.jpg' alt=""></img>
-                <div className={styles.link}>
-                <Link to={`/Fincas`}><h2>Fincas</h2></Link>
-                    <p>
-                        visita estos sitios y haz tours cafeteros
-                        visita estos sitios y haz tours cafeteros
-                        visita estos sitios y haz tours cafeteros
-                        visita estos sitios y haz tours cafeteros
-                    </p>
-                </div>
-            </div>
-            <div className={styles.itemMenu}>
-                <img src='https://milcienmillas.com/wp-content/uploads/2020/09/Casa-ti%CC%81pica-Salento-Quindi%CC%81o-Colombia-milcienmillas-1024x768.jpg?6bfec1&6bfec1' alt=""></img>
-                <div className={styles.link}>
-                <Link to={`/`}><h2>Hoteles</h2></Link>
-                    <p>
-                        visita estos sitios y haz tours cafeteros
-                        visita estos sitios y haz tours cafeteros
-                        visita estos sitios y haz tours cafeteros
-                        visita estos sitios y haz tours cafeteros
-                    </p>
-                </div>
-            </div>
-            
-           
-  
-            
-         
-        </div>
+        <Menu></Menu>
+
         <div className={styles.imgInicio}>
             <div className={styles.filtro}>
                 <h2>Crea tu Tienda virtual con nosotros</h2> 
@@ -93,7 +40,7 @@ const ContentHome = () => {
                     <img src='https://www.altonivel.com.mx/wp-content/uploads/2018/03/cafeteria.jpg' alt='hola'></img>
                     <div className={styles.infoPlaces}>
                         <h3>El Ocaso finca café</h3>
-                        <div class="stars"><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon></div>
+                        <div className="stars"><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon></div>
                       <h5>visita estos sitios y haz tours cafeteros</h5>
 
                     </div>
@@ -103,7 +50,7 @@ const ContentHome = () => {
                     <img src='https://www.altonivel.com.mx/wp-content/uploads/2018/03/cafeteria.jpg' alt='hola'></img>
                     <div className={styles.infoPlaces}>
                         <h3>El Ocaso finca café</h3>
-                        <div class="stars"><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon></div>
+                        <div className="stars"><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon></div>
                       <h5>visita estos sitios y haz tours cafeteros</h5>
 
                     </div>
@@ -135,6 +82,45 @@ const ContentHome = () => {
           
             </div>
         </div>
+        <div className={styles.containerSubs}>
+      
+      <div className={styles.sub}>
+        <div className={styles.sub1} ><ion-icon name="rocket-outline"></ion-icon></div>
+        <h3>Prueba Gratis por un mes</h3>
+        <ul className={styles.listSub}>
+          <li><ion-icon name="checkmark-outline"></ion-icon>crear productos</li>
+          <li><ion-icon name="checkmark-outline"></ion-icon>crear productos</li>
+          <li><ion-icon name="close-outline"></ion-icon>crear productos</li>
+          <li><ion-icon name="close-outline"></ion-icon>crear productos</li>
+        </ul>
+        <button className={styles.btnSub1 }>$0/Month</button>
+
+      </div>
+      <div className={styles.sub}>
+        <div className={styles.sub2}><ion-icon name="telescope-outline"></ion-icon></div>
+        <h3>Suscripción   Basica</h3>
+        <ul className={styles.listSub}>
+          <li><ion-icon name="checkmark-outline"></ion-icon>crear productos</li>
+          <li><ion-icon name="checkmark-outline"></ion-icon>crear productos</li>
+          <li><ion-icon name="checkmark-outline"></ion-icon>crear productos</li>
+          <li><ion-icon name="close-outline"></ion-icon>crear productos</li>
+        </ul>
+        <button className={styles.btnSub2 }>$30/Month</button>
+
+      </div>
+      <div className={styles.sub}>
+        <div className={styles.headerSub}><ion-icon name="diamond-outline"></ion-icon></div>
+        <h3>Suscripción premium</h3>
+        <ul className={styles.listSub}>
+          <li><ion-icon name="checkmark-outline"></ion-icon>crear productos</li>
+          <li><ion-icon name="checkmark-outline"></ion-icon>crear productos</li>
+          <li><ion-icon name="checkmark-outline"></ion-icon>crear productos</li>
+          <li><ion-icon name="checkmark-outline"></ion-icon>crear productos</li>
+        </ul>
+        <button className={styles.buttonSub }>$50/Month</button>
+
+      </div>
+    </div>
        
     </div>
   )
