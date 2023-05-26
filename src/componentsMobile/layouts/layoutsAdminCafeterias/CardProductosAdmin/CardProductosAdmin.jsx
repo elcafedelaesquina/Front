@@ -62,10 +62,10 @@ export const CardProductosAdmin = () => {
               />
             </div>
             <h2 className={Style.h2}>{item.name}</h2>
-            <p className={Style.price}>{item.price}</p>
-            <p>{item.description}</p>
+            <p className={Style.price}>${item.price}</p>
+            <p className={Style.description}>{item.description}</p>
             <p className={Style.btns}>
-              <button>Actualizar</button>
+              {/* <button>Actualizar</button> */}
               <button onClick={() => deleteProduct(item.cod_product)} >Eliminar</button>
             </p>
           </div>
@@ -73,8 +73,7 @@ export const CardProductosAdmin = () => {
       </Carousel>
 
       <div className={Style.adminContainerCreateProduct}>
-        <button
-          className={Style.btnAdminCreateProduct} onClick={() => setCreateNewProduct(!createNewProduct)}>Crea un nuevo producto</button>
+        <button className={Style.btnAdminCreateProduct} onClick={() => setCreateNewProduct(!createNewProduct)}>Crea un nuevo producto</button>
       </div>
 
       {createNewProduct && (

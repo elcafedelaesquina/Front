@@ -1,6 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Style from  "./slider.module.css";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import { imagen } from "./data";
 
 export const Slider = () => {

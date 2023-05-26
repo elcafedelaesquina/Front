@@ -12,7 +12,7 @@ export const Cafeteria = () => {
   return (
     <div>
       <NavBar />
-      <Slider />
+      {/* <Slider /> */}
       <HomeCafeteria />
       <CategoriesProducts />
       <FeaturedProducts />
