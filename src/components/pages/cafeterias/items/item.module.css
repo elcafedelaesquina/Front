@@ -37,6 +37,7 @@
 .itemCafeterias .infoItem .title{
     padding: 10px 10px 0px 10px;
     width: 100%;
+
     min-height: 50px;
     display: flex;
     justify-content: space-between;
@@ -44,11 +45,13 @@
 
 }
 .itemCafeterias .infoItem .title h4{
+    min-width: 80%;
+    overflow: hidden;
     color: rgb(255, 168, 37);
-    font-size:22px;
+    font-size:24px;
     cursor: pointer;
-    
     transition: all 0.8s;
+    border-bottom: 1px solid  rgb(70, 70, 70);
 }
 .itemCafeterias .infoItem .title h4:hover{
      
@@ -58,10 +61,12 @@
 }
 .itemCafeterias .infoItem .title ion-icon{
     font-size:30px;
-    color: rgb(248, 2, 105);
+    color: rgb(250, 30, 49);
 }
 .itemCafeterias .infoItem  h5{
-    font-size:17px;
+    font-size:19px;
+    max-width: 90%;
+    overflow: hidden;
     padding: 0px 10px;
     
    text-decoration-line: underline;
@@ -69,7 +74,7 @@
    cursor: pointer;
 }
 .itemCafeterias .infoItem  p{
-    font-size:16px;
+    font-size:17px;
     min-height: 70px;
     overflow: hidden;
     padding: 5px 10px;
@@ -85,17 +90,101 @@
 
 }
 .itemCafeterias .infoItem .titleBottom h5{
-    padding: 8px 10px 0 10px;
+    padding: 15px 10px 0 10px;
     text-decoration-line:underline;
     font-size: 14px;
     color: rgb(163, 163, 163);
 
 }
-.itemCafeterias .infoItem .titleBottom .ranking{
-    padding-top:5px ;
-    width: 18%;
+.button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+    transform: scale(0.9);
+   }
+   
+   .button.learn-more {
+    width: 140px;
+    height: auto;
+   }
+   
+   .button.learn-more .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #555555;
+    border-radius: 1.625rem;
+   }
+   
+   .button.learn-more .circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+   }
+   
+   .button.learn-more .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+   }
+   
+   .button.learn-more .circle .icon.arrow::before {
+    position: absolute;
+    content: "";
+    top: -0.29rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    transform: rotate(45deg);
+   }
+   
+   .button.learn-more .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: #ffffff;
+    font-weight: 100;
+    line-height: 1.6;
     text-align: center;
-    border-radius: 10px;
-    color: #f7f2f2;
-    background-color:#303030;
-}
+
+   }
+   
+   .button:hover .circle {
+    width: 100%;
+    
+   }
+   
+   .button:hover .circle .icon.arrow {
+    background:white;
+
+    border-color: #fcd83c;
+    transform: translate(1rem, 0);
+   }
+   
+   .button:hover .button-text {
+    color: #fcd83c;
+   }
+   

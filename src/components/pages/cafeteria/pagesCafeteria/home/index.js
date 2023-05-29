@@ -2,6 +2,7 @@ import React, { useEffect,useState } from 'react'
 import styles from './style.module.css'
 import { Link } from 'react-router-dom'
 
+
  const HomeCafeteria = () => {
   const [coffee,setCoffee]=useState(JSON.parse(localStorage.getItem('coffee')))
   useEffect(()=>{

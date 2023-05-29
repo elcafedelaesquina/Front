@@ -1,21 +1,51 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import'./style.css'
 
 const Comments = () => {
+    const [data,setData]=useState([])
+
+    useEffect(()=>{
+      fetch('https://apimainejetravel.azurewebsites.net/api/Coffee/Lista')
+      .then(response => response.json())
+      .then(data => {
+        const {coffeeList}=data
+        setData(coffeeList[0])})
+        
+    },[])
+    const [valor,setValor]=useState([{id_coffee: 2, name: 'cafe la esquina', email: 'cafe@gmail.com', password: '123', description: 'EL mejor cafe Salento',image
+    : 
+    "https://apimainejetravel.azurewebsites.net/Imagenes/8b2f52ca-b32a-48be-9896-83a1451f92b1.jpeg"}])
+
+    const changeComment=(e)=>{
+        let filtered=data.filter( item=>item.id_coffee===parseInt(e.target.value)) 
+        setValor(filtered)
+        console.log(typeof data[0].id_coffee)
+        console.log(data[0])
+
+        
+         
+    }
   return (
     <div className="containerComments">
        <h2>Tu opinion es importante para nosotros...</h2> 
        <div className="container">
            <div className="cafeteriaComments">
             <div className="commentsGenerator">
-                <img alt='' src="https://www.wradio.com.co/resizer/UpUfe56rcOvclY3i88hBsDzw5nA=/650x488/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/prisaradioco/CT3V63LOOBBJBMDL22HG5LGKXI.jpg"></img>
+                <img alt='' src={valor[0].image}></img>
                 <div className="choose">
-                    <h3>El Café de la Esquina</h3>
-                    <h4>Salento Quindio</h4>
-                    <select>
-                        <option>Café de la esquina</option>
-                        <option>Café de la esquina</option>
-                        <option>Café de la esquina</option>
+                    <h3>{valor[0].name}</h3>
+                    <h4>{valor[0].address}</h4>
+                    <select onChange={changeComment}>
+                        {data.map(item=>{
+                            return (<option 
+                                value={item.id_coffee}
+
+                            >{item.name}
+
+                            </option>)
+
+                        })}
+                        
                     </select>
 
                 </div> 

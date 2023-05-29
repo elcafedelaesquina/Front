@@ -18,6 +18,15 @@
   justify-content: center;
   align-items: center;
 }
+.h2{
+  color: orange;
+}
+.h3{
+  width: 70%;
+  font-size: 25px;
+  text-align: center;
+  padding-bottom:15px ;
+}
 .filtro{
   font-size:25px;
   color: azure;
@@ -26,7 +35,7 @@
 
 .infoGray{
     width: 100%;
-    height: 50vh;
+    height: 400px;
     background: rgba(52, 52, 52, 1.0);
     background: linear-gradient(250deg, rgb(20, 20, 20), rgb(8, 107, 114));
     display: flex;
@@ -36,8 +45,9 @@
     gap: 40px;;
     
 }
-.infoGray img {
+.infoGray .imgInicio {
     width: 30%;
+    height: 98%;
     margin-left: 15%;
     border-radius: 20px;
 
@@ -52,7 +62,7 @@
 }
 .infoGray .containerInfo h3{
     font-size:30px;
-    color: rgb(47, 255, 220);
+    color: #ffb61a;
 }
 .infoGray .containerInfo p{
     width: 50%;
@@ -78,7 +88,7 @@
     font-size: 35px;
     padding-left:10px ;
     color: rgb(212, 212, 212);
-    border-top: solid rgb(36, 204, 255);
+    border-top: solid rgb(255, 204, 36);
     margin: 0 auto;
 }
 .containerPlaces h4{
@@ -132,40 +142,147 @@
     transform: scale(1.01);
     background-color: rgb(253, 189, 69);
 }
+.cardHome {
+  color: #1b1b1b;
+  width: 220px;
+  height: 284px;
+  position: relative;
+  outline: 6px solid #4646463d;
+  border-radius: 8px;
+  line-height: 150%;
+  box-shadow: 0px 5px 10px 4px  rgba(41, 41, 41, 0.534);
+  
+  /* background: #ff930f;
+  background-blend-mode: multiply; */
+ /*  background: linear-gradient(to top, #ff930f, #ffcc33); */
+  transition: background-color 1s linear;
+  overflow: hidden;
+  background-size: cover;
+  cursor: pointer;
+  
+ /*  filter: brightness(50%); */
+  
+
+}
 
 
-.item img{
-    border-top-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-    width: 100%;
-    height:200px;
-    transition: all 0.5s;
+.cardFront {
+  left: 0;
+  padding-top: 200px;
+  position: absolute;
+  width: 220px;
+  text-align: center;
+  background-color: rgba(36, 36, 36, 0.436);
+  height: 100%;
+  transition: transform 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
 }
-.item:hover > img{
-  border-top-right-radius: 0px;
-  border-bottom-left-radius: 0px;
+
+.cardBack {
+  transform: translateX(100%);
+  height: 100%;
+  width: 220px;
+  
+  background-color: rgba(36, 36, 36, 0.436);
+  transition: transform 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+}
+
+
+/*Text*/
+.titleCard {
+  font-size: 22px;
+  font-weight: bold;
+  bottom: 16px;
+  max-width: 100%;
+  max-height:50px ;
+  color: #ffb61a;
+  
+}
+/*Text divider*/
+.titleCard::after {
+  content: "";
+  display: block;
+  width: 50%;
+  border-radius: 50%;
+  height: 2px;
+  margin: 2px auto;
+  background-color: #707070;
+}
+.subtitle{
+  color: white;
+  font-size: 18px;
+}
+.cardBack{
+  padding: 30px;
+  height: 100%;
+  color: white;
 
 }
-.infoPlaces{
-  width: 100%;
-  height: auto;
+.buttonCard {
+  background-color: #252525;
+  border: 1px solid #1d1d1d;
+  padding: 5px;
+  position: relative;
+  width: 7.2em;
+  height: 2em;
+  transition: 0.5s;
+  font-size: 17px;
+  border-radius: 10px;
+  cursor: pointer;
+  bottom: -160px;
+  right: -50px;
 }
-.item h3{
-    font-size: 20px;
-    color: rgb(44, 44, 44);
-}
-.item .infoPlaces .stars  {
-    color: rgb(192, 192, 0);
-    height:20px;
-}
-.item .infoPlaces h5{
-    width:90%;
-    height: 60px;
 
-    margin: 0 auto;
-    font-size: 15px;
-    color: rgb(128, 128, 128);
+.buttonCard p {
+  position: absolute;
+  top: 0.4em;
+  left: 1.2em;
+  margin: 0;
+  padding: 0;
+  transition: .5s;
+  color:rgb(255, 201, 52);
 }
+
+.buttonCard ion-icon{
+  position: absolute;
+  top: 0.4em;
+  right: 0.5em;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  transition: 0.5s;
+  height: 1em;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.buttonCard:hover p {
+  left: 0.6em;
+  color: #fff
+}
+
+.buttonCard:hover ion-icon {
+  opacity: 1;
+}
+
+.buttonCard:hover {
+  background-color: #fcc42a;
+}
+
+
+/*Hover*/
+.cardHome:hover {
+  background-color: #1b1b1b25;
+}
+
+.cardHome:hover .cardFront {
+  transform: translateX(-100%);
+}
+
+.cardHome:hover .cardBack {
+  transform: translateX(0);
+}
+
+
 .containerSubs{
   /*
 * Created with https://www.css-gradient.com
@@ -227,12 +344,12 @@ background: linear-gradient(300deg, rgba(52, 52, 52, 1.0), rgba(66, 57, 155, 0.9
 .sub h3{
    font-size:28px;
    margin-top: 18px;
-   color: rgb(39, 122, 248);
+   color: rgb(248, 192, 39);
 }
 .sub .listSub{
    list-style: none;
    margin-top:10px;
-   font-size: 15px;
+   font-size: 18px;
    color: aliceblue;
 }
 .sub .buttonSub{

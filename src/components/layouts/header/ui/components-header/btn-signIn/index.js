@@ -6,7 +6,7 @@ import styles from './style.module.css'
 const BtnSingIn = () => {
   return (
     
-     <Link to={'/PageRegistros'}><button className={styles.BtnSingIn}>Sign In</button></Link>
+     <Link to={'/PageRegistros'}><button className={styles.BtnSingIn}>Iniciar Sesión</button></Link>
     
   )
 }
