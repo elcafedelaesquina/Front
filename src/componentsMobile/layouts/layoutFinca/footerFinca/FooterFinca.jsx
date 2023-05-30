@@ -5,10 +5,6 @@ import { Link } from 'react-router-dom'
 export const FooterFinca = () => {
   return (
     <footer>
-        <section className={Style.ads}>
-            <Link className={Style.advertisement} to={'/'}><h2>¿Te interesa tener una Página Web como esta? Pues empieza ya con Nosotros... </h2></Link> 
-        </section>
-
         <ul className={Style.footerCafeteria}>
             <section className={Style.itemsFooter}>
                 <h3 className={Style.subtitle}>HORARIOS:</h3>
