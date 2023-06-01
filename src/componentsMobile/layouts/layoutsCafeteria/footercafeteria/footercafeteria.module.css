@@ -1,20 +1,3 @@
-.ads{
-    width: 100%;
-    height: 60px;
-    background-color: #f8d92ade;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.ads .advertisement{
-    font-size: 10px;
-    width: 100%;
-    color: #444444;
-}
-
 .footerCafeteria{
     width: 100%;
     height: auto;
