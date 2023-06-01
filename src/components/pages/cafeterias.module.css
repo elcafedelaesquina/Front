@@ -31,7 +31,7 @@
 .itemsContainer{
     width: 85%;
     margin: 20px auto;
-    border-top: solid rgb(39, 156, 252);
+    border-top: 2px solid rgb(252, 220, 39);
     display: flex;
     justify-content: space-between;
    
@@ -67,7 +67,7 @@
 .containerImg{
     width: 85%;
     margin: 30px auto;
-    border-top: solid rgb(52, 189, 253);
+    border-top: solid rgb(250, 199, 32);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -79,7 +79,7 @@
     overflow: hidden;
     margin: 20px;
     border-radius: 50%;
-    outline: 2px solid rgba(84, 142, 252, 0.918);
+    outline: 2px solid rgba(253, 172, 50, 0.918);
     
 }
 .containerImg .divImg img {
@@ -97,8 +97,9 @@
 
 .containerImg h2{
     width: 100%;
+    font-size: 27px;
     margin:  10px 0px 40px 0;
-    color: rgb(240, 86, 47);
+    color: rgb(255, 255, 255);
 }
 
 .whatsapp {

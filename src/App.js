@@ -14,7 +14,8 @@ import { User } from './components/layouts/RegistrarCrear/User/User'
 import { Cafe } from './components/layouts/RegistrarCrear/Cafe/Cafe'
 import { Farm } from './components/layouts/RegistrarCrear/Farm/Farm'; 
 import { CafeteriaCreateProduct } from './components/layouts/CafeteriasAdmin/FormAdmincafeteriaCreateProduct/CafeteriaCreateProduct';
-
+import { ProductsCafeteria } from './components/pages/cafeteria/pagesCafeteria/products';
+import { Carrito } from './components/pages/cafeteria/pagesCafeteria/carrito';
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
     <Routes>
       <Route path="/cafeterias" element={<Cafeterias></Cafeterias>}></Route>
       <Route path="/cafeterias/cafeteria/carta" element={<CartaCafeteria></CartaCafeteria>}></Route>
+      <Route path="/cafeterias/cafeteria/productos" element={<ProductsCafeteria></ProductsCafeteria>}></Route>
+      <Route path="/cafeterias/cafeteria/carrito" element={<Carrito></Carrito>}></Route>
       <Route path="/cafeterias/cafeteria" element={<Cafeteria></Cafeteria>}></Route>
       <Route path='/fincas' element={<Fincas></Fincas>}></Route>
       <Route path='/fincas/finca' element={<Finca></Finca>}></Route>

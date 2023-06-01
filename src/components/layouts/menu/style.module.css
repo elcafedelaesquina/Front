@@ -42,17 +42,17 @@
   height:35px ;
   transition: all 0.6s;
   padding: 0px 10px;
-  color: greenyellow;
+  color:  rgb(255, 165, 47);
   overflow: hidden;
   text-decoration: none;
 }
 .itemMenu .link h2{
-  color: rgb(255, 206, 47);
+  color:  rgb(255, 165, 47);
   text-decoration: none;
 
 }
 .itemMenu .link p{
-  font-size:15px;
+  font-size:18px;
   margin-top: 10px;
   color: rgb(223, 223, 223);
 }

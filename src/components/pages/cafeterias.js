@@ -7,9 +7,20 @@ import { Menu } from '../layouts/menu'
 import { SearchCafeterias } from './cafeterias/search'
 import { Item } from './cafeterias/items'
 import { FilterCafeterias } from './cafeterias/filter'
+import { Link } from 'react-router-dom'
 
 
 const Cafeterias = () => {
+  const [dataFinca,setDataFinca]=useState([])
+
+  useEffect(()=>{
+    fetch('https://apimainejetravel.azurewebsites.net/api/Farm/Lista')
+    .then(response => response.json())
+    .then(data => {
+      const {farmList}=data
+      setDataFinca(farmList[0])})
+      
+  },[])
 
   const [data,setData]=useState([])
 
@@ -25,7 +36,7 @@ const Cafeterias = () => {
     <>
     <Header></Header>
     <div className={styles.sectionCafeterias}>
-      <div className={styles.whatsapp}><ion-icon name="chatbubble-ellipses-outline"></ion-icon>Contactanos </div>
+    <Link to={'/cafeterias/cafeteria'}  ><div className={styles.whatsapp}><ion-icon name="chatbubble-ellipses-outline"></ion-icon>Contactanos </div></Link>
     <Menu></Menu>
       <div className={styles.searchImg}>
         <div className={styles.filter}>
@@ -57,47 +68,20 @@ const Cafeterias = () => {
 
       </div>
       <div className={styles.containerImg}>
-        <h2>Otros sitios que te van a interesar para visitar</h2>
-       <div  className={styles.divImg} >
-       <img alt='' src="https://www.comparaonline.cl/blog-statics/cl/uploads/2016/12/lugares-turisticos-de-colombia.png">
-        </img>
-        </div> 
-        <div className={styles.divImg}>
-        <img  alt='' src="https://ecommerceapi.assistcard.com/Api/ImagesHandler/GetImage?freeImageCode=lugares%20turisticos%20colombia">
-        </img>
+        <h2>Fincas Cafeteras que te van a interesar para visitar</h2>
+       
+        {dataFinca.map((item,index)=>{
+           if (index>=7 ) {
+            return null; // Detiene la iteración
+          }
+            return (
+              <div  className={styles.divImg} key={item.id_farm}>
+              <img alt='' src={item.image}>
+               </img>
+               </div>
+            )
 
-        </div>
-        <div  className={styles.divImg} >
-        <img   alt=''src="https://travelgrafia.co/wp-content/uploads/2020/02/Sitios-turisticos-de-la-Piedra-del-penol.jpg">
-        </img>
-        </div>
-        <div  className={styles.divImg}>
-        <img   alt='' src="https://www.elcolombiano.com/binrepository/998x639/0c39/998d562/none/11101/OAQB/whatsapp-image-2021-01-21-at-10-59-59-am_37061558_20210121110108.jpg">
-        </img>
-        </div>
-        <div  className={styles.divImg} >
-        <img alt='' src="https://www.wradio.com.co/resizer/UpUfe56rcOvclY3i88hBsDzw5nA=/650x488/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/prisaradioco/CT3V63LOOBBJBMDL22HG5LGKXI.jpg">
-        </img>
-
-        </div>
-        <div  className={styles.divImg} >
-       <img alt='' src="https://www.comparaonline.cl/blog-statics/cl/uploads/2016/12/lugares-turisticos-de-colombia.png">
-        </img>
-        </div> 
-        <div  className={styles.divImg}>
-        <img  alt='' src="https://ecommerceapi.assistcard.com/Api/ImagesHandler/GetImage?freeImageCode=lugares%20turisticos%20colombia">
-        </img>
-
-        </div>
-        <div  className={styles.divImg} >
-        <img   alt=''src="https://travelgrafia.co/wp-content/uploads/2020/02/Sitios-turisticos-de-la-Piedra-del-penol.jpg">
-        </img>
-        </div>
-        
-        
-        
-        
-        
+          })}
 
 
       </div>
