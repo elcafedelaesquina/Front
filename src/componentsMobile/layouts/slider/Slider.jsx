@@ -46,7 +46,7 @@ export const Slider = () => {
                   {/* <img src={slide.img} alt="slide" /> */}
                   <div className={Style.content}>
                     <h2>{slide.title}</h2>
-                    <p>{slide.text}</p>
+                    <p className={Style.text}>{slide.text}</p>
                     <hr />
                     <button className={Style.btnStart}>Adquirir</button>
                   </div>

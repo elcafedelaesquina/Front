@@ -75,3 +75,7 @@
   width: 100vw;
   height: 80vh;
 }
+
+.text{
+  white-space: pre-wrap;
+}
