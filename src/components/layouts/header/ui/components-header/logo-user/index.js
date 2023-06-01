@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import './style.css'
 
 const LogoUser= (props) => {
@@ -22,7 +23,7 @@ const LogoUser= (props) => {
           <li className='itemMenu' onClick={props.close}>Cerrar Sesion</li>
         </ul>}
         {id_coffee &&<ul className='menuUser'>
-          <li className='itemMenu'>Crear Productos</li>
+          <Link to={'/CafeteriaCreateProduct'}><li className='itemMenu'>Crear Productos</li></Link>
           <li className='itemMenu'>Editar Perfil</li>
           <li className='itemMenu' onClick={props.close}>Cerrar Sesion</li>
         </ul>}
