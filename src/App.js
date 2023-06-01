@@ -13,6 +13,7 @@ import { TousFincas } from './components/pages/finca/pagesFinca/tour';
 import { User } from './components/layouts/RegistrarCrear/User/User'
 import { Cafe } from './components/layouts/RegistrarCrear/Cafe/Cafe'
 import { Farm } from './components/layouts/RegistrarCrear/Farm/Farm'; 
+import { CafeteriaCreateProduct } from './components/layouts/CafeteriasAdmin/FormAdmincafeteriaCreateProduct/CafeteriaCreateProduct';
 import { ProductsCafeteria } from './components/pages/cafeteria/pagesCafeteria/products';
 import { Carrito } from './components/pages/cafeteria/pagesCafeteria/carrito';
 
@@ -34,6 +35,7 @@ function App() {
       <Route path='/User' element={<User></User>}></Route>
       <Route path='/Cafe' element={<Cafe></Cafe>}></Route>
       <Route path='/Farm' element={<Farm></Farm>}></Route>
+      <Route path='/CafeteriaCreateProduct' element={<CafeteriaCreateProduct></CafeteriaCreateProduct>}></Route>
     </Routes>   
   </div>
 
