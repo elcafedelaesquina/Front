@@ -26,8 +26,7 @@
     overflow: hidden;
     height: 500px;
     position: absolute;
-    filter: blur(2px);
-    filter: brightness(100%);
+    backdrop-filter: brightness(80%);
     
     
 }

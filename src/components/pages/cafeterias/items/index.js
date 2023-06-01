@@ -10,8 +10,8 @@ const Item = (props) => {
   .then(data => {
     let coffee=data[0][0]
     localStorage.setItem('coffee',JSON.stringify(coffee))
-    window.location.href = 'http://localhost:3000/cafeterias/cafeteria'
-  })
+/*     window.location.href = 'http://localhost:3000/cafeterias/cafeteria'
+ */  })
   }
 
   return (

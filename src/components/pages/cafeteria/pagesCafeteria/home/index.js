@@ -4,11 +4,14 @@ import { Link } from 'react-router-dom'
 
 
  const HomeCafeteria = () => {
-  const [coffee,setCoffee]=useState(JSON.parse(localStorage.getItem('coffee')))
+  const [coffee,setCoffee]=useState({image:'',name:''})
   useEffect(()=>{
-    let data=JSON.parse(localStorage.getItem('coffee'))
-    setCoffee(data)
-    console.log(data)
+    setTimeout(()=>{
+      let data=JSON.parse(localStorage.getItem('coffee'))
+      setCoffee(data)
+    },1000)
+    
+
     
   },[])
   return (

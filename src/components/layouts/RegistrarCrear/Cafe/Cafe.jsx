@@ -219,21 +219,21 @@ var formularioLogin=useRef(null)
         <img className={styles['imgContainer']} src='https://metropoliabierta.elespanol.com/uploads/s1/83/27/49/cafeteri-a.jpeg' alt="" />
         <div className={styles.text}>
           <Link to={'/'}><img src={logo}  className={styles.logoForm} alt=''></img></Link>
-          <span className={styles['text-1']}>Every new friend is <br /> a new adventure</span>
-          <span className={styles['text-2']}>Let's get connected</span>
+          <span className={styles['text-1']}>Empieza con nosotros<br /> para que tengas una mejor experiencia</span>
+          <span className={styles['text-2']}>Disfruta de los mejores servicios</span>
         </div>
       </div>
     </div>
     <form ref={formulario}>
       <div className={styles['form-content']}>
         <form ref={formularioLogin} className={styles['login-form']}>
-          <div className={styles.title}>Login Cafe</div>
+          <div className={styles.title}>Iniciar Sesión</div>
           <div className={styles['input-boxes']}>
             <div className={styles['input-box']}>
               <i className={`fas fa-envelope ${styles['icon']}`}><FontAwesomeIcon icon={faEnvelope} /></i>
 
               <input type="text" className={styles.type} name="Type"  placeholder='Enter your name' value={1}/>
-              <input type="text" name='Email' placeholder='Enter your email' />
+              <input type="text" name='Email' placeholder='E-mail' />
 
             </div>
             <div className={styles['input-box']}>
@@ -241,22 +241,22 @@ var formularioLogin=useRef(null)
                 <FontAwesomeIcon icon={faLock} />
               </i>
 
-              <input type="password" name='Password' placeholder='Enter your password'  />
+              <input type="password" name='Password' placeholder='Contraseña'  />
 
             </div>
-            <div className={styles.text}><a href=''>Forget password?</a></div>
+            <div className={styles.text}><a href=''>¿Olvidaste la contraseña?</a></div>
             <div className={`${styles['button']} ${styles['input-box']}`}>
               <i className={`fas fa-envelope ${styles['icon']}`}></i>
 
-              <button className={styles['button-form']} type='submit' onClick={login}>Log In</button>
+              <button className={styles['button-form']} type='submit' onClick={login}>Inciar Sesión</button>
 
             </div>
-            <div className={styles['text login-text']}>Don't have an account? <label htmlFor="flip">SigUp now</label></div>
+            <div className={styles['text login-text']}>¿No tienes una cuenta? <label htmlFor="flip">Regístrate</label></div>
           </div>
         </form>
 
         <div className={styles['signup-form']}>
-          <div className={styles.title}>SignUp Cafe</div>
+          <div className={styles.title}>Regístrate</div>
           <div className={styles['input-boxes']}>
             <div className={styles['input-box']}>
               <i className={`fas fa-user ${styles['icon']}`}>
@@ -265,7 +265,7 @@ var formularioLogin=useRef(null)
 
               <input type="text" className={styles.type} name="Type"   value={1}/>
               <input type="text" className={styles.type} name="State"   value={'activo'}/>
-              <input type="text" name='Name' placeholder='Enter your name'  />
+              <input type="text" name='Name' placeholder='Nombre de Tu Cafetería'  />
 
             </div>
             <div className={styles['input-box']}>
@@ -273,7 +273,7 @@ var formularioLogin=useRef(null)
                 <FontAwesomeIcon icon={faEnvelope} />
               </i>
 
-              <input type="text" name='Email' placeholder='Enter your email' />
+              <input type="text" name='Email' placeholder='E-mail' />
 
             </div>
             <div className={styles['input-box']}>
@@ -281,7 +281,7 @@ var formularioLogin=useRef(null)
                 <FontAwesomeIcon icon={faPhone} />
               </i>
 
-              <input type="tel" name='Phone' placeholder='Enter your phone'  />
+              <input type="tel" name='Phone' placeholder='Telefono'  />
 
             </div>
 
@@ -290,7 +290,7 @@ var formularioLogin=useRef(null)
                 <FontAwesomeIcon icon={faLocationDot} />
               </i>
 
-              <input type="tel" name='Address' placeholder='Enter your address'  />
+              <input type="tel" name='Address' placeholder='Dirección-ejemplo: Salento Cra 6 #5'  />
 
             </div>
 
@@ -299,11 +299,11 @@ var formularioLogin=useRef(null)
                 <FontAwesomeIcon icon={faLock} />
               </i>
 
-              <input type="password" name='Password' placeholder='Enter your password'  />
+              <input type="password" name='Password' placeholder='Contraseña'  />
             </div>
 
             <div className={styles['input-box textarea-container']}>
-              <input type="textarea" name='Description' className={styles.textarea} placeholder='Enter your short description'  />
+              <input type="textarea" name='Description' className={styles.textarea} placeholder='Breve descripción de tu Cafetería'  />
 
             </div>
             
@@ -323,10 +323,10 @@ var formularioLogin=useRef(null)
             <div className={`${styles['button']} ${styles['input-box']}`}>
               <i className={`fas fa-envelope ${styles['icon']}`}></i>
 
-              <button className={styles['button-form']} type='submit' onClick={register}>Sig Up</button>
+              <button className={styles['button-form']} type='submit' onClick={register}>Regístrate</button>
 
             </div>
-            <div className={styles['text signup-text']}>Already have an account? <label htmlFor="flip">Login now</label></div>
+            <div className={styles['text signup-text']}>¿Ya tienes una cuenta? <label htmlFor="flip">Inicia sesión ya</label></div>
           </div>
         </div>
       </div>

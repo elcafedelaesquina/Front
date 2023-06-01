@@ -22,7 +22,7 @@ const ContentHome = () => {
             <div className={styles.filtro}>
                 <h2 className={styles.h2}>Crea tu Tienda virtual con nosotros</h2> 
                 <h3 className={styles.h3}>¡Bienvenid@ a nuestra página de inicio! Aquí en nuestro sitio web, nos especializamos en la creación de páginas web para cafeterías y fincas. Te ofrecemos soluciones personalizadas para destacar tu negocio y capturar la esencia de tu café o finca en línea.</h3>
-                <Link to={'/PageRegistros'}><button className={styles.BtnEmpieza}>Empieza con nosotros</button></Link>
+                <Link to={'/PageRegistros'}><button className={styles.button}>Realizar Compra</button></Link>
 
             </div>
             
@@ -34,7 +34,7 @@ const ContentHome = () => {
             <p>
             Desde el diseño atractivo y funcional de tu página web, hasta la integración de herramientas de reserva y pedidos en línea, te ayudaremos a establecer una presencia en línea impactante que refleje la personalidad y el encanto de tu tienda virtual.
             </p>
-            <h5>Last updated 3 mins ago</h5>
+            <h5>Última Actualización hace 3min </h5>
 
            </div>
 
@@ -44,31 +44,30 @@ const ContentHome = () => {
             <h4>visita estos sitios y haz tours cafeteros</h4>
             <div className={styles.containerItems}>
               {/* {DataTransfer.map(item=>{return()})} */}
-         {
-          data.map((item,index)=>{
-            if(index>=5){
-              return null
-            }
-            return(
-              <div className={styles.cardHome} style={{ backgroundImage: `url(${item.image})`}}>
-              <div className={styles.cardFront}>
-                <p className={styles.titleCard}>{item.name}</p>
-                <p className={styles.subtitle}>Salento-Quindio</p>
-              </div>
-              <div className={styles.cardBack}>
-                <p>{item.description}.</p>
-                <Link to={'/fincas'}  >
-                <button className={styles.buttonCard}>
-                    <p>Visitanos</p>
-                    <ion-icon name="paper-plane-outline"></ion-icon>
+              {
+                data.map((item,index)=>{
+                  if(index>=4){
+                    return null
+                  }
+                  return(
+                    <div className={styles.card}>
+                    <img src={item.image} alt='' className={styles.imgCard}>
+                     
+                    </img>
+                    <div className={styles.card_content}>
+                      <span className={styles.card_title}>{item.name}</span>
+                      <span className={styles.card_subtitle}>{item.address}</span>
+                      <p className={styles.card_description}>{item.description}</p>
+                    </div>
+                  </div>
                     
-                </button>
-                </Link>
-              </div>
-            </div>
-            )
-          })
-         }
+
+                  
+                  )
+                })
+
+
+              }
 
             
 

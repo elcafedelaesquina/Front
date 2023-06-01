@@ -1,6 +1,8 @@
 import React from 'react'
 import'./style.css'
 const FilterCafeterias = () => {
+  
+  
   return (
     < >
         <select className="select">
@@ -21,7 +23,7 @@ const FilterCafeterias = () => {
          <p>Filandia</p>
         </div>
         <div className='check'>
-         <input type="checkbox"></input> 
+         <input type="checkbox" ></input> 
          <p>Calarca</p>
         </div>
         <div className='check'>

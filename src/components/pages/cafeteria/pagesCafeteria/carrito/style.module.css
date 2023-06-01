@@ -1,0 +1,156 @@
+
+.carrito{
+    width:400px;
+    height: 100vh;
+    position:fixed;
+    z-index: 10;
+    right: 0;
+    background-color:rgb(255, 255, 255);
+    backdrop-filter: brightness(10%);
+    animation: show 1.5s ease-out;
+
+}
+.cerrar{
+    margin: 15px;
+    font-size:30px ;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: all 0.5s;
+
+}
+.cerrar:hover{
+    transform:rotate(360deg)
+}
+.titleCarrito{
+    margin-left:20px;
+    font-size: 30px;
+    
+}
+.itemsCarrito{
+    width: 100%;
+    height: 320px;
+    overflow:auto;
+    padding: 10px 0;
+}
+.itemsCarrito::-webkit-scrollbar-thumb {
+    background-color: rgba(32, 32, 32, 0);
+    border-radius: 20px;
+    
+  }
+.itemCarrito{
+    width: 100%;
+    height: 130px;
+    display: flex;
+    padding: 10px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0px 0px 4px rgb(212, 212, 212);
+    gap: 10px;
+    margin-top: 8px;
+}
+.imgItem{
+    width: 110px;
+    height: 110px;
+    border-radius: 10px;
+    
+}
+.name{
+    max-width: 90%;
+    height: auto;
+    max-height: 35px ;
+    color: orange;
+    overflow: hidden;
+
+
+}
+.btnDelete{
+    position:relative;
+    top: -80px;
+    right:-230px;
+    font-size: 23px;
+    cursor: pointer;
+    color: orange;
+    width: 25px;
+    transition: all 0.2s;
+}
+.btnDelete:hover{
+    transform: rotate(10deg);
+    color: rgb(39, 39, 39);
+}
+.quantity{
+    width: 40px;
+    height: 20px;
+    margin-left: 5px;
+}
+.infoItem p{
+    color: rgb(70, 70, 70);
+    font-weight: 500;
+    max-width: 100%;
+    overflow: hidden;
+
+}
+.total{
+    padding:5px 15px;
+    width:100%;
+    display: flex;
+    justify-content:space-between;
+}
+.total> h4{
+    color: rgb(77, 77, 77);
+
+}
+.infoItem p span{
+    color: rgb(46, 46, 46);
+}
+.button {
+    border: none;
+    margin:20px 0 0 70px;
+    width: 260px;
+    height: 28px;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #ffcf32;
+    transition: all 1000ms;
+    font-size: 15px;
+    overflow: hidden;
+    outline: 2px solid #fda623;
+    background-color: #ffffff;
+  }
+  
+  .button:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    outline: 2px solid #ffcc23;
+    box-shadow: 4px 5px 17px -4px #ffb923;
+    cursor: pointer;
+  }
+  
+  .button::before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #ffc421;
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+  }
+  
+  .button:hover::before {
+    width: 250%;
+  }
+  @keyframes show {
+    0%{
+        transform: translateY(-1000px)
+    }
+    100%{
+        transform: translateX(0px)
+
+    }
+    
+  }
