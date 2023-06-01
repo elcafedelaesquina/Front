@@ -1,36 +1,34 @@
 import React from 'react'
 import'./style.css'
 const FilterCafeterias = () => {
+  
+  
   return (
     < >
         <select className="select">
-           <option>Café</option>
-           <option>Café</option>
-           <option>Café</option>
-           <option>Café</option>
-           <option>Café</option>
-           <option>Café</option>
+           <option>Renacer Salento</option>
+           
            
         </select>
         <div className='check'>
          <input type="checkbox"></input> 
-         <p>Cafes cerca</p>
+         <p>Salento</p>
         </div>
         <div className='check'>
          <input type="checkbox"></input> 
-         <p>Cafes cerca</p>
+         <p>Armenia</p>
         </div>
         <div className='check'>
          <input type="checkbox"></input> 
-         <p>Cafes cerca</p>
+         <p>Filandia</p>
+        </div>
+        <div className='check'>
+         <input type="checkbox" ></input> 
+         <p>Calarca</p>
         </div>
         <div className='check'>
          <input type="checkbox"></input> 
-         <p>Cafes cerca</p>
-        </div>
-        <div className='check'>
-         <input type="checkbox"></input> 
-         <p>Cafes cerca</p>
+         <p>La Tebaida</p>
         </div>
 
         <div className='iframe' >

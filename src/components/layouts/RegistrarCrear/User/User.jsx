@@ -94,7 +94,7 @@ function register(){
           showConfirmButton: false,
           timer: 1500
         })
-        navigate('/')
+        navigate('/User')
         setLoader(false)
 
       }
@@ -186,50 +186,50 @@ return (
         
         <div className={styles.text}>
           <li><Link to={'/'}><img src={logo}  className={styles.logoForm} alt=''></img></Link></li>
-          <span className={styles['text-1']}>Every new friend is <br /> a new adventure</span>
-          <span className={styles['text-2']}>Let's get connected</span>
+          <span className={styles['text-1']}>Empieza con nosotros<br /> para que tengas una mejor experiencia</span>
+          <span className={styles['text-2']}>Disfruta de los mejores servicios</span>
         </div>
       </div>
     </div>
     <form  id='formu' ref={formulario}>
       <div className={styles['form-content']}>
         <div className={styles['login-form']}>
-          <div className={styles.title}>Login User</div>
+          <div className={styles.title}>Inicia Sesión</div>
           <form ref={formularioLogin} className={styles['input-boxes']}>
             <div className={styles['input-box']}>
               <i className='fas fa-envelope icon'><FontAwesomeIcon icon={faEnvelope} /></i>
-              <input type="text" className={styles.type} name="Type"  placeholder='Enter your name' value={3}/>
-              <input type="email" name='Email'  placeholder='Enter your email'  />
+              <input type="text" className={styles.type} name="Type"  placeholder='Nombre' value={3}/>
+              <input type="email" name='Email'  placeholder='E-mail'  />
             </div>
             <div className={styles['input-box']}>
               <i className='fas fa-lock icon'><FontAwesomeIcon icon={faLock} /></i>
-              <input type="password" name='Password'  placeholder='Enter your password' />
+              <input type="password" name='Password'  placeholder='Contraseña' />
             </div>
-            <div className={styles.text}><a>Forget password?</a></div>
+            <div className={styles.text}><labe>¿Olvidaste la contraseña?</labe></div>
             <div className={`${styles['button']} ${styles['input-box']}`}>
-              <button className={styles['button-form']} onClick={login} type='submit'>Log In</button>
+              <button className={styles['button-form']} onClick={login} type='submit'>Iniciar Sesión</button>
             </div>
-            <div className={styles['text login-text']}>Don't have an account? <label htmlFor="flip">SigUp now</label></div>
+            <div className={styles['text login-text']}>¿No tienes una cuenta? <label htmlFor="flip">Regístrate</label></div>
           </form>
         </div>
 
         <div className={styles['signup-form']}>
-          <div className={styles.title}>SignUp User</div>
+          <div className={styles.title}>Regístrate</div>
           <div className={styles['input-boxes']}>
             <div className={styles['input-box']}>
               <i className='fas fa-user icon'><FontAwesomeIcon icon={faUser} /></i>
               <input type="text" className={styles.type} name="Type"  placeholder='Enter your name' value={3}/>
-              <input type="text" ref={name} name="Name"  placeholder='Enter your name'  />
+              <input type="text" ref={name} name="Name"  placeholder='Nombre'  />
             </div>
             <div className={styles['input-box']}>
               <i className={`fas fa-envelope ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faEnvelope} />
               </i>
-              <input type="text" ref={email}name="Email" placeholder='Enter your email'  />
+              <input type="text" ref={email}name="Email" placeholder='E-mail'  />
             </div>
             <div className={styles['input-box']}>
               <i className='fas fa-lock icon'><FontAwesomeIcon icon={faLock} /></i>
-              <input type="password" ref={password} name="Password"  placeholder='Enter your password'  />
+              <input type="password" ref={password} name="Password"  placeholder='Contraseña'  />
             </div>
 
             <div className={styles['container-file']}>
@@ -247,9 +247,9 @@ return (
 
             <div id='selectedFile'></div>
             <div className={`${styles['button']} ${styles['input-box']}`}>
-              <button className={styles['button-form']} type='submit' onClick={register}  ref={btnRegister}>Sig Up</button>
+              <button className={styles['button-form']} type='submit' onClick={register}  ref={btnRegister}>Regístrate</button>
             </div>
-            <div className={styles['text signup-text']}>Already have an account? <label htmlFor="flip">Login now</label></div>
+            <div className={styles['text signup-text']}>¿Ya tienes una cuenta? <label htmlFor="flip">Inicia Sesión ya</label></div>
           </div>
         </div>
       </div>

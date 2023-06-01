@@ -10,9 +10,9 @@ const Footer = () => {
             <li><Link to={'/'}><img src={logo} alt=''></img></Link>  </li>
             <li>
              <h3>Contactanos</h3>  
-              <p>Call Us<span>+57 36455411</span></p>
-              <p>E-mail<span>Ejetravel@gmail.com</span></p>
-              <p>Call Us<span>+57 36455411</span></p>
+              <p>Llamanos:<span>+57-3004524535 </span></p>
+              <p>E-mail:<span>Ejetravel@gmail.com</span></p>
+              <p>Dirección:<span>Armenia-Quindio</span></p>
             </li>
             <li>
               <h3>Siguenos</h3>
@@ -27,7 +27,7 @@ const Footer = () => {
             <li>
               <h3>Herramientas</h3>
               <div className={styles.iconsCreators}>
-              <ion-icon name="logo-github"></ion-icon>
+              <ion-icon name="logo-npm"></ion-icon>
               <ion-icon name="logo-react"></ion-icon>
               <ion-icon name="logo-javascript"></ion-icon>
 

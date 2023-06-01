@@ -46,7 +46,7 @@
     height: 150px;
     color: rgb(202, 255, 96);
 
-    border-right: solid white;
+    border-right: solid rgb(255, 167, 66);
     
 }
 .footer ul li .icons{
@@ -81,14 +81,14 @@
 }
 .footer ul li .iconsCreators ion-icon:nth-child(1){
     background-color:rgb(255, 255, 255);
-    color: #000000;
+    color: #fd2542;
 
 }
 
 
 .footer ul li .iconsCreators ion-icon:nth-child(3){
     background-color:rgb(255, 255, 255);
-    color: #eaff32;
+    color: #fded06;
 
 }
 .footer ul li .icons ion-icon:nth-child(3){
@@ -101,11 +101,7 @@
     color: #32adff;
 
 }
-.footer ul li .iconsCreatorsion-icon:nth-child(3){
-    background-color:rgb(255, 255, 255);
-    color: #edf102;
 
-}
 
 
 

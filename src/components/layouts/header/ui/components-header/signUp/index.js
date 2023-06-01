@@ -1,11 +1,12 @@
 import React from 'react'
 import './style.css'
+import { Link } from 'react-router-dom'
 
 const BtnSignUp  = () => {
   return (
     <>
-        <h2 className="h">Sign Up</h2>
-        <h2 className="h">Help</h2>
+        <Link to={'/PageRegistros'}><h2 className="h">Registrate</h2></Link>
+        <h2 className="h">Ayuda</h2>
 
     </>
       

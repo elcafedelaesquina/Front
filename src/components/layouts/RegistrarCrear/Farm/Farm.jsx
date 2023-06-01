@@ -96,75 +96,75 @@ function handleSignupSubmit(e) {
         <img className={styles['imgContainer']} src='https://media-cdn.tripadvisor.com/media/photo-s/07/19/08/26/finca-el-ocaso-salento.jpg' alt="" />
         <div className={styles.text}>
           <Link to={'/'}><img src={logo}  className={styles.logoForm} alt=''></img></Link>
-          <span className={styles['text-1']}>Every new friend is <br /> a new adventure</span>
-          <span className={styles['text-2']}>Let's get connected</span>
+          <span className={styles['text-1']}>Empieza con nosotros<br /> para que tengas una mejor experiencia</span>
+          <span className={styles['text-2']}>Disfruta de los mejores servicios</span>
         </div>
       </div>
     </div>
     <form action="#">
       <div className={styles['form-content']}>
         <div className={styles['login-form']}>
-          <div className={styles.title}>Login Farm</div>
+          <div className={styles.title}>Inicia Sesión</div>
           <div className={styles['input-boxes']}>
             <div className={styles['input-box']}>
               <i className={`fas fa-envelope ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faEnvelope} />
               </i>
-              <input type="text" placeholder='Enter your email' value={loginEmail} onChange={(e) => setLoginEmail(e.target.value)}/>
+              <input type="text" placeholder='E-mail' value={loginEmail} onChange={(e) => setLoginEmail(e.target.value)}/>
             </div>
             <div className={styles['input-box']}>
               <i className={`fas fa-lock ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faLock} />
               </i>
-              <input type="password" placeholder='Enter your password' value={loginPassword} onChange={(e) => setLoginPassword(e.target.value)} />
+              <input type="password" placeholder='Contraseña' value={loginPassword} onChange={(e) => setLoginPassword(e.target.value)} />
             </div>
-            <div className={styles.text}><a href=''>Forget password?</a></div>
+            <div className={styles.text}><a >¿Olvidaste la contraseña?</a></div>
             <div className={`${styles['button']} ${styles['input-box']}`}>
               <i className={`fas fa-envelope ${styles['icon']}`}></i>
-              <button className={styles['button-form']} type='submit'onClick={handleLoginSubmit}>Log In</button>
+              <button className={styles['button-form']} type='submit'onClick={handleLoginSubmit}>Inciar Sesión</button>
             </div>
-            <div className={styles['text login-text']}>Don't have an account? <label htmlFor="flip">SigUp now</label></div>
+            <div className={styles['text login-text']}>¿No tienes una cuenta? <label htmlFor="flip">Regístrate</label></div>
           </div>
         </div>
 
         <div className={styles['signup-form']}>
-          <div className={styles.title}>SignUp Farm</div>
+          <div className={styles.title}>Regístrate</div>
           <div className={styles['input-boxes']}>
             <div className={styles['input-box']}>
               <i className={`fas fa-user ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faUser} />
               </i>
-              <input type="text" placeholder='Enter your name' value={signupName} onChange={(e) => setSignupName(e.target.value)} />
+              <input type="text" placeholder='Nombre de Tu Finca' value={signupName} onChange={(e) => setSignupName(e.target.value)} />
             </div>
             <div className={styles['input-box']}>
               <i className={`fas fa-envelope ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faEnvelope} />
               </i>
-              <input type="text" placeholder='Enter your email' value={signupEmail} onChange={(e) => setSignupEmail(e.target.value)} />
+              <input type="text" placeholder='E-mail' value={signupEmail} onChange={(e) => setSignupEmail(e.target.value)} />
             </div>
             <div className={styles['input-box']}>
               <i className={`fas fa-Phone ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faPhone} />
               </i>
-              <input type="tel" placeholder='Enter your phone' value={signupPhone} onChange={(e) => setSignupPhone(e.target.value)}/>
+              <input type="tel" placeholder='Telefono' value={signupPhone} onChange={(e) => setSignupPhone(e.target.value)}/>
             </div>
 
             <div className={styles['input-box']}>
               <i className={`fas fa-Location-Dot ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faLocationDot} />
               </i>
-              <input type="tel" placeholder='Enter your address' value={signupAddress} onChange={(e) => setSignupAddress(e.target.value)} />
+              <input type="tel" placeholder='Dirección-ejemplo: Salento Cra3 #6' value={signupAddress} onChange={(e) => setSignupAddress(e.target.value)} />
             </div>
 
             <div className={styles['input-box']}>
               <i className={`fas fa-lock ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faLock} />
               </i>
-              <input type="password" placeholder='Enter your password' value={signupPassword} onChange={(e) => setSignupPassword(e.target.value)} />
+              <input type="password" placeholder='Contraseña' value={signupPassword} onChange={(e) => setSignupPassword(e.target.value)} />
             </div>
 
             <div className={styles['input-box textarea-container']}>
-              <input type="textarea" className={styles.textarea} placeholder='Enter your short description' value={signupDescription} onChange={(e) => setSignupDescription(e.target.value)} />
+              <input type="textarea" className={styles.textarea} placeholder='Breve descripción de Tu Finca' value={signupDescription} onChange={(e) => setSignupDescription(e.target.value)} />
             </div>
 
             <div className={styles['container-file']}>
@@ -182,9 +182,9 @@ function handleSignupSubmit(e) {
 
             <div className={`${styles['button']} ${styles['input-box']}`}>
               <i className={`fas fa-envelope ${styles['icon']}`}></i>
-              <button className={styles['button-form']} type='submit' onClick={handleSignupSubmit}>Sig Up</button>
+              <button className={styles['button-form']} type='submit' onClick={handleSignupSubmit}>Regístrate</button>
             </div>
-            <div className={styles['text signup-text']}>Already have an account? <label htmlFor="flip">Login now</label></div>
+            <div className={styles['text signup-text']}>¿Ya tienes una cuenta? <label htmlFor="flip">inicia sesión ya</label></div>
           </div>
         </div>
       </div>

@@ -10,10 +10,7 @@ const Menu = () => {
         <div className={styles.link}>
         <Link to={`/`}><h2>Inicio</h2></Link>
             <p>
-                visita estos sitios y haz tours cafeteros
-                visita estos sitios y haz tours cafeteros
-                visita estos sitios y haz tours cafeteros
-                visita estos sitios y haz tours cafeteros
+            Explora nuestro sitio web y descubre todo lo que ofrecemos en nuestra página de inicio. Obtén información sobre nuestros servicios, productos y novedades más recientes
             </p>
         </div>
     </div>
@@ -22,10 +19,7 @@ const Menu = () => {
         <div className={styles.link}>
         <Link to={`/cafeterias`}><h2>Cafeterias</h2></Link>
             <p>
-                visita estos sitios y haz tours cafeteros
-                visita estos sitios y haz tours cafeteros
-                visita estos sitios y haz tours cafeteros
-                visita estos sitios y haz tours cafeteros
+            Descubre nuestras acogedoras cafeterías donde podrás disfrutar de deliciosas bebidas y aperitivos. Sumérgete en un ambiente relajante mientras disfrutas de un café de calidad y experimentas la pasión por el café en cada sorbo
             </p>
         </div>
     </div>
@@ -34,10 +28,12 @@ const Menu = () => {
         <div className={styles.link}>
         <Link to={`/Fincas`}><h2>Fincas</h2></Link>
             <p>
-                visita estos sitios y haz tours cafeteros
-                visita estos sitios y haz tours cafeteros
-                visita estos sitios y haz tours cafeteros
-                visita estos sitios y haz tours cafeteros
+            Explora nuestras fincas y sumérgete 
+            en la belleza de la naturaleza. Descubre entornos tranquilos
+             y exuberantes donde puedes disfrutar de actividades al aire libre, 
+             como Tours cafeteros, Cabalgatas o simplemente relajarte rodeado
+              de paisajes impresionantes
+
             </p>
         </div>
     </div>

@@ -22,6 +22,7 @@
     height: 105px;
     border-radius: 50%;
     margin-bottom: -20px;
+    border: 2px solid orange;
 }
 .logo h3{
     font-size: 30px;
