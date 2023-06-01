@@ -2,12 +2,8 @@ import React, { useEffect, useState } from "react";
 import Style from "./commentsCafeterias.module.css";
 
 export const CommentsCafeterias = () => {
-  let imgTest = "https://res.cloudinary.com/dmrq9n2im/image/upload/v1683225617/El%20caf%C3%A9%20de%20la%20esquina/imgtest3_m4hqtw.jpg";
-
   const [data, setData] = useState([]);
-
-  const [dataComment,setDataComment]=useState('')
-  const [value,setValue]=useState([])
+  const [dataComment,setDataComment]=useState({})
 
   const getCafeterias = async () => {
     await fetch("https://apimainejetravel.azurewebsites.net/api/Coffee/Lista")
@@ -17,17 +13,16 @@ export const CommentsCafeterias = () => {
         setData(coffeeList[0]);
       });
   };
-  const selectCafeteria=(e)=>{
-    const valor=e.target
-    console.log(dataComment)
 
+  const selectCafeteria=(e)=>{
+    const valor = parseInt(e.target.value)
+    const cafe = data.find((cafe) => cafe.id_coffee === valor)
+    setDataComment(cafe)
   }
 
   useEffect(() => {
     getCafeterias();
   }, []);
-
-
 
   return (
     <div className={Style.containerComments}>
@@ -38,16 +33,18 @@ export const CommentsCafeterias = () => {
           <div className={Style.choose}>
             <select className={Style.select}  onChange={selectCafeteria} >
             {data.map((item) => {
-              
               return (
-              <option value={{item}} selected={()=>{setDataComment(item.image)}}>{item.name}</option>
+                <option key={item.id_coffee} value={item.id_coffee} selected={()=>{setDataComment(item.image)}}>
+                  {item.name}
+                </option>
               );
             })}
             </select>
           </div>
-          <h3 className={Style.subTitle}>{dataComment}</h3>
-          <p className={Style.ubicationSite}>{dataComment}</p>
-          <img src={dataComment} alt="" className={Style.imgSite} />
+          
+          <h3 className={Style.subTitle}>{dataComment.name}</h3>
+          <p className={Style.ubicationSite}>{dataComment.description}</p>
+          <img src={dataComment.image} alt="" className={Style.imgSite} />
           <h3 className={Style.subTitle}>Califica tu experiencia</h3>
         </section>
 
@@ -66,13 +63,7 @@ export const CommentsCafeterias = () => {
 
         <section className={Style.comment}>
           <h3 className={Style.subTitle}>Tu opinion</h3>
-          <textarea
-            className={Style.textarea}
-            name=""
-            id=""
-            cols="30"
-            rows="10"
-          />
+          <textarea className={Style.textarea} name="" id="" cols="30" rows="10" />
           <button className={Style.btnSend}>Enviar</button>
         </section>
 
@@ -102,3 +93,4 @@ export const CommentsCafeterias = () => {
     </div>
   );
 };
+

@@ -2,12 +2,8 @@ import React, { useEffect, useState } from "react";
 import Style from "./commentsFincas.module.css";
 
 export const CommentsFincas = () => {
-  let imgTest = "https://res.cloudinary.com/dmrq9n2im/image/upload/v1683225617/El%20caf%C3%A9%20de%20la%20esquina/imgtest3_m4hqtw.jpg";
-
   const [data, setData] = useState([]);
-
   const [dataComment,setDataComment]=useState('')
-  const [value,setValue]=useState([])
 
   const getFincas = async () => {
     await fetch("https://apimainejetravel.azurewebsites.net/api/Farm/Lista")
@@ -17,17 +13,16 @@ export const CommentsFincas = () => {
         setData(farmList[0]);
       });
   };
-  const selectFinca=(e)=>{
-    const valor=e.target
-    console.log(dataComment)
 
+  const selectFinca=(e)=>{
+    const valor = parseInt(e.target.value)
+    const finca = data.find((finca) => finca.id_farm === valor)
+    setDataComment(finca)
   }
 
   useEffect(() => {
     getFincas();
   }, []);
-
-
 
   return (
     <div className={Style.containerComments}>
@@ -38,16 +33,17 @@ export const CommentsFincas = () => {
           <div className={Style.choose}>
             <select className={Style.select}  onChange={selectFinca} >
             {data.map((item) => {
-              
               return (
-              <option value={{item}} selected={()=>{setDataComment(item.image)}}>{item.name}</option>
+                <option key={item.id_farm} value={item.id_farm} selected={()=>{setDataComment(item.image)}}>
+                  {item.name}
+                </option>
               );
             })}
             </select>
           </div>
-          <h3 className={Style.subTitle}>{dataComment}</h3>
-          <p className={Style.ubicationSite}>{dataComment}</p>
-          <img src={dataComment} alt="" className={Style.imgSite} />
+          <h3 className={Style.subTitle}>{dataComment.name}</h3>
+          <p className={Style.ubicationSite}>{dataComment.description}</p>
+          <img src={dataComment.image} alt="" className={Style.imgSite} />
           <h3 className={Style.subTitle}>Califica tu experiencia</h3>
         </section>
 
