@@ -3,15 +3,15 @@ import { useState, useEffect } from "react";
 import Style from  "./slider.module.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { imagen } from "./data";
+import { info } from "./data";
 
 export const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slideLength = imagen.length;
+  const slideLength = info.length;
 
   const autoScroll = true;
   let slideInterval;
-  let intervalTime = 5000;
+  let intervalTime = 6000;
 
   const nextSlide = () => {
     // console.log(slideLength);
@@ -38,17 +38,17 @@ export const Slider = () => {
   return (
     <>
       <div className={Style.slider}>
-        {imagen.map((slide, index) => {
+        {info.map((slide, index) => {
           return (
             <div className={index === currentSlide ? `${Style.slide} ${Style.current}` : `${Style.slide}`} key={index} >
               {index === currentSlide && (
                 <div className={Style.card}>
-                  <img src={slide.img} alt="slide" />
+                  {/* <img src={slide.img} alt="slide" /> */}
                   <div className={Style.content}>
-                    <h2>hola</h2>
-                    <p>{slide.title}</p>
+                    <h2>{slide.title}</h2>
+                    <p>{slide.text}</p>
                     <hr />
-                    <button className={Style.btnStart}>Get Started</button>
+                    <button className={Style.btnStart}>Adquirir</button>
                   </div>
                 </div>
               )}
