@@ -87,6 +87,7 @@
 .text{
   white-space: pre-wrap;
   color: #e9f0f7;
+  font-size: 1.2rem;
 }
 
 .btnStart {
