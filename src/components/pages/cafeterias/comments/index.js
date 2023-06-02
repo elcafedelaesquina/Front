@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect, useRef} from 'react'
 import'./style.css'
 
 const Comments = () => {
@@ -19,11 +19,33 @@ const Comments = () => {
     const changeComment=(e)=>{
         let filtered=data.filter( item=>item.id_coffee===parseInt(e.target.value)) 
         setValor(filtered)
-        console.log(typeof data[0].id_coffee)
-        console.log(data[0])
+        /* console.log(typeof data[0].id_coffee)
+        console.log(data[0]) */
 
         
          
+    }
+    const textArea=useRef(null)
+    const sendComment=()=>{
+        ///organizar post no esta recibiendo la peticion
+        let id_customer=parseInt(localStorage.getItem('id_customer'))
+        let obj={
+            Comments: textArea.current.value,
+            Id_bussines: valor[0].id_coffee,
+            Id_user:id_customer,
+            Type_business:1
+            }
+            console.log(obj)
+        
+        fetch('https://apimainejetravel.azurewebsites.net/api/Comment/Guardar', {
+            method: 'POST',
+            body:obj
+          })
+          .then(response => response.json())
+          .then(data=>
+            console.log(data)
+            ) 
+
     }
   return (
     <div className="containerComments">
@@ -66,8 +88,8 @@ const Comments = () => {
                 </div>
                 <h3>Tu opinion<span>(Obligatorio)</span></h3>
                 
-                <textarea></textarea>
-                <button className='btnEnviarComments'>Enviar</button>
+                <textarea ref={textArea}></textarea>
+                <button className='btnEnviarComments' onClick={()=>{sendComment()}}>Enviar</button>
             </div>
 
             
