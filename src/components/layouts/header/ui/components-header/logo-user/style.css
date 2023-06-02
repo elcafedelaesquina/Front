@@ -1,45 +1,59 @@
-.divlogo{
+ .divlogo{
+    position: relative;
     height: 100%;
     display: flex;
-    justify-content: space-around;
-    gap: 20px;
     align-items: center;
     padding: 0px 20px;
 }
-.divlogo h2{
-    color:#ffb61a;
-    
 
+.divlogo h2 {
+    color: #ffb61a;
 }
-.imglogo{
+  
+.imglogo {
     width: 90px;
     height: 90px;
     border-radius: 50%;
     border: 1px solid #ffb61a;
-
 }
-.menuUser{
-    width: 0px;
-    display: flex;
-    gap: 8px;
+  
+.menuContainer {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 450px; /* Ajusta el ancho deseado */
+    background-color: rgba(34, 34, 34, 0.692);
+    border-radius: 5px;
     overflow: hidden;
-    height:100%;
-    align-items: center;
-    color: #fff;
-    justify-content: space-between;
-    transition: all 0.8s;
-    list-style: none;
+    box-shadow: 0px 2px 4px rgba(248, 238, 238, 0.2);
+    opacity: 0;
+    color: #ffa844;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
 }
-.itemMenu{
-    min-width:130px;
-    cursor: pointer;
-    font-size: 20px;
-    
-}
-.itemMenu:hover{
-    color: rgb(255, 206, 47);
-}
-.divlogo:hover>.menuUser{
-    width: 400px;
 
+.menuContainer .menuUser .itemMenu{
+    font-size: large;
+}
+
+.menuUser {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+  
+.itemMenu {
+    padding: 10px;
+    border-bottom: 1px solid #ffa844;
+    color: #ffa844;
+}
+  
+.itemMenu:hover {
+    background-color: #ddd;
+}
+  
+.divlogo:hover .menuContainer {
+    opacity: 1;
+    visibility: visible;
 }
