@@ -14,7 +14,7 @@
   width: 100vw;
   height: 80vh;
   margin: auto 2px;
-  background-image: url("https://res.cloudinary.com/dmrq9n2im/image/upload/v1683151601/El%20caf%C3%A9%20de%20la%20esquina/Icons/cocora_snamp7.png");
+  background-image: url('https://i.pinimg.com/originals/d6/49/48/d64948463ed288a6105c49177316ef1e.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -33,17 +33,74 @@
   width: auto;
   height: auto;
   margin: auto 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
 }
 
 .title {
   width: 100%;
   height: 80px;
+  color: #ffb61a;
+}
+
+.text{
+  width: 90%;
+  height: auto;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .btnStart {
   width: 350px;
   height: 60px;
-  margin: auto 4px;
+  border: none;
+  margin:20px 0 0 0px;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #ffcf32;
+  transition: all 1000ms;
+  font-size: 15px;
+  overflow: hidden;
+  outline: 2px solid #fda623;
+  background-color: #ffffff;
+}
+
+.btnStart:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+  outline: 2px solid #ffcc23;
+  box-shadow: 4px 5px 17px -4px #ffb923;
+  cursor: pointer;
+}
+
+.btnStart::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #ffc421;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+
+.btnStart:hover::before {
+  width: 250%;
+}
+@keyframes show {
+  0%{
+      transform: translateY(-1000px)
+  }
+  100%{
+      transform: translateX(0px)
+
+  }
+  
 }
 
 .infoGray {
@@ -57,7 +114,6 @@
   justify-content: space-around;
   padding: 40px;
   gap: 40px;
-  margin-top: 39px;
 }
 
 .infoGray img {
@@ -74,22 +130,23 @@
 }
 
 .infoGray h3 {
-  font-size: 30px;
+  font-size: 25px;
   padding-top: 20px;
-  color: rgb(47, 255, 220);
+  color: #ffb61a;
+  text-align: center;
 }
 
 .infoGray .containerInfo p {
-  text-align: center;
+  text-align: justify;
   width: 100%;
   font-size: 20px;
   color: #c7c7c7;
+  border-bottom: solid #adff2f;
+  padding: 10px 0 15px 0px;
 }
 
 .infoGray .containerInfo h5 {
   width: 60%;
   font-size: 1rem;
   color: rgb(0, 0, 0);
-  padding: 10px 0 15px 0px;
-  border-bottom: solid greenyellow;
 }
