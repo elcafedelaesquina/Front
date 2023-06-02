@@ -38,7 +38,7 @@
   align-items: center; 
 }
 
-.title {
+.title2 {
   width: 100%;
   height: 80px;
   color: #ffb61a;
@@ -129,14 +129,14 @@
   gap: 10px;
 }
 
-.infoGray h3 {
+.infoGray .title3 {
   font-size: 25px;
   padding-top: 20px;
   color: #ffb61a;
   text-align: center;
 }
 
-.infoGray .containerInfo p {
+.infoGray .containerInfo .text {
   text-align: justify;
   width: 100%;
   font-size: 20px;
@@ -145,7 +145,7 @@
   padding: 10px 0 15px 0px;
 }
 
-.infoGray .containerInfo h5 {
+.infoGray .containerInfo .title5 {
   width: 60%;
   font-size: 1rem;
   color: rgb(0, 0, 0);
