@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import { Link } from 'react-router-dom'
 import './style.css'
 
 const LogoUser= (props) => {
-  const [user,setUser]=useState(true)
+ 
   let name=JSON.parse(localStorage.getItem('name'))
   let image=JSON.parse(localStorage.getItem('image'))
   let id=JSON.parse(localStorage.getItem('id_customer'))
   let id_coffee=JSON.parse(localStorage.getItem('id_coffee'))
+ 
 
 
   

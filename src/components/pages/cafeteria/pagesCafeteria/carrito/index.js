@@ -8,7 +8,13 @@ import { ProductsCafeteria } from '../products'
 const Carrito = () => {
     const[carrito,setCarrito]=useState([])
     useEffect(()=>{
-        setCarrito( JSON.parse(localStorage.getItem('carrito')) )
+        if(JSON.parse(localStorage.getItem('carrito'))){
+            setCarrito(JSON.parse(localStorage.getItem('carrito')) )
+        }
+        else{
+            setCarrito([])
+        }
+        
 
     },[])
 

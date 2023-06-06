@@ -115,9 +115,21 @@ function register(){
    .then(data=>{
      // Manejar la respuesta de la petición
      console.log(data)
-     const {status}=data;
+     const {status,exepcion}=data;
       console.log(status)
-      if(status){ 
+      if(exepcion ||exepcion==='Account is registed'){
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Este E-mail ya está registrado!'
+        })
+        
+        setLoader(false)
+        setImagePreview('');
+
+      }
+      
+      else if(status){ 
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
@@ -232,7 +244,7 @@ var formularioLogin=useRef(null)
             <div className={styles['input-box']}>
               <i className={`fas fa-envelope ${styles['icon']}`}><FontAwesomeIcon icon={faEnvelope} /></i>
 
-              <input type="text" className={styles.type} name="Type"  placeholder='Enter your name' value={1}/>
+              <input type="text" className={styles.type} name="Type" readOnly  placeholder='Enter your name' value={1}/>
               <input type="text" name='Email' placeholder='E-mail' />
 
             </div>
@@ -263,8 +275,8 @@ var formularioLogin=useRef(null)
                 <FontAwesomeIcon icon={faUser} />
               </i>
 
-              <input type="text" className={styles.type} name="Type"   value={1}/>
-              <input type="text" className={styles.type} name="State"   value={'activo'}/>
+              <input type="text" className={styles.type} name="Type" readOnly   value={1}/>
+              <input type="text" className={styles.type} name="State" readOnly   value={'activo'}/>
               <input type="text" name='Name' placeholder='Nombre de Tu Cafetería'  />
 
             </div>
@@ -309,7 +321,7 @@ var formularioLogin=useRef(null)
             
             <div className={styles['container-file']}>
             <div className={`${styles['input-boxx']} ${styles.box}`} onClick={handleButtonClick}>
-              <i className={styles['icon']} class="fa-solid fa-cloud-arrow-up"><FontAwesomeIcon icon={faCloudArrowUp} /></i>
+              <i className={styles['icon']} ><FontAwesomeIcon icon={faCloudArrowUp} /></i>
               <input type="file" alt='' ref={fileInputRef} name="Image" hidden placeholder='Choose your image'  onChange={handleImageInputChange} />
               {imagePreview && (
                 <div className={styles['image-preview']}>

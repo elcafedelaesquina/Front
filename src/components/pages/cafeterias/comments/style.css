@@ -25,6 +25,9 @@
     padding: 0px;
     
 }
+.values{
+    display: none;
+}
 
 .commentsGenerator{
     width: 100%;
