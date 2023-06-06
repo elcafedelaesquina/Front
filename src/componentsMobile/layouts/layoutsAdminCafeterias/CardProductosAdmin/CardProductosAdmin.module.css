@@ -1,8 +1,25 @@
 .carousel {
   width: 100%;
+  background: rgba(52, 52, 52, 1.0);
   position: absolute;
-  top: 180px;
+  top: 100px;
   z-index: 1;
+}
+
+.containerClose {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.iconCLose {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  color: #fff;
+  right: 10;
 }
 
 .productImage {
@@ -18,6 +35,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 320px;
   margin: 10px auto;
+  margin-top: 100px;
   text-align: center;
   font-family: arial;
   color: #fff;
@@ -44,47 +62,4 @@
   width: 100%;
   font-size: 18px;
   margin-top: 40px ;
-}
-
-.adminContainerCreateProduct{
-  width: 100%;
-  height: 100px;
-  position: absolute;
-  bottom: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btnAdminCreateProduct{
-  width: 65%;
-  height: 60px;
-  font-size: 1.2rem;
-  border-radius: 10px;
-}
-
-.containerForm{
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  top: 110px;
-  background: radial-gradient( at center bottom,rgb(77, 77, 77),rgb(36, 36, 36));
-  margin-bottom: 50px;
-  z-index: 3;
-}
-
-.containerClose{
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-.iconCLose {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  color: #fff;
-  right: 0;
 }
