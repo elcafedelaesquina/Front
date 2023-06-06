@@ -1,10 +1,11 @@
 .carproducts{
     width: 100%;
     height: auto;
+    margin: 10px;
 }
 
 .subtitle{
-    color: #fff;
+    color: #000;
     display: flex;
     justify-content: center;
     margin: 10px;
@@ -23,28 +24,24 @@
     height: 30%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     font-size: 20px;
 }
 
 .nameProduct{
-    color: #fff;
+    color: #ffa500;
     margin: 5px;
 }
 
 .descriptionProduct{
-    color:#fff;
+    color:#464646;
     margin: 5px;
+    font-size: 15px;
 }
 
-.btnPrice{
-    height: 1.5rem;
-    width: 6rem;
-    border-radius: 30px;
-    background-color: #C8723D;
-    color: #fff;
+.quantity{
     border: none;
-    margin: 5px;
+    background-color: transparent;
 }
 
 .containerImage{
@@ -58,7 +55,71 @@
 }
 
 .txt{
-    color: #fff;
+    color: #4d4d4d;
     font-size: 20px;
-    margin-left: 15px;
 }
+
+.txtSend{
+    color: #4d4d4d;
+    font-size: 15px;
+}
+
+.containerBtn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btnConfirm {
+    width: 300px;
+    height: 40px;
+    border: none;
+    margin:20px 0 0 0px;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #ffcf32;
+    transition: all 1000ms;
+    font-size: 15px;
+    overflow: hidden;
+    outline: 2px solid #fda623;
+    background-color: #ffffff;
+  }
+  
+  .btnConfirm:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    outline: 2px solid #ffcc23;
+    box-shadow: 4px 5px 17px -4px #ffb923;
+    cursor: pointer;
+  }
+  
+  .btnConfirm::before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #ffc421;
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+  }
+  
+  .btnConfirm:hover::before {
+    width: 250%;
+  }
+
+  @keyframes show {
+    0%{
+        transform: translateY(-1000px)
+    }
+    100%{
+        transform: translateX(0px)
+  
+    }
+    
+  }
+  

@@ -24,8 +24,8 @@ export const AppMobile = () => {
     <>
       <Routes>
         <Route path="/" element={ <Home /> } />
-        <Route path="/Cafeteria" element={ <Cafeteria /> } />
-        <Route path="/cafeterias" element={ <Cafeterias /> } />
+        <Route path="/Cafeterias" element={ <Cafeterias /> } />
+        <Route path="/Cafeterias/cafeteria" element={ <Cafeteria /> } />
         
         <Route path="/AdminCafeteria" element={ <AdminCafeteria /> } />
         <Route path="/AdminCafeteria/DescripcionCafeteria" element={ <DescripcionCafeteria /> } />
@@ -39,7 +39,7 @@ export const AppMobile = () => {
         <Route path="/Farm" element={ <Farm /> } />
 
         <Route path="/Fincas" element={ <Fincas />} />
-        <Route path="/Finca" element={ <Finca/>} />
+        <Route path="/Fincas/Finca" element={ <Finca/>} />
       </Routes>
     </>
   );
