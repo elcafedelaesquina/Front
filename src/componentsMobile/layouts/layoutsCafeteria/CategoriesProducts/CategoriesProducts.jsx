@@ -20,22 +20,24 @@ export const CategoriesProducts = () => {
     }, []);
 
     return (
-        <>
-            <h2 className={Style.titleMenu}>Nuestra carta</h2>
-            <div className={Style.containerProducts}>
-                {
-                    data.map((item) => (
-                        <div className={Style.breakfast} >
-                            <div className={Style.breakfast1}>
-                                <p className={Style.type}>{item.category}</p>
-                                <button className={Style.icon}>
-                                    <img className={Style.img} src={item.image} alt="" />
-                                </button>
+        <div className={Style.containerMain}>
+            <div className={Style.containerCarta}>
+                <h2 className={Style.titleMenu}>Nuestra carta</h2>
+                <div className={Style.containerProducts}>
+                    {
+                        data.map((item) => (
+                            <div className={Style.breakfast} >
+                                <div className={Style.breakfast1}>
+                                    <p className={Style.type}>{item.category}</p>
+                                    <button className={Style.icon}>
+                                        <img className={Style.img} src={item.image} alt="" />
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    ))
-                }
+                        ))
+                    }
+                </div>
             </div>
-        </>
+        </div>
     )
 }

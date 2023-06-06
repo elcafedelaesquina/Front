@@ -6,16 +6,21 @@ import { SearchFincas } from "../../layouts/layoutsFincas/searchCafeterias/Searc
 import { ItemsFincas } from "../../layouts/layoutsFincas/itemsCafeterias/ItemsFincas";
 import { CafeteriasFincas } from "../../layouts/layoutsFincas/fincasCafeterias/CafeteriasFincas";
 import { CommentsFincas } from "../../layouts/layoutsFincas/CommentsFincas/CommentsFincas";
+import { Loader } from "../../layouts/loader/Loader";
 
 export const Fincas = () => {
   const [data, setData] = useState([]);
+  const [filterName, setFilterName] = useState("");
+  const [isloading, setIsLoading] = useState(false);
 
   const getFincas = async () => {
+    setIsLoading(true);
     await fetch("https://apimainejetravel.azurewebsites.net/api/Farm/Lista")
       .then((response) => response.json())
       .then((data) => {
         const { farmList } = data;
         setData(farmList[0]);
+        setIsLoading(false);
       });
   };
 
@@ -23,28 +28,54 @@ export const Fincas = () => {
     getFincas();
   }, []);
 
+  const handleFilterChage = (event) => {
+    const { value } = event.target;
+    setFilterName(value);
+  };
+
+  const filteredData = data.filter((item) =>
+    filterName
+      ? item.name.toLowerCase().includes(filterName.toLowerCase())
+      : item
+  );
+
   return (
     <>
       <NavBar />
       <div className={Style.sectionCafeterias}>
         <div className={Style.searchImg}>
           <div className={Style.filter}>
-            <SearchFincas />
+            <SearchFincas
+              filterName={filterName}
+              handleFilterChage={handleFilterChage}
+            />
           </div>
         </div>
 
         <div className={Style.container}>
-          {data.map((item) => {
-            return (
-              <ItemsFincas
-                key={item.id_farm}
-                name={item.name}
-                description={item.description}
-                image={item.image}
-                address={item.address}
-              />
-            );
-          })}
+          {isloading ? (
+            <Loader />
+          ) : (
+            <>
+              {filteredData.length > 0 ? (
+                <div>
+                  {filteredData.map((item) => {
+                    return (
+                      <ItemsFincas
+                        key={item.id_farm}
+                        name={item.name}
+                        description={item.description}
+                        image={item.image}
+                        address={item.address}
+                      />
+                    );
+                  })}
+                </div>
+              ) : (
+                <h3>No se encontraron resultados</h3>
+              )}
+            </>
+          )}
         </div>
 
         <div className={Style.containerImg}>
@@ -53,12 +84,11 @@ export const Fincas = () => {
           </h2>
           <div className={Style.grid}>
             {data.map((item) => {
-              console.log(item);
               return <CafeteriasFincas image={item.image} />;
             })}
           </div>
         </div>
-            
+
         <CommentsFincas />
       </div>
 

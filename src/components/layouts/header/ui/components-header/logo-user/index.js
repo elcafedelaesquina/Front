@@ -17,19 +17,24 @@ const LogoUser= (props) => {
     <div className='divlogo'>
         <h2>{name}</h2>
         <img className='imglogo' src={image} alt=''></img>
-        {id &&<ul className='menuUser'>
-          <li className='itemMenu'>Ver compras</li>
-          <li className='itemMenu'>Editar Perfil</li>
-          <li className='itemMenu' onClick={props.close}>Cerrar Sesion</li>
-        </ul>}
-        {id_coffee &&<ul className='menuUser'>
-          <Link to={'/CafeteriaCreateProduct'}><li className='itemMenu'>Crear Productos</li></Link>
-          <li className='itemMenu'>Editar Perfil</li>
-          <li className='itemMenu' onClick={props.close}>Cerrar Sesion</li>
-        </ul>}
-        
-      
-    </div>
+        {id && (
+          <div className='menuContainer'>
+           <ul className='menuUser'>
+              <li className='itemMenu'>Ver compras</li>
+              <li className='itemMenu'>Editar Perfil</li>
+              <li className='itemMenu' onClick={props.close}>Cerrar Sesion</li>
+            </ul>
+          </div>)}
+        {id_coffee && (
+          <div className='menuContainer'>
+            <ul className='menuUser'>
+              <Link to={'/CafeteriaCreateProduct'}><li className='itemMenu'>Crear Productos</li></Link>
+              <li className='itemMenu'>Editar Perfil</li>
+              <li className='itemMenu' onClick={props.close}>Cerrar Sesion</li>
+            </ul>
+          </div>
+          )}   
+      </div>
   )
 }
 

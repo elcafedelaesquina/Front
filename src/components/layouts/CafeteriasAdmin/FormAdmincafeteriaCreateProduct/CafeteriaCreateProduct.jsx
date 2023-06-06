@@ -1,9 +1,29 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./CafeteriaCreateProduct.module.css"
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import {faCloudArrowUp} from '@fortawesome/free-solid-svg-icons'
 import { Loader } from "../../loader";
 
 
 export const CafeteriaCreateProduct = () => {
+
+  function handleImageInputChange(e) {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+      reader.onloadend = () => {
+        setImage(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+    function handleImageClear() {
+      setImage('');
+    }
+  
+    const fileInputRef = useRef(null);
+    const handleButtonClick = () => {
+      fileInputRef.current.click();
+    }
 
   const [loader,setLoader]=useState(false)
 
@@ -12,7 +32,7 @@ export const CafeteriaCreateProduct = () => {
   const [price, setPrice] = useState("");
   const [stock, setStock] = useState("");
   const [category, setCategory] = useState("");
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState("");
   const [idAdmin, setIdAdmin] = useState(123);
 
   const handleSubmit = async (e) => {
@@ -45,17 +65,21 @@ export const CafeteriaCreateProduct = () => {
     {loader && <Loader></Loader>}
     {!loader && <div className={styles.container}>
    
-    <form  id='formu' onSubmit={handleSubmit} className={styles['input-boxes']}>
+    <form  id='formu' onSubmit={handleSubmit}  className={`${styles['input-boxes']} ${'form-content'}`}>
       <div className={styles['form-content']}>
-        <div className={styles['login-form']}>
+        <div className={styles['form-create']}>
           <div className={styles.title}>Crear Productos</div>
+
+            <div className={styles['input-box']}>
+              <input type="number" className={styles['input-admin']} name='Id_admin' id="stock" value={idAdmin} onChange={(e) => setIdAdmin(Number(e.target.value))}/>
+            </div>
 
             <div className={styles['input-box']}>
               <input type="text" name='Name'  placeholder='Nombre' id="name" value={name} onChange={(e) => setName(e.target.value)} />
             </div>
 
-            <div className={styles['input-box']}>
-              <textarea name='Description' id="description" className={styles.textarea} placeholder='Enter your Description' value={description} onChange={(e) => setDescription(e.target.value)} />           
+            <div className={styles['input-box textarea-container']}>
+              <textarea name='Description' id="description" className={styles.textarea} placeholder='Ingrese su descripción' value={description} onChange={(e) => setDescription(e.target.value)} />           
             </div>
 
             <div className={styles['input-box']}>
@@ -63,19 +87,24 @@ export const CafeteriaCreateProduct = () => {
             </div>
 
             <div className={styles['input-box']}>
-              <input type="number" id="stock" name='Stock' placeholder='Stock' value={stock} onChange={(e) => setStock(Number(e.target.value))}/>
+              <input type="number" id="stock" name='Stock' placeholder='Existencias' value={stock} onChange={(e) => setStock(Number(e.target.value))}/>
             </div>
 
             <div className={styles['input-box']}>
               <input type="text" name='Category' id="categery" placeholder='Categoría' value={category} onChange={(e) => setCategory(e.target.value)}/>
             </div>
 
-            <div className={styles['input-box']}>
-              <input type="file" name='name' id="image" value={image} onChange={(e) => setImage(e.target.value)}/>
-            </div>
-
-            <div className={styles['input-box']}>
-              <input type="number" name='Id_admin' id="stock" value={idAdmin} onChange={(e) => setIdAdmin(Number(e.target.value))}/>
+            <div className={styles['container-file']}>
+              <div className={`${styles['input-boxx']} ${styles.box}`} onClick={handleButtonClick}>
+              <i className={styles['icon']} class="fa-solid fa-cloud-arrow-up"><FontAwesomeIcon icon={faCloudArrowUp} /></i>
+                <input type="file" name='name' hidden placeholder="Choose your image" ref={fileInputRef} id="image"  onChange={(e) => { setImage(e.target.value); handleImageInputChange(e);}} />
+                {image && (
+                  <div className={styles['image-preview']}>
+                    <img className={styles.imgPreview} src={image} alt="Imagen seleccionada" />
+                    <button className={styles.btnPreview} onClick={handleImageClear}><i className={styles.iconX} class="fa-solid fa-circle-xmark"><FontAwesomeIcon icon={faCircleXmark} /></i></button>
+                  </div>
+                )}
+              </div>
             </div>
 
             <div className={`${styles['button']} ${styles['input-box']}`}>
