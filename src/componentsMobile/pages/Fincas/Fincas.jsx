@@ -72,7 +72,7 @@ export const Fincas = () => {
                   })}
                 </div>
               ) : (
-                <h3>no hay nada</h3>
+                <h3>No se encontraron resultados</h3>
               )}
             </>
           )}

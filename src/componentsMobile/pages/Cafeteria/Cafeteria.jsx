@@ -1,4 +1,5 @@
 import React from "react";
+import Style from "./cafeteria.module.css"
 import { NavBar } from "../../layouts/navbar/Navbar";
 import { Slider } from "../../layouts/slider/Slider";
 import { HomeCafeteria } from "../../layouts/layoutsCafeteria/homeCafeteria/HomeCafeteria";
@@ -10,7 +11,7 @@ import { Menu } from "../../layouts/layoutsCafeteria/Menu/Menu"
 
 export const Cafeteria = () => {
   return (
-    <div>
+    <div className={Style.containerCafeteria}>
       <NavBar />
       {/* <Slider /> */}
       <HomeCafeteria />
