@@ -16,6 +16,7 @@ import { Farm } from './components/layouts/RegistrarCrear/Farm/Farm';
 import { CafeteriaCreateProduct } from './components/layouts/CafeteriasAdmin/FormAdmincafeteriaCreateProduct/CafeteriaCreateProduct';
 import { ProductsCafeteria } from './components/pages/cafeteria/pagesCafeteria/products';
 import { Carrito } from './components/pages/cafeteria/pagesCafeteria/carrito';
+import { EditarPerfilAdmin } from './components/layouts/CafeteriasAdmin/EditarPerfilAdmin/EditarPerfilAdmin';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
       <Route path='/Cafe' element={<Cafe></Cafe>}></Route>
       <Route path='/Farm' element={<Farm></Farm>}></Route>
       <Route path='/CafeteriaCreateProduct' element={<CafeteriaCreateProduct></CafeteriaCreateProduct>}></Route>
+      <Route path='/EditarPerfilAdmin' element={<EditarPerfilAdmin></EditarPerfilAdmin>}></Route>
     </Routes>   
   </div>
 
