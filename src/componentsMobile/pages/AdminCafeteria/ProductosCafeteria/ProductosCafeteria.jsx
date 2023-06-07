@@ -4,7 +4,7 @@ import { HeaderAdminCafeterias } from "../../../layouts/layoutsAdminCafeterias/H
 import { CardProductosAdmin } from "../../../layouts/layoutsAdminCafeterias/CardProductosAdmin/CardProductosAdmin";
 import { GridProductsAdmin } from "../../../layouts/layoutsAdminCafeterias/GridProductsAdmin/GridProductsAdmin";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import { FormAdmincafeteriaCreateMenuProducts } from "../../../layouts/layoutsAdminCafeterias/FormAdmincafeteriaCreateMenuProducts/FormAdmincafeteriaCreateMenuProducts";
+import { FormAdmincafeteriaCreateProduct } from "../../../layouts/layoutsAdminCafeterias/FormAdmincafeteriaCreateProduct/FormAdmincafeteriaCreateProduct";
 
 export const ProductosCafeteria = () => {
   let items = JSON.parse(localStorage.getItem("coffee")); // ${items.id_coffee}
@@ -36,8 +36,7 @@ export const ProductosCafeteria = () => {
   const deleteProduct = async (id) => {
     try {
       const response = await fetch(
-        `https://apimainejetravel.azurewebsites.net/api/Product/Eliminar/${id}`,
-        { method: "DELETE" }
+        `https://apimainejetravel.azurewebsites.net/api/Product/Eliminar/${id}`, { method: "DELETE" }
       );
       const data = await response.json();
       console.log(data);
@@ -57,6 +56,12 @@ export const ProductosCafeteria = () => {
     <>
       <HeaderAdminCafeterias />
       <main className={Style.main}>
+        <div className={Style.adminContainerCreateProduct}>
+          <button className={Style.btnAdminCreateProduct} onClick={() => setCreateNewProduct(!createNewProduct)}>
+            Crea un nuevo producto
+          </button>
+        </div>
+
         <GridProductsAdmin
           valores={data}
           cardId={cardId}
@@ -64,20 +69,15 @@ export const ProductosCafeteria = () => {
           isVisible={isVisible}
         />
 
-        <div className={Style.adminContainerCreateProduct}>
-          <button className={Style.btnAdminCreateProduct} onClick={() => setCreateNewProduct(!createNewProduct)}>
-            Crea un nuevo producto
-          </button>
-        </div>
-
         {createNewProduct && (
           <div className={Style.containerForm}>
             <div className={Style.containerClose} onClick={() => setCreateNewProduct(!createNewProduct)} >
               <AiOutlineCloseCircle className={Style.iconCLose} />
             </div>
-            <FormAdmincafeteriaCreateMenuProducts />
+            <FormAdmincafeteriaCreateProduct />
           </div>
         )}
+        
         <CardProductosAdmin
           card={card}
           setIsVisible={setIsVisible}
