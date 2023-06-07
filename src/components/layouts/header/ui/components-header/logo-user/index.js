@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import { Link } from 'react-router-dom'
 import './style.css'
 
 const LogoUser= (props) => {
-  const [user,setUser]=useState(true)
+ 
   let name=JSON.parse(localStorage.getItem('name'))
   let image=JSON.parse(localStorage.getItem('image'))
   let id=JSON.parse(localStorage.getItem('id_customer'))
   let id_coffee=JSON.parse(localStorage.getItem('id_coffee'))
+ 
 
 
   
@@ -28,8 +29,8 @@ const LogoUser= (props) => {
         {id_coffee && (
           <div className='menuContainer'>
             <ul className='menuUser'>
-              <Link to={'/CafeteriaCreateProduct'}><li className='itemMenu'>Crear Productos</li></Link>
-              <li className='itemMenu'>Productos</li>
+              <Link to={'/CafeteriaCreateProduct'}><li className='itemMenu'>Mis Productos</li></Link>
+              <li className='itemMenu'>Menú</li>
               <Link to={'/EditarPerfilAdmin'}><li className='itemMenu'>Editar Perfil</li></Link>
               <li className='itemMenu' onClick={props.close}>Cerrar Sesion</li>
             </ul>

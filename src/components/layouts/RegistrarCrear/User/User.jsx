@@ -77,9 +77,20 @@ function register(){
     .then(data=>{
       // Manejar la respuesta de la petición
       /* console.log(data.status) */
-      const {status}=data;
+      const {status,exepcion}=data;
       console.log(data)
-      if(status){
+      if(exepcion ||exepcion==='Account is registed'){
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Este E-mail ya está registrado!'
+        })
+        
+        setLoader(false)
+        setImagePreview('');
+
+      }
+      else if(status){
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
@@ -198,14 +209,14 @@ return (
           <form ref={formularioLogin} className={styles['input-boxes']}>
             <div className={styles['input-box']}>
               <i className='fas fa-envelope icon'><FontAwesomeIcon icon={faEnvelope} /></i>
-              <input type="text" className={styles.type} name="Type"  placeholder='Nombre' value={3}/>
+              <input type="text" className={styles.type} name="Type" readOnly  placeholder='Nombre' value={3}/>
               <input type="email" name='Email'  placeholder='E-mail'  />
             </div>
             <div className={styles['input-box']}>
               <i className='fas fa-lock icon'><FontAwesomeIcon icon={faLock} /></i>
               <input type="password" name='Password'  placeholder='Contraseña' />
             </div>
-            <div className={styles.text}><labe>¿Olvidaste la contraseña?</labe></div>
+            <div className={styles.text}><label>¿Olvidaste la contraseña?</label></div>
             <div className={`${styles['button']} ${styles['input-box']}`}>
               <button className={styles['button-form']} onClick={login} type='submit'>Iniciar Sesión</button>
             </div>
@@ -218,7 +229,7 @@ return (
           <div className={styles['input-boxes']}>
             <div className={styles['input-box']}>
               <i className='fas fa-user icon'><FontAwesomeIcon icon={faUser} /></i>
-              <input type="text" className={styles.type} name="Type"  placeholder='Enter your name' value={3}/>
+              <input type="text" className={styles.type} name="Type"  readOnly placeholder='Enter your name' value={3}/>
               <input type="text" ref={name} name="Name"  placeholder='Nombre'  />
             </div>
             <div className={styles['input-box']}>
@@ -234,7 +245,7 @@ return (
 
             <div className={styles['container-file']}>
             <div className={`${styles['input-boxx']} ${styles.box}`} onClick={handleButtonClick}>
-              <i className={styles['icon']} class="fa-solid fa-cloud-arrow-up"><FontAwesomeIcon icon={faCloudArrowUp} /></i>
+              <i className={styles['icon']} ><FontAwesomeIcon icon={faCloudArrowUp} /></i>
               <input type="file" alt='' ref={image} name="Image" hidden placeholder='Choose your image'  onChange={handleImageInputChange} />
               {imagePreview && (
                 <div className={styles['image-preview']}>
