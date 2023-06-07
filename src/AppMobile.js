@@ -11,10 +11,10 @@ import { ProductosCartaCafeteria } from "./componentsMobile/pages/AdminCafeteria
 import { ProductosCafeteria } from "./componentsMobile/pages/AdminCafeteria/ProductosCafeteria/ProductosCafeteria";
 import { VentasCafeteria } from "./componentsMobile/pages/AdminCafeteria/VentasCafeteria/VentasCafeteria";
 
-import { PageRegistros } from "./components/pages/PageRegistros/PageRegistros";
-import { User } from "./components/layouts/RegistrarCrear/User/User";
-import { Cafe } from "./components/layouts/RegistrarCrear/Cafe/Cafe";
-import { Farm } from "./components/layouts/RegistrarCrear/Farm/Farm";
+import { PageRegistros } from "./componentsMobile/pages/PageRegistros/PageRegistros";
+import { User } from "./componentsMobile/layouts/RegistrarCrear/User/User";
+import { Cafe } from "./componentsMobile/layouts/RegistrarCrear/Cafe/Cafe";
+import { Farm } from "./componentsMobile/layouts/RegistrarCrear/Farm/Farm";
 
 import { Fincas } from "./componentsMobile/pages/Fincas/Fincas";
 import { Finca } from "./componentsMobile/pages/Finca/Finca";

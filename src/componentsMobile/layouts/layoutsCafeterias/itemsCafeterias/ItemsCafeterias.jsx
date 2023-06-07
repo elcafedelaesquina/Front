@@ -3,6 +3,17 @@ import Style from "./itemsCafeterias.module.css";
 import { Link } from "react-router-dom";
 
 export const ItemsCafeterias = (props) => {
+
+  const lenght = 35;
+
+  const textLimite = (text) => {
+    if (text <=  lenght ) {
+      return text
+    }else{
+      return text.slice(0, lenght) + '...'
+    }
+  }
+
   return (
     <Link to={"/cafeterias/cafeteria"}>
       <div className={Style.itemCafeterias}>
@@ -15,7 +26,7 @@ export const ItemsCafeterias = (props) => {
             <ion-icon name="heart"></ion-icon>
           </div>
           <h5 className={Style.h5}> {props.address} </h5>
-          <p className={Style.p}>{props.description}</p>
+          <p className={Style.p}>{textLimite(props.description)}</p>
           <div className={Style.titleBottom}>
             <h5 className={Style.h5}>Hace 3 Minutos</h5>
             <div className={Style.ranking}>5,2</div>
