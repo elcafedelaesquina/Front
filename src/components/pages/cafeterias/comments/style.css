@@ -166,8 +166,8 @@
     background-color: rgba(190, 190, 190, 0);
     padding: 10px;
    
-    max-height: 600px;
-    overflow: hidden;
+    max-height: 550px;
+    overflow-y: auto;
     
 }
 .comments .comment{

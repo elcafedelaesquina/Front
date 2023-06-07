@@ -8,6 +8,7 @@
 
 .divlogo h2 {
     color: #ffb61a;
+    margin-right: 10px;;
 }
   
 .imglogo {
@@ -48,10 +49,12 @@
     padding: 10px;
     border-bottom: 1px solid #ffa844;
     color: #ffa844;
+    transition: all 0.3s;
 }
   
 .itemMenu:hover {
-    background-color: #ddd;
+    color: white;
+    background-color: #ffa844;
 }
   
 .divlogo:hover .menuContainer {

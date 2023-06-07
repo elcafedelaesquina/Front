@@ -29,8 +29,8 @@ const LogoUser= (props) => {
         {id_coffee && (
           <div className='menuContainer'>
             <ul className='menuUser'>
-              <Link to={'/CafeteriaCreateProduct'}><li className='itemMenu'>Crear Productos</li></Link>
-              <li className='itemMenu'>Productos</li>
+              <Link to={'/CafeteriaCreateProduct'}><li className='itemMenu'>Mis Productos</li></Link>
+              <li className='itemMenu'>Menú</li>
               <Link to={'/EditarPerfilAdmin'}><li className='itemMenu'>Editar Perfil</li></Link>
               <li className='itemMenu' onClick={props.close}>Cerrar Sesion</li>
             </ul>

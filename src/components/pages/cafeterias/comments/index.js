@@ -2,7 +2,21 @@ import React,{useState,useEffect, useRef} from 'react'
 import'./style.css'
 
 const Comments = () => {
+    const Swal = require('sweetalert2')
     const [data,setData]=useState([])
+    const [valor,setValor]=useState([{address
+        : 
+        "Salento Carrera 6a 6a 14",
+        id_coffee
+        : 
+        2,
+        image
+        : 
+        "https://apimainejetravel.azurewebsites.net/Imagenes/69407558-9820-4cda-b362-358332bf8b79.jpg",
+        name
+        : 
+        "Café Jesús Martin"
+       }])
     const [comment,setComment]=useState([ 
         {id_comment: 1, id_bussines: 2, comments: 'holaa', user_name: 'armandoz', user_image: 'https://apimainejetravel.azurewebsites.net/Imagenes/5607f842-809f-4ef7-9319-a5d031c85195.jpg'}
        
@@ -22,22 +36,20 @@ const Comments = () => {
             setIdCustomer(id)
 
         }
+        fetch(`https://apimainejetravel.azurewebsites.net/api/Comment/Lista/1/${valor[0].id_coffee}`)
+        .then(response => response.json())
+        .then(data => {
+          const {list}=data
+          console.log(list[0])
+          setComment(list[0])
+          })
         
         
     },[])
-    const [valor,setValor]=useState([{address
-        : 
-        "Salento Carrera 6a 6a 14",
-        id_coffee
-        : 
-        2,
-        image
-        : 
-        "https://apimainejetravel.azurewebsites.net/Imagenes/69407558-9820-4cda-b362-358332bf8b79.jpg",
-        name
-        : 
-        "Café Jesús Martin"
-       }])
+    
+    
+
+       
 
     const changeComment=(e)=>{
         let filtered=data.filter( item=>item.id_coffee===parseInt(e.target.value)) 
@@ -49,7 +61,8 @@ const Comments = () => {
       .then(data => {
         const {list}=data
         console.log(list[0])
-        setComment(list[0])})
+        setComment(list[0])
+        })
 
         
          
@@ -59,8 +72,6 @@ const Comments = () => {
     var textArea=useRef(null)
     const sendComment=()=>{
         ///organizar post no esta recibiendo la peticion
-        
-            
             let obj={
                 Comments: textArea.current.value,
                 Id_bussines: valor[0].id_coffee,
@@ -68,9 +79,6 @@ const Comments = () => {
                 Type_business:1
                 }
                 console.log(obj)
-            
-       
-            
             fetch('https://apimainejetravel.azurewebsites.net/api/Comment/Guardar', {
                 method: 'POST',
                 headers: {
@@ -81,8 +89,25 @@ const Comments = () => {
               })
               .then(response => response.json())
               .then(data=>
-                console.log(data)
-                ) 
+                console.log(data)) 
+            setTimeout(()=>{
+                fetch(`https://apimainejetravel.azurewebsites.net/api/Comment/Lista/1/${valor[0].id_coffee}`)
+                .then(response => response.json())
+                .then(data => {
+                  const {list}=data
+                  console.log(list[0])
+                  setComment(list[0])
+                  })
+                  Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Gracias Por Tu Comentario',
+                    showConfirmButton: false,
+                    timer: 1000
+                  })
+            },1000)
+              
+                
 
       
        
@@ -118,16 +143,16 @@ const Comments = () => {
                 
                 
                 <div className="rating">
-                  <input type="radio" id="star5" name="rate" value="5"/>
-                  <label htmlFor="star5" title="text"></label>
-                  <input type="radio" id="star4" name="rate" value="4"/>
-                  <label htmlFor="star4" title="text"></label>
-                  <input type="radio" id="star3" name="rate" value="3"/>
-                  <label htmlFor="star3" title="text"></label>
-                  <input type="radio" id="star2" name="rate" value="2"/>
-                  <label htmlFor="star2" title="text"></label>
                   <input type="radio" id="star1" name="rate" value="1"/>
                   <label htmlFor="star1" title="text"></label>
+                  <input type="radio" id="star2" name="rate" value="2"/>
+                  <label htmlFor="star2" title="text"></label>
+                  <input type="radio" id="star3" name="rate" value="3"/>
+                  <label htmlFor="star3" title="text"></label>
+                  <input type="radio" id="star4" name="rate" value="4"/>
+                  <label htmlFor="star4" title="text"></label>
+                  <input type="radio" id="star5" name="rate" value="5"/>
+                  <label htmlFor="star5" title="text"></label>
                 </div>
                 <h3>Tu opinion<span>(Obligatorio)</span></h3>
                 
@@ -143,25 +168,31 @@ const Comments = () => {
             
             </div> 
            <div className='comments'>
-            {comment.map(comment=>{
-                return(
-                    <div className="comment">
-                        <img src={comment.user_image} alt=''></img>
-                        <div className="commentUser">
-                            <h3>{comment.user_name}</h3>
-                            <div className='starsContainer'>
-                            <ion-icon name="star" ></ion-icon>
-                            <ion-icon name="star" ></ion-icon>
-                            <ion-icon name="star" ></ion-icon>
-                            <ion-icon name="star" ></ion-icon>
-                            <ion-icon name="star" ></ion-icon>
+            {comment.reverse().map((comment,index)=>{
+                   if (index < comment.length - 3) {
+                    return null;
+                  }
+                 
+                    return(
+                        <div className="comment" key={index}>
+                            <img src={comment.user_image} alt=''></img>
+                            <div className="commentUser">
+                                <h3>{comment.user_name}</h3>
+                                <div className='starsContainer'>
+                                <ion-icon name="star" ></ion-icon>
+                                <ion-icon name="star" ></ion-icon>
+                                <ion-icon name="star" ></ion-icon>
+                                <ion-icon name="star" ></ion-icon>
+                                <ion-icon name="star" ></ion-icon>
+                                </div>
+                                <p>Sunday 21-03 at 9:30 PM</p>
                             </div>
-                            <p>Sunday 21-03 at 9:30 PM</p>
+                            <p>{comment.comments}
+                            </p>
                         </div>
-                        <p>{comment.comments}
-                        </p>
-                    </div>
-                )
+                    )
+                  
+                
             })
                         }
 
