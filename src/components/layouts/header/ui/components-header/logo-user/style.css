@@ -44,6 +44,7 @@
 }
   
 .itemMenu {
+    cursor: pointer;
     padding: 10px;
     border-bottom: 1px solid #ffa844;
     color: #ffa844;

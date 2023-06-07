@@ -8,6 +8,7 @@ import { Loader } from "../../loader";
 
 export const CafeteriaCreateProduct = () => {
 
+  //image
   function handleImageInputChange(e) {
     const file = e.target.files[0];
     const reader = new FileReader();
@@ -27,6 +28,7 @@ export const CafeteriaCreateProduct = () => {
 
   const [loader,setLoader]=useState(false)
 
+  //
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -36,7 +38,7 @@ export const CafeteriaCreateProduct = () => {
   const [idAdmin, setIdAdmin] = useState(123);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     console.log(e.target);
 
     const formData = new FormData(e.target);
