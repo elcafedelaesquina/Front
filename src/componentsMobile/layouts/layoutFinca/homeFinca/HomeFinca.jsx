@@ -10,11 +10,11 @@ export const HomeFinca = () => {
         <h2 className={Style.title}>Pagina Web administrable</h2>
         <div className={Style.line}/>
         <p className={Style.text}>
-        Un lugar agradable en donde podrá disfrutar la mejor experienca acerca del Café… Demo de Página web administrable para Cafés o Restaurantes, desarrollada en WordPress, con páginas como La Carta, Reservas, Galería de imágenes y Página contactos con Formulario de consultas y mapa de ubicación, enlaces a Redes sociales y botón para Chat de Whatsapp.
+        Un lugar agradable en donde podrá disfrutar el mejor Café… Demo de Página web administrable para Cafés o Restaurantes, desarrollada en WordPress, con páginas como La Carta, Reservas, Galería de imágenes y Página contactos con Formulario de consultas y mapa de ubicación, enlaces a Redes sociales y botón para Chat de Whatsapp.
         </p>
         <section className={Style.containerImg}>
         <img className={Style.imgRef} src={img1} alt="" />
-        <h3 className={Style.txtImg}>El mejor lugar para disfrutar tu aprendizaje sobre el Café</h3>
+        <h3 className={Style.txtImg}>El mejor lugar para disfrutar tu Café</h3>
         </section>
     </div>
   )

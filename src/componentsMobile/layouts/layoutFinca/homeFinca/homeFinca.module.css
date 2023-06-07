@@ -5,7 +5,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-top: 150px;
     gap: 25px;
+    background-color: #f0f8ff;
 }
 
 .title{
@@ -14,11 +16,11 @@
 
 .line{
     width: 80%;
-    border: 3px #686868 dotted;
+    border: 3px #d6b877 dotted;
 }
 
 .text{
-    color:#f0f8ff;
+    color:#808080;
     width: 90%; 
     text-align: justify;
 }
