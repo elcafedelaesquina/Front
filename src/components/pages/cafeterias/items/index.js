@@ -20,7 +20,9 @@ const Item = (props) => {
     <div className={styles.itemCafeterias}>
         <div className={styles.imgItem}><img className={styles.img} src={props.image} alt=''></img></div>
         <div className={styles.infoItem}>
+        <Link to={'/cafeterias/cafeteria'}  onClick={coffee}>
             <div className={styles.title}><h4>{props.name}</h4> <ion-icon name="heart"></ion-icon></div>
+            </Link>
             <h5>{props.address}</h5>
             <p>{props.description}
             </p>

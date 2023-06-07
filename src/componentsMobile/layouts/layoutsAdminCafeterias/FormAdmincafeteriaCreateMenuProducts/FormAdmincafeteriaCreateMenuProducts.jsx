@@ -8,7 +8,7 @@ export const FormAdmincafeteriaCreateMenuProducts = () => {
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("");
   const [image, setImage] = useState(null);
-  const [idAdmin, setIdAdmin] = useState(3);
+  const [idAdmin, setIdAdmin] = useState(2);
 
   const handleSubmit = async (e) => {
     // e.preventDefault();
@@ -17,9 +17,7 @@ export const FormAdmincafeteriaCreateMenuProducts = () => {
     const formData = new FormData(e.target);
 
     try {
-        
       const response = await fetch("https://apimainejetravel.azurewebsites.net/api/MenuProduct/Guardar", { method: "POST", body: formData } );
-
       if (response.ok) {
         // Datos guardados exitosamente
         console.log("Datos guardados exitosamente");
@@ -36,21 +34,21 @@ export const FormAdmincafeteriaCreateMenuProducts = () => {
   return (
     <form className={Style.form} onSubmit={handleSubmit}>
       <label className={Style.label} htmlFor="name">Nombre:</label>
-      <input className={Style.input} name="name" type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} required />
+      <input className={Style.input} name="Name" type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} required />
 
       <label className={Style.label} htmlFor="description">Descripción:</label>
-      <textarea className={Style.textarea} name="description" id="description" value={description} onChange={(e) => setDescription(e.target.value)} required />
+      <textarea className={Style.textarea} name="Description" id="description" value={description} onChange={(e) => setDescription(e.target.value)} required />
 
       <label className={Style.label} htmlFor="price">Precio:</label>
-      <input className={Style.input} name="price" type="number" id="price" value={price} onChange={(e) => setPrice(Number(e.target.value))} required />
+      <input className={Style.input} name="Price" type="number" id="price" value={price} onChange={(e) => setPrice(Number(e.target.value))} required />
 
       <label className={Style.label} htmlFor="category">Categoría:</label>
-      <input className={Style.input} name="category" type="text" id="category" value={category} onChange={(e) => setCategory(e.target.value)} required />
+      <input className={Style.input} name="Category" type="text" id="category" value={category} onChange={(e) => setCategory(e.target.value)} required />
 
       <label className={Style.label} htmlFor="image">Imagen:</label>
-      <input className={Style.input} name="image" type="file" id="image" value={image} onChange={(e) => setImage(e.target.value)} required />
+      <input className={Style.input} name="Image" type="file" id="image" value={image} onChange={(e) => setImage(e.target.value)} required />
       
-      <input className={Style.id} name="id_coffee" type="number" id="stock" value={idAdmin} onChange={(e) => setIdAdmin(Number(e.target.value))} required />
+      <input className={Style.id} name="Id_coffee" type="number" id="stock" value={idAdmin} onChange={(e) => setIdAdmin(Number(e.target.value))} required />
 
       <button className={Style.button} type="submit">Crear Producto</button>
     </form>

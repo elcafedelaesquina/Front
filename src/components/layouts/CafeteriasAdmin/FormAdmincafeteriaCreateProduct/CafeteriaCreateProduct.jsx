@@ -8,6 +8,7 @@ import { Loader } from "../../loader";
 
 export const CafeteriaCreateProduct = () => {
 
+  //image
   function handleImageInputChange(e) {
     const file = e.target.files[0];
     const reader = new FileReader();
@@ -27,6 +28,7 @@ export const CafeteriaCreateProduct = () => {
 
   const [loader,setLoader]=useState(false)
 
+  //
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -36,7 +38,7 @@ export const CafeteriaCreateProduct = () => {
   const [idAdmin, setIdAdmin] = useState(123);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     console.log(e.target);
 
     const formData = new FormData(e.target);
@@ -83,7 +85,9 @@ export const CafeteriaCreateProduct = () => {
             </div>
 
             <div className={styles['input-box']}>
-              <input type="number" name='Price' id="price" placeholder='Precio' value={price} onChange={(e) => setPrice(Number(e.target.value))}/>
+              <input type="text" name='Price' id="price" placeholder='Precio' value={price} onChange={(e) => {
+                let x=parseInt(e.target.value) 
+                setPrice(x)}}/>
             </div>
 
             <div className={styles['input-box']}>
@@ -96,7 +100,7 @@ export const CafeteriaCreateProduct = () => {
 
             <div className={styles['container-file']}>
               <div className={`${styles['input-boxx']} ${styles.box}`} onClick={handleButtonClick}>
-              <i className={styles['icon']} class="fa-solid fa-cloud-arrow-up"><FontAwesomeIcon icon={faCloudArrowUp} /></i>
+              <i className={styles['icon']} ><FontAwesomeIcon icon={faCloudArrowUp} /></i>
                 <input type="file" name='name' hidden placeholder="Choose your image" ref={fileInputRef} id="image"  onChange={(e) => { setImage(e.target.value); handleImageInputChange(e);}} />
                 {image && (
                   <div className={styles['image-preview']}>
