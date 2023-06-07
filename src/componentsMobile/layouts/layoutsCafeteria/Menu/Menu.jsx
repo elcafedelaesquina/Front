@@ -3,12 +3,13 @@ import Style from './menu.module.css'
 
 export const Menu = () => {
       
-  let x=JSON.parse(localStorage.getItem('coffee'))
+  let items=JSON.parse(localStorage.getItem('coffee'))
   const [estado,setEstado]=useState([])
   const categorizedData = {};
   useEffect(()=>{
+    
       
-  fetch(`https://apimainejetravel.azurewebsites.net/api/MenuProduct/Lista/${x.id_coffee}`)
+  fetch(`https://apimainejetravel.azurewebsites.net/api/MenuProduct/Lista/${items.id_coffee}`)
   .then(response => response.json())
   .then(data => {
     data.list[0].forEach(item => {

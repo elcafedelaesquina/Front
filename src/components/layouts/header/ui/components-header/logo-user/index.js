@@ -30,7 +30,8 @@ const LogoUser= (props) => {
           <div className='menuContainer'>
             <ul className='menuUser'>
               <Link to={'/CafeteriaCreateProduct'}><li className='itemMenu'>Crear Productos</li></Link>
-              <li className='itemMenu'>Editar Perfil</li>
+              <li className='itemMenu'>Productos</li>
+              <Link to={'/EditarPerfilAdmin'}><li className='itemMenu'>Editar Perfil</li></Link>
               <li className='itemMenu' onClick={props.close}>Cerrar Sesion</li>
             </ul>
           </div>

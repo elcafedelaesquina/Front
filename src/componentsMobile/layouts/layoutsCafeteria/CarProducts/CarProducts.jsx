@@ -8,40 +8,31 @@ export const CarProducts = () => {
     <div className={Style.carproducts}>
       <h2 className={Style.subtitle}>Tus productos selecionados</h2>
       <div className={Style.containerProduct}>
-        <div className={Style.containerInfo}>
-          <p className={Style.nameProduct}>Nombre producto</p>
-          <p className={Style.descriptionProduct}>Cantidad selecionada</p>
-          <button className={Style.btnPrice}>Valor unidad</button>
-        </div>
         <div className={Style.containerImage}>
           <img className={Style.imageProduct} src={imgtest} alt="" />
         </div>
-      </div>
-
-      <div className={Style.containerProduct}>
         <div className={Style.containerInfo}>
           <p className={Style.nameProduct}>Nombre producto</p>
-          <p className={Style.descriptionProduct}>Cantidad selecionada</p>
-          <button className={Style.btnPrice}>Valor unidad</button>
-        </div>
-        <div className={Style.containerImage}>
-          <img className={Style.imageProduct} src={imgtest} alt="" />
-        </div>
-      </div>
-
-      <div className={Style.containerProduct}>
-        <div className={Style.containerInfo}>
-          <p className={Style.nameProduct}>Nombre producto</p>
-          <p className={Style.descriptionProduct}>Cantidad selecionada</p>
-          <button className={Style.btnPrice}>Valor unidad</button>
-        </div>
-        <div className={Style.containerImage}>
-          <img className={Style.imageProduct} src={imgtest} alt="" />
+          <p className={Style.descriptionProduct}>Descripción</p>
+          <p className={Style.descriptionProduct}>Cantidad:
+            <select className={Style.quantity}>
+              <option value={1}>1</option>
+              <option value={2}>2</option>
+              <option value={3}>3</option>
+              <option value={4}>4</option>
+            </select>
+          </p>
+          <p className={Style.descriptionProduct}>Precio: $</p>
         </div>
       </div>
 
-      <p className={Style.txt}>Total de productos: xx</p>
-      <p className={Style.txt}>Valor total: xx</p>
+      <p className={Style.txt}>Subtotal:</p>
+      <p className={Style.txt}>Iva:</p>
+      <p className={Style.txt}>Total:</p>
+      <p className={Style.txtSend}>El costo del envio se ajustará al vslor de la compra</p>
+      <div className={Style.containerBtn}>
+      <button className={Style.btnConfirm}>REALIZAR COMPRA</button>
+      </div>
     </div>
   );
 };
