@@ -35,22 +35,31 @@ export const CafeteriaCreateProduct = () => {
   const [stock, setStock] = useState("");
   const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
-  const [idAdmin, setIdAdmin] = useState(123);
+  const [idAdmin, setIdAdmin] = useState(1092455367);
 
   const handleSubmit = async (e) => {
-    // e.preventDefault();
+     e.preventDefault();
     console.log(e.target);
+    
 
     const formData = new FormData(e.target);
+    formData.forEach(function (key,value){
+      console.log(key,value);
+    })
 
     try {
         
-      const response = await fetch("https://apimainejetravel.azurewebsites.net/api/Product/Guardar", { method: "POST", body: formData } );
+      const response = await fetch("https://apimainejetravel.azurewebsites.net/api/Product/Guardar", { method: "POST", body: formData } )
+      .then(response => response.json())
+      .then(data => {
+        console.log(data
+          )
+      })
 
       if (response.ok) {
         // Datos guardados exitosamente
         console.log("Datos guardados exitosamente");
-        window.location.reload();
+        
         setLoader(false)
       } else {
         // Error al guardar los datos
@@ -101,7 +110,7 @@ export const CafeteriaCreateProduct = () => {
             <div className={styles['container-file']}>
               <div className={`${styles['input-boxx']} ${styles.box}`} onClick={handleButtonClick}>
               <i className={styles['icon']} ><FontAwesomeIcon icon={faCloudArrowUp} /></i>
-                <input type="file" name='name' hidden placeholder="Choose your image" ref={fileInputRef} id="image"  onChange={(e) => { setImage(e.target.value); handleImageInputChange(e);}} />
+                <input type="file" name='Image' hidden placeholder="Choose your image" ref={fileInputRef} id="image"  onChange={(e) => { setImage(e.target.value); handleImageInputChange(e);}} />
                 {image && (
                   <div className={styles['image-preview']}>
                     <img className={styles.imgPreview} src={image} alt="Imagen seleccionada" />
