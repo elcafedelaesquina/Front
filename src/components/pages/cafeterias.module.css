@@ -158,28 +158,55 @@
 }
 
 .whatsapp {
-    width: 160px;
-    background-color:rgb(77, 77, 77);
-    height: auto;
-    color: rgb(253, 253, 253);
     border-radius:10px;
-    padding:8px 5px;
     position:fixed;
     z-index: 1;
     bottom: 20px;
     right: 20px;
-    font-size: 17px;
     cursor: pointer;
  
  }
 
 
-.whatsapp ion-icon{
-    font-size:17px;
-    margin-right: 5px;
-    margin-left: 8px;
-    color: rgb(58, 183, 255);
+.whatsapp:before,
+.whatsapp:after{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    bottom: 5px;
+    right: 0px;
+    opacity: 0;
+    background-color: rgb(50, 255, 136);
+    animation: onda 1.5s infinite;
+}
+.whatsapp:before{
+    animation-delay: 1s;
+}
+.whatsapp:after{
+    animation-delay: 1.3s;
+}
+.whatsappImg{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
    
+}
+@keyframes onda {
+    0%{
+        transform: scale(1);
+
+    }
+    15%{
+        opacity: 1;
+
+    }
+    100%{
+        transform: scale(1.5);
+        opacity: 0;
+    }
 }
 
 

@@ -17,7 +17,6 @@ const  ProductCafeteria= () => {
          
           
       },[])
-       console.log(data) 
     const putCarrito=(product)=>{
         let createLocal = JSON.parse(localStorage.getItem('carrito')) || []; // Parsea la cadena JSON a un array o utiliza un array vacío por defecto
         createLocal.push(product); // Agrega el producto al array

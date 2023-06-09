@@ -58,7 +58,7 @@ const Cafeterias = () => {
     <>
     <Header></Header>
     <div className={styles.sectionCafeterias}>
-    <Link to={'/cafeterias/cafeteria'}  ><div className={styles.whatsapp}><ion-icon name="chatbubble-ellipses-outline"></ion-icon>Contactanos </div></Link>
+    <Link to={'/cafeterias/cafeteria'} ><div className={styles.whatsapp}><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/479px-WhatsApp_icon.png' alt=''className={styles.whatsappImg} ></img></div></Link>
     <Menu></Menu>
       <div className={styles.searchImg}>
         <div className={styles.filter}>

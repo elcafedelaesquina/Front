@@ -17,7 +17,7 @@ const ContentHome = () => {
   return (
     <div className="content-home">
         <Menu></Menu>
-
+        <Link to={'/cafeterias/cafeteria'} ><div className={styles.whatsapp}><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/479px-WhatsApp_icon.png' alt=''className={styles.whatsappImg} ></img></div></Link>
         <div className={styles.imgInicio}>
             <div className={styles.filtro}>
                 <h2 className={styles.h2}>Crea tu Tienda virtual con nosotros</h2> 
@@ -43,7 +43,6 @@ const ContentHome = () => {
             <h2>Tal vez te gusten </h2>
             <h4>Visita estos sitios y Vive la mejor experiencia del Café </h4>
             <div className={styles.containerItems}>
-              {/* {DataTransfer.map(item=>{return()})} */}
               {
                 data.map((item,index)=>{
                   if(index>=4){

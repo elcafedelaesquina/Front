@@ -144,7 +144,7 @@ const Comments = () => {
         <div className="cafeteriaComments">
           <div className="commentsGenerator" ref={formulario}>
 
-            <img alt='' src={valor[0].image}></img>
+            <img alt='' className='imgCafeteriaComment' src={valor[0].image}></img>
             <div className="choose">
               <h3 >{valor[0].name}</h3>
               <h4>{valor[0].address}</h4>
