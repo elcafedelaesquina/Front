@@ -1,11 +1,12 @@
 import React from 'react'
 import styles from './style.module.css'
+import Swal from 'sweetalert2';
 import { useEffect, useState } from 'react'
 
 
 
-const ProductAdmin = ({data}) => {
-    const Swal = require('sweetalert2')
+const ProductAdmin = ({data,deleteProp}) => {
+    
    
 
     return (
@@ -23,8 +24,13 @@ const ProductAdmin = ({data}) => {
             </div>
             <div className={styles['card-footer']}>
                 <span className={styles['text-title']}>${data.price}</span>
-                <div className={styles['card-button']} >
-                    <ion-icon name="bag-add-outline"></ion-icon>
+                
+                <div className={styles['card-button-update']} >                    
+                    <ion-icon name="color-wand" onClick={()=>{deleteProp[1](data.id_product)}}></ion-icon>
+                   
+                </div>
+                <div className={styles['card-button-delete'] } onClick={()=>{deleteProp[0](data.id_product)}}>                    
+                    <ion-icon name="trash-outline" ></ion-icon>
                 </div>
             </div>
         </div>

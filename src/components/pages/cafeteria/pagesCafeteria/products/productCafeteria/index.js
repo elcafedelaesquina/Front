@@ -13,7 +13,12 @@ const  ProductCafeteria= () => {
         fetch(`https://apimainejetravel.azurewebsites.net/api/Product/Lista/${coffee.id_coffee}`)
         .then(response => response.json())
         .then(data => {
-          setData(data.list[0])})
+          
+            setData(data.list[0])
+          
+        }
+          
+          )
          
           
       },[])
