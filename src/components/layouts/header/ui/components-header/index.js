@@ -14,7 +14,7 @@ const ComponentsHeader = () => {
       Swal.fire({
         position: 'top-end',
         icon: 'success',
-        title:'Adios '+name ,
+        title:'Adiós '+name ,
         showConfirmButton: false,
         timer: 1500
       })

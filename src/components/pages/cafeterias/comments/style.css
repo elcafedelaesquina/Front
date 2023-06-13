@@ -25,6 +25,9 @@
     padding: 0px;
     
 }
+.values{
+    display: none;
+}
 
 .commentsGenerator{
     width: 100%;
@@ -41,12 +44,12 @@
     flex-wrap: wrap; 
     gap:20px;
 }
-.commentsGenerator img{
+.commentsGenerator .imgCafeteriaComment{
     width: 40%;
     border-radius: 10px;
-    height: 180px;
-    
+    height: 180px;   
 }
+
 .commentsGenerator .choose{
     margin-top: 20px;
     width: 50%;
@@ -163,8 +166,8 @@
     background-color: rgba(190, 190, 190, 0);
     padding: 10px;
    
-    max-height: 600px;
-    overflow: hidden;
+    max-height: 550px;
+    overflow-y: auto;
     
 }
 .comments .comment{

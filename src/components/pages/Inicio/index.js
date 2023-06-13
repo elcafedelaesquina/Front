@@ -17,12 +17,12 @@ const ContentHome = () => {
   return (
     <div className="content-home">
         <Menu></Menu>
-
+        <Link to={'/cafeterias/cafeteria'} ><div className={styles.whatsapp}><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/479px-WhatsApp_icon.png' alt=''className={styles.whatsappImg} ></img></div></Link>
         <div className={styles.imgInicio}>
             <div className={styles.filtro}>
                 <h2 className={styles.h2}>Crea tu Tienda virtual con nosotros</h2> 
                 <h3 className={styles.h3}>¡Bienvenid@ a nuestra página de inicio! Aquí en nuestro sitio web, nos especializamos en la creación de páginas web para cafeterías y fincas. Te ofrecemos soluciones personalizadas para destacar tu negocio y capturar la esencia de tu café o finca en línea.</h3>
-                <Link to={'/PageRegistros'}><button className={styles.button}>Realizar Compra</button></Link>
+                <Link to={'/PageRegistros'}><button className={styles.button}>Empieza Con Nosotros</button></Link>
 
             </div>
             
@@ -41,9 +41,8 @@ const ContentHome = () => {
         </div>
         <div className={styles.containerPlaces}>
             <h2>Tal vez te gusten </h2>
-            <h4>visita estos sitios y haz tours cafeteros</h4>
+            <h4>Visita estos sitios y Vive la mejor experiencia del Café </h4>
             <div className={styles.containerItems}>
-              {/* {DataTransfer.map(item=>{return()})} */}
               {
                 data.map((item,index)=>{
                   if(index>=4){

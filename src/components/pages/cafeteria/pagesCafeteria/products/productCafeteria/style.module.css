@@ -10,7 +10,7 @@
    }
    
    .card-img {
-    background-color: #ffcaa6;
+    background-color: #ececec;
     height: 122px;
     width: 100%;
     border-radius: .5rem;
@@ -71,6 +71,7 @@
    /*Hover*/
    .card-img:hover {
     transform: translateY(-25%);
+    box-shadow: 0px 2px 8px rgba(128, 128, 128, 0.418);
 
    }
    
