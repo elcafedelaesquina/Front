@@ -9,7 +9,7 @@ export const FormAdmincafeteriaCreateProduct = () => {
   const [stock, setStock] = useState("");
   const [category, setCategory] = useState("");
   const [image, setImage] = useState(null);
-  const [idAdmin, setIdAdmin] = useState(123);
+  const [idAdmin, setIdAdmin] = useState(1092455367);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

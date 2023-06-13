@@ -10,6 +10,7 @@ import { Loader } from "../../layouts/loader/Loader";
 
 export const Cafeterias = () => {
   const [data, setData] = useState([]);
+  const [dataFincas, setDataFincas] = useState([]);
   const [filterName, setFilterName] = useState("");
   const [isloading, setIsLoading] = useState(false);
 
@@ -26,6 +27,21 @@ export const Cafeterias = () => {
 
   useEffect(() => {
     getCafeterias();
+  }, []);
+
+  const getFincas = async () => {
+    setIsLoading(true);
+    await fetch("https://apimainejetravel.azurewebsites.net/api/Farm/Lista")
+      .then((response) => response.json())
+      .then((dataFincas) => {
+        const { farmList } = dataFincas;
+        setDataFincas(farmList[0]);
+        setIsLoading(false);
+      });
+  };
+
+  useEffect(() => {
+    getFincas();
   }, []);
 
   const handleFilterChage = (event) => {
@@ -83,7 +99,7 @@ export const Cafeterias = () => {
             Otros sitios que te van a interesar visitar
           </h2>
           <div className={Style.grid}>
-            {data.map((item) => {
+            {dataFincas.map((item) => {
               return <FincasCafeterias image={item.image} />;
             })}
           </div>

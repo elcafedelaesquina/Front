@@ -10,6 +10,7 @@ import { Loader } from "../../layouts/loader/Loader";
 
 export const Fincas = () => {
   const [data, setData] = useState([]);
+  const [dataCafeterias, setDataCafeterias] = useState([]);
   const [filterName, setFilterName] = useState("");
   const [isloading, setIsLoading] = useState(false);
 
@@ -38,6 +39,21 @@ export const Fincas = () => {
       ? item.name.toLowerCase().includes(filterName.toLowerCase())
       : item
   );
+
+  const getCafeterias = async () => {
+    setIsLoading(true);
+    await fetch("https://apimainejetravel.azurewebsites.net/api/Coffee/Lista")
+      .then((response) => response.json())
+      .then((dataCafeterias) => {
+        const { coffeeList } = dataCafeterias;
+        setDataCafeterias(coffeeList[0]);
+        setIsLoading(false);
+      });
+  };
+
+  useEffect(() => {
+    getCafeterias();
+  }, []);
 
   return (
     <>
@@ -83,7 +99,7 @@ export const Fincas = () => {
             Otros sitios que te van a interesar visitar
           </h2>
           <div className={Style.grid}>
-            {data.map((item) => {
+            {dataCafeterias.map((item) => {
               return <CafeteriasFincas image={item.image} />;
             })}
           </div>

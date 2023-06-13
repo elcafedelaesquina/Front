@@ -67,7 +67,7 @@
   justify-content: center;
 }
 
-.rating {
+/* .rating {
   width: 100vw;
   height: auto;
   display: flex;
@@ -106,7 +106,7 @@
 
 .rating > input:checked ~ label {
   color: #ffff60;
-}
+} */
 
 .comment {
   width: 100%;

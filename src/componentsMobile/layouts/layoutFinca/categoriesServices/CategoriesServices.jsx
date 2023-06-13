@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Style from "./categoriesproducts.module.css";
+import Style from "./categoriesServices.module.css";
 
-export const CategoriesProducts = () => {
+export const CategoriesServices = () => {
   const [data, setData] = useState([]);
 
   const getCategories = async () => {
