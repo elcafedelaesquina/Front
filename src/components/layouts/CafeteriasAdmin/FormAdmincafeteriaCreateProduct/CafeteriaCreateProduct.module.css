@@ -18,9 +18,9 @@
   position: relative;
   max-width: 450px;
   width: 100%;
-  height: 90vh;
+  height: 70vh;
   background: #fff;
-  padding: 20px 30px;
+  padding: 40px 30px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   perspective: 2700px;
 }
@@ -69,6 +69,20 @@ form .form-content .title{
   font-size: 30px;
   font-weight: 500;
   color: #000;
+}
+
+.iconX> a ion-icon{
+  font-size: 30px;
+  cursor: pointer;
+  color: black;
+}
+
+.iconX{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-left: 20px;
+  padding: 20px;
 }
 
 form .form-content .title::before{

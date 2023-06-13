@@ -134,6 +134,21 @@ form .form-content .title::before{
     background: #262626;
 }
 
+.iconX> a ion-icon{
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+}
+  
+.iconX{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-left: 20px;
+    padding: 20px;
+}
+
+
 form .signup-form .title:before{
     width: 20px;
 }

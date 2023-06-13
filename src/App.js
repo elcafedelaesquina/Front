@@ -17,6 +17,8 @@ import { CafeteriaCreateProduct } from './components/layouts/CafeteriasAdmin/For
 import { ProductsCafeteria } from './components/pages/cafeteria/pagesCafeteria/products';
 import { Carrito } from './components/pages/cafeteria/pagesCafeteria/carrito';
 import { EditarPerfilAdmin } from './components/layouts/CafeteriasAdmin/EditarPerfilAdmin/EditarPerfilAdmin';
+import { CrearAdministradorCafeteria } from './components/layouts/CafeteriasAdmin/CrearAdministradorCafeteria/CrearAdministradorCafeteria'
+import { EditarPerfilUsuario } from './components/layouts/UsuarioAdmin/EditarPerfilUsuario/EditarPerfilUsuario'
 
 function App() {
   return (
@@ -38,6 +40,8 @@ function App() {
       <Route path='/Farm' element={<Farm></Farm>}></Route>
       <Route path='/CafeteriaCreateProduct' element={<CafeteriaCreateProduct></CafeteriaCreateProduct>}></Route>
       <Route path='/EditarPerfilAdmin' element={<EditarPerfilAdmin></EditarPerfilAdmin>}></Route>
+      <Route path='/CrearAdministradorCafeteria' element={<CrearAdministradorCafeteria></CrearAdministradorCafeteria>}></Route>
+      <Route path='/EditarPerfilUsuario' element={<EditarPerfilUsuario></EditarPerfilUsuario>}></Route>
     </Routes>   
   </div>
 
