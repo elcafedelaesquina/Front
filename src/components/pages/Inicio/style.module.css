@@ -1,5 +1,55 @@
 
+.whatsapp {
+  border-radius:10px;
+  position:fixed;
+  z-index: 1;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
 
+}
+
+
+.whatsapp:before,
+.whatsapp:after{
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  bottom: 5px;
+  right: 0px;
+  opacity: 0;
+  background-color: rgb(50, 255, 136);
+  animation: onda 1.5s infinite;
+}
+.whatsapp:before{
+  animation-delay: 1s;
+}
+.whatsapp:after{
+  animation-delay: 1.3s;
+}
+.whatsappImg{
+  position: relative;
+  width: 60px;
+  height: 60px;
+  z-index: 2;
+ 
+}
+@keyframes onda {
+  0%{
+      transform: scale(1);
+
+  }
+  15%{
+      opacity: 1;
+
+  }
+  100%{
+      transform: scale(1.5);
+      opacity: 0;
+  }
+}
 .imgInicio{
   margin:0px auto 0px;
   width: 100%;

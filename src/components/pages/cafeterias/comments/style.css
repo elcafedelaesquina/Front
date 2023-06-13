@@ -44,12 +44,12 @@
     flex-wrap: wrap; 
     gap:20px;
 }
-.commentsGenerator img{
+.commentsGenerator .imgCafeteriaComment{
     width: 40%;
     border-radius: 10px;
-    height: 180px;
-    
+    height: 180px;   
 }
+
 .commentsGenerator .choose{
     margin-top: 20px;
     width: 50%;

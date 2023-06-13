@@ -35,9 +35,7 @@ export const ProductosCafeteria = () => {
 
   const deleteProduct = async (id) => {
     try {
-      const response = await fetch(
-        `https://apimainejetravel.azurewebsites.net/api/Product/Eliminar/${id}`, { method: "DELETE" }
-      );
+      const response = await fetch(`https://apimainejetravel.azurewebsites.net/api/Product/Eliminar/${id}`, { method: "DELETE" });
       const data = await response.json();
       console.log(data);
       getProductsCafeterias();
@@ -51,23 +49,15 @@ export const ProductosCafeteria = () => {
     setCard(item);
   };
 
-
   return (
     <>
       <HeaderAdminCafeterias />
       <main className={Style.main}>
         <div className={Style.adminContainerCreateProduct}>
-          <button className={Style.btnAdminCreateProduct} onClick={() => setCreateNewProduct(!createNewProduct)}>
-            Crea un nuevo producto
-          </button>
+          <button className={Style.btnAdminCreateProduct} onClick={() => setCreateNewProduct(!createNewProduct)}>Crea un nuevo producto</button>
         </div>
 
-        <GridProductsAdmin
-          valores={data}
-          cardId={cardId}
-          setIsVisible={setIsVisible}
-          isVisible={isVisible}
-        />
+        <GridProductsAdmin valores={data} cardId={cardId} setIsVisible={setIsVisible} isVisible={isVisible} />
 
         {createNewProduct && (
           <div className={Style.containerForm}>
@@ -78,12 +68,7 @@ export const ProductosCafeteria = () => {
           </div>
         )}
         
-        <CardProductosAdmin
-          card={card}
-          setIsVisible={setIsVisible}
-          isVisible={isVisible}
-          deleteProduct={deleteProduct}
-        />
+        <CardProductosAdmin card={card} setIsVisible={setIsVisible} isVisible={isVisible} deleteProduct={deleteProduct} />
       </main>
     </>
   );

@@ -58,14 +58,28 @@
    }
    
    /*Button*/
-   .card-button {
-    border: 1px solid #252525;
+   .card-button-update{
+    border: 1px solid #ffffff;
+    background-color: rgb(255, 206, 47);
+    color: white;
     display: flex;
     padding: .3em;
     cursor: pointer;
     border-radius: 50px;
     transition: .3s ease-in-out;
     font-size: 20px;
+   }
+   .card-button-delete{
+    border: 1px solid #ffffff;
+    background-color: rgb(255, 39, 82);
+    color: white;
+    display: flex;
+    padding: .3em;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: .3s ease-in-out;
+    font-size: 20px;
+
    }
    
    /*Hover*/
@@ -75,8 +89,14 @@
 
    }
    
-   .card-button:hover {
-    border: 1px solid rgb(255, 216, 41);
-    background-color: rgb(255, 206, 47);
-    color: white;
+   .card-button-update:hover {
+    transform: rotate(10deg);
+    color: rgb(39, 39, 39);
+    background-color: rgb(200, 255, 47);
+   }
+   .card-button-delete:hover {
+    transform: rotate(10deg);
+  
+    background-color: rgb(255, 52, 25);
+    color: rgb(32, 32, 32);
    }

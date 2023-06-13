@@ -13,11 +13,15 @@ const  ProductCafeteria= () => {
         fetch(`https://apimainejetravel.azurewebsites.net/api/Product/Lista/${coffee.id_coffee}`)
         .then(response => response.json())
         .then(data => {
-          setData(data.list[0])})
+          
+            setData(data.list[0])
+          
+        }
+          
+          )
          
           
       },[])
-       console.log(data) 
     const putCarrito=(product)=>{
         let createLocal = JSON.parse(localStorage.getItem('carrito')) || []; // Parsea la cadena JSON a un array o utiliza un array vacío por defecto
         createLocal.push(product); // Agrega el producto al array
