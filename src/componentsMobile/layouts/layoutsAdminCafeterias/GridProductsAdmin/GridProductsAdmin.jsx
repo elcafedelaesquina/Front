@@ -11,8 +11,7 @@ export const GridProductsAdmin = ({valores, cardId, setIsVisible, isVisible }) =
           onClick={() => {
             setIsVisible(!isVisible)
             cardId(item)
-          }}
-        >
+          }}>
           <img src={item.image} alt="image product" className={Style.image} />
           {item.name}
         </div>
