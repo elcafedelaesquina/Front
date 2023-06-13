@@ -29,7 +29,7 @@ export const CarProducts = () => {
       <p className={Style.txt}>Subtotal:</p>
       <p className={Style.txt}>Iva:</p>
       <p className={Style.txt}>Total:</p>
-      <p className={Style.txtSend}>El costo del envio se ajustará al vslor de la compra</p>
+      <p className={Style.txtSend}>El costo del envio se ajustará al valor de la compra</p>
       <div className={Style.containerBtn}>
       <button className={Style.btnConfirm}>REALIZAR COMPRA</button>
       </div>

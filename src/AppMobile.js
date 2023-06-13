@@ -16,8 +16,11 @@ import { User } from "./componentsMobile/layouts/RegistrarCrear/User/User";
 import { Cafe } from "./componentsMobile/layouts/RegistrarCrear/Cafe/Cafe";
 import { Farm } from "./componentsMobile/layouts/RegistrarCrear/Farm/Farm";
 
+import { AdminFinca } from "./componentsMobile/pages/AdminFinca/AdminFinca";
+
 import { Fincas } from "./componentsMobile/pages/Fincas/Fincas";
 import { Finca } from "./componentsMobile/pages/Finca/Finca";
+
 
 export const AppMobile = () => {
   return (
@@ -38,8 +41,11 @@ export const AppMobile = () => {
         <Route path="/Cafe" element={ <Cafe /> } />
         <Route path="/Farm" element={ <Farm /> } />
 
+        <Route path="/AdminFinca" element={ <AdminFinca />} />
+
         <Route path="/Fincas" element={ <Fincas />} />
         <Route path="/Fincas/Finca" element={ <Finca/>} />
+
       </Routes>
     </>
   );
