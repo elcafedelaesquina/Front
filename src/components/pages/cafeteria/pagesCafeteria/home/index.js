@@ -24,7 +24,7 @@ import { Link } from 'react-router-dom'
           <div className={styles.slide}><img className={styles.slideImg} src='https://ae01.alicdn.com/kf/Sbb35b5f72e95428ea498d4252b4f952d6/Papel-Tapiz-de-caf-pintado-a-mano-Mural-de-decoraci-n-Industrial-caf-t-de-la.jpg' alt=''></img></div>
           <div className={styles.slide}>
             <h2 className={styles.cafeteriaTitle}>{coffee.name}</h2>
-            <h3>Los mejores cafés de colombia a tu alcance</h3>
+            <h3>{coffee.description}</h3>
           </div>
           
         </div>
@@ -40,7 +40,7 @@ import { Link } from 'react-router-dom'
         </div>
         <div className={styles.ImgHome}>
 
-          <img className={styles.imgHome} src='https://universidadlaconcordia.edu.mx/blog/wp-content/uploads/2022/08/ULC_tipos-de-restaurantes.jpg' alt=''></img>
+          <img className={styles.imgHome} src='https://muchosnegociosrentables.com/wp-content/uploads/2019/04/modelos-de-cafeterias.jpg' alt=''></img>
           <h2 className={styles.filterHome}>El mejor lugar para disfrutar tu Café</h2>
         </div>
         
@@ -48,24 +48,22 @@ import { Link } from 'react-router-dom'
             <h3> .............   <span >Nuestra Carta</span>   ..............</h3>
             <div className={styles.itemHome}>
               <img className={styles.imgFocus} src='https://www.elespectador.com/resizer/Z28ceEm87lkRDk4QKJtw55k0nQk=/arc-anglerfish-arc2-prod-elespectador/public/LY3ZTJZS5ZBUJL63BODAZ72L7U.png' alt=''></img>
-              <h4>Cafés</h4>
+              <Link to={`/cafeterias/cafeteria/carta`}>Cafés</Link>
 
             </div>
             <div className={styles.itemHome}>
               <img className={styles.imgFocus} src='https://media-cdn.tripadvisor.com/media/photo-s/1b/bf/56/03/nuestras-bebidas-frias.jpg' alt=''></img>
-              <h4>Otras 
-                Bebidas
-                </h4>
+              <Link to={`/cafeterias/cafeteria/carta`}>Otras bebidas</Link>
 
             </div>
             <div className={styles.itemHome}>
               <img className={styles.imgFocus} src='https://d100mj7v0l85u5.cloudfront.net/s3fs-public/WhatsApp-Image-2021-10-22-at-3.04.14-PM.jpeg' alt=''></img>
-              <h4>Panaderia</h4>
+              <Link to={`/cafeterias/cafeteria/carta`}>Panaderia</Link>
 
             </div>
             <div className={styles.itemHome}>
               <img className={styles.imgFocus} src='https://www.cubahora.cu/uploads/resources/images/2018/03/27/desayunar-huevo.jpg' alt=''></img>
-              <h4>Desayunos</h4>
+              <Link to={`/cafeterias/cafeteria/carta`}>Desayunos</Link>
 
             </div>
             <h3> .............   <span >Productos Destacados</span>   ..............</h3>

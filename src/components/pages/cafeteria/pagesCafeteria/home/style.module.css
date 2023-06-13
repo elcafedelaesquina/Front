@@ -196,7 +196,7 @@
     transform: scale(1.1);
     filter: brightness(100%);
 }
-.itemHome h4{
+.itemHome a{
     cursor: pointer;
     font-size: 30px;
     width: 20%;

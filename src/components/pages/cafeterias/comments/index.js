@@ -78,43 +78,55 @@ const Comments = () => {
 
   const sendComment = () => {
     ///organizar post no esta recibiendo la peticion
-    console.log(rate)
-    let obj = {
-      Comments: textArea.current.value,
-      Id_bussines: valor[0].id_coffee,
-      Id_user: id_customer,
-      Type_business: 1,
-      Score: rate
-    }
-    console.log(obj)
-    fetch('https://apimainejetravel.azurewebsites.net/api/Comment/Guardar', {
-      method: 'POST',
-      headers: {
-        "Content-Type": "application/json"
-        // Puedes agregar otros encabezados aquí si es necesario
-      },
-      body: JSON.stringify(obj),
-    })
-      .then(response => response.json())
-      .then(data =>
-        console.log(data))
-    setTimeout(() => {
-      fetch(`https://apimainejetravel.azurewebsites.net/api/Comment/Lista/1/${valor[0].id_coffee}`)
+    if(id_customer){
+      console.log(rate)
+      let obj = {
+        Comments: textArea.current.value,
+        Id_bussines: valor[0].id_coffee,
+        Id_user: id_customer,
+        Type_business: 1,
+        Score: rate
+      }
+      console.log(obj)
+      fetch('https://apimainejetravel.azurewebsites.net/api/Comment/Guardar', {
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json"
+          // Puedes agregar otros encabezados aquí si es necesario
+        },
+        body: JSON.stringify(obj),
+      })
         .then(response => response.json())
-        .then(data => {
-          const { list } = data
-          setComment(list[0])
-
+        .then(data =>
+          console.log(data))
+      setTimeout(() => {
+        fetch(`https://apimainejetravel.azurewebsites.net/api/Comment/Lista/1/${valor[0].id_coffee}`)
+          .then(response => response.json())
+          .then(data => {
+            const { list } = data
+            setComment(list[0])
+  
+          })
+  
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Gracias Por Tu Comentario',
+          showConfirmButton: false,
+          timer: 1000
         })
-
+      }, 1000)
+    }else{
       Swal.fire({
         position: 'top-end',
-        icon: 'success',
-        title: 'Gracias Por Tu Comentario',
+        icon: 'error',
+        title: 'Inicia sesión para enviar tu comentario',
         showConfirmButton: false,
-        timer: 1000
+        timer: 1500
       })
-    }, 1000)
+
+    }
+
 
 
 
