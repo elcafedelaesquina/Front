@@ -31,7 +31,7 @@ const LogoUser= (props) => {
             <ul className='menuUser'>
               <Link to={'/CrearAdministradorCafeteria'}><li className='itemMenu'>Crear Administrador</li></Link>
               <Link to={'/CafeteriaCreateProduct'}><li className='itemMenu'>Mis Productos</li></Link>
-              <li className='itemMenu'>Menú</li>
+              <Link to={'/CrearMenuProducto'}><li className='itemMenu'>Menú</li></Link>
               <Link to={'/EditarPerfilAdmin'}><li className='itemMenu'>Editar Perfil</li></Link>
               <li className='itemMenu' onClick={props.close}>Cerrar Sesion</li>
             </ul>
