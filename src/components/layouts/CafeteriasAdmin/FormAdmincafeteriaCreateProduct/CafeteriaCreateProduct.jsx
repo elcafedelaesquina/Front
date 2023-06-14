@@ -88,6 +88,13 @@ export const CafeteriaCreateProduct = () => {
             showConfirmButton: false,
             timer: 1500
           })
+          setName('');
+          setDescription('');
+          setPrice('');
+          setStock('');
+          setCategory('');
+          setImage('');
+          setIdAdmin(''); 
           
           setLoader(false)
         } else {
@@ -105,6 +112,9 @@ export const CafeteriaCreateProduct = () => {
     } catch (error) {
       console.log("Error de conexión:", error);
     }
+
+    
+    
   };
   const putPrice=(e) => {
       if(e.target.value>0){
@@ -242,6 +252,9 @@ export const CafeteriaCreateProduct = () => {
  }
   return (
     <div className={styles.cn}>
+      <div className={styles.iconX}>
+       <Link to={'/'}><ion-icon name="close"></ion-icon></Link>
+      </div>
     {loader && <Loader></Loader>}
     
           
@@ -269,7 +282,7 @@ export const CafeteriaCreateProduct = () => {
               <form  id='formu' onSubmit={handleSubmit}  className={`${styles['input-boxes']} ${'form-content'}`}>
                 <div className={styles['form-content']}>
                   <div className={styles['form-create']}>
-                    <div className={styles.titleContainer}><h4 className={styles.title}>Crear Productos </h4> <Link to={'/'}><ion-icon name="close"></ion-icon></Link></div>
+                    <div className={styles.titleContainer}><h4 className={styles.title}>Crear Productos </h4></div>
                         <input type="number" className={styles['input-admin']} name='Id_admin' id="stock" value={idAdmin} onChange={()=>{}}  />
 
                       <div className={styles['input-box']}>

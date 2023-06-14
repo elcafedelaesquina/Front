@@ -76,6 +76,7 @@
   transform: translateY(-100px);
 }
 
+
 .container .card:hover .face.face2{
   transform: translateY(0px);
 }
@@ -130,6 +131,20 @@
 .container .card .face.face2 .content .boton.buttons:hover::after {
 	transform: scale(400);
 	background: #ffa844;
+}
+
+.iconX> a ion-icon{
+  font-size: 30px;
+  cursor: pointer;
+  color: black;
+}
+
+.iconX{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-left: 20px;
+  padding: 20px;
 }
 
 @media screen and (max-width: 768px) {

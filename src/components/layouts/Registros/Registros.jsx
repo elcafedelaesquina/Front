@@ -8,6 +8,9 @@ import { Link } from 'react-router-dom';
 export function Registros() {
   return (
       <div className={PageStyle.cn}>
+      <div className={PageStyle.iconX}>
+       <Link to={'/'}><ion-icon name="close"></ion-icon></Link>
+      </div>
         <div className={PageStyle.container}>
         <div className={PageStyle.card}>
           <div className={`${PageStyle.face} ${PageStyle.face1}`}>

@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import styles from "./EditarPerfilAdmin.module.css"
+import { Link } from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import {faCloudArrowUp} from '@fortawesome/free-solid-svg-icons'
@@ -97,6 +98,9 @@ export const EditarPerfilAdmin = () => {
 
   return (
     <div className={styles.cn}>
+      <div className={styles.iconX}>
+       <Link to={'/'}><ion-icon name="close"></ion-icon></Link>
+      </div>
     {loader && <Loader></Loader>}
     {!loader && <div className={styles.container}>
    
