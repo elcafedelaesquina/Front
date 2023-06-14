@@ -1,7 +1,6 @@
 import React from "react";
 import Style from "./cafeteria.module.css"
 import { NavBar } from "../../layouts/navbar/Navbar";
-import { Slider } from "../../layouts/slider/Slider";
 import { HomeCafeteria } from "../../layouts/layoutsCafeteria/homeCafeteria/HomeCafeteria";
 import { CategoriesProducts } from "../../layouts/layoutsCafeteria/CategoriesProducts/CategoriesProducts";
 import { FeaturedProducts } from "../../layouts/layoutsCafeteria/featuredproducts/FeaturedProducts";
@@ -13,12 +12,11 @@ export const Cafeteria = () => {
   return (
     <div className={Style.containerCafeteria}>
       <NavBar />
-      {/* <Slider /> */}
       <HomeCafeteria />
-      <CategoriesProducts />
-      <FeaturedProducts />
+      {/* <CategoriesProducts /> */}
       <Menu />
-      <CarProducts />
+      <FeaturedProducts />
+      {/* <CarProducts /> */}
       <FooterCafeteria />
     </div>
   );

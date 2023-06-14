@@ -27,7 +27,7 @@ export const FormAdmincafeteriaCreateProduct = () => {
         window.location.reload();
       } else {
         // Error al guardar los datos
-        console.log("Error al guardar los datos");
+        console.log(response);
       }
     } catch (error) {
       console.log("Error de conexión:", error);
