@@ -9,7 +9,7 @@ import { Loader } from "../../loader";
 
 
 export const EditarPerfilAdmin = () => {
-  
+  const Swal = require('sweetalert2')
 
   const [loader,setLoader]=useState(false)
 
@@ -26,6 +26,7 @@ export const EditarPerfilAdmin = () => {
 
 
   useEffect(() => {
+    
     // Hacer una solicitud a la base de datos para obtener los datos del perfil del administrador
     // y asignar los valores recibidos a los estados correspondientes
     let id_coffee=JSON.parse(localStorage.getItem('id_coffee'))
@@ -64,10 +65,11 @@ export const EditarPerfilAdmin = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    console.log(e.target)
   const formData = new FormData(e.target);
 
   try {
+
     setLoader(true);
 
     const response = await fetch("https://apimainejetravel.azurewebsites.net/api/Coffee/Actualizar", {
@@ -75,6 +77,19 @@ export const EditarPerfilAdmin = () => {
       body: formData
     }).then(response=>response.json())
     .then(data=>{
+      if(data.result==="exito al actualizar") {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Usuario actualizado exitosamente',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        localStorage.setItem('name',JSON.stringify(name))
+        localStorage.setItem('image',JSON.stringify(image))
+        localStorage.setItem('id_coffee',JSON.stringify(id_coffee))
+      }
+      
       console.log(data)
       if (response.ok) {
         // Datos actualizados exitosamente
@@ -128,7 +143,7 @@ export const EditarPerfilAdmin = () => {
           <div className={styles.title}>Editar Perfil <div className={styles.iconX}>
        <Link to={'/'}><ion-icon name="close"></ion-icon></Link>
       </div></div>
-              <input type="text" className={styles['input-admin']} name='Id_admin' id="stock" value={id_coffee} onChange={() =>{} }/>
+              <input type="text" className={styles['input-admin']} name='Id_coffee' id="stock" value={parseInt(id_coffee)} onChange={() =>{} }/>
               <input type="text" className={styles['input-admin']} name='State' id="stock" value={'activo'} onChange={() =>{} }/>
               
             

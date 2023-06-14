@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 
 
 export const EditarPerfilUsuario = () => {
+  const Swal = require('sweetalert2')
 
   const [name,setName]=useState('')
   const [email,setEmail]=useState('')
@@ -22,7 +23,7 @@ export const EditarPerfilUsuario = () => {
     let id=JSON.parse(localStorage.getItem('id_customer'))
     setIdCustomer(id)
     console.log(typeof id)
-    fetch(`https://apimainejetravel.azurewebsites.net/api/Customer/Obtener/7`, {
+    fetch(`https://apimainejetravel.azurewebsites.net/api/Customer/Obtener/${id}`, {
       method: 'GET'
       
     })
@@ -30,7 +31,12 @@ export const EditarPerfilUsuario = () => {
     .then(data=>{
       setName(data[0][0].name)
       setEmail(data[0][0].email)
-      setPassword(data[0][0].password)})
+      setPassword(data[0][0].password)
+     
+
+      
+    }
+      )
 
   },[])
 
@@ -79,6 +85,18 @@ export const EditarPerfilUsuario = () => {
       /* console.log(data.status) */
       const {status,exepcion}=data;
       console.log(data)
+      if(data.result==="exito al actualizar") {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Usuario actualizado exitosamente',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        localStorage.setItem('name',JSON.stringify(name))
+        localStorage.setItem('image',JSON.stringify(image))
+        localStorage.setItem('id_customer',JSON.stringify(id_customer))
+      }
    
     })
     ;
@@ -103,19 +121,19 @@ export const EditarPerfilUsuario = () => {
           <div className={styles.title}>Editar Perfil del Usuario</div>
 
             <div className={styles['input-box']}>
-              <input type="number" className={styles['input-user']} value={id_customer} readOnly name='Id_customer' id="stock" />
+              <input type="number" className={styles['input-user']} value={id_customer}  name='Id_customer' id="stock" />
             </div>
 
             <div className={styles['input-box']}>
-              <input type="text" name='Name' value={name}  placeholder='Nombre' id="name" />
+              <input type="text" name='Name' value={name}  placeholder='Nombre' onChange={(e)=>{setName(e.target.value)}} id="name" />
             </div>
 
             <div className={styles['input-box']}>
-              <input type="email" name='Email' value={email} placeholder='email' id="email" />
+              <input type="email" name='Email' value={email} placeholder='email' onChange={(e)=>{setEmail(e.target.value)}} id="email" />
             </div>
 
             <div className={styles['input-box']}>
-              <input type="password" name='Password' value={password}   placeholder='Contraseña' id="password"  />
+              <input type="password" name='Password' value={password}   placeholder='Contraseña' onChange={(e)=>{setPassword(e.target.value)}} id="password"  />
             </div>
 
             <div className={styles['container-file']}>

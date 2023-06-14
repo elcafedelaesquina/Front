@@ -30,10 +30,10 @@
     display: flex;
    
    
-    justify-content: space-between;
+    justify-content: center;
 }
 .containerInput input{
-    width: 65%;
+    width: 75%;
     border-radius: 10px;
     height: 45px;
     border: none;
@@ -43,13 +43,4 @@
     outline: none;
     
 }
-.containerInput button{
-    width: 25%;
-    height: 45px;
-    background-color:  rgb(255, 167, 66);
-    border: none;
-    border-radius: 10px;
-    color: white;
-    font-size:22px
 
-}

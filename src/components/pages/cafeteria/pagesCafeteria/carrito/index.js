@@ -127,7 +127,7 @@ const Carrito = () => {
 
 
     </div>
-    <ChatModal></ChatModal>
+    
 
     <ProductsCafeteria></ProductsCafeteria>
     
