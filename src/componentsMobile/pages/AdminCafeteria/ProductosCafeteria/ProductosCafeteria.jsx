@@ -14,9 +14,7 @@ export const ProductosCafeteria = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const getProductsCafeterias = async () => {
-    await fetch(
-      `https://apimainejetravel.azurewebsites.net/api/Product/Lista/2`
-    )
+    await fetch(`https://apimainejetravel.azurewebsites.net/api/Product/Lista/2`)
       .then((response) => response.json())
       .then((data) => {
         const { list } = data;
