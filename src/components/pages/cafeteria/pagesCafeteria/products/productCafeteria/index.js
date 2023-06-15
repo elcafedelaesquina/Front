@@ -7,6 +7,7 @@ import { useEffect,useState } from 'react'
 const  ProductCafeteria= () => {
     const Swal = require('sweetalert2')
     const [data,setData]=useState([])
+ 
     useEffect(()=>{
         let coffee=JSON.parse(localStorage.getItem('coffee'))
         //obtener el id de la cafeteria y pasarlo para filtrar los productos de una cafeteria
@@ -23,17 +24,31 @@ const  ProductCafeteria= () => {
           
       },[])
     const putCarrito=(product)=>{
-        let createLocal = JSON.parse(localStorage.getItem('carrito')) || []; // Parsea la cadena JSON a un array o utiliza un array vacío por defecto
-        createLocal.push(product); // Agrega el producto al array
-        localStorage.setItem('carrito', JSON.stringify(createLocal));
-        console.log(createLocal);
-        Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Producto Agregado al Carrito',
-            showConfirmButton: false,
-            timer: 1500
-          })
+        let validation=JSON.parse(localStorage.getItem('id_customer'))
+        if(validation){
+            let createLocal = JSON.parse(localStorage.getItem('carrito')) || []; // Parsea la cadena JSON a un array o utiliza un array vacío por defecto
+            createLocal.push(product); // Agrega el producto al array
+            localStorage.setItem('carrito', JSON.stringify(createLocal));
+            console.log(createLocal);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Producto Agregado al Carrito',
+                showConfirmButton: false,
+                timer: 1500
+            })
+            
+        }else{
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'Inicia sesión para agregar al Carrito',
+                showConfirmButton: false,
+                timer: 1500
+            })
+          
+        }
+        
        
     }
     

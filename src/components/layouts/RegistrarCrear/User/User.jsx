@@ -81,6 +81,7 @@ function register(){
       console.log(data)
       if(exepcion ||exepcion==='Account is registed'){
         Swal.fire({
+          position: 'top-center',
           icon: 'error',
           title: 'Oops...',
           text: 'Este E-mail ya está registrado!'
@@ -92,6 +93,7 @@ function register(){
       }
       else if(status){
         Swal.fire({
+          position: 'top-center',
           icon: 'error',
           title: 'Oops...',
           text: 'Ingresa la informacion de todos los campos!'
@@ -99,7 +101,7 @@ function register(){
         setLoader(false)
       }else{
         Swal.fire({
-          position: 'top-end',
+          position: 'top-center',
           icon: 'success',
           title: 'Éxito al registrarse',
           showConfirmButton: false,
@@ -142,6 +144,7 @@ function login(){
       const {token,mensaje}=data;
       if(mensaje==='Correo o contraseña invalida'){
         Swal.fire({
+          position: 'top-center',
           icon: 'error',
           title: 'Oops...',
           text: 'Contraseña o correo invalido!'
@@ -150,7 +153,8 @@ function login(){
 
       }else if(!token){
         Swal.fire({
-          icon: 'error',
+          position: 'top-center',
+          icon: 'warning',
           title: 'Oops...',
           text: 'Ingresa la informacion de todos los campos!'
         })
@@ -162,7 +166,7 @@ function login(){
         localStorage.setItem('id_customer',JSON.stringify(data.listCustomer[0].id_customer))
         let name=JSON.parse(localStorage.getItem('name'))
         Swal.fire({
-          position: 'top-end',
+          position: 'top-center',
           icon: 'success',
           title: 'Bienvenido '+name,
           showConfirmButton: false,

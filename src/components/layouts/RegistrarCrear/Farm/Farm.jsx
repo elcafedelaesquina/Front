@@ -129,6 +129,7 @@ export function Farm() {
         
         else if(status){ 
           Swal.fire({
+            position: 'top-center',
             icon: 'error',
             title: 'Oops...',
             text: 'Ingresa la informacion de todos los campos!'
@@ -189,7 +190,8 @@ export function Farm() {
         }
         else if(!token){
           Swal.fire({
-            icon: 'error',
+            position: 'top-center',
+            icon: 'warning',
             title: 'Oops...',
             text: 'Ingresa la informacion de todos los campos!'
           })

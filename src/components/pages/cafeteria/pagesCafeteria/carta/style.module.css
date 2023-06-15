@@ -27,7 +27,7 @@
     margin: 0px auto;
     padding-top: 100px;
     backdrop-filter: brightness(30%);
-    color: aliceblue;
+    color: rgb(235, 235, 235);
     font-size: 28px;
 }
 .imgCarta h2{
@@ -68,7 +68,7 @@
     border-bottom: 1px solid gray;
     padding: 5px;
     font-size:20px;
-    background-color: aliceblue;
+    background-color: rgb(240, 240, 240);
 }
 .itemPricetwo{
     width: 100%;

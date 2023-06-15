@@ -78,7 +78,8 @@ const Comments = () => {
 
   const sendComment = () => {
     ///organizar post no esta recibiendo la peticion
-    if(id_customer){
+    let id= parseInt(localStorage.getItem('id_customer'))
+    if(id){
       console.log(rate)
       let obj = {
         Comments: textArea.current.value,

@@ -119,7 +119,8 @@ function register(){
       console.log(status)
       if(exepcion ||exepcion==='Account is registed'){
         Swal.fire({
-          icon: 'error',
+          position: 'top-center',
+          icon: 'warning',
           title: 'Oops...',
           text: 'Este E-mail ya está registrado!'
         })
@@ -131,6 +132,7 @@ function register(){
       
       else if(status){ 
         Swal.fire({
+          position: 'top-center',
           icon: 'error',
           title: 'Oops...',
           text: 'Ingresa la informacion de todos los campos!'
@@ -182,6 +184,7 @@ var formularioLogin=useRef(null)
       console.log(data)
       if(mensaje==='Correo o contraseña invalida'){
         Swal.fire({
+          position: 'top-center',
           icon: 'error',
           title: 'Oops...',
           text: 'Contraseña o correo invalido!'
@@ -191,7 +194,8 @@ var formularioLogin=useRef(null)
       }
       else if(!token){
         Swal.fire({
-          icon: 'error',
+          position: 'top-center',
+          icon: 'warning',
           title: 'Oops...',
           text: 'Ingresa la informacion de todos los campos!'
         })
@@ -203,7 +207,7 @@ var formularioLogin=useRef(null)
         localStorage.setItem('id_coffee',JSON.stringify(data.listCoffee[0].id_coffee))
         let name=JSON.parse(localStorage.getItem('name'))
         Swal.fire({
-          position: 'top-end',
+          position: 'top-center',
           icon: 'success',
           title: 'Bienvenido '+name,
           showConfirmButton: false,

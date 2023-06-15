@@ -8,7 +8,8 @@ import { ProductsCafeteria } from '../products'
 
 const Carrito = () => {
     const[carrito,setCarrito]=useState([])
-    const [total,setTotal]=useState(0)
+    const [total,setTotal]=useState(0) 
+    const [load,setLoad]=useState([])
     useEffect(()=>{
         if(JSON.parse(localStorage.getItem('carrito'))){
             setCarrito(JSON.parse(localStorage.getItem('carrito')) )
@@ -19,16 +20,6 @@ const Carrito = () => {
         
 
     },[])
-    let [sum,setSum]=useState(0)
-    const calculate=(precio)=>{
-        
-        sum+=precio
-        setTotal(sum)
-        
-
-
-    }
-
     const deleteItem=(index)=>{
         let items=JSON.parse(localStorage.getItem('carrito')) 
         items.splice(index,1)
@@ -36,9 +27,15 @@ const Carrito = () => {
             let resta
             resta=total-items[index].price
             setTotal(resta)
+        }else{
+            
+                setTotal(0)
+            
         }
         localStorage.setItem('carrito',JSON.stringify(items))
         setCarrito( JSON.parse(localStorage.getItem('carrito')) )
+       
+        setLoad([])
         
 
     }
@@ -53,17 +50,35 @@ const Carrito = () => {
 
 
     }
+    useEffect(()=>{
+        let car=JSON.parse(localStorage.getItem('carrito'))
+        
+        if(car.length !=0){
+            let suma=0
+            for (let item of car  ){
+                console.log(item.price)
+                suma=item.price+suma
+                
+                
+    
+            }
+            setTotal(suma)
+        }else{
+            setTotal(0)
+        }
+
+    },[load])
 
   return (
     <>
     <div className={styles.carrito}>
-        <div className={styles.cerrar}><Link to={`/cafeterias/cafeteria/productos`}><ion-icon name="close-outline"></ion-icon></Link></div>
+        <div className={styles.cerrar}>{<Link to={`/cafeterias/cafeteria/productos`}><ion-icon name="close-outline"></ion-icon></Link>}</div>
         <h2 className={styles.titleCarrito}>Carrito</h2>
         <div className={styles.itemsCarrito}>
             {carrito.map((product,index)=>{
                
                 return(
-                    <div className={styles.itemCarrito} onLoad={()=>{calculate(product.price)}}>
+                    <div className={styles.itemCarrito} /* onLoad={()=>{calculate(product.price)}} */>
                     <img src={product.image} alt='' className={styles.imgItem}></img>
                     <div className={styles.infoItem}>
                         <h4 className={styles.name}>{product.name}</h4>

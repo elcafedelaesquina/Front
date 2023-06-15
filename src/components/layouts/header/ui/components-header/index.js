@@ -12,7 +12,7 @@ const ComponentsHeader = () => {
   const close=()=>{
       
       Swal.fire({
-        position: 'top-end',
+        position: 'top-center',
         icon: 'success',
         title:'Adiós '+name ,
         showConfirmButton: false,
