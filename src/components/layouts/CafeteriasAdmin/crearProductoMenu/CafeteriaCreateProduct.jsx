@@ -4,11 +4,12 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import {faCloudArrowUp} from '@fortawesome/free-solid-svg-icons'
 import { Loader } from "../../loader";
-import { ProductAdmin } from "./productAdmin";
 import { Link } from "react-router-dom";
 
-export const CafeteriaCreateProduct = () => {
+export const CafeteriaCreateMenuProduct = () => {
   const Swal = require('sweetalert2')
+  const [estado,setEstado]=useState([])
+    const categorizedData = {};
 
   //image
   function handleImageInputChange(e) {
@@ -36,28 +37,21 @@ export const CafeteriaCreateProduct = () => {
   const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
   const [idAdmin, setIdAdmin] = useState(""); 
+  const [idCoffee, setIdCoffee] = useState(""); 
   const [dataProduct,setDataProduct]=useState([])
+  
   useEffect(()=>{
     let coffee=JSON.parse(localStorage.getItem('id_coffee'))
+    setIdCoffee(coffee)
    
     //obtener el id de la cafeteria y pasarlo para filtrar los productos de una cafeteria
     if(coffee){
-      fetch(`https://apimainejetravel.azurewebsites.net/api/Product/Lista/${coffee}`)
-    .then(response => response.json())
-    .then(data => {
-   
-      console.log(data)
-        setDataProduct(data.list[0]) 
-      
-      })
-      fetch(`https://apimainejetravel.azurewebsites.net/api/Admin/Lista/1/${coffee}`)
+      fetch(`https://apimainejetravel.azurewebsites.net/api/MenuProduct/Lista/${coffee}`)
       .then(response => response.json())
       .then(data => {
-
-          setIdAdmin(data.list[0][0].id_admin) 
-          console.log(data.list[0][0].id_admin)
-
-        })
+        console.log(data)
+        
+      })
 
     }
     setDataProduct([])
@@ -76,7 +70,7 @@ export const CafeteriaCreateProduct = () => {
 
     try {
         
-        await fetch("https://apimainejetravel.azurewebsites.net/api/Product/Guardar", { method: "POST", body: formData } )
+        await fetch("https://apimainejetravel.azurewebsites.net/api/MenuProduct/Guardar", { method: "POST", body: formData } )
       .then(response => response.json())
       .then(data => {
         console.log(data)
@@ -97,7 +91,6 @@ export const CafeteriaCreateProduct = () => {
           setImage('');
           setIdAdmin(''); 
           
-          setLoader(false)
         } else {
           // Error al guardar los datos
           Swal.fire({
@@ -107,8 +100,10 @@ export const CafeteriaCreateProduct = () => {
           })
         }
       })
-
+      setEstado([])
       setLoad([])
+
+     
       setLoader(false)
     } catch (error) {
       console.log("Error de conexión:", error);
@@ -127,7 +122,7 @@ export const CafeteriaCreateProduct = () => {
       }
     }
   const deleteProduct=(id_product)=>{
-    fetch(`https://apimainejetravel.azurewebsites.net/api/Product/Eliminar/${id_product}`,
+    fetch(`https://apimainejetravel.azurewebsites.net/api/MenuProduct/Eliminar/${id_product}`,
      { method: "DELETE"} )
       .then(response => response.json())
       .then(data => {
@@ -147,18 +142,28 @@ export const CafeteriaCreateProduct = () => {
   }
   useEffect(()=>{
     let coffee=JSON.parse(localStorage.getItem('id_coffee'))
-   
     //obtener el id de la cafeteria y pasarlo para filtrar los productos de una cafeteria
-    if(coffee){
-      fetch(`https://apimainejetravel.azurewebsites.net/api/Product/Lista/${coffee}`)
+     if(coffee){
+      fetch(`https://apimainejetravel.azurewebsites.net/api/MenuProduct/Lista/${coffee}`)
     .then(response => response.json())
     .then(data => {
-        setDataProduct(data.list[0]) 
+      
+        data.list[0].forEach(item => {
+          const category = item.category;
+        
+          if (!categorizedData[category]) {
+            categorizedData[category] = [];
+          }
+        
+          categorizedData[category].push(item);
+        });
+        const array = Object.values(categorizedData)
+       
+        setEstado(array)
       })
       
 
-    }
-    
+    } 
 
   },[load])
 
@@ -208,7 +213,7 @@ export const CafeteriaCreateProduct = () => {
       
   };
   const show=(prop)=>{
-    console.log(prop)
+    
      const formData = new FormData();
      for (const key in prop) {
        if (prop.hasOwnProperty(key)) {
@@ -261,18 +266,28 @@ export const CafeteriaCreateProduct = () => {
     
     {!loader &&<>
           <div className={styles.ProductsContainer}>
-            <h2 className={styles.titleContainerProducts} onClick={updateProduct}>Mis Productos</h2>
+            <h2 className={styles.titleContainerProducts} >Mis Productos</h2>
+            {
+                        estado.map(item =>(
+                            
+                            <div className={styles.itemCarta}> 
+                            <h3 className={styles.titleCarta}>{item[0].category}</h3>{
+                            item.map((producto,index)=>(
+                                                  
+                                    
+                                    <div key={index} className={styles.itemPriceOne}><p>{producto.name}</p><p>${producto.price}</p> <ion-icon name="trash-outline"onClick={()=>{deleteProduct(producto.id_menu_product)}} ></ion-icon></div>
+                                    
 
-               {dataProduct.length>0 && dataProduct.map(product=>{
-                return(
-                  <ProductAdmin key={product.id_product} data={product} deleteProp={[deleteProduct,updateProduct]} ></ProductAdmin>
-                )
-                 
-              })
-              }
-              {!dataProduct.length>0 &&
-                <h2>todavia no tienes productos</h2>
-              }
+                            )
+                            )}
+                            </div>
+                            
+                        ))
+
+                    }
+
+               
+              
             
 
          </div>
@@ -284,10 +299,10 @@ export const CafeteriaCreateProduct = () => {
                     <div className={styles.titleContainer}><h4 className={styles.title}>Crear Productos </h4><div className={styles.iconX}>
        <Link to={'/'}><ion-icon name="close"></ion-icon></Link>
       </div></div>
-                        <input type="number" className={styles['input-admin']} name='Id_admin' id="stock" value={idAdmin} onChange={()=>{}}  />
+                        <input type="number" className={styles['input-admin']} name='Id_coffee' id="stock" value={idCoffee} onChange={()=>{}}  />
 
                       <div className={styles['input-box']}>
-                        <input type="text" name='Name'  placeholder='Nombre' id="name" value={name} onChange={(e) => setName(e.target.value)} />
+                        <input type="text" name='Name'  placeholder='Nombre' id="Name" value={name} onChange={(e) => setName(e.target.value)} />
                       </div>
 
                       <div className={styles['input-box textarea-container']}>
@@ -298,9 +313,7 @@ export const CafeteriaCreateProduct = () => {
                         <input type="text" name='Price' id="price" placeholder='Precio' value={price} onChange={putPrice}/>
                       </div>
 
-                      <div className={styles['input-box']}>
-                        <input type="number" id="stock" name='Stock' min={0} placeholder='Existencias' value={stock} onChange={(e) => setStock(Number(e.target.value))}/>
-                      </div>
+                     
 
                       <div className={styles['input-box']}>
                         <input type="text" name='Category' id="categery" placeholder='Categoría' value={category} onChange={(e) => setCategory(e.target.value)}/>

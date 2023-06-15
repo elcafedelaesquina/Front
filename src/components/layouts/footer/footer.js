@@ -25,18 +25,17 @@ const Footer = () => {
               </div>
             </li>
             <li>
-              <h3>Herramientas</h3>
-              <div className={styles.iconsCreators}>
-              <ion-icon name="logo-npm"></ion-icon>
-              <ion-icon name="logo-react"></ion-icon>
-              <ion-icon name="logo-javascript"></ion-icon>
-
-              </div>
+              <h3>Acerca de nosotros</h3> 
+              <p>-Quienes somos</p>
+              <p>-Nuestro Objetivo</p>
+              <p>-Alcance</p>
+              
+             
             </li>
             <li>
               <h3>Información legal</h3>
-              <span>Términos y configuración Privacidad y cookiesTérminos y condiciones
-            Términos y configuración Privacidad y cookiesTérminos y condiciones</span>
+              <p>-Este sitio web puede incluir enlaces a sitios web de terceros. </p>
+              <p>-El contenido de este sitio web es únicamente para información general.</p>
             </li>  
         </ul>
        

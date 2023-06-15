@@ -40,8 +40,9 @@ const  ProductCafeteria= () => {
 
   return (
     <>
-     {data.map(product=>{
+     {data.length>0 &&  data.map(product=>{
                     return(
+                        <>
                         <div key={product.id} className={styles.card}>
                             <div className={styles['card-img']}>
                                 <img className={styles.cardProduct}
@@ -61,10 +62,12 @@ const  ProductCafeteria= () => {
                                 </div>
                             </div>
                         </div>
+                        </>
                        
 
                     )
                 })}
+        {data.length<=0&&<h2>Esta cafeteria no Tienes productos</h2>}
 
     </>
    

@@ -25,7 +25,7 @@ export const ProductosCafeteria = () => {
       })
       .catch((error) => {
         // Manejar el error
-        console.log("error");
+        console.log(error);
       });
   };
 

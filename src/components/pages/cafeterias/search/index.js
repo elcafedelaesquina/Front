@@ -8,7 +8,6 @@ const SearchCafeterias= (props) => {
         <h5>¡Descubre nuestras increíbles cafeterías! Sumérgete en un mundo de aromas y sabores, donde el café se convierte en una experiencia única!</h5>
         <div className={styles.containerInput}>
             <input type="text" value={props.filter} onChange={props.handleFilterChange} placeholder={'Buscar Cafeterias'}></input>
-            <button>Buscar</button>
         </div>
         
     </div>

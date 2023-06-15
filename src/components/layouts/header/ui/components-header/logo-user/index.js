@@ -1,4 +1,4 @@
-import React, {  useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import './style.css'
 
@@ -22,15 +22,16 @@ const LogoUser= (props) => {
           <div className='menuContainer'>
            <ul className='menuUser'>
               <li className='itemMenu'>Ver compras</li>
-              <li className='itemMenu'>Editar Perfil</li>
+              <Link to={'/EditarPerfilUsuario'}><li className='itemMenu'>Editar Perfil</li></Link>
               <li className='itemMenu' onClick={props.close}>Cerrar Sesion</li>
             </ul>
           </div>)}
         {id_coffee && (
           <div className='menuContainer'>
             <ul className='menuUser'>
+              <Link to={'/CrearAdministradorCafeteria'}><li className='itemMenu'>Crear Administrador</li></Link>
               <Link to={'/CafeteriaCreateProduct'}><li className='itemMenu'>Mis Productos</li></Link>
-              <li className='itemMenu'>Menú</li>
+              <Link to={'/CrearMenuProducto'}><li className='itemMenu'>Menú</li></Link>
               <Link to={'/EditarPerfilAdmin'}><li className='itemMenu'>Editar Perfil</li></Link>
               <li className='itemMenu' onClick={props.close}>Cerrar Sesion</li>
             </ul>

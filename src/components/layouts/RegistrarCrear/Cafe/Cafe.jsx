@@ -223,6 +223,11 @@ var formularioLogin=useRef(null)
 }
   return (
     <div className={styles.cn}>
+      <div className={styles.iconX}>
+       <Link to={'/PageRegistros'}><ion-icon name="close"></ion-icon></Link>
+      </div>
+      
+      
           {loader && <Loader></Loader>}
           {!loader && <div className={styles.container}>
     <input type="checkbox"  className={styles.flip} id="flip" />
@@ -239,7 +244,7 @@ var formularioLogin=useRef(null)
     <form ref={formulario}>
       <div className={styles['form-content']}>
         <form ref={formularioLogin} className={styles['login-form']}>
-          <div className={styles.title}>Iniciar Sesión</div>
+          <div className={styles.titleContainer}><h4 className={styles.title}>Iniciar Sesión</h4></div>
           <div className={styles['input-boxes']}>
             <div className={styles['input-box']}>
               <i className={`fas fa-envelope ${styles['icon']}`}><FontAwesomeIcon icon={faEnvelope} /></i>

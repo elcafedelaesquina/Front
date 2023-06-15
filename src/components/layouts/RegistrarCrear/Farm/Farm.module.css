@@ -40,6 +40,21 @@
     z-index: 100;
 }
 
+.iconX> a ion-icon{
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+}
+  
+.iconX{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-left: 20px;
+    padding: 20px;
+}
+
+
 .container .flip:checked ~ .cover{
     transform: rotateY(-180deg);
 }

@@ -85,7 +85,7 @@ const ContentHome = () => {
           <li><ion-icon name="close-outline"></ion-icon>Editar Información</li>
           <li><ion-icon name="close-outline"></ion-icon>Eliminar Información</li>
         </ul>
-        <button className={styles.btnSub1 }>$0/Month</button>
+        <button className={styles.btnSub1 }>$0/Mes</button>
 
       </div>
       <div className={styles.sub}>
@@ -97,7 +97,7 @@ const ContentHome = () => {
           <li><ion-icon name="checkmark-outline"></ion-icon>Editar Información</li>
           <li><ion-icon name="close-outline"></ion-icon>Eliminar Información</li>
         </ul>
-        <button className={styles.btnSub2 }>$30/Month</button>
+        <button className={styles.btnSub2 }>$30/Mes</button>
 
       </div>
       <div className={styles.sub}>
@@ -109,7 +109,7 @@ const ContentHome = () => {
           <li><ion-icon name="checkmark-outline"></ion-icon>Editar Información</li>
           <li><ion-icon name="checkmark-outline"></ion-icon>Eliminar Información</li>
         </ul>
-        <button className={styles.buttonSub }>$50/Month</button>
+        <button className={styles.buttonSub }>$50/Mes</button>
 
       </div>
     </div>

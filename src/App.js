@@ -17,11 +17,16 @@ import { CafeteriaCreateProduct } from './components/layouts/CafeteriasAdmin/For
 import { ProductsCafeteria } from './components/pages/cafeteria/pagesCafeteria/products';
 import { Carrito } from './components/pages/cafeteria/pagesCafeteria/carrito';
 import { EditarPerfilAdmin } from './components/layouts/CafeteriasAdmin/EditarPerfilAdmin/EditarPerfilAdmin';
-
+import { CrearAdministradorCafeteria } from './components/layouts/CafeteriasAdmin/CrearAdministradorCafeteria/CrearAdministradorCafeteria'
+import { EditarPerfilUsuario } from './components/layouts/UsuarioAdmin/EditarPerfilUsuario/EditarPerfilUsuario'
+import { CafeteriaCreateMenuProduct } from './components/layouts/CafeteriasAdmin/crearProductoMenu/CafeteriaCreateProduct';
+import { ChatModal } from './components/layouts/chat';
 function App() {
   return (
   <div> 
     <Routes>
+    <Route path="/chat" element={<ChatModal></ChatModal>}></Route>
+    <Route path="/CrearMenuProducto" element={<CafeteriaCreateMenuProduct></CafeteriaCreateMenuProduct>}></Route>
       <Route path="/cafeterias" element={<Cafeterias></Cafeterias>}></Route>
       <Route path="/cafeterias/cafeteria/carta" element={<CartaCafeteria></CartaCafeteria>}></Route>
       <Route path="/cafeterias/cafeteria/productos" element={<ProductsCafeteria></ProductsCafeteria>}></Route>
@@ -38,6 +43,8 @@ function App() {
       <Route path='/Farm' element={<Farm></Farm>}></Route>
       <Route path='/CafeteriaCreateProduct' element={<CafeteriaCreateProduct></CafeteriaCreateProduct>}></Route>
       <Route path='/EditarPerfilAdmin' element={<EditarPerfilAdmin></EditarPerfilAdmin>}></Route>
+      <Route path='/CrearAdministradorCafeteria' element={<CrearAdministradorCafeteria></CrearAdministradorCafeteria>}></Route>
+      <Route path='/EditarPerfilUsuario' element={<EditarPerfilUsuario></EditarPerfilUsuario>}></Route>
     </Routes>   
   </div>
 

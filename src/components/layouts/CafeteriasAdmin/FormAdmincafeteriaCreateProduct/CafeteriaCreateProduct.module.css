@@ -71,6 +71,20 @@ form .form-content .title{
   color: #000;
 }
 
+.iconX> a ion-icon{
+  font-size: 30px;
+  cursor: pointer;
+  color: black;
+}
+
+.iconX{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-left: 20px;
+  padding: 20px;
+}
+
 form .form-content .title::before{
   content: '';
   position: absolute;

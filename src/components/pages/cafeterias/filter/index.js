@@ -8,7 +8,6 @@ const FilterCafeterias = () => {
         <select className="select">
            <option>Renacer Salento</option>
            
-           
         </select>
         <div className='check'>
          <input type="checkbox"></input> 

@@ -1,16 +1,24 @@
 .cn{
-  min-height: 100vh;
+  height: 100vh;
+  max-height: 100vh;
   display: flex;
+  padding: 30px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   background: #ffa844;
+  overflow: hidden;
+}
+.containerForms{
+  width: 100vh;
+  overflow: auto;
+  width: 32%;
 }
 
 .container{
   position: relative;
   max-width: 450px;
   width: 100%;
-  height: 90vh;
+  height: 65vh;
   background: #fff;
   padding: 20px 30px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -37,7 +45,6 @@
   transform: translateY(-100px);
   position: fixed;
   background-color: #fcfcfc00;
-  /* border-bottom: 2px solid gray; */
   z-index: 2;
   height: 38px;
   border-bottom-left-radius: 00px;
@@ -48,6 +55,8 @@
 .titleContainer{
   width: 100%;
   display: flex;
+  padding: 10;
+  padding-bottom: 50px;
   justify-content: space-between;
 }
 .titleContainer> a ion-icon{
@@ -74,7 +83,7 @@ form .form-content .title{
   top: 0;
   right: 0;
   padding-left: 20px;
-  padding: 0px;
+  padding: 20px;
 }
 
 form .form-content .title::before{
@@ -100,7 +109,7 @@ form .form-content .input-box{
   align-items: center;
   height: 30px;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 30px;
   position: relative;
 }
 
@@ -158,7 +167,7 @@ form .form-content .button-form{
   padding: 0;
   height: 45px;
   cursor: pointer;
-  margin-top: -50px;
+  margin-top: 50px;
   transition: all 0.4s ease;
 }
 

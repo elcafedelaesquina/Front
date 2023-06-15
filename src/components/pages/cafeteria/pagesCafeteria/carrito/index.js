@@ -1,12 +1,14 @@
 import React, { useEffect,useState } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './style.module.css'
+import { ChatModal } from '../../../../layouts/chat'
 
 import { ProductsCafeteria } from '../products'
 
 
 const Carrito = () => {
     const[carrito,setCarrito]=useState([])
+    const [total,setTotal]=useState(0)
     useEffect(()=>{
         if(JSON.parse(localStorage.getItem('carrito'))){
             setCarrito(JSON.parse(localStorage.getItem('carrito')) )
@@ -17,21 +19,32 @@ const Carrito = () => {
         
 
     },[])
+    let [sum,setSum]=useState(0)
+    const calculate=(precio)=>{
+        
+        sum+=precio
+        setTotal(sum)
+        
+
+
+    }
 
     const deleteItem=(index)=>{
         let items=JSON.parse(localStorage.getItem('carrito')) 
         items.splice(index,1)
+        if(items.length!==0){
+            let resta
+            resta=total-items[index].price
+            setTotal(resta)
+        }
         localStorage.setItem('carrito',JSON.stringify(items))
         setCarrito( JSON.parse(localStorage.getItem('carrito')) )
         
 
     }
     const purchase=()=>{
-
         //organizar los productos para ser enviados a la compra 
-
-
-        fetch('https://localhost:7002/api/MakePurchase/HacerCompra', {
+    fetch('https://localhost:7002/api/MakePurchase/HacerCompra', {
       method: 'POST',
       body:'objeto con info de los productos de la compra'
     })
@@ -48,8 +61,9 @@ const Carrito = () => {
         <h2 className={styles.titleCarrito}>Carrito</h2>
         <div className={styles.itemsCarrito}>
             {carrito.map((product,index)=>{
+               
                 return(
-                    <div className={styles.itemCarrito}>
+                    <div className={styles.itemCarrito} onLoad={()=>{calculate(product.price)}}>
                     <img src={product.image} alt='' className={styles.imgItem}></img>
                     <div className={styles.infoItem}>
                         <h4 className={styles.name}>{product.name}</h4>
@@ -62,8 +76,10 @@ const Carrito = () => {
                                 <option value={4}>4</option>
                             </select>
                         </p>
-                        <p>Precio: $<span>{product.price}</span></p>
-                        <div className={styles.btnDelete} onClick={()=>{deleteItem(index)}}><ion-icon name="trash-outline"></ion-icon></div>
+                        <p>Precio: $<span >{product.price}</span></p>
+                        
+                        <div className={styles.btnDelete} onClick={()=>{deleteItem(index)
+                         }}><ion-icon name="trash-outline"></ion-icon></div>
                     </div>
                 </div>
                 )
@@ -97,20 +113,21 @@ const Carrito = () => {
         </div>
         <div>
             <div className={styles.total}>
-                <h4>Subtotal:</h4><h4>$150.000</h4>
+                <h4>Subtotal:</h4><h4>${total}</h4>
             </div>
             <div className={styles.total}>
-                <p>Iva:</p><p>$15.000</p>
+                <p>Iva:</p><p>19%</p>
             </div>
             <div className={styles.total}>
-                <h4>Total:</h4><h4>$150.000</h4>
+                <h4>Total:</h4><h4>${total+total*0.19}</h4>
             </div>
         </div>
-        <p className={styles.infoPay}>El pago del envio se ajustará a la compra</p>
-        <button className={styles.button}>Realizar Compra</button>
+        <p className={styles.infoPay}>El pago del envío se ajustará a la compra</p>
+        <button className={styles.button} onClick={purchase}>Realizar Compra</button>
 
 
     </div>
+    
 
     <ProductsCafeteria></ProductsCafeteria>
     

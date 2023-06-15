@@ -188,6 +188,10 @@ function login(){
 return (
 
   <div className={styles.cn}>
+      <div className={styles.iconX}>
+       <Link to={'/PageRegistros'}><ion-icon name="close"></ion-icon></Link>
+      </div>
+      
     {loader && <Loader></Loader>}
     {!loader && <div className={styles.container}>
     <input type="checkbox" className={styles.flip} id='flip' />

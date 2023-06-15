@@ -67,17 +67,15 @@ const Cafeterias = () => {
         <h5>¡Descubre nuestras increíbles cafeterías! Sumérgete en un mundo de aromas y sabores, donde el café se convierte en una experiencia única!</h5>
         <div className={styles.containerInput}>
             <input type="text" value={filter} onChange={handleFilterChange}  placeholder={'Buscar Cafeterias'}></input>
-            <button>Buscar</button>
+            
         </div>
         
     </div>
         </div>
       </div>
-      <div className={styles.itemsContainer}>
-        
+      <div className={styles.itemsContainer}>       
         <div className={styles.filter}>
-        <FilterCafeterias></FilterCafeterias>
-
+        <FilterCafeterias data={data}></FilterCafeterias>
         </div>
         <div className={styles.container}>
           {data.map(item=>{
@@ -101,7 +99,7 @@ const Cafeterias = () => {
         <h2>Fincas Cafeteras que te van a interesar para visitar</h2>
        
         {dataFinca.map((item,index)=>{
-           if (index>=7 ) {
+           if (index>=5 ) {
             return null; // Detiene la iteración
           }
             return (

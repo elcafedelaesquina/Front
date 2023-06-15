@@ -71,9 +71,6 @@ export const FormAdmincafeteriaUpdateProduct = ({ card, setIsHidden, isHidden })
           </div>
         </div> */}
 
-      <label className={Style.label} htmlFor="image">Imagen:</label>
-      <input name="Image" type="file" id="imageupload" value={image} onChange={(e) => setImage(e.target.value)} />
-
         <label className={Style.label} htmlFor="name">Nombre:</label>
         <input className={Style.input} name="Name" type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} required />
 
@@ -88,6 +85,9 @@ export const FormAdmincafeteriaUpdateProduct = ({ card, setIsHidden, isHidden })
 
         <label className={Style.label} htmlFor="category">Categoría:</label>
         <input className={Style.input} name="Category" type="text" id="category" value={category} onChange={(e) => setCategory(e.target.value)} required />
+
+        <label className={Style.label} htmlFor="image">Imagen:</label>
+        <input name="Image" type="file" id="imageupload" value={image} onChange={(e) => setImage(e.target.value)} />
 
         <input className={Style.id} name="Id_admin" type="number" id="stock" value={idAdmin} onChange={(e) => setIdAdmin(Number(e.target.value))} required />
 
