@@ -1,16 +1,32 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Style from "./FormAdmincafeteriaUpdateProduct.module.css";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
 export const FormAdmincafeteriaUpdateProduct = ({ card, setIsHidden, isHidden }) => {
+  let item = JSON.parse(localStorage.getItem("id_coffee"));
   const [id_product, setId_product] = useState(card.id_product);
-  const [idAdmin, setIdAdmin] = useState(1092455367);
   const [name, setName] = useState(card.name);
   const [description, setDescription] = useState(card.description);
   const [price, setPrice] = useState(card.price);
   const [stock, setStock] = useState(card.stock);
   const [category, setCategory] = useState(card.category);
   const [image, setImage] = useState(null);
+  const [idAdmin, setIdAdmin] = useState("");
+
+  const getAdmin = async () => {
+    await fetch(
+      `https://apimainejetravel.azurewebsites.net/api/Admin/Lista/1/${item}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setIdAdmin(data.list[0][0].id_admin) 
+        console.log(data.list[0][0].id_admin)
+      });
+    };
+    
+    useEffect(() => {
+      getAdmin();
+    }, []);
 
   var image2=useRef(null)
 

@@ -1,14 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Style from "./FormAdmincafeteriaCreateMenuProducts.module.css"
 
 export const FormAdmincafeteriaCreateMenuProducts = () => {
 
+  let item = JSON.parse(localStorage.getItem("id_coffee"));
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("");
   const [image, setImage] = useState(null);
-  const [idAdmin, setIdAdmin] = useState(2);
+  const [idAdmin, setIdAdmin] = useState("");
+
+  const getAdmin = async () => {
+    await fetch(
+      `https://apimainejetravel.azurewebsites.net/api/Admin/Lista/1/${item}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setIdAdmin(data.list[0][0].id_admin) 
+        console.log(data.list[0][0].id_admin)
+      });
+    };
+    
+    useEffect(() => {
+      getAdmin();
+    }, []);
 
   const handleSubmit = async (e) => {
     // e.preventDefault();
