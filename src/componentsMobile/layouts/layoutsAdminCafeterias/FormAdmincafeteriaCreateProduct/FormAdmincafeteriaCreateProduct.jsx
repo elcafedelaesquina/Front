@@ -1,15 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Style from "./FormAdmincafeteriaCreateProduct.module.css"
 
 export const FormAdmincafeteriaCreateProduct = () => {
-
+  
+  let item = JSON.parse(localStorage.getItem("id_coffee"));
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [stock, setStock] = useState("");
   const [category, setCategory] = useState("");
   const [image, setImage] = useState(null);
-  const [idAdmin, setIdAdmin] = useState(1092455367);
+  const [data, setData] = useState({});
+  const idAdminCoffe = data;
+  console.log(idAdminCoffe[0]);
+  const valueIdAdminCoffe = (idAdminCoffe[0]);
+  console.log(valueIdAdminCoffe);
+  const [idAdmin, setIdAdmin] = useState(valueIdAdminCoffe);
+
+  const getAdmin = async () => {
+    await fetch(
+      `https://apimainejetravel.azurewebsites.net/api/Admin/Lista/1/${item}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        const { list } = data;
+        const elements = list;
+        setData(elements);
+      })
+      .catch((error) => {
+        // Manejar el error
+        console.log("Error al encontrar el ID del admin: ",error);
+      });
+    };
+    
+    useEffect(() => {
+      getAdmin();
+    }, []);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,16 +45,14 @@ export const FormAdmincafeteriaCreateProduct = () => {
     const formData = new FormData(e.target);
 
     try {
-        
       const response = await fetch("https://apimainejetravel.azurewebsites.net/api/Product/Guardar", { method: "POST", body: formData } );
-
       if (response.ok) {
         // Datos guardados exitosamente
         console.log("Datos guardados exitosamente");
         window.location.reload();
       } else {
         // Error al guardar los datos
-        console.log("Error al guardar los datos");
+        console.log(response);
       }
     } catch (error) {
       console.log("Error de conexión:", error);

@@ -1,8 +1,8 @@
 import React from 'react'
-import {Registros} from '../../layouts/Registros/Registros'
+import { Registros } from '../../layouts/RegistrosMobile/Registros'
 
 export function PageRegistros() {
   return (
-    <Registros></Registros>
+    <Registros />
   )
 }

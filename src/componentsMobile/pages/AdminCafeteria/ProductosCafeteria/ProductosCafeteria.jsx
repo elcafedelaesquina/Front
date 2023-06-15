@@ -7,7 +7,7 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import { FormAdmincafeteriaCreateProduct } from "../../../layouts/layoutsAdminCafeterias/FormAdmincafeteriaCreateProduct/FormAdmincafeteriaCreateProduct";
 
 export const ProductosCafeteria = () => {
-  let items = JSON.parse(localStorage.getItem("coffee")); // ${items.id_coffee}
+  let items = JSON.parse(localStorage.getItem("id_coffee")); // ${items.id_coffee}
   const [data, setData] = useState([]);
   const [card, setCard] = useState([]);
   const [createNewProduct, setCreateNewProduct] = useState(false);
@@ -15,7 +15,7 @@ export const ProductosCafeteria = () => {
 
   const getProductsCafeterias = async () => {
     await fetch(
-      `https://apimainejetravel.azurewebsites.net/api/Product/Lista/2`
+      `https://apimainejetravel.azurewebsites.net/api/Product/Lista/${items}`
     )
       .then((response) => response.json())
       .then((data) => {

@@ -1,8 +1,8 @@
 import React from 'react'
 import PageStyle from './PageStyle.module.css'
-import img_user from "../Registros/img/user.png";
-import img_cafe from "../Registros/img/cafe.png";
-import img_farm from "../Registros/img/farm.png";
+import img_user from "../RegistrosMobile/img/user.png";
+import img_cafe from "../RegistrosMobile/img/cafe.png";
+import img_farm from "../RegistrosMobile/img/farm.png";
 import { Link } from 'react-router-dom';
 
 export function Registros() {

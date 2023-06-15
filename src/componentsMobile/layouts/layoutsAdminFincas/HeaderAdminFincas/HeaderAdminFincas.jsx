@@ -7,7 +7,7 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import { AiOutlineHome } from "react-icons/ai";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
 import { FaRoute } from "react-icons/fa";
-import { MdSell } from "react-icons/md";
+import { FaDoorOpen } from "react-icons/fa";
 
 const Logo =
   "https://res.cloudinary.com/dmrq9n2im/image/upload/v1683321911/El%20caf%C3%A9%20de%20la%20esquina/ejeTravel_nnf3ra.png";
@@ -27,11 +27,11 @@ const Items = [
     url: "/AdminFinca/ToursFinca",
     ic: <FaRoute className={Style.iconMenu} />,
   },
-  // {
-  //   title: "Mis Ventas",
-  //   url: "/AdminCafeteria/VentasCafeteria",
-  //   ic: <MdSell className={Style.iconMenu} />,
-  // },
+  {
+    title: "Cerrar Sesión",
+    url: "/AdminCafeteria/VentasCafeteria",
+    ic: <FaDoorOpen className={Style.iconMenu} />,
+  },
 ];
 
 export const HeaderAdminFincas = () => {
