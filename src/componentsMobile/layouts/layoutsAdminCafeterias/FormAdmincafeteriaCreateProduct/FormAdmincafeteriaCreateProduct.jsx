@@ -10,32 +10,32 @@ export const FormAdmincafeteriaCreateProduct = () => {
   const [stock, setStock] = useState("");
   const [category, setCategory] = useState("");
   const [image, setImage] = useState(null);
-  const [data, setData] = useState({});
-  const idAdminCoffe = data;
-  console.log(idAdminCoffe[0]);
-  const valueIdAdminCoffe = (idAdminCoffe[0]);
-  console.log(valueIdAdminCoffe);
-  const [idAdmin, setIdAdmin] = useState(valueIdAdminCoffe);
+  const [idAdmin, setIdAdmin] = useState(1092455367);
+  // const idAdminCoffe = (1092455367);
+  // const [data, setData] = useState({});
+  // console.log(idAdminCoffe);
+  // const valueIdAdminCoffe = (idAdminCoffe);
+  // console.log(valueIdAdminCoffe);
 
-  const getAdmin = async () => {
-    await fetch(
-      `https://apimainejetravel.azurewebsites.net/api/Admin/Lista/1/${item}`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        const { list } = data;
-        const elements = list;
-        setData(elements);
-      })
-      .catch((error) => {
-        // Manejar el error
-        console.log("Error al encontrar el ID del admin: ",error);
-      });
-    };
+  // const getAdmin = async () => {
+  //   await fetch(
+  //     `https://apimainejetravel.azurewebsites.net/api/Admin/Lista/1/${item}`
+  //   )
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       const { list } = data;
+  //       const elements = list;
+  //       setData(elements);
+  //     })
+  //     .catch((error) => {
+  //       // Manejar el error
+  //       console.log("Error al encontrar el ID del admin: ",error);
+  //     });
+  //   };
     
-    useEffect(() => {
-      getAdmin();
-    }, []);
+  //   useEffect(() => {
+  //     getAdmin();
+  //   }, []);
 
 
   const handleSubmit = async (e) => {
