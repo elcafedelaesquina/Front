@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import './style.css'
 
-const Comments = () => {
+const Comments = (props) => {
   const Swal = require('sweetalert2')
   const [data, setData] = useState([])
   const [valor, setValor] = useState([{
@@ -88,7 +88,6 @@ const Comments = () => {
         Type_business: 1,
         Score: rate
       }
-      console.log(obj)
       fetch('https://apimainejetravel.azurewebsites.net/api/Comment/Guardar', {
         method: 'POST',
         headers: {
@@ -127,14 +126,6 @@ const Comments = () => {
       })
 
     }
-
-
-
-
-
-
-
-
   }
   const stars=(score)=>{
     let stars = [];
@@ -194,7 +185,9 @@ const Comments = () => {
             <h3>Tu opinion<span>(Obligatorio)</span></h3>
 
             <textarea ref={textArea}></textarea>
-            <button className='btnEnviarComments' type='submit' onClick={sendComment}>Enviar</button>
+            <button className='btnEnviarComments' type='submit'  onClick={()=>{
+              sendComment() 
+              props.recargar()}}>Enviar</button>
 
 
           </div>
@@ -206,9 +199,6 @@ const Comments = () => {
         </div>
         <div className='comments'>
           {comment.reverse().map((comment, index) => {
-
-
-
             return (
               <div className="comment" key={index}>
                 <img src={comment.user_image} alt=''></img>

@@ -24,7 +24,12 @@ const Cafeterias = () => {
 
   const [data,setData]=useState([])
   const [realData,setRealData]=useState([])
-
+  const [load,setLoad]=useState([])
+  const recargar=()=>{
+    alert('fdgf')
+    setLoad([])
+   
+  }
   useEffect(()=>{
     fetch('https://apimainejetravel.azurewebsites.net/api/Coffee/Lista')
     .then(response => response.json())
@@ -35,13 +40,12 @@ const Cafeterias = () => {
       })
       
       
-  },[])
+  },[load])
   const [filter, setFilter] = useState('');
   const filteredData = data.filter(item => item.name.toLowerCase().includes(filter.toLowerCase()));
   function handleFilterChange(event) {
     const inputValue = event.target.value;
     setFilter(inputValue);
-    console.log(typeof event.target.value);
     if(event.target.value<='0'){
       setData(realData)
 
@@ -53,6 +57,8 @@ const Cafeterias = () => {
     
     
   }
+
+  
   
   return (
     <>
@@ -114,7 +120,7 @@ const Cafeterias = () => {
 
       </div>
 
-      <Comments></Comments>
+      <Comments recargar={recargar}></Comments>
       
       
 

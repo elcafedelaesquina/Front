@@ -11,7 +11,7 @@ import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import logo from "./Logo.png"
 import { Loader } from '../../loader';
 import { Link, useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2'
+
 
 export function Cafe() {
 
@@ -99,62 +99,65 @@ export function Cafe() {
 function register(){
  formulario=formulario.current
  formulario.addEventListener('submit',(e)=>{
-   e.preventDefault()
-   const formData=new FormData(formulario)
+  if(e){
+    e.preventDefault()
+    const formData=new FormData(formulario)
+ 
+    formData.forEach(function(value, key) {
+      console.log(key + ': ' + value);
+    });
+    setLoader(true)
+    
+    fetch('https://apimainejetravel.azurewebsites.net/api/Coffee/Guardar', {
+      method: 'POST',
+      body:formData
+    })
+    .then(response => response.json())
+    .then(data=>{
+      // Manejar la respuesta de la petición
+      console.log(data)
+      const {status,exepcion}=data;
+       console.log(status)
+       if(exepcion ||exepcion==='Account is registed'){
+         Swal.fire({
+           position: 'top-center',
+           icon: 'warning',
+           title: 'Oops...',
+           text: 'Este E-mail ya está registrado!'
+         })
+         
+         setLoader(false)
+         setImagePreview('');
+ 
+       }
+       
+       else if(status){ 
+         Swal.fire({
+           position: 'top-center',
+           icon: 'warning',
+           title: 'Oops...',
+           text: 'Ingresa la informacion de todos los campos!'
+         })
+         setLoader(false)
+       }else{
+         Swal.fire({
+           position: 'top-end',
+           icon: 'success',
+           title: 'Éxito al registrarse',
+           showConfirmButton: false,
+           timer: 1500
+         })
+         navigate('/Cafe')
+         setLoader(false)
+ 
+       }
+    })
+    .catch(error => {
+      // Manejar el error de la petición
+      console.log(error)
+    });
+  }
 
-   formData.forEach(function(value, key) {
-     console.log(key + ': ' + value);
-   });
-   setLoader(true)
-   
-   fetch('https://apimainejetravel.azurewebsites.net/api/Coffee/Guardar', {
-     method: 'POST',
-     body:formData
-   })
-   .then(response => response.json())
-   .then(data=>{
-     // Manejar la respuesta de la petición
-     console.log(data)
-     const {status,exepcion}=data;
-      console.log(status)
-      if(exepcion ||exepcion==='Account is registed'){
-        Swal.fire({
-          position: 'top-center',
-          icon: 'warning',
-          title: 'Oops...',
-          text: 'Este E-mail ya está registrado!'
-        })
-        
-        setLoader(false)
-        setImagePreview('');
-
-      }
-      
-      else if(status){ 
-        Swal.fire({
-          position: 'top-center',
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Ingresa la informacion de todos los campos!'
-        })
-        setLoader(false)
-      }else{
-        Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          title: 'Éxito al registrarse',
-          showConfirmButton: false,
-          timer: 1500
-        })
-        navigate('/Cafe')
-        setLoader(false)
-
-      }
-   })
-   .catch(error => {
-     // Manejar el error de la petición
-     console.log(error)
-   });
  })
  
 }

@@ -10,7 +10,7 @@ import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import logo from "./Logo.png"
 import { Link,useNavigate } from 'react-router-dom'
 import { Loader } from '../../loader';
-import Swal from 'sweetalert2'
+
 
 
 export function User() {
@@ -19,18 +19,25 @@ export function User() {
   const Swal = require('sweetalert2')
 
   const [imagePreview, setImagePreview] = useState('');
+  const [validateImg,setValidateImg] = useState(false)
 
 
   function handleImageInputChange(e) {
-    const file = e.target.files[0];
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setImagePreview(reader.result);
-    };
-    reader.readAsDataURL(file);
+    console.log(e.target.files.length !==0)
+    if(e.target.files.length !==0){
+      const file = e.target.files[0];
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagePreview(reader.result);
+        setValidateImg(true)
+      };
+      reader.readAsDataURL(file);
+    }
+   
   }
   function handleImageClear() {
     setImagePreview('');
+    setValidateImg(false)
   }
   
   //boton images
@@ -58,71 +65,85 @@ const [loader,setLoader]=useState(false)
   const navigate = useNavigate();
   
 function register(){
-  formulario=formulario.current
-  formulario.addEventListener('submit',(e)=>{
-    e.preventDefault()
-    const formData=new FormData(formulario)
 
-
-      formData.forEach(function(value, key) {
-      console.log(key + ': ' + value);
-    });
-    setLoader(true)
+  try{
+    formulario=formulario.current
+    formulario.addEventListener('submit',(e)=>{
     
-    fetch('https://apimainejetravel.azurewebsites.net/api/Customer/Guardar', {
-      method: 'POST',
-      body:formData
-    })
-    .then(response => response.json())
-    .then(data=>{
-      // Manejar la respuesta de la petición
-      /* console.log(data.status) */
-      const {status,exepcion}=data;
-      console.log(data)
-      if(exepcion ||exepcion==='Account is registed'){
-        Swal.fire({
-          position: 'top-center',
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Este E-mail ya está registrado!'
-        })
+      if(e){
+        e.preventDefault()
+        const formData=new FormData(formulario)
+    
+    
+          formData.forEach(function(value, key) {
+          console.log(key + ': ' + value);
+        });
+        setLoader(true)
         
-        setLoader(false)
-        setImagePreview('');
-
-      }
-      else if(status){
-        Swal.fire({
-          position: 'top-center',
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Ingresa la informacion de todos los campos!'
+        fetch('https://apimainejetravel.azurewebsites.net/api/Customer/Guardar', {
+          method: 'POST',
+          body:formData
         })
-        setLoader(false)
-      }else{
-        Swal.fire({
-          position: 'top-center',
-          icon: 'success',
-          title: 'Éxito al registrarse',
-          showConfirmButton: false,
-          timer: 1500
+        .then(response => response.json())
+        .then(data=>{
+          // Manejar la respuesta de la petición
+          /* console.log(data.status) */
+          const {status,exepcion}=data;
+          console.log(data)
+          if(exepcion ||exepcion==='Account is registed'){
+            Swal.fire({
+              position: 'top-center',
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Este E-mail ya está registrado!'
+            })
+            
+            setLoader(false)
+           
+  
+    
+          }
+          else if(status){
+            Swal.fire({
+              position: 'top-center',
+              icon: 'warning',
+              title: 'Oops...',
+              text: 'Ingresa la informacion de todos los campos!'
+            })
+            setLoader(false)
+          }else{
+            Swal.fire({
+              position: 'top-center',
+              icon: 'success',
+              title: 'Éxito al registrarse',
+              showConfirmButton: false,
+              timer: 1500
+            })
+            navigate('/User')
+            setLoader(false)
+    
+          }
         })
-        navigate('/User')
-        setLoader(false)
-
+        .catch(error => {
+          // Manejar el error de la petición
+          console.log(error)
+        });
       }
+   
     })
-    .catch(error => {
-      // Manejar el error de la petición
-      console.log(error)
-    });
-  })
+
+  }
+  catch(e){
+    console.log(e)
+  }
+   handleImageClear()
   
 }
 var formularioLogin=useRef(null)
 
 function login(){
   formularioLogin=formularioLogin.current
+  console.log(formularioLogin)
   formularioLogin.addEventListener('submit',(e)=>{
     e.preventDefault()
     const formData=new FormData(formularioLogin)
@@ -187,6 +208,19 @@ function login(){
   })
   
 }
+const [validate,setValidate]=useState(false)
+
+const validatePassword=(e) => {
+ 
+  if(e.target.value.length>4 && validateImg){
+    setValidate(true)
+  }
+  else{
+    setValidate(false)
+  }
+  console.log(validate)
+
+}
 
 
 return (
@@ -238,23 +272,23 @@ return (
             <div className={styles['input-box']}>
               <i className='fas fa-user icon'><FontAwesomeIcon icon={faUser} /></i>
               <input type="text" className={styles.type} name="Type"  readOnly placeholder='Enter your name' value={3}/>
-              <input type="text" ref={name} name="Name"  placeholder='Nombre'  />
+              <input type="text" ref={name} name="Name"  placeholder='Nombre' required />
             </div>
             <div className={styles['input-box']}>
               <i className={`fas fa-envelope ${styles['icon']}`}>
                 <FontAwesomeIcon icon={faEnvelope} />
               </i>
-              <input type="text" ref={email}name="Email" placeholder='E-mail'  />
+              <input type="email" ref={email}name="Email" placeholder='E-mail' required />
             </div>
             <div className={styles['input-box']}>
               <i className='fas fa-lock icon'><FontAwesomeIcon icon={faLock} /></i>
-              <input type="password" ref={password} name="Password"  placeholder='Contraseña'  />
+              <input onChange={validatePassword} onInvalid={()=>setValidate(false)} type="password" className={ styles.password} ref={password} name="Password" required  placeholder='Contraseña' pattern="[a-zA-Z0-999]{6,10}" title="La contraseña debe contener mas de 5 caracteres, mayusculas y numeros"  />
             </div>
 
             <div className={styles['container-file']}>
             <div className={`${styles['input-boxx']} ${styles.box}`} onClick={handleButtonClick}>
               <i className={styles['icon']} ><FontAwesomeIcon icon={faCloudArrowUp} /></i>
-              <input type="file" alt='' ref={image} name="Image" hidden placeholder='Choose your image'  onChange={handleImageInputChange} />
+              <input type="file" alt='' ref={image} name="Image" hidden placeholder='Choose your image' required  onChange={handleImageInputChange} />
               {imagePreview && (
                 <div className={styles['image-preview']}>
                   <img className={styles.imgPreview} src={imagePreview} alt="Imagen seleccionada" />
@@ -266,7 +300,9 @@ return (
 
             <div id='selectedFile'></div>
             <div className={`${styles['button']} ${styles['input-box']}`}>
-              <button className={styles['button-form']} type='submit' onClick={register}  ref={btnRegister}>Regístrate</button>
+              {validate &&<button className={styles['button-form']} type='submit' onClick={register}  ref={btnRegister}>Regístrate</button>}
+              {!validate &&<button className={styles['button-form']} type='disabled'  ref={btnRegister}>Regístrate</button>}
+              
             </div>
             <div className={styles['text signup-text']}>¿Ya tienes una cuenta? <label htmlFor="flip">Inicia Sesión ya</label></div>
           </div>

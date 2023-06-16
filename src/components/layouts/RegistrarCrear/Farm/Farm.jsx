@@ -97,7 +97,8 @@ export function Farm() {
   function register(){
    formulario=formulario.current
    formulario.addEventListener('submit',(e)=>{
-     e.preventDefault()
+    if(e){
+      e.preventDefault()
      const formData=new FormData(formulario)
   
      formData.forEach(function(value, key) {
@@ -130,7 +131,7 @@ export function Farm() {
         else if(status){ 
           Swal.fire({
             position: 'top-center',
-            icon: 'error',
+            icon: 'warning',
             title: 'Oops...',
             text: 'Ingresa la informacion de todos los campos!'
           })
@@ -152,6 +153,8 @@ export function Farm() {
        // Manejar el error de la petición
        console.log(error)
      });
+    }
+     
    })
    
   }

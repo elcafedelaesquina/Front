@@ -21,7 +21,6 @@ const Item = (props) => {
           .then(response => response.json())
           .then(data => {
             const { list } = data
-            console.log(list)
             setComment(list[0])
   
           })
@@ -42,14 +41,16 @@ const Item = (props) => {
             </p>
             <div className={styles.titleBottom}>
               <div className={styles.containerImgComment} onLoad={()=>{comments()}}>
-                {comment.map((comment,index)=>{
+                {comment && comment.reverse().map((comment,index)=>{
                   if(index>=5){
                     return null
                   }
-                  return(<img className={styles.imgComment} key={comment.id_comment} src={comment.user_image}></img>)
+                  return(<img alt='' className={styles.imgComment} key={comment.id_comment} src={comment.user_image}></img>)
                   
                 })}
-                <div className={styles.imgCommentPlus}>+{comment.length-5}</div>
+                {comment.length>5 &&<div className={styles.imgCommentPlus}>+{comment.length>5 &&comment.length-5}</div>}
+                
+                
               </div>
               <Link to={'/cafeterias/cafeteria'}  onClick={coffee}>
               <button className={styles['learn-more']+ ' '+ styles.button}>

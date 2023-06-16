@@ -103,6 +103,7 @@
 .containerImgComment{
     width: 200px;
     height: 45px;
+    padding-left: 8px;
     
     display: flex;
     background-color: rgba(165, 42, 42, 0);
@@ -139,7 +140,7 @@
     height: 35px;
     width: 35px;
     position:relative;
-    margin-left: -5px;
+    margin-left: -8px;
     background-color: #555555;
     
     outline:2px solid rgba(52, 52, 52, 1.0);
@@ -151,7 +152,7 @@
     height: 35px;
     width: 35px;
     position:relative;
-    margin-left: -5px;
+    margin-left: -8px;
     text-align: center;
     padding-top:7px ;
 
