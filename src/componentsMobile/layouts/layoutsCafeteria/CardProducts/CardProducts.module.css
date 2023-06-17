@@ -34,7 +34,7 @@
 
 .card {
   width: 98%;
-  height: 60%;
+  height: auto;
   gap: 20px;
   box-shadow: 0 4px 8px 0 #00000033;
   max-width: 320px;
