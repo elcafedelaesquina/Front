@@ -5,8 +5,9 @@ import { HomeCafeteria } from "../../layouts/layoutsCafeteria/homeCafeteria/Home
 import { CategoriesProducts } from "../../layouts/layoutsCafeteria/CategoriesProducts/CategoriesProducts";
 import { FeaturedProducts } from "../../layouts/layoutsCafeteria/featuredproducts/FeaturedProducts";
 import { CarProducts } from "../../layouts/layoutsCafeteria/CarProducts/CarProducts";
-import { FooterCafeteria } from "../../layouts/layoutsCafeteria/footercafeteria/FooterCafeteria";
 import { Menu } from "../../layouts/layoutsCafeteria/Menu/Menu"
+import { FooterCafeteria } from "../../layouts/layoutsCafeteria/footercafeteria/FooterCafeteria";
+import { Chat } from "../../layouts/layoutsCafeteria/Chat/Chat";
 
 export const Cafeteria = () => {
   return (
@@ -17,6 +18,7 @@ export const Cafeteria = () => {
       <Menu />
       <FeaturedProducts />
       {/* <CarProducts /> */}
+      <Chat />
       <FooterCafeteria />
     </div>
   );

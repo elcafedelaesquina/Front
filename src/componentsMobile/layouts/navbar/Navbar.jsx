@@ -25,10 +25,12 @@ export const NavBar = () => {
       <header className={Style.header}>
         <nav className={Style.nav}>
           <div className={Style.containerLogoTitle}>
-            <img className={Style.logo} src={Logo} alt="" />
-            <h2 className={Style.title}>
-              Eje Travel
-            </h2>
+            <Link className={Style.link} to={'/'}>
+              <img className={Style.logo} src={Logo} alt=''/>
+              <h2 className={Style.title}>
+                Eje Travel
+              </h2>
+            </Link> 
           </div>
           <div className={Style.containerMenu}>
             { isOpen ? 
