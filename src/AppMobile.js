@@ -29,6 +29,7 @@ export const AppMobile = () => {
         <Route path="/" element={ <Home /> } />
         <Route path="/Cafeterias" element={ <Cafeterias /> } />
         <Route path="/Cafeterias/cafeteria" element={ <Cafeteria /> } />
+
         
         <Route path="/AdminCafeteria" element={ <AdminCafeteria /> } />
         <Route path="/AdminCafeteria/DescripcionCafeteria" element={ <DescripcionCafeteria /> } />
