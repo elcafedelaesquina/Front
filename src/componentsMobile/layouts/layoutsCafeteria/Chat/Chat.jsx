@@ -22,7 +22,7 @@ export const Chat = () => {
     };
 
     return (
-        <div>
+        <div className={Style.chat}>
             <button onClick={toggleModal}>Abrir chat</button>
 
             {isOpen && (
