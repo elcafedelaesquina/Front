@@ -254,25 +254,6 @@ export const ProductosCartaCafeteria = () => {
         {!loader && (
           <>
             {createNewProductoCarta ? (
-              <div className={Style.ProductsContainer}>
-                <button className={Style.btnStart} onClick={() => setcreateNewProductoCarta(!createNewProductoCarta)} >
-                  Crea un nuevo producto
-                </button>
-                <h2 className={Style.titleContainerProducts}>Mis Productos</h2>
-                {estado.map((item) => (
-                  <div className={Style.itemCarta}>
-                    <h3 className={Style.titleCarta}>{item[0].category}</h3>
-                    {item.map((producto, index) => (
-                      <div key={index} className={Style.itemPriceOne}>
-                        <p>{producto.name}</p>
-                        <p>${producto.price}</p>{" "}
-                        <ion-icon name="trash-outline" onClick={() => { deleteProduct(producto.id_menu_product)}} />
-                      </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            ) : (
               <div className={Style.containerForms}>
                 <div className={Style.container}>
                   <form id="formu" onSubmit={handleSubmit} className={`${Style["input-boxes"]} ${"form-content"}`} >
@@ -331,6 +312,25 @@ export const ProductosCartaCafeteria = () => {
                     </div>
                   </form>
                 </div>
+              </div>
+            ) : (
+              <div className={Style.ProductsContainer}>
+                <button className={Style.btnStart} onClick={() => setcreateNewProductoCarta(!createNewProductoCarta)} >
+                  Crea un nuevo producto
+                </button>
+                <h2 className={Style.titleContainerProducts}>Mis Productos</h2>
+                {estado.map((item) => (
+                  <div className={Style.itemCarta}>
+                    <h3 className={Style.titleCarta}>{item[0].category}</h3>
+                    {item.map((producto, index) => (
+                      <div key={index} className={Style.itemPriceOne}>
+                        <p>{producto.name}</p>
+                        <p>${producto.price}</p>{" "}
+                        <ion-icon name="trash-outline" onClick={() => { deleteProduct(producto.id_menu_product)}} />
+                      </div>
+                    ))}
+                  </div>
+                ))}
               </div>
             )}
           </>
