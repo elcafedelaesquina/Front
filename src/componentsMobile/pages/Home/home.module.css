@@ -92,6 +92,7 @@
 .btnStart:hover::before {
   width: 250%;
 }
+
 @keyframes show {
   0%{
       transform: translateY(-1000px)
