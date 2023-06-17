@@ -142,7 +142,7 @@ export function Farm() {
             showConfirmButton: false,
             timer: 1500
           })
-          navigate('/Cafe')
+          navigate('/Farm')
           setLoader(false)
   
         }
@@ -207,7 +207,7 @@ export function Farm() {
             showConfirmButton: false,
             timer: 1500
           })
-          navigate('/')
+          navigate('/AdminFinca')
           setLoader(false)
   
         }

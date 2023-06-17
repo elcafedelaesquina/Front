@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import Style from "./ProductosCafeteria.module.css";
+import Style from "./toursFinca.module.css";
 import { HeaderAdminCafeterias } from "../../../layouts/layoutsAdminCafeterias/HeaderAdminCafeterias/HeaderAdminCafeterias";
 import { CardProductosAdmin } from "../../../layouts/layoutsAdminCafeterias/CardProductosAdmin/CardProductosAdmin";
 import { GridProductsAdmin } from "../../../layouts/layoutsAdminCafeterias/GridProductsAdmin/GridProductsAdmin";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { FormAdmincafeteriaCreateProduct } from "../../../layouts/layoutsAdminCafeterias/FormAdmincafeteriaCreateProduct/FormAdmincafeteriaCreateProduct";
 
-export const ProductosCafeteria = () => {
-  let items = JSON.parse(localStorage.getItem("id_coffee")); // ${items.id_coffee}
+export const ToursFinca = () => {
+  let items = JSON.parse(localStorage.getItem("coffee")); // ${items.id_coffee}
   const [data, setData] = useState([]);
   const [card, setCard] = useState([]);
   const [createNewProduct, setCreateNewProduct] = useState(false);
@@ -15,7 +15,7 @@ export const ProductosCafeteria = () => {
 
   const getProductsCafeterias = async () => {
     await fetch(
-      `https://apimainejetravel.azurewebsites.net/api/Product/Lista/${items}`
+      `https://apimainejetravel.azurewebsites.net/api/Product/Lista/2`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -25,7 +25,7 @@ export const ProductosCafeteria = () => {
       })
       .catch((error) => {
         // Manejar el error
-        console.log(error);
+        console.log("error");
       });
   };
 

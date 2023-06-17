@@ -1,12 +1,12 @@
 import React from "react";
-import Style from "./HeaderAdminCafeterias.module.css";
+import Style from "./HeaderAdminFincas.module.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { AiOutlineHome } from "react-icons/ai";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
-import { GiBoxUnpacking } from "react-icons/gi";
+import { FaRoute } from "react-icons/fa";
 import { FaDoorOpen } from "react-icons/fa";
 
 const Logo =
@@ -23,9 +23,9 @@ const Items = [
     ic: <MdOutlineRestaurantMenu className={Style.iconMenu} />,
   },
   {
-    title: "Mis Productos",
-    url: "/AdminCafeteria/ProductosCafeteria",
-    ic: <GiBoxUnpacking className={Style.iconMenu} />,
+    title: "Mis tours",
+    url: "/AdminFinca/ToursFinca",
+    ic: <FaRoute className={Style.iconMenu} />,
   },
   {
     title: "Cerrar Sesión",
@@ -34,7 +34,7 @@ const Items = [
   },
 ];
 
-export const HeaderAdminCafeterias = () => {
+export const HeaderAdminFincas = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
