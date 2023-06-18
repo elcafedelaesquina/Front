@@ -114,8 +114,8 @@ export const PerfilCafeteria = () => {
   return (
     <>
       <HeaderAdminCafeterias />
-      <main className={Style.cn}>
-        {loader && <Loader></Loader>}
+      <main className={Style.main}>
+        {loader && <Loader/>}
         {!loader && (
           <div className={Style.container}>
             <form id="formu" onSubmit={handleSubmit} className={`${Style["input-boxes"]} ${"form-content"}`} >

@@ -24,6 +24,7 @@ export const ProductosCartaCafeteria = () => {
     };
     reader.readAsDataURL(file);
   }
+  
   function handleImageClear() {
     setImage("");
   }
