@@ -12,24 +12,29 @@ import { FaDoorOpen } from "react-icons/fa";
 const Logo =
   "https://res.cloudinary.com/dmrq9n2im/image/upload/v1683321911/El%20caf%C3%A9%20de%20la%20esquina/ejeTravel_nnf3ra.png";
 const Items = [
-  // {
-  //   title: "Mi Descripcion",
-  //   url: "/AdminCafeteria/DescripcionCafeteria",
-  //   ic: <AiOutlineHome className={Style.iconMenu} />,
-  // },
+  {
+    title: "Editar perfil",
+    url: "/EditarPerfilAdmin",
+    ic: <AiOutlineHome className={Style.iconMenu} />,
+  },
+  {
+    title: "Crear Administrador",
+    url: "/CreateAdminCafeteria",
+    ic: <AiOutlineHome className={Style.iconMenu} />,
+  },
   {
     title: "Mi Menu",
-    url: "/AdminCafeteria/ProductosCarta",
+    url: "/CreateProductsCarta",
     ic: <MdOutlineRestaurantMenu className={Style.iconMenu} />,
   },
   {
     title: "Mis Productos",
-    url: "/AdminCafeteria/ProductosCafeteria",
+    url: "/CreateProductsCafeteria",
     ic: <GiBoxUnpacking className={Style.iconMenu} />,
   },
   {
     title: "Cerrar Sesión",
-    url: "/AdminCafeteria/VentasCafeteria",
+    url: "/",
     ic: <FaDoorOpen className={Style.iconMenu} />,
   },
 ];

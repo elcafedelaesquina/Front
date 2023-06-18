@@ -6,10 +6,10 @@ import { Cafeteria } from "./componentsMobile/pages/Cafeteria/Cafeteria";
 import { Cafeterias } from "./componentsMobile/pages/Cafeterias/Cafeterias";
 
 import { AdminCafeteria } from "./componentsMobile/pages/AdminCafeteria/AdminCafeteria";
-import { DescripcionCafeteria } from "./componentsMobile/pages/AdminCafeteria/DescripcionCafeteria/DescripcionCafeteria";
+import { PerfilCafeteria } from "./componentsMobile/pages/AdminCafeteria/PerfilCafeteria/PerfilCafeteria";
 import { ProductosCartaCafeteria } from "./componentsMobile/pages/AdminCafeteria/ProductosCartaCafeteria/ProductosCartaCafeteria";
 import { ProductosCafeteria } from "./componentsMobile/pages/AdminCafeteria/ProductosCafeteria/ProductosCafeteria";
-import { VentasCafeteria } from "./componentsMobile/pages/AdminCafeteria/VentasCafeteria/VentasCafeteria";
+import { AdministradorCafeteria } from "./componentsMobile/pages/AdminCafeteria/AdministradorCafeteria/AdministradorCafeteria"; 
 
 import { PageRegistros } from "./componentsMobile/pages/PageRegistros/PageRegistros";
 import { User } from "./componentsMobile/layouts/RegistrarCrear/User/User";
@@ -32,10 +32,10 @@ export const AppMobile = () => {
 
         
         <Route path="/AdminCafeteria" element={ <AdminCafeteria /> } />
-        <Route path="/AdminCafeteria/DescripcionCafeteria" element={ <DescripcionCafeteria /> } />
-        <Route path="/AdminCafeteria/ProductosCarta" element={ <ProductosCartaCafeteria /> } />
-        <Route path="/AdminCafeteria/ProductosCafeteria" element={ <ProductosCafeteria /> } />
-        <Route path="/AdminCafeteria/VentasCafeteria" element={ <VentasCafeteria /> } />
+        <Route path="/EditarPerfilAdmin" element={ <PerfilCafeteria /> } />
+        <Route path="/CreateProductsCarta" element={ <ProductosCartaCafeteria /> } />
+        <Route path="/CreateProductsCafeteria" element={ <ProductosCafeteria /> } />
+        <Route path="/CreateAdminCafeteria" element={ <AdministradorCafeteria /> } />
         
         <Route path="/PageRegistros" element={ <PageRegistros /> } />
         <Route path="/User" element={ <User /> } />
