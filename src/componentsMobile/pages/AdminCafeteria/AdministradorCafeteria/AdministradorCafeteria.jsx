@@ -20,7 +20,6 @@ export const AdministradorCafeteria = () => {
         .then((data) => {
         const { list } = data;
         const valores = list[0]
-        console.log(valores);
         setDataProduct(valores);
         });
     }
