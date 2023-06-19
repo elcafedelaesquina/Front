@@ -319,7 +319,7 @@ export const ProductosCartaCafeteria = () => {
                 <button className={Style.btnStart} onClick={() => setcreateNewProductoCarta(!createNewProductoCarta)} >
                   Crea un nuevo producto
                 </button>
-                <h2 className={Style.titleContainerProducts}>Mis Productos</h2>
+                <h2 className={Style.titleContainerProducts}>Mi Menu</h2>
                 {estado.map((item) => (
                   <div className={Style.itemCarta}>
                     <h3 className={Style.titleCarta}>{item[0].category}</h3>

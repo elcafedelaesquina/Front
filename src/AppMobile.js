@@ -33,9 +33,11 @@ export const AppMobile = () => {
         
         <Route path="/AdminCafeteria" element={ <AdminCafeteria /> } />
         <Route path="/EditarPerfilAdmin" element={ <PerfilCafeteria /> } />
+        <Route path="/CreateAdminCafeteria" element={ <AdministradorCafeteria /> } />
         <Route path="/CreateProductsCarta" element={ <ProductosCartaCafeteria /> } />
         <Route path="/CreateProductsCafeteria" element={ <ProductosCafeteria /> } />
-        <Route path="/CreateAdminCafeteria" element={ <AdministradorCafeteria /> } />
+        <Route path="/ChatsAdmin" element={ <AdminCafeteria /> } />
+        
         
         <Route path="/PageRegistros" element={ <PageRegistros /> } />
         <Route path="/User" element={ <User /> } />

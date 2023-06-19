@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import { AiOutlineHome } from "react-icons/ai";
+import { AiOutlineUser } from "react-icons/ai";
+import { AiOutlineUsergroupAdd } from "react-icons/ai";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
 import { GiBoxUnpacking } from "react-icons/gi";
+import { IoChatbubblesSharp } from "react-icons/io5";
 import { FaDoorOpen } from "react-icons/fa";
 
 const Logo =
@@ -15,12 +17,12 @@ const Items = [
   {
     title: "Editar perfil",
     url: "/EditarPerfilAdmin",
-    ic: <AiOutlineHome className={Style.iconMenu} />,
+    ic: <AiOutlineUser className={Style.iconMenu} />,
   },
   {
     title: "Crear Administrador",
     url: "/CreateAdminCafeteria",
-    ic: <AiOutlineHome className={Style.iconMenu} />,
+    ic: <AiOutlineUsergroupAdd className={Style.iconMenu} />,
   },
   {
     title: "Mi Menu",
@@ -31,6 +33,11 @@ const Items = [
     title: "Mis Productos",
     url: "/CreateProductsCafeteria",
     ic: <GiBoxUnpacking className={Style.iconMenu} />,
+  },
+  {
+    title: "Mis Chat",
+    url: "/ChatsAdmin",
+    ic: <IoChatbubblesSharp className={Style.iconMenu} />,
   },
   {
     title: "Cerrar Sesión",
