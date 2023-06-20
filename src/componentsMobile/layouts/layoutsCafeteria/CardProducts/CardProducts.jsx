@@ -35,7 +35,6 @@ export const CardProducts = ({ card, setIsVisible, isVisible }) => {
   const [isHidden, setIsHidden] = useState(false);
   return (
     <>
-     {/* {data.length>0 &&  data.map(product=>{ */}
       {isVisible && (
         <div className={Style.carousel}>
           <div className={Style.containerClose} onClick={() => setIsVisible(!isVisible)} >
@@ -48,13 +47,14 @@ export const CardProducts = ({ card, setIsVisible, isVisible }) => {
             <h2 className={Style.h2}>{card.name}</h2>
             <p className={Style.price}>Precio: ${card.price}</p>
             <p className={Style.description}>{card.description}</p>
-            <div className={Style['card-button']} onClick={()=>{putCarrito(product)}}>
-              <ion-icon name="bag-add-outline"></ion-icon>
-            </div>
+            {data.length>0 &&  data.map(product=>(
+                <div className={Style['card-button']} onClick={()=>{putCarrito(product)}}>
+                <ion-icon name="bag-add-outline"></ion-icon>
+              </div>
+            ))} 
           </div>
         </div>
       )}
-    {/* })}  */}
     {data.length==0&&<h2>Esta cafeteria no Tienes productos</h2>}
     </>
   );
