@@ -36,16 +36,14 @@ export const AdministradorCafeteria = () => {
         console.log(key + ": " + value);
       });
 
-      fetch("https://apimainejetravel.azurewebsites.net/api/Admin/Guardar", {
-        method: "POST",
-        body: formData,
-      })
+      fetch("https://apimainejetravel.azurewebsites.net/api/Admin/Guardar", {method: "POST", body: formData})
         .then((response) => response.json())
         .then((data) => {
           // Manejar la respuesta de la petición
           console.log(data);
         });
-    });
+      });
+      window.location.reload();
   };
 
   var formularioLogin = useRef(null);

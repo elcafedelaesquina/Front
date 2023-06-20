@@ -168,7 +168,7 @@ export const ProductosCartaCafeteria = () => {
 
   const updateProduct = async (id_product) => {
     await fetch(
-      `https://apimainejetravel.azurewebsites.net/api/Product/Obtener/${id_product}`
+      `https://apimainejetravel.azurewebsites.net/api/MenuProduct/Lista/${id_product}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -219,7 +219,7 @@ export const ProductosCartaCafeteria = () => {
         formData.append(key, prop[key]);
       }
     }
-    fetch(`https://apimainejetravel.azurewebsites.net/api/Product/Actualizar`, {
+    fetch(`https://apimainejetravel.azurewebsites.net/api/MenuProduct/Actualizar`, {
       method: "PUT",
       body: formData,
     })
