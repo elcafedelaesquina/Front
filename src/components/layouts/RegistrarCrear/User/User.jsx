@@ -220,7 +220,7 @@ return (
               <i className='fas fa-lock icon'><FontAwesomeIcon icon={faLock} /></i>
               <input type="password" name='Password'  placeholder='Contraseña' />
             </div>
-            <div className={styles.text}><label>¿Olvidaste la contraseña?</label></div>
+            <div className={styles.text}><Link to={'/Recuperar'}><label>¿Olvidaste la contraseña?</label></Link></div>
             <div className={`${styles['button']} ${styles['input-box']}`}>
               <button className={styles['button-form']} onClick={login} type='submit'>Iniciar Sesión</button>
             </div>
