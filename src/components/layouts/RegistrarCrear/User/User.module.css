@@ -171,7 +171,7 @@ form .form-content .input-box{
 .type{
     display: none;
 }
-.form-content .input-box input, .button-form{
+.form-content .input-box input, .button-form,.buttonDiv-form{
     height: 100%;
     width: 100%;
     outline: none;
@@ -223,7 +223,7 @@ form .form-content .button input{
     transition: all 0.4s ease;
 }
 
-form .form-content .button-form{
+form .form-content .button-form,.buttonDiv-form{
     color: #fff;
     background: #262626;
     border-radius: 6px;
@@ -232,7 +232,7 @@ form .form-content .button-form{
     transition: all 0.4s ease;
 }
 
-form .form-content .button-form:hover{
+form .form-content .button-form:hover,.buttonDiv-form:hover{
     background: #ffa844;
 }
 

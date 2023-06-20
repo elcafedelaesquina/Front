@@ -63,14 +63,14 @@ const [loader,setLoader]=useState(false)
   var formulario=useRef(null)
 
   const navigate = useNavigate();
-  
+  const [validate,setValidate]=useState(false)
 function register(){
 
   try{
     formulario=formulario.current
     formulario.addEventListener('submit',(e)=>{
     
-      if(e){
+      if(e && validate && validateImg){
         e.preventDefault()
         const formData=new FormData(formulario)
     
@@ -127,6 +127,12 @@ function register(){
         .catch(error => {
           // Manejar el error de la petición
           console.log(error)
+          Swal.fire({
+            position: 'top-center',
+            icon: 'warning',
+            title: 'Oops...',
+            text: 'Ingresa la imagen!'
+          })
         });
       }
    
@@ -208,11 +214,11 @@ function login(){
   })
   
 }
-const [validate,setValidate]=useState(false)
+
 
 const validatePassword=(e) => {
  
-  if(e.target.value.length>4 && validateImg){
+  if(e.target.value.length>5 ){
     setValidate(true)
   }
   else{
@@ -301,7 +307,7 @@ return (
             <div id='selectedFile'></div>
             <div className={`${styles['button']} ${styles['input-box']}`}>
               {validate &&<button className={styles['button-form']} type='submit' onClick={register}  ref={btnRegister}>Regístrate</button>}
-              {!validate &&<button className={styles['button-form']} type='disabled'  ref={btnRegister}>Regístrate</button>}
+              {!validate &&<div className={styles['buttonDiv-form']} type='disabled'  ref={btnRegister}>Regístrate</div>}
               
             </div>
             <div className={styles['text signup-text']}>¿Ya tienes una cuenta? <label htmlFor="flip">Inicia Sesión ya</label></div>
