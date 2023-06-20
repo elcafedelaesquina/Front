@@ -8,6 +8,8 @@ import { AiOutlineLogin } from "react-icons/ai";
 import { CiCoffeeCup } from "react-icons/ci";
 import { GiFarmer } from "react-icons/gi";
 import { FaDoorOpen } from "react-icons/fa";
+import { GoPencil } from "react-icons/go";
+import { AiOutlineShopping } from "react-icons/ai";
 
 import { AiOutlineUser } from "react-icons/ai";
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
@@ -103,17 +105,17 @@ export const NavBar = () => {
                 {id && (
                   <>
                     <li className={Style.li}>
-                      <AiOutlineHome className={ Style.iconMenu } />
+                      <GoPencil className={ Style.iconMenu } />
                       <Link className={Style.link} to="/">Editar Perfil</Link>
                     </li>
 
                     <li className={Style.li}>
-                      <AiOutlineHome className={ Style.iconMenu } />
+                      <AiOutlineShopping className={ Style.iconMenu } />
                       <Link className={Style.link} to="/">Ver Compras</Link>
                     </li>
 
                     <li className={Style.li}>
-                      <AiOutlineHome className={ Style.iconMenu } />
+                      <IoChatbubblesSharp className={ Style.iconMenu } />
                       <Link className={Style.link} to="/">Mis Chat</Link>
                     </li>
                   </> 
@@ -148,35 +150,65 @@ export const NavBar = () => {
         </>
       ):(
         <>
-          <li className={Style.li}>
-            <AiOutlineUser className={Style.iconMenu} />
-            <Link className={Style.link} to="/EditarPerfilAdmin">Editar perfil</Link>
-          </li>
+          <header className={Style.header}>
+            <nav className={Style.nav}>
+              <div className={Style.containerLogoTitle}>
+                <img className={Style.logo} src={img} alt="" />
+                <h2 className={Style.title}>{nombre}</h2>
+              </div>
+              <div className={Style.containerMenu}>
+                {!isOpen ? (
+                  <AiOutlineCloseCircle
+                    className={Style.iconMenu}
+                    onClick={() => setIsOpen(!isOpen)}
+                  />
+                ) : (
+                  <AiOutlineMenu
+                    className={Style.iconMenu}
+                    onClick={() => setIsOpen(!isOpen)}
+                  />
+                )}
+              </div>
+            </nav>
+          </header>
 
-          <li className={Style.li}>
-            <AiOutlineUsergroupAdd className={Style.iconMenu} />
-            <Link className={Style.link} to="/CreateAdminCafeteria">Crear Administrador</Link>
-          </li>
+        {!isOpen && (
+          <>
+            <div className={Style.menu} >
+            <ul className={Style.ul} >
+            <li className={Style.li}>
+              <AiOutlineUser className={Style.iconMenu} />
+              <Link className={Style.link} to="/EditarPerfilAdmin">Editar perfil</Link>
+            </li>
 
-          <li className={Style.li}>
-            <MdOutlineRestaurantMenu className={Style.iconMenu} />
-            <Link className={Style.link} to="/CreateProductsCarta">Mi Menu</Link>
-          </li>
+            <li className={Style.li}>
+              <AiOutlineUsergroupAdd className={Style.iconMenu} />
+              <Link className={Style.link} to="/CreateAdminCafeteria">Crear Administrador</Link>
+            </li>
 
-          <li className={Style.li}>
-            <GiBoxUnpacking className={Style.iconMenu} />
-            <Link className={Style.link} to="/CreateProductsCafeteria">Mis Productos</Link>
-          </li>
+            <li className={Style.li}>
+              <MdOutlineRestaurantMenu className={Style.iconMenu} />
+              <Link className={Style.link} to="/CreateProductsCarta">Mi Menu</Link>
+            </li>
 
-          <li className={Style.li}>
-            <IoChatbubblesSharp className={Style.iconMenu} />
-            <Link className={Style.link} to="/ChatsAdmin">Mis Chat</Link>
-          </li>
-          
-          <li className={Style.li}>
-            <FaDoorOpen className={Style.iconMenu} />
-            <Link className={Style.link} onClick={close} to="/">Cerrar Sesión</Link>
-          </li>
+            <li className={Style.li}>
+              <GiBoxUnpacking className={Style.iconMenu} />
+              <Link className={Style.link} to="/CreateProductsCafeteria">Mis Productos</Link>
+            </li>
+
+            <li className={Style.li}>
+              <IoChatbubblesSharp className={Style.iconMenu} />
+              <Link className={Style.link} to="/ChatsAdmin">Mis Chat</Link>
+            </li>
+            
+            <li className={Style.li}>
+              <FaDoorOpen className={Style.iconMenu} />
+              <Link className={Style.link} onClick={close} to="/">Cerrar Sesión</Link>
+            </li>
+          </ul>
+          </div>
+        </>
+          )}
         </>
       )}
     </>
