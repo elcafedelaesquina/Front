@@ -22,6 +22,7 @@ import { EditarPerfilUsuario } from './components/layouts/UsuarioAdmin/EditarPer
 import { CafeteriaCreateMenuProduct } from './components/layouts/CafeteriasAdmin/crearProductoMenu/CafeteriaCreateProduct';
 import { ChatModal } from './components/layouts/chat';
 import { Recuperar } from './components/layouts/RecuperarContraseña/Recuperar';
+import { Verificacion } from './components/layouts/RecuperarContraseña/Verificacion/Verificacion';
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
       <Route path='/CrearAdministradorCafeteria' element={<CrearAdministradorCafeteria></CrearAdministradorCafeteria>}></Route>
       <Route path='/EditarPerfilUsuario' element={<EditarPerfilUsuario></EditarPerfilUsuario>}></Route>
       <Route path='/Recuperar' element={<Recuperar></Recuperar>}></Route>
+      <Route path='/Verificacion' element={<Verificacion></Verificacion>}></Route>
     </Routes>   
   </div>
 

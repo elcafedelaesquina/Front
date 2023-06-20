@@ -6,10 +6,105 @@
     background: #ffa844;
 }
 
+.cn .color {
+    position: absolute;
+    filter: blur(150px);
+}
+
+.cn .color:nth-child(1) {
+    top: -350px;
+    width: 600px;
+    height: 600px;
+
+}
+
+.cn .color:nth-child(2) {
+    top: 150px;
+    left: -125px;
+    width: 120px;
+    height: 120px;
+    z-index: 2;
+}
+
+.cn .color:nth-child(3) {
+    bottom: 50px;
+    right: 100px;
+    width: 300px;
+    height: 300px;
+    background: #ffa844;
+}
+
+.kj {
+    position: relative;
+}
+
+.kj .square {
+    position: absolute;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    animation: animate 10s linear infinite;
+    animation-delay: calc(-1s * var(--i));
+}
+
+@keyframes animate {
+
+    0%,
+    100% {
+        transform: translateY(-40px);
+    }
+
+    50% {
+        transform: translateY(40px);
+    }
+}
+
+.kj .square:nth-child(1) {
+    top: -50px;
+    right: -95px;
+    width: 100px;
+    height: 100px;
+}
+
+.kj .square:nth-child(2) {
+    top: 150px;
+    left: -125px;
+    width: 120px;
+    height: 120px;
+    z-index: 2;
+}
+
+.kj .square:nth-child(3) {
+    bottom: 50px;
+    right: -85px;
+    width: 80px;
+    height: 80px;
+    z-index: 2;
+}
+
+
+.kj .square:nth-child(4) {
+    bottom: -80px;
+    left: 100px;
+    width: 50px;
+    height: 50px;
+}
+
+.kj .square:nth-child(5) {
+    top: -80px;
+    left: 100px;
+    width: 60px;
+    height: 60px;
+}
+
 .container{
     position: relative;
     max-width: 850px;
-    width: 100%;
+    width: 1000px;
     background: #fff;
     padding: 40px 30px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -45,7 +140,7 @@
 }
   
 .iconX{
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     padding-left: 20px;

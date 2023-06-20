@@ -1,10 +1,11 @@
 import React from "react";
-import styles from "./Recuperar.module.css";
+import styles from "./Verificacion.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import { faLock } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-export function Recuperar() {
+export function Verificacion() {
   return (
     <div>
       <section className={styles.section}>
@@ -24,24 +25,30 @@ export function Recuperar() {
           <div className={styles.square}></div>
           <div className={styles.container}>
             <div className={styles.form}>
-              <h2>Recuperar contraseña</h2>
+              <h2>Verificar</h2>
               <form>
                 <div className={styles.inputBox}>
                   <i className="fas fa-envelope icon">
-                    <FontAwesomeIcon icon={faEnvelope} />
+                    <FontAwesomeIcon icon={faCircleCheck} />
                   </i>
-                  <input type="text" placeholder="Correo electronico" />
+                  <input type="num" placeholder="Codigo de Verificación" />
                 </div>
+
+                <div className={styles.inputBox}>
+                  <i className="fas fa-lock icon">
+                    <FontAwesomeIcon icon={faLock} />
+                  </i>
+                  <input type="password" placeholder="Nueva Contraseña" />
+                </div>
+
                 <div className={styles.button}>
-                  <Link to={"/Verificacion"}>
-                    <button
-                      className={styles["button-form"]}
-                      type="submit"
-                      value="Enviar"
-                    >
-                      Enviar
-                    </button>
-                  </Link>
+                  <button
+                    className={styles["button-form"]}
+                    type="submit"
+                    value="Enviar"
+                  >
+                    Enviar
+                  </button>
                 </div>
                 <p className={styles.forget}>
                   Ya tienes una cuenta?
