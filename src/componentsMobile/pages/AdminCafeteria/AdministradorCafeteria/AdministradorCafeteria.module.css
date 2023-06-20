@@ -6,22 +6,10 @@
   padding: 30px;
   align-items: center;
   justify-content: space-around;
-  background: rgb(255, 168, 68);
+  background: #ffa844;
   overflow: hidden;
   position: absolute;
-  top: 85px;
-}
-
-.containerForms {
-  width: 100%;
-  position: fixed;
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 4;
-  top: 205px;
+  top: 40px;
 }
 
 .btnStart {
@@ -41,59 +29,22 @@
   background-color: #ffffff;
 }
 
-.itemCarta {
-  width: 400px;
-  height: auto;
-  margin-top: 20px;
-}
-
-.titleCarta {
+.containerForms {
   width: 100%;
-  font-size: 30px;
-  text-align: center;
-  padding: 5px;
-  color: aliceblue;
-  background-color: rgb(133, 64, 64);
-}
-
-.itemPriceOne {
-  width: 100%;
-  height: 40px;
+  position: fixed;
+  overflow: auto;
   display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid gray;
-  padding: 5px;
-  font-size: 20px;
-  background-color: aliceblue;
-}
-
-.itemPriceOne > ion-icon {
-  cursor: pointer;
-  color: rgb(255, 255, 255);
-  background-color: rgba(255, 54, 54, 0.863);
-  border-radius: 10px;
-  padding: 5px;
-  transition: all 0.3s;
-}
-
-.itemPriceOne > ion-icon:hover {
-  transform: rotate(20deg);
-  background-color: rgb(255, 43, 43) (51, 51, 51);
-}
-
-.itemPricetwo {
-  width: 100%;
-  display: flex;
-  height: 40px;
-  justify-content: space-between;
-  padding: 5px;
-  font-size: 20px;
-  background-color: rgb(243, 243, 243);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  top: 205px;
 }
 
 .container {
   position: relative;
-  width: 96%;
+  width: 90%;
+  height: 40vh;
   background: #fff;
   padding: 20px 30px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -104,7 +55,7 @@
 .ProductsContainer {
   width: 100%;
   height: auto;
-  max-height: 75vh;
+  margin-top: 30px;
   padding: 30px 10px;
   overflow: auto;
   display: flex;
@@ -118,7 +69,7 @@
 .titleContainerProducts {
   font-size: 35px;
   transform: translateY(-100px);
-  position: absolute;
+  position: fixed;
   background-color: #fcfcfc00;
   z-index: 2;
   height: 38px;
@@ -130,6 +81,8 @@
 .titleContainer {
   width: 100%;
   display: flex;
+  padding: 10;
+  padding-bottom: 50px;
   justify-content: space-between;
 }
 
@@ -146,23 +99,18 @@ form .form-content .title {
   color: #000;
 }
 
-.iconX > a ion-icon {
-  font-size: 60px;
-  cursor: pointer;
-  color: black;
-}
-
 .iconX {
   position: absolute;
-  top: 0;
+  cursor: pointer;
+  top: 80px;
   right: 0;
   padding-left: 20px;
   padding: 20px;
 }
 
 .close {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
 }
 
 form .form-content .title::before {
@@ -248,7 +196,7 @@ form .form-content .button-form {
   padding: 0;
   height: 45px;
   cursor: pointer;
-  margin-top: -50px;
+  margin-top: 50px;
   transition: all 0.4s ease;
 }
 
