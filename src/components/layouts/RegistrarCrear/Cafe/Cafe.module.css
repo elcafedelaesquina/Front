@@ -160,7 +160,7 @@ form .form-content .input-box{
     position: relative;
 }
 
-.form-content .input-box input, .button-form{
+.form-content .input-box input, .button-form,.buttonDiv-form{
     height: 100%;
     width: 100%;
     outline: none;
@@ -171,7 +171,7 @@ form .form-content .input-box{
     border-bottom: 2px solid rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
-.form-content .input-box input, .button-form:focus,
+.form-content .input-box input, .button-form:focus,.buttonDiv-form,
 .form-content .input-box input, .button-form:valid{
     border-color: #ffa844;
 }
@@ -212,7 +212,7 @@ form .form-content .button input{
     transition: all 0.4s ease;
 }
 
-form .form-content .button-form{
+form .form-content .button-form,.buttonDiv-form{
     color: #fff;
     background: #262626;
     border-radius: 6px;
@@ -221,7 +221,7 @@ form .form-content .button-form{
     transition: all 0.4s ease;
 }
 
-form .form-content .button-form:hover{
+form .form-content .button-form:hover,.buttonDiv-form:hover{
     background: #ffa844;
 }
 
@@ -277,16 +277,17 @@ form .form-content .signup-text{
 .image-preview .imgPreview {
     display: inline-block;
     max-width: 100%;
-    height: auto;
+    height: 125px;
     width: auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 5px;
 }
 .image-preview .btnPreview {
     position: absolute;
-    top: 0px;
-    right: 18px;
+    top: 10px;
+    right: 25px;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;

@@ -1,6 +1,6 @@
 .select{
     width: 100%;
-    background-color: rgb(51, 51, 51);
+    background-color: rgb(255, 255, 255);
     height: 40px;
     border-radius: 10px;
     font-size: 20px;
@@ -21,7 +21,7 @@
     height: 35px;
     
     align-items:center;
-    background-color: rgb(63, 63, 63);
+    background-color: rgb(255, 255, 255);
     border-radius: 5px;
     cursor: pointer;
 }

@@ -27,17 +27,29 @@ export function Cafe() {
   const [signupPassword, setSignupPassword] = useState('');
   const [signupDescription, setSignupDescription] = useState('');
 
+  const [validateImg,setValidateImg] = useState(false)
+  const [validate,setValidate]=useState(false)
+
 
   function handleImageInputChange(e) {
-  const file = e.target.files[0];
-  const reader = new FileReader();
-    reader.onloadend = () => {
-      setImagePreview(reader.result);
-    };
-    reader.readAsDataURL(file);
+    if(e.target.files.length !==0){
+      const file = e.target.files[0];
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagePreview(reader.result);
+       /*  console.log(reader.result) */
+        
+      };
+      reader.readAsDataURL(file);
+      setValidateImg(true)
+    }else{
+      setValidateImg(false)
+    }
+   
   }
   function handleImageClear() {
     setImagePreview('');
+    setValidateImg(false)
   }
 
   const fileInputRef = useRef(null);
@@ -52,7 +64,6 @@ export function Cafe() {
       email: loginEmail,
       password: loginPassword
     };
-    console.log(loginData)
 
     // Aquí puedes realizar la llamada a la API del backend para el inicio de sesión
     // backend.login(loginData);
@@ -94,71 +105,83 @@ export function Cafe() {
  const [loader,setLoader]=useState(false)
 
  var formulario=useRef(null)
+ var btnRegister=useRef()
  const navigate = useNavigate();
  
 function register(){
- formulario=formulario.current
- formulario.addEventListener('submit',(e)=>{
-  if(e){
-    e.preventDefault()
-    const formData=new FormData(formulario)
- 
-    formData.forEach(function(value, key) {
-      console.log(key + ': ' + value);
-    });
-    setLoader(true)
+
+  try{
+    formulario=formulario.current
+    formulario.addEventListener('submit',(e)=>{
+     if(e && validate && validateImg){
+       e.preventDefault()
+       const formData=new FormData(formulario)
     
-    fetch('https://apimainejetravel.azurewebsites.net/api/Coffee/Guardar', {
-      method: 'POST',
-      body:formData
-    })
-    .then(response => response.json())
-    .then(data=>{
-      // Manejar la respuesta de la petición
-      console.log(data)
-      const {status,exepcion}=data;
-       console.log(status)
-       if(exepcion ||exepcion==='Account is registed'){
-         Swal.fire({
-           position: 'top-center',
-           icon: 'warning',
-           title: 'Oops...',
-           text: 'Este E-mail ya está registrado!'
-         })
-         
-         setLoader(false)
-         setImagePreview('');
- 
-       }
+       formData.forEach(function(value, key) {
+         console.log(key + ': ' + value);
+       });
+       setLoader(true)
        
-       else if(status){ 
-         Swal.fire({
-           position: 'top-center',
-           icon: 'warning',
-           title: 'Oops...',
-           text: 'Ingresa la informacion de todos los campos!'
-         })
-         setLoader(false)
-       }else{
-         Swal.fire({
-           position: 'top-end',
-           icon: 'success',
-           title: 'Éxito al registrarse',
-           showConfirmButton: false,
-           timer: 1500
-         })
-         navigate('/Cafe')
-         setLoader(false)
- 
-       }
+       fetch('https://apimainejetravel.azurewebsites.net/api/Coffee/Guardar', {
+         method: 'POST',
+         body:formData
+       })
+       .then(response => response.json())
+       .then(data=>{
+         // Manejar la respuesta de la petición
+         const {status,exepcion}=data;
+          if(exepcion ||exepcion==='Account is registed'){
+            Swal.fire({
+              position: 'top-center',
+              icon: 'warning',
+              title: 'Oops...',
+              text: 'Este E-mail ya está registrado!'
+            })
+            
+            setLoader(false)
+            setImagePreview('');
+    
+          }
+          
+          else if(status){ 
+            Swal.fire({
+              position: 'top-center',
+              icon: 'warning',
+              title: 'Oops...',
+              text: 'Ingresa la informacion de todos los campos!'
+            })
+            setLoader(false)
+          }else{
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'Éxito al registrarse',
+              showConfirmButton: false,
+              timer: 1500
+            })
+            navigate('/Cafe')
+            setLoader(false)
+    
+          }
+       })
+       .catch(error => {
+         // Manejar el error de la petición
+         console.log(error)
+       });
+     }
+   
     })
-    .catch(error => {
-      // Manejar el error de la petición
-      console.log(error)
-    });
+  }
+  catch(e){
+    Swal.fire({
+      position: 'top-center',
+      icon: 'warning',
+      title: 'Oops...',
+      text: 'Ingresa la imagen!'
+    })
+
   }
 
- })
  
 }
 var formularioLogin=useRef(null)
@@ -169,9 +192,9 @@ var formularioLogin=useRef(null)
     e.preventDefault()
     const formData=new FormData(formularioLogin)
 
-    formData.forEach(function(value, key) {
+  /*   formData.forEach(function(value, key) {
       console.log(key + ': ' + value);
-    });
+    }); */
     setLoader(true)
     
     fetch('https://apimainejetravel.azurewebsites.net/api/Autenticacion/Validar', {
@@ -227,6 +250,36 @@ var formularioLogin=useRef(null)
     });
   })
   
+}
+const validatePassword=(e) => {
+ 
+  if(e.target.value.length>5 ){
+    setValidate(true)
+  }
+  else{
+    setValidate(false)
+  }
+
+}
+
+
+const showAlert=()=>{
+  if(!validate && validateImg){
+    Swal.fire({
+      position: 'top-center',
+      icon: 'warning',
+      title: 'Oops...',
+      text: 'Ingresa una contraseña de 6 o más de caracteres!'
+    })
+
+  }else if(!validate || !validateImg){
+    Swal.fire({
+      position: 'top-center',
+      icon: 'warning',
+      title: 'Oops...',
+      text: 'Ingresa la informacion de todos los campos!'
+    })
+  }
 }
   return (
     <div className={styles.cn}>
@@ -323,7 +376,7 @@ var formularioLogin=useRef(null)
                 <FontAwesomeIcon icon={faLock} />
               </i>
 
-              <input type="password" name='Password' placeholder='Contraseña'  />
+              <input type="password"  onChange={validatePassword} onInvalid={()=>setValidate(false)} className={ styles.password}  name="Password" required  placeholder='Contraseña' pattern="[a-zA-Z0-999]{6,10}" title="La contraseña debe contener mas de 5 caracteres, mayusculas y numeros"  />
             </div>
 
             <div className={styles['input-box textarea-container']}>
@@ -347,7 +400,8 @@ var formularioLogin=useRef(null)
             <div className={`${styles['button']} ${styles['input-box']}`}>
               <i className={`fas fa-envelope ${styles['icon']}`}></i>
 
-              <button className={styles['button-form']} type='submit' onClick={register}>Regístrate</button>
+              {validate &&<button className={styles['button-form']} type='submit' onClick={register}  ref={btnRegister}>Regístrate</button>}
+              {!validate &&<button className={styles['buttonDiv-form']} type='button' onClick={showAlert} ref={btnRegister}>Regístrate</button>}
 
             </div>
             <div className={styles['text signup-text']}>¿Ya tienes una cuenta? <label htmlFor="flip">Inicia sesión ya</label></div>

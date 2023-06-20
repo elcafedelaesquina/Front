@@ -29,9 +29,13 @@ export function User() {
       const reader = new FileReader();
       reader.onloadend = () => {
         setImagePreview(reader.result);
-        setValidateImg(true)
+       /*  console.log(reader.result) */
+        
       };
       reader.readAsDataURL(file);
+      setValidateImg(true)
+    }else{
+      setValidateImg(false)
     }
    
   }
@@ -75,9 +79,9 @@ function register(){
         const formData=new FormData(formulario)
     
     
-          formData.forEach(function(value, key) {
+        /*   formData.forEach(function(value, key) {
           console.log(key + ': ' + value);
-        });
+        }); */
         setLoader(true)
         
         fetch('https://apimainejetravel.azurewebsites.net/api/Customer/Guardar', {
@@ -89,7 +93,7 @@ function register(){
           // Manejar la respuesta de la petición
           /* console.log(data.status) */
           const {status,exepcion}=data;
-          console.log(data)
+        /*   console.log(data) */
           if(exepcion ||exepcion==='Account is registed'){
             Swal.fire({
               position: 'top-center',
@@ -126,7 +130,7 @@ function register(){
         })
         .catch(error => {
           // Manejar el error de la petición
-          console.log(error)
+         /*  console.log(error) */
           Swal.fire({
             position: 'top-center',
             icon: 'warning',
@@ -141,6 +145,12 @@ function register(){
   }
   catch(e){
     console.log(e)
+    Swal.fire({
+      position: 'top-center',
+      icon: 'warning',
+      title: 'Oops...',
+      text: 'Ingresa la imagen!'
+    })
   }
    handleImageClear()
   
@@ -154,9 +164,9 @@ function login(){
     e.preventDefault()
     const formData=new FormData(formularioLogin)
 
-    formData.forEach(function(value, key) {
+    /* formData.forEach(function(value, key) {
       console.log(key + ': ' + value);
-    });
+    }); */
     setLoader(true)
     
     fetch('https://apimainejetravel.azurewebsites.net/api/Autenticacion/Validar', {
@@ -166,8 +176,6 @@ function login(){
     .then(response => response.json())
     .then(data=>{
       // Manejar la respuesta de la petición
-      console.log(data)
-      
       const {token,mensaje}=data;
       if(mensaje==='Correo o contraseña invalida'){
         Swal.fire({
@@ -224,10 +232,28 @@ const validatePassword=(e) => {
   else{
     setValidate(false)
   }
-  console.log(validate)
 
 }
 
+
+const showAlert=()=>{
+  if(!validate && validateImg){
+    Swal.fire({
+      position: 'top-center',
+      icon: 'warning',
+      title: 'Oops...',
+      text: 'Ingresa una contraseña de 6 o más de caracteres!'
+    })
+
+  }else if(!validate || !validateImg){
+    Swal.fire({
+      position: 'top-center',
+      icon: 'warning',
+      title: 'Oops...',
+      text: 'Ingresa la informacion de todos los campos!'
+    })
+  }
+}
 
 return (
 
@@ -293,8 +319,8 @@ return (
 
             <div className={styles['container-file']}>
             <div className={`${styles['input-boxx']} ${styles.box}`} onClick={handleButtonClick}>
-              <i className={styles['icon']} ><FontAwesomeIcon icon={faCloudArrowUp} /></i>
-              <input type="file" alt='' ref={image} name="Image" hidden placeholder='Choose your image' required  onChange={handleImageInputChange} />
+              <i className={styles['icon']} ><FontAwesomeIcon icon={faCloudArrowUp}  /></i>
+              <input type="file" alt='' ref={image} name="Image" hidden placeholder='Choose your image' required onClick={handleImageInputChange}  onChange={handleImageInputChange} />
               {imagePreview && (
                 <div className={styles['image-preview']}>
                   <img className={styles.imgPreview} src={imagePreview} alt="Imagen seleccionada" />
@@ -307,7 +333,7 @@ return (
             <div id='selectedFile'></div>
             <div className={`${styles['button']} ${styles['input-box']}`}>
               {validate &&<button className={styles['button-form']} type='submit' onClick={register}  ref={btnRegister}>Regístrate</button>}
-              {!validate &&<div className={styles['buttonDiv-form']} type='disabled'  ref={btnRegister}>Regístrate</div>}
+              {!validate &&<button className={styles['buttonDiv-form']} type='button' onClick={showAlert} ref={btnRegister}>Regístrate</button>}
               
             </div>
             <div className={styles['text signup-text']}>¿Ya tienes una cuenta? <label htmlFor="flip">Inicia Sesión ya</label></div>
