@@ -205,11 +205,11 @@ var formularioLogin=useRef(null)
         Swal.fire({
           position: 'top-end',
           icon: 'success',
-          title: 'Bienvenido '+name,
+          title: 'Bienvenido '+ name,
           showConfirmButton: false,
           timer: 1500
         })
-        navigate('/AdminCafeteria')
+        navigate('/')
         setLoader(false)
 
       }

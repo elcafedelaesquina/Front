@@ -1,0 +1,144 @@
+.chat{
+    background-color: #00000080;
+    display:block;
+}
+
+.modal{
+    width: 100%;
+    height: 100%;
+    background-color: #00000080;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContent {
+    background-color: #303030;
+    padding: 15px;
+    border-radius: 5px;
+    max-width: 450px;
+    height: 70vh;
+    width: 100%;
+    box-shadow: 0 2px 5px #0000004d;
+}
+
+.modalHeader{
+    display:flex;
+    height: 65px;
+    width: 100%;
+    justify-content:space-between;
+}
+
+.titleChat{
+    font-size:35px;
+    color: #faa423
+}
+
+.closeBtn{
+    width: 40px;
+    height: 40px;
+    background-color:#ff000000;
+    font-size: 35px;
+    border: none;
+    cursor: pointer;
+}
+
+.closeBtn:hover{
+    color: #faa423;
+}
+
+.containerMessage{
+    height: 355px;
+    margin-bottom: 18px;
+    background-color: #252525;
+    width: 100%;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.messageOne{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.messageOne>.message{
+    width: 50%;
+    max-width: 50%;
+    border-top-left-radius:8px ;
+    border-top-right-radius:8px ;
+    border-bottom-Right-radius:8px ;
+    padding: 8px;
+    background-color: #faa423;
+    font-size: 15px;
+}
+
+.messageTwo{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+    gap: 10px;   
+}
+
+.messageTwo>.message{
+    width: 50%;
+    max-width: 50%;
+    border-top-left-radius:8px ;
+    border-top-right-radius:8px ;
+    border-bottom-left-radius:8px ;
+    background-color: #303030;
+    padding: 8px;
+    color: #f0f8ff;
+}
+
+.messageOne>.dateMessage,.messageTwo>.dateMessage{
+    color: #5f5f5f;
+    font-size: 12px;  
+}
+
+.form{
+    width: 100%;
+    display: flex;
+    gap: 15px;
+}
+
+.textarea {
+    width: 90%;
+    border-radius: 20px;
+    height: 50px;
+    padding: 12px;
+    resize: none;
+    background-color: #242424;
+    margin-bottom: 10px;
+    font-size: 17px;
+    border: none;
+    color: #faebd7;
+    overflow: hidden;
+    outline: none;
+}
+
+.textarea:focus{
+    outline: 2px solid #faa423;
+}
+
+.submitBtn{
+    height: 50px;
+    width: 55px;
+    border-radius: 50%;
+    background-color: #faa423;
+    border: none;
+    font-size: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    max-width: 50px;
+    max-height: 50px;
+    overflow: hidden;
+    transition: all 0.3s
+}
+
+.submitBtn:hover{
+    color: #faa423;
+    background-color: #222222;
+}

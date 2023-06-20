@@ -1,0 +1,71 @@
+.carousel {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 100px;
+  z-index: 2;
+  background-image: url('https://i.pinimg.com/564x/89/7f/4f/897f4fd9135cef6a2dc385b713c1fdaf.jpg');
+  /* background-repeat: no-repeat; */
+  background-size: 100% 88%;
+}
+
+.containerClose {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.iconCLose {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  color: #eedcc4;
+  right: 10;
+}
+
+.productImage {
+  width: 100%;
+  height: 20em;
+  object-fit: cover;
+  border-radius: 5%;
+}
+
+.card {
+  width: 98%;
+  height: auto;
+  gap: 20px;
+  box-shadow: 0 4px 8px 0 #00000033;
+  max-width: 320px;
+  margin: 10px auto;
+  margin-top: 100px;
+  text-align: center;
+  font-family: arial;
+  color: #000;
+  background-color: aliceblue;
+  border-radius: 5%;
+}
+
+.price {
+  /* color: grey; */
+  padding: 10px;
+  font-size: 22px;
+}
+
+.description{
+  font-size: 1.3rem;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: #ffffff;
+  background-color: #ce0404;
+  text-align: center;
+  cursor: pointer;
+  width: 50%;
+  font-size: 18px;
+  margin-top: 40px ;
+}
