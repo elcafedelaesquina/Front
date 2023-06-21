@@ -30,11 +30,7 @@ const CartaCafeteria = () => {
     })
     },[])
    
-    estado.map((item,index)=>{
-        console.log(item)
-       /*  console.log(index) */
-    })
-  ;
+
 
    
   return (

@@ -151,6 +151,7 @@
 .infoTitle{
   width: 100%;
   text-align: center;
+  color: #2e2d31;
   font-size: 50px;
 }
 .itemInfo{
@@ -170,7 +171,7 @@
 }
 .itemInfo>p{
   font-size: 18px;
-  color: #888888;
+  color: #636363;
 
 }
 .itemImg{
@@ -339,6 +340,7 @@
 }
 .containerMenu>h2{
   font-size: 45px;
+  color: rgb(53, 53, 53);
 }
 .brands{
   width: 70%;
@@ -352,7 +354,7 @@
   display: flex;
   gap: 55px;
   width: max-content;
-  animation: carousel-animation 10s infinite linear ;
+  animation: carousel-animation 18s infinite linear ;
 
 }
 .brand{
@@ -374,7 +376,7 @@
   
 
   100% {
-    transform: translateX(0%);
+    transform: translateX(-1%);
   }
   
 } 

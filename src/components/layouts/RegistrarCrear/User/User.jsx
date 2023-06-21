@@ -23,14 +23,14 @@ export function User() {
 
 
   function handleImageInputChange(e) {
-    console.log(e.target.files.length !==0)
+    console.log(e.target.files)
+
     if(e.target.files.length !==0){
       const file = e.target.files[0];
       const reader = new FileReader();
       reader.onloadend = () => {
         setImagePreview(reader.result);
        /*  console.log(reader.result) */
-        
       };
       reader.readAsDataURL(file);
       setValidateImg(true)
@@ -77,10 +77,8 @@ function register(){
       if(e && validate && validateImg){
         e.preventDefault()
         const formData=new FormData(formulario)
-    
-    
         /*   formData.forEach(function(value, key) {
-          console.log(key + ': ' + value);
+          console.log(key + ': ' +typeof  value);
         }); */
         setLoader(true)
         

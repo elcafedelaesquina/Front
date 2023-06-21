@@ -21,7 +21,7 @@ const LogoUser= (props) => {
         {id && (
           <div className='menuContainer'>
            <ul className='menuUser'>
-              <li className='itemMenu'>Ver compras</li>
+           <Link to={'/compras'}> <li className='itemMenu'>Ver compras</li></Link>
               <Link to={'/EditarPerfilUsuario'}><li className='itemMenu'>Editar Perfil</li></Link>
               <li className='itemMenu' onClick={props.close}>Cerrar Sesion</li>
             </ul>

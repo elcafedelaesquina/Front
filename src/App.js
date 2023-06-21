@@ -21,10 +21,12 @@ import { CrearAdministradorCafeteria } from './components/layouts/CafeteriasAdmi
 import { EditarPerfilUsuario } from './components/layouts/UsuarioAdmin/EditarPerfilUsuario/EditarPerfilUsuario'
 import { CafeteriaCreateMenuProduct } from './components/layouts/CafeteriasAdmin/crearProductoMenu/CafeteriaCreateProduct';
 import { ChatModal } from './components/layouts/chat';
+import { Compras } from './components/pages/verCompras';
 function App() {
   return (
   <div> 
     <Routes>
+    <Route path="/compras" element={<Compras></Compras>}></Route>
     <Route path="/chat" element={<ChatModal></ChatModal>}></Route>
     <Route path="/CrearMenuProducto" element={<CafeteriaCreateMenuProduct></CafeteriaCreateMenuProduct>}></Route>
       <Route path="/cafeterias" element={<Cafeterias></Cafeterias>}></Route>

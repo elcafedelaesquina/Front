@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom'
     
 
     
-  },[JSON.parse(localStorage.getItem('coffee'))])
+  },[])
   return (
     <div className={styles.home}>
       <div className={styles.section}>

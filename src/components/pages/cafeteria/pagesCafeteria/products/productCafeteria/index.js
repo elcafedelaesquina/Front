@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styles from './style.module.css'
 import { useEffect,useState } from 'react'
 
@@ -23,13 +23,22 @@ const  ProductCafeteria= () => {
          
           
       },[])
+      const [quantity,setQuantity]=useState('')
+       const selectQuantity=(e)=>{
+        setQuantity(e.target.value)
+
+       }
     const putCarrito=(product)=>{
+        
         let validation=JSON.parse(localStorage.getItem('id_customer'))
         if(validation){
-            let createLocal = JSON.parse(localStorage.getItem('carrito')) || []; // Parsea la cadena JSON a un array o utiliza un array vacío por defecto
-            createLocal.push(product); // Agrega el producto al array
+            
+            let createLocal = JSON.parse(localStorage.getItem('carrito')) || []; 
+            let newProduct=product
+            newProduct.quantity=parseInt(quantity)
+            newProduct.id_product=parseInt(product.id_product)// Parsea la cadena JSON a un array o utiliza un array vacío por defecto
+            createLocal.push(newProduct); // Agrega el producto al array
             localStorage.setItem('carrito', JSON.stringify(createLocal));
-            console.log(createLocal);
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',
@@ -72,6 +81,12 @@ const  ProductCafeteria= () => {
                             </div>
                             <div className={styles['card-footer']}>
                                 <span className={styles['text-title']}>${product.price}</span>
+                                <select onChange={selectQuantity} className={styles.quantity} >
+                                <option value={1}>1</option>
+                                <option value={2}>2</option>
+                                <option value={3}>3</option>
+                                <option value={4}>4</option>
+                                </select>
                                 <div className={styles['card-button']} onClick={()=>{putCarrito(product)}}>
                                 <ion-icon name="bag-add-outline"></ion-icon>
                                 </div>

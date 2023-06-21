@@ -6,12 +6,6 @@ import {Link} from 'react-router-dom'
   const [coffee,setCoffee]=useState({image:'',name:''})
   const [token,setToken]=useState(false)
 
- 
-   
- 
-   
-
-
   useEffect(()=>{
       
       let data=JSON.parse(localStorage.getItem('coffee'))
@@ -24,7 +18,7 @@ import {Link} from 'react-router-dom'
       }
       
       
-  },[JSON.parse(localStorage.getItem('id_customer')),JSON.parse(localStorage.getItem('coffee'))])
+  },[])
   let name=coffee.name
   return (
     <div className={styles.header} >

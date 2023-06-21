@@ -143,7 +143,7 @@ const Comments = (props) => {
 
   return (
     <div className="containerComments">
-      <h2>Tu opinion es importante para nosotros...</h2>
+      <h2>Tu opinión es importante para nosotros...</h2>
       <div className="container">
         <div className="cafeteriaComments">
           <div className="commentsGenerator" ref={formulario}>
@@ -182,7 +182,7 @@ const Comments = (props) => {
               <input type="radio" onChange={() => setRate(1)} id="star1" name="rate" value="1" />
               <label htmlFor="star1" title="text"></label>
             </div>
-            <h3>Tu opinion<span>(Obligatorio)</span></h3>
+            <h3>Tu opinión<span>(Obligatorio)</span></h3>
 
             <textarea ref={textArea}></textarea>
             <button className='btnEnviarComments' type='submit'  onClick={()=>{

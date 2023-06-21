@@ -49,15 +49,11 @@ export const CafeteriaMenuAdmin = () => {
 
   return (
     <>
-      <Carousel className={Style.carousel}>
+      <div className={Style.carousel}>
         {data.map((item) => (
         <div className={Style.card} key={item.cod_product}>
           <div>
-            <img
-              className={Style.productImage}
-              src={item.image}
-              alt="product image"
-            />
+            <img className={Style.productImage} src={item.image} alt="product"></img>
           </div>
           <h2 className={Style.h2}>{item.name}</h2>
           <p className={Style.price}>${item.price}</p>
@@ -68,7 +64,7 @@ export const CafeteriaMenuAdmin = () => {
           </p>
         </div>
       ))}
-      </Carousel>
+      </div>
 
       <div className={Style.adminContainerCreateProduct}>
         <button

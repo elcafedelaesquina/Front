@@ -29,20 +29,20 @@ const ContentHome = () => {
         <div className={styles.infoGray}>
           <h2 className={styles.infoTitle}>¿Por qué Eje Travel?</h2>
             <div className={styles.itemInfo}>
-              <img className={styles.itemImg} src='https://sense-digital.co/wp-content/uploads/2020/08/man-1-medium.png'></img>
+              <img className={styles.itemImg} alt='' src='https://sense-digital.co/wp-content/uploads/2020/08/man-1-medium.png'></img>
               <h2>Tu satisfacción es garantizada</h2>
               <p>El desarrollo y diseño de nuestras tiendas es realizado por profesionales.</p>
               <p>¡Comienza a vender ahora!</p>
             </div>
             <div className={styles.itemInfo}>
-              <img className={styles.itemImg} src='https://sense-digital.co/wp-content/uploads/2020/08/customer-service-medium.png' ></img>
-              <h2>Te damos atención personalizada</h2>
-              <p>Desde el momento cero tendrás a tu disposición un asesor comercial para resolver tus dudas y un líder de desarrollo para dar soporte a tu sitio cuando sea necesario</p>
+              <img className={styles.itemImg} alt='' src='https://sense-digital.co/wp-content/uploads/2020/08/customer-service-medium.png' ></img>
+              <h2>Nuestra herramienta resolverá todas tus dudas</h2>
+              <p>Desde el momento cero tendrás a tu disposición una herramienta de inteligencia artificial para resolver tus dudas o ayudarte con el manejo de tu pagina.</p>
             </div>
             <div className={styles.itemInfo}>
-              <img className={styles.itemImg} src='https://sense-digital.co/wp-content/uploads/2020/08/website-design-medium.png'></img>
+              <img className={styles.itemImg}  alt=''src='https://sense-digital.co/wp-content/uploads/2020/08/website-design-medium.png'></img>
               <h2>¡Al final te enseñamos a editar por ti mismo!</h2>
-              <p>La tecnología usada para crear tu tienda (WordPress) te permitirá editar hasta el más mínimo detalle a través de un editor intuitivo . Tecnología usada por grandes marcas en todo el mundo (Disney, MTV, Blomberg, Microsoft)</p>
+              <p>La tecnología usada para crear tu tienda te permitirá editar la información  a través de un editor  . Tecnología usada por grandes marcas en todo el mundo.</p>
            
             </div>
             <div className={styles.brands}>
@@ -84,7 +84,7 @@ const ContentHome = () => {
         </div>
       <div>
       <div className={styles.containerMenu}>     
-        <h2>Nuestro servicios a tu disposición</h2> 
+        <h2>Nuestros servicios a tu disposición</h2> 
           <Menu></Menu>
       </div>
       <div className={styles.containerSubs}>
