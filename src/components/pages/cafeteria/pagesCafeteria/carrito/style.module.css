@@ -37,7 +37,7 @@
     width: 100%;
     min-height: 320px;
     height: auto;
-    max-height: 65vh;
+    max-height: 60vh;
     overflow:auto;
     padding: 10px 0;
 }
@@ -75,9 +75,13 @@
 .description{
     width: 80%;
     height: auto;
-    max-height: 45px ;
+    max-height: 55px ;
     margin-bottom: 4px;
 
+    
+}
+.description  span{
+  color: rgb(255, 42, 42);
 }
 .btnDelete{
     position:relative;

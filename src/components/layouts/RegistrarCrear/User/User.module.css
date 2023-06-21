@@ -1,4 +1,4 @@
-.cn {
+.cn{
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -6,113 +6,17 @@
     background: #ffa844;
 }
 
-.cn .color {
-    position: absolute;
-    filter: blur(150px);
-}
-
-.cn .color:nth-child(1) {
-    top: -350px;
-    width: 600px;
-    height: 600px;
-
-}
-
-.cn .color:nth-child(2) {
-    top: 150px;
-    left: -125px;
-    width: 120px;
-    height: 120px;
-    z-index: 2;
-}
-
-.cn .color:nth-child(3) {
-    bottom: 50px;
-    right: 100px;
-    width: 300px;
-    height: 300px;
-    background: #ffa844;
-}
-
-.kj {
-    position: relative;
-}
-
-.kj .square {
-    position: absolute;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    animation: animate 10s linear infinite;
-    animation-delay: calc(-1s * var(--i));
-}
-
-@keyframes animate {
-
-    0%,
-    100% {
-        transform: translateY(-40px);
-    }
-
-    50% {
-        transform: translateY(40px);
-    }
-}
-
-.kj .square:nth-child(1) {
-    top: -50px;
-    right: -95px;
-    width: 100px;
-    height: 100px;
-}
-
-.kj .square:nth-child(2) {
-    top: 150px;
-    left: -125px;
-    width: 120px;
-    height: 120px;
-    z-index: 2;
-}
-
-.kj .square:nth-child(3) {
-    bottom: 50px;
-    right: -85px;
-    width: 80px;
-    height: 80px;
-    z-index: 2;
-}
-
-
-.kj .square:nth-child(4) {
-    bottom: -80px;
-    left: 100px;
-    width: 50px;
-    height: 50px;
-}
-
-.kj .square:nth-child(5) {
-    top: -80px;
-    left: 100px;
-    width: 60px;
-    height: 60px;
-}
-
-
-.container {
+.container{
     position: relative;
     max-width: 850px;
-    width: 2000px;
+    width: 100%;
     background: #fff;
     padding: 40px 30px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     perspective: 2700px;
 }
 
-.container .cover {
+.container .cover{
     position: absolute;
     top: 0;
     left: 50%;
@@ -124,7 +28,7 @@
     transform-style: preserve-3d;
 }
 
-.container .cover::before {
+.container .cover::before{
     content: '';
     position: absolute;
     height: 100%;
@@ -134,20 +38,19 @@
     z-index: 100;
 }
 
-.container .flip:checked~.cover {
+.container .flip:checked ~ .cover{
     transform: rotateY(-180deg);
 }
 
-.container .flip:checked~.cover .back {
+.container .flip:checked ~ .cover .back{
     transform: rotateY(-180deg);
 }
-
-.container .flip:checked~.cover .text {
+.container .flip:checked ~ .cover .text{
     transform: rotateY(180deg);
 }
 
 
-.container .cover .imgContainer {
+.container .cover .imgContainer{
     position: absolute;
     height: 100%;
     width: 100%;
@@ -156,7 +59,12 @@
     backface-visibility: hidden;
 }
 
-.container .cover .text {
+/* .container .cover .back .backImg{
+    transform: rotateY(180deg);
+}
+ */
+
+.container .cover .text{
     position: absolute;
     z-index: 111;
     height: 100%;
@@ -168,8 +76,7 @@
     transition: all 0.9s;
     list-style: none;
 }
-
-.logoForm {
+.logoForm{
     width: 200px;
     background-color: rgba(255, 255, 255, 0);
     height: 200px;
@@ -177,7 +84,7 @@
 }
 
 .cover .text .text-1,
-.cover .text .text-2 {
+.cover .text .text-2{
     font-size: 26px;
     font-weight: 600;
     color: #fff;
@@ -185,39 +92,40 @@
     backface-visibility: hidden;
 }
 
-.cover .text .text-2 {
+.cover .text .text-2{
     font-size: 15px;
     font-weight: 500;
     color: #ffa844;
 }
 
 
-.container form {
+.container form{
     height: 100%;
     width: 100%;
     background: #fff;
 }
 
 
-.container .form-content {
+.container .form-content{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .form-content .login-form,
-.form-content .signup-form {
+.form-content .signup-form{
     width: calc(100% / 2 - 25px);
 }
 
-form .form-content .title {
+
+form .form-content .title{
     position: relative;
     font-size: 24px;
     font-weight: 500;
     color: #000;
 }
 
-form .form-content .title::before {
+form .form-content .title::before{
     content: '';
     position: absolute;
     left: 0;
@@ -227,14 +135,14 @@ form .form-content .title::before {
     background: #262626;
 }
 
-.iconX>a ion-icon {
+.iconX> a ion-icon{
     font-size: 30px;
     cursor: pointer;
     color: black;
 }
-
-.iconX {
-    position: fixed;
+  
+.iconX{
+    position: absolute;
     top: 0;
     right: 0;
     padding-left: 20px;
@@ -242,15 +150,15 @@ form .form-content .title::before {
 }
 
 
-form .signup-form .title:before {
+form .signup-form .title:before{
     width: 20px;
 }
 
-form .form-content .input-boxes {
+form .form-content .input-boxes{
     margin-top: 30px;
 }
 
-form .form-content .input-box {
+form .form-content .input-box{
     display: flex;
     align-items: center;
     height: 50px;
@@ -258,13 +166,10 @@ form .form-content .input-box {
     margin: 10px 0;
     position: relative;
 }
-
-.type {
+.type{
     display: none;
 }
-
-.form-content .input-box input,
-.button-form {
+.form-content .input-box input, .button-form,.buttonDiv-form{
     height: 100%;
     width: 100%;
     outline: none;
@@ -275,42 +180,39 @@ form .form-content .input-box {
     border-bottom: 2px solid rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
-
-.form-content .input-box input,
-.button-form:focus,
-.form-content .input-box input,
-.button-form:valid {
+.form-content .input-box input, .button-form:focus,
+.form-content .input-box input, .button-form:valid{
     border-color: #ffa844;
 }
 
-.form-content .input-box i {
+.form-content .input-box i{
     position: absolute;
     color: #ffa844;
     font-size: 17px;
 }
 
-form .form-content .text {
+form .form-content .text{
     font-size: 14px;
     font-weight: 500;
     color: #333;
 }
 
-form .form-content .text a {
+form .form-content .text a{
     text-decoration: none;
     color: #000;
 }
 
-form .form-content .text a:hover {
+form .form-content .text a:hover{
     text-decoration: underline;
-
+    
 }
 
-form .form-content .button {
+form .form-content .button{
     color: #fff;
     margin-top: 40px;
 }
 
-form .form-content .button input {
+form .form-content .button input{
     color: #fff;
     background: #0004ff;
     border-radius: 6px;
@@ -319,7 +221,7 @@ form .form-content .button input {
     transition: all 0.4s ease;
 }
 
-form .form-content .button-form {
+form .form-content .button-form,.buttonDiv-form{
     color: #fff;
     background: #262626;
     border-radius: 6px;
@@ -328,25 +230,25 @@ form .form-content .button-form {
     transition: all 0.4s ease;
 }
 
-form .form-content .button-form:hover {
+form .form-content .button-form:hover,.buttonDiv-form:hover{
     background: #ffa844;
 }
 
-form .form-content .button input:hover {
+form .form-content .button input:hover{
     background: #00b3ff;
 }
 
-form .form-content label {
+form .form-content label{
     color: #0004ff;
     cursor: pointer;
 }
 
-form .form-content label:hover {
+form .form-content label:hover{
     text-decoration: underline;
 }
 
 form .form-content .login-text,
-form .form-content .signup-text {
+form .form-content .signup-text{
     text-align: center;
     margin-top: 25px;
 }
@@ -363,12 +265,12 @@ form .form-content .signup-text {
     border-radius: 5px;
 }
 
-.input-boxes .container-file {
+.input-boxes .container-file{
     display: flex;
     justify-content: center;
 }
 
-.form-content .input-boxx i {
+.form-content .input-boxx i{
     position: absolute;
     color: #ffa844;
     font-size: 17px;
@@ -376,23 +278,22 @@ form .form-content .signup-text {
 
 .image-preview {
     position: relative;
-
+    
 }
-
 .image-preview .imgPreview {
     display: inline-block;
     max-width: 100%;
-    height: auto;
+    height: 125px;
     width: auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 5px;
 }
-
 .image-preview .btnPreview {
     position: absolute;
-    top: 0px;
-    right: 18px;
+    top: -10px;
+    right: -10px;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -408,29 +309,26 @@ form .form-content .input-boxx {
     margin: 10px 0;
 }
 
-.container .flip {
+.container .flip{
     display: none;
 }
 
-@media (max-width: 730px) {
-    .container .cover {
+@media (max-width: 730px){
+    .container .cover{
         display: none;
     }
-
     .form-content .login-form,
-    .form-content .signup-form {
-        width: 100%;
+    .form-content .signup-form{
+    width: 100%;
     }
-
-    .form-content .signup-form {
+    .form-content .signup-form{
         display: none;
     }
-
-    .container .flip:checked~form .signup-form {
+    .container .flip:checked ~ form .signup-form{
         display: block;
     }
-
-    .container .flip:checked~form .login-form {
+    .container .flip:checked ~ form .login-form{
         display: none;
     }
 }
+

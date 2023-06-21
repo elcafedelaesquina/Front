@@ -27,13 +27,7 @@ const ProductsCafeteria= () => {
                 <li className={styles.li}>Precio</li>
             </ul>
             <div className={styles.ProductsContainer}>
-                {/* {DataTransfer.map(product=>{
-                    return(
-                        <ProductCafeteria key={producto.id}></ProductCafeteria>
-
-                    )
-                })} */}
-                <ProductCafeteria></ProductCafeteria>
+                <ProductCafeteria key={1}></ProductCafeteria>
                 
 
             </div>

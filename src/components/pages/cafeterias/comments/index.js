@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import './style.css'
 
-const Comments = () => {
+const Comments = (props) => {
   const Swal = require('sweetalert2')
   const [data, setData] = useState([])
   const [valor, setValor] = useState([{
@@ -78,7 +78,8 @@ const Comments = () => {
 
   const sendComment = () => {
     ///organizar post no esta recibiendo la peticion
-    if(id_customer){
+    let id= parseInt(localStorage.getItem('id_customer'))
+    if(id){
       console.log(rate)
       let obj = {
         Comments: textArea.current.value,
@@ -87,7 +88,6 @@ const Comments = () => {
         Type_business: 1,
         Score: rate
       }
-      console.log(obj)
       fetch('https://apimainejetravel.azurewebsites.net/api/Comment/Guardar', {
         method: 'POST',
         headers: {
@@ -126,14 +126,6 @@ const Comments = () => {
       })
 
     }
-
-
-
-
-
-
-
-
   }
   const stars=(score)=>{
     let stars = [];
@@ -151,7 +143,7 @@ const Comments = () => {
 
   return (
     <div className="containerComments">
-      <h2>Tu opinion es importante para nosotros...</h2>
+      <h2>Tu opinión es importante para nosotros...</h2>
       <div className="container">
         <div className="cafeteriaComments">
           <div className="commentsGenerator" ref={formulario}>
@@ -190,10 +182,12 @@ const Comments = () => {
               <input type="radio" onChange={() => setRate(1)} id="star1" name="rate" value="1" />
               <label htmlFor="star1" title="text"></label>
             </div>
-            <h3>Tu opinion<span>(Obligatorio)</span></h3>
+            <h3>Tu opinión<span>(Obligatorio)</span></h3>
 
             <textarea ref={textArea}></textarea>
-            <button className='btnEnviarComments' type='submit' onClick={sendComment}>Enviar</button>
+            <button className='btnEnviarComments' type='submit'  onClick={()=>{
+              sendComment() 
+              props.recargar()}}>Enviar</button>
 
 
           </div>
@@ -205,9 +199,6 @@ const Comments = () => {
         </div>
         <div className='comments'>
           {comment.reverse().map((comment, index) => {
-
-
-
             return (
               <div className="comment" key={index}>
                 <img src={comment.user_image} alt=''></img>

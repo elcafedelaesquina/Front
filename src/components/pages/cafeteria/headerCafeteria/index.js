@@ -6,22 +6,16 @@ import {Link} from 'react-router-dom'
   const [coffee,setCoffee]=useState({image:'',name:''})
   const [token,setToken]=useState(false)
 
-  setInterval(()=>{
-    let validation=JSON.parse(localStorage.getItem('id_customer'))
-    if(validation){
-      setToken(true)
-    }else{
-      setToken(false)
-    }
-  },1000)
-   
-
-
   useEffect(()=>{
-      setTimeout(()=>{
-        let data=JSON.parse(localStorage.getItem('coffee'))
+      
+      let data=JSON.parse(localStorage.getItem('coffee'))
       setCoffee(data)
-      },1000)
+      let validation=JSON.parse(localStorage.getItem('id_customer'))
+      if(validation){
+        setToken(true)
+      }else{
+        setToken(false)
+      }
       
       
   },[])

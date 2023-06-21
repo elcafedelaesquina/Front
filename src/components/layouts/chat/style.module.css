@@ -1,4 +1,5 @@
 .modal {
+    box-sizing: border-box;
     position: fixed;
     top: 0;
     left: 0;
@@ -36,7 +37,59 @@
     background-color: rgb(37, 37, 37);
     width: 100%;
     border-radius: 15px;
-    padding: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+  .messagePurchase{
+    text-align: center;
+    width: 100%;
+    height: auto;
+    margin:10px 0 ;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: rgb(53, 53, 53);
+    
+  }
+  .messagePurchase>h3{
+    border-bottom: 1px solid white;
+    margin-bottom: 5px;
+    color: rgb(250, 164, 35);
+  }
+
+  .messagePurchase>h4{
+    border-top: 1px solid white;
+    margin-top: 5px;
+    color: rgb(250, 164, 35);
+  }
+  .messagePurchase>h4>span{
+    color: aliceblue;
+  }
+  .containerItems{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+  .messageItem{
+    width: 50%;
+    margin-top: 5px;
+    background-color: rgba(255, 0, 0, 0);
+    display: flex;
+  }
+  .messageItem>img{
+    width: 55px;
+    border-radius: 5px;
+    height: 55px;
+  }
+  .messageItem>p{
+    padding-left:5px ;
+    color: rgb(250, 164, 35);
+  }
+  .messageItem>p>span{
+    color: aliceblue;
+    max-width: 100%;
+    overflow: hidden;
   }
   .messageOne{
     width: 100%;
@@ -52,7 +105,7 @@
     border-top-left-radius:8px ;
     border-top-right-radius:8px ;
     border-bottom-Right-radius:8px ;
-    
+    height: auto;
     padding: 8px;
     background-color: rgb(250, 164, 35);
     font-size: 15px;
@@ -69,6 +122,7 @@
     border-top-left-radius:8px ;
     border-top-right-radius:8px ;
     border-bottom-left-radius:8px ;
+    height: auto;
     background-color: rgb(48, 48, 48);
     padding: 8px;
     color: aliceblue;
