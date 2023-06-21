@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styles from './style.module.css'
 
 const Compras = () => {
+  //por terminar
     /* const [data,setData]=useState([]) */
     useEffect(()=>{
         try{
