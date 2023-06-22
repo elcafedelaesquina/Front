@@ -159,7 +159,16 @@ function register(){
               showConfirmButton: false,
               timer: 1500
             })
-            navigate('/Cafe')
+            fetch('https://apimainejetravel.azurewebsites.net/api/Autenticacion/Validar', {
+            method: 'POST',
+              body:formData
+            })
+            .then(response => response.json())
+            .then(data=>{
+              // Manejar la respuesta de la petición
+              localStorage.setItem('id_coffee',JSON.stringify(data.listCoffee[0].id_coffee))
+              console.log(data)})
+            navigate('/CrearAdministradorCafeteria')
             setLoader(false)
     
           }
@@ -167,21 +176,27 @@ function register(){
        .catch(error => {
          // Manejar el error de la petición
          console.log(error)
+         Swal.fire({
+          position: 'top-center',
+          icon: 'warning',
+          title: 'Oops...',
+          text: 'Ingresa la imagen!'
+        })
        });
      }
    
     })
   }
   catch(e){
+    console.log(e)
     Swal.fire({
       position: 'top-center',
       icon: 'warning',
       title: 'Oops...',
       text: 'Ingresa la imagen!'
     })
-
   }
-
+   handleImageClear()
  
 }
 var formularioLogin=useRef(null)
@@ -342,7 +357,7 @@ const showAlert=()=>{
 
               <input type="text" className={styles.type} name="Type" readOnly   value={1}/>
               <input type="text" className={styles.type} name="State" readOnly   value={'activo'}/>
-              <input type="text" name='Name' placeholder='Nombre de Tu Cafetería'  />
+              <input type="text" name='Name' placeholder='Nombre de Tu Cafetería' required />
 
             </div>
             <div className={styles['input-box']}>
@@ -350,7 +365,7 @@ const showAlert=()=>{
                 <FontAwesomeIcon icon={faEnvelope} />
               </i>
 
-              <input type="text" name='Email' placeholder='E-mail' />
+              <input type="text" name='Email' placeholder='E-mail' required />
 
             </div>
             <div className={styles['input-box']}>
@@ -358,7 +373,7 @@ const showAlert=()=>{
                 <FontAwesomeIcon icon={faPhone} />
               </i>
 
-              <input type="tel" name='Phone' placeholder='Telefono'  />
+              <input type="tel" name='Phone' placeholder='Telefono' required  />
 
             </div>
 
@@ -387,7 +402,7 @@ const showAlert=()=>{
             <div className={styles['container-file']}>
             <div className={`${styles['input-boxx']} ${styles.box}`} onClick={handleButtonClick}>
               <i className={styles['icon']} ><FontAwesomeIcon icon={faCloudArrowUp} /></i>
-              <input type="file" alt='' ref={fileInputRef} name="Image" hidden placeholder='Choose your image'  onChange={handleImageInputChange} />
+              <input type="file" alt='' ref={fileInputRef} name="Image" hidden placeholder='Choose your image'  required onChange={handleImageInputChange} />
               {imagePreview && (
                 <div className={styles['image-preview']}>
                   <img className={styles.imgPreview} src={imagePreview} alt="Imagen seleccionada" />
@@ -401,7 +416,7 @@ const showAlert=()=>{
               <i className={`fas fa-envelope ${styles['icon']}`}></i>
 
               {validate &&<button className={styles['button-form']} type='submit' onClick={register}  ref={btnRegister}>Regístrate</button>}
-              {!validate &&<button className={styles['buttonDiv-form']} type='button' onClick={showAlert} ref={btnRegister}>Regístrate</button>}
+              {!validate &&<button className={styles['button-form']} type='button' onClick={showAlert} >Regístrate</button>}
 
             </div>
             <div className={styles['text signup-text']}>¿Ya tienes una cuenta? <label htmlFor="flip">Inicia sesión ya</label></div>

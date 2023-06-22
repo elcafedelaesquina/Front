@@ -26,7 +26,6 @@ const Cafeterias = () => {
   const [realData,setRealData]=useState([])
   const [load,setLoad]=useState([])
   const recargar=()=>{
-    alert('fdgf')
     setLoad([])
    
   }

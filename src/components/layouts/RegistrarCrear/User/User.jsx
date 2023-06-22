@@ -331,7 +331,7 @@ return (
             <div id='selectedFile'></div>
             <div className={`${styles['button']} ${styles['input-box']}`}>
               {validate &&<button className={styles['button-form']} type='submit' onClick={register}  ref={btnRegister}>Regístrate</button>}
-              {!validate &&<button className={styles['buttonDiv-form']} type='button' onClick={showAlert} ref={btnRegister}>Regístrate</button>}
+              {!validate &&<button className={styles['buttonDiv-form']} type='button' onClick={showAlert} >Regístrate</button>}
               
             </div>
             <div className={styles['text signup-text']}>¿Ya tienes una cuenta? <label htmlFor="flip">Inicia Sesión ya</label></div>
