@@ -5,11 +5,11 @@ import { Home } from "./componentsMobile/pages/Home/Home";
 import { Cafeteria } from "./componentsMobile/pages/Cafeteria/Cafeteria";
 import { Cafeterias } from "./componentsMobile/pages/Cafeterias/Cafeterias";
 
-import { AdminCafeteria } from "./componentsMobile/pages/AdminCafeteria/AdminCafeteria";
 import { PerfilCafeteria } from "./componentsMobile/pages/AdminCafeteria/PerfilCafeteria/PerfilCafeteria";
 import { ProductosCartaCafeteria } from "./componentsMobile/pages/AdminCafeteria/ProductosCartaCafeteria/ProductosCartaCafeteria";
 import { ProductosCafeteria } from "./componentsMobile/pages/AdminCafeteria/ProductosCafeteria/ProductosCafeteria";
 import { AdministradorCafeteria } from "./componentsMobile/pages/AdminCafeteria/AdministradorCafeteria/AdministradorCafeteria"; 
+import { AdminChats } from "./componentsMobile/pages/AdminCafeteria/AdminChats/AdminChats";
 
 import { PageRegistros } from "./componentsMobile/pages/PageRegistros/PageRegistros";
 import { User } from "./componentsMobile/layouts/RegistrarCrear/User/User";
@@ -31,12 +31,11 @@ export const AppMobile = () => {
         <Route path="/Cafeterias/cafeteria" element={ <Cafeteria /> } />
 
         
-        <Route path="/AdminCafeteria" element={ <AdminCafeteria /> } />
         <Route path="/EditarPerfilAdmin" element={ <PerfilCafeteria /> } />
         <Route path="/CreateAdminCafeteria" element={ <AdministradorCafeteria /> } />
         <Route path="/CreateProductsCarta" element={ <ProductosCartaCafeteria /> } />
         <Route path="/CreateProductsCafeteria" element={ <ProductosCafeteria /> } />
-        <Route path="/ChatsAdmin" element={ <AdminCafeteria /> } />
+        <Route path="/ChatsAdmin" element={ <AdminChats /> } />
         
         
         <Route path="/PageRegistros" element={ <PageRegistros /> } />

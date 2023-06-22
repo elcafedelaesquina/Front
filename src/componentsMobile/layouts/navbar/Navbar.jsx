@@ -17,9 +17,6 @@ import { MdOutlineRestaurantMenu } from "react-icons/md";
 import { GiBoxUnpacking } from "react-icons/gi";
 import { IoChatbubblesSharp } from "react-icons/io5";
 
-import { HeaderAdminCafeterias } from '../layoutsAdminCafeterias/HeaderAdminCafeterias/HeaderAdminCafeterias';
-
-
 export const NavBar = () => {
   const Swal = require('sweetalert2')
   const [isOpen, setIsOpen] = useState(false);

@@ -6,8 +6,8 @@ import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { Loader } from "../../../layouts/loader/Loader";
 import { Link } from "react-router-dom";
-import { HeaderAdminCafeterias } from "../../../layouts/layoutsAdminCafeterias/HeaderAdminCafeterias/HeaderAdminCafeterias";
 import { FormAdmincafeteriaCreateProduct } from "../../../layouts/layoutsAdminCafeterias/FormAdmincafeteriaCreateProduct/FormAdmincafeteriaCreateProduct";
+import { NavBar } from "../../../layouts/navbar/Navbar";
 
 export const ProductosCartaCafeteria = () => {
   const Swal = require("sweetalert2");
@@ -248,7 +248,7 @@ export const ProductosCartaCafeteria = () => {
 
   return (
     <>
-      <HeaderAdminCafeterias />
+      <NavBar />
       <main className={Style.main}>
         {loader && <Loader />}
 

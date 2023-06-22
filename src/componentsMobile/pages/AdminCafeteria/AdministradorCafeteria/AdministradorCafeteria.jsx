@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Style from "./AdministradorCafeteria.module.css";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { HeaderAdminCafeterias } from "../../../layouts/layoutsAdminCafeterias/HeaderAdminCafeterias/HeaderAdminCafeterias";
+import { NavBar } from "../../../layouts/navbar/Navbar";
 
 export const AdministradorCafeteria = () => {
   const [dataProduct, setDataProduct] = useState([]);
@@ -49,7 +49,7 @@ export const AdministradorCafeteria = () => {
   var formularioLogin = useRef(null);
   return (
     <>
-      <HeaderAdminCafeterias />
+      <NavBar />
       <main className={Style.main}>
         {/* loader && <Loader />*/}
         {/* !loader && */ 

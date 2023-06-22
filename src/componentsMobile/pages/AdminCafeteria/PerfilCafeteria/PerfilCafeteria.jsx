@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
-import { HeaderAdminCafeterias } from "../../../layouts/layoutsAdminCafeterias/HeaderAdminCafeterias/HeaderAdminCafeterias";
 import { Loader } from "../../../layouts/loader/Loader";
+import { NavBar } from "../../../layouts/navbar/Navbar";
 
 export const PerfilCafeteria = () => {
   const Swal = require("sweetalert2");
@@ -113,7 +113,7 @@ export const PerfilCafeteria = () => {
 
   return (
     <>
-      <HeaderAdminCafeterias />
+      <NavBar />
       <main className={Style.main}>
         {loader && <Loader/>}
         {!loader && (
