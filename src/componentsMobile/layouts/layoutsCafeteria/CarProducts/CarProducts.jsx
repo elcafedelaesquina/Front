@@ -48,7 +48,7 @@ export const CarProducts = () => {
   return (
     <>
     <div className={Style.carrito}>
-        <div className={Style.cerrar}><Link to={`/cafeterias/cafeteria/productos`}><ion-icon name="close-outline"></ion-icon></Link></div>
+        <div className={Style.cerrar}><Link to={`/cafeterias/cafeteria/products`}><ion-icon name="close-outline"></ion-icon></Link></div>
         <h2 className={Style.titleCarrito}>Carrito</h2>
         <div className={Style.itemsCarrito}>
             {carrito.map((product,index)=>{

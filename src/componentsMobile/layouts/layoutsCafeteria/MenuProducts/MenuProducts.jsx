@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Style from './menu.module.css'
 
-export const Menu = () => {
+export const MenuProducts = () => {
       
   let items=JSON.parse(localStorage.getItem('coffee'))
   const [estado,setEstado]=useState([])

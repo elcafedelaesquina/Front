@@ -1,14 +1,14 @@
 import React from 'react'
 import { NavBar } from '../../../layouts/navbar/Navbar'
-import { GridProducts } from '../../../layouts/layoutsCafeteria/GridProducts/GridProducts'
+import { MenuProducts } from '../../../layouts/layoutsCafeteria/MenuProducts/MenuProducts'
 import { FooterCafeteria } from '../../../layouts/layoutsCafeteria/footercafeteria/FooterCafeteria'
 
-export const Products = () => {
+export const Menu = () => {
   return (
     <>
         <NavBar />
         <main>
-            <GridProducts />
+          <MenuProducts />
         </main>
         <FooterCafeteria />
     </>

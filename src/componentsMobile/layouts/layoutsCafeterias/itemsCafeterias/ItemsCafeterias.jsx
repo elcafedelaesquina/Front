@@ -23,14 +23,9 @@ export const ItemsCafeterias = (props) => {
         <div className={Style.infoItem}>
           <div className={Style.title}>
             <h4 className={Style.h4}>{props.name}</h4>
-            <ion-icon name="heart"></ion-icon>
           </div>
           <h5 className={Style.h5}> {props.address} </h5>
           <p className={Style.p}>{textLimite(props.description)}</p>
-          <div className={Style.titleBottom}>
-            <h5 className={Style.h5}>Hace 3 Minutos</h5>
-            <div className={Style.ranking}>5,2</div>
-          </div>
         </div>
       </div>
     </Link>

@@ -22,16 +22,61 @@ export const Home = () => {
           </div>
         </div>
 
-        <div className={Style.infoGray}>
-          <h3 className={Style.title3}>"Crea una tienda virtual perfecta para que tus clientes"</h3>
-          <img src="https://res.cloudinary.com/dmrq9n2im/image/upload/v1683225617/El%20caf%C3%A9%20de%20la%20esquina/imgtest3_m4hqtw.jpg" alt="h"></img>
-          <div className={Style.containerInfo}>
-            <p className={Style.text}>
-            Desde el diseño atractivo y funcional de tu página web, hasta la integración de herramientas de reserva y pedidos en línea, te ayudaremos a establecer una presencia en línea impactante que refleje la personalidad y el encanto de tu tienda virtual.
-            </p>
-            {/* <h5>Last updated 3 mins ago</h5> */}
-          </div>
+        <div className={Style.ContainerTarjetas}>
+          <h2 className={Style.infoTitle}>¿Por qué Eje Travel?</h2>
+            <div className={Style.itemInfo}>
+              <img className={Style.itemImg} alt='' src='https://sense-digital.co/wp-content/uploads/2020/08/man-1-medium.png'></img>
+              <h2>Tu satisfacción es garantizada</h2>
+              <p>El desarrollo y diseño de nuestras tiendas es realizado por profesionales.</p>
+              <p>¡Comienza a vender ahora!</p>
+            </div>
+            <div className={Style.itemInfo}>
+              <img className={Style.itemImg} alt='' src='https://sense-digital.co/wp-content/uploads/2020/08/customer-service-medium.png' ></img>
+              <h2>Nuestra herramienta resolverá todas tus dudas</h2>
+              <p>Desde el momento cero tendrás a tu disposición una herramienta de inteligencia artificial para resolver tus dudas o ayudarte con el manejo de tu pagina.</p>
+            </div>
+            <div className={Style.itemInfo}>
+              <img className={Style.itemImg}  alt=''src='https://sense-digital.co/wp-content/uploads/2020/08/website-design-medium.png'></img>
+              <h2>¡Al final te enseñamos a editar por ti mismo!</h2>
+              <p>La tecnología usada para crear tu tienda te permitirá editar la información  a través de un editor  . Tecnología usada por grandes marcas en todo el mundo.</p>
+            </div>
         </div>
+
+        <div className={Style.brands}>
+              <div className={Style.carusel}>
+              <div className={Style.brand}>
+                <img src='https://seeklogo.com/images/J/Juan_Valdez_Cafe-logo-9D9A5C862E-seeklogo.com.png' alt=''></img>
+              </div>
+              <div className={Style.brand}>
+                <img src='https://logodownload.org/wp-content/uploads/2017/10/Starbucks-logo.png' alt=''></img>
+              </div>
+              <div className={Style.brand}>
+                <img src='https://quindio.federaciondecafeteros.org/app/uploads/sites/10/2020/09/Logo-plan-cosecha-2023-04-300x300.png' alt=''></img>
+              </div>
+              <div className={Style.brand}>
+                <img src='https://www.nestleprofessional.pl/sites/default/files/2022-06/Nescafe%20logo.png' alt=''></img>
+              </div>
+              <div className={Style.brand}>
+                <img src='https://images.rappi.pe/marketplace/cafquindoporlafinca_mt_nc-1677275568340.jpeg' alt=''></img>
+              </div>
+              <div className={Style.brand}>
+                <img src='https://seeklogo.com/images/J/Juan_Valdez_Cafe-logo-9D9A5C862E-seeklogo.com.png' alt=''></img>
+              </div>
+              <div className={Style.brand}>
+                <img src='https://logodownload.org/wp-content/uploads/2017/10/Starbucks-logo.png' alt=''></img>
+              </div>
+              <div className={Style.brand}>
+                <img src='https://quindio.federaciondecafeteros.org/app/uploads/sites/10/2020/09/Logo-plan-cosecha-2023-04-300x300.png' alt=''></img>
+              </div>
+              <div className={Style.brand}>
+                <img src='https://www.nestleprofessional.pl/sites/default/files/2022-06/Nescafe%20logo.png' alt=''></img>
+              </div>
+              <div className={Style.brand}>
+                <img src='https://images.rappi.pe/marketplace/cafquindoporlafinca_mt_nc-1677275568340.jpeg' alt=''></img>
+              </div>
+              
+              </div>
+            </div>
 
         <Slider />
       </main>
