@@ -1,10 +1,9 @@
-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.cn{
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #ffa844;
-  background: linear-gradient(to bottom, #ffa84400, #33333300);
 }
 
 .container{

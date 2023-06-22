@@ -5,10 +5,9 @@
   padding: 30px;
   align-items: center;
   justify-content: space-around;
-  background: rgba(255, 168, 68, 0);
+  background: rgb(255, 168, 68);
   overflow: hidden;
 }
-
 .containerForms{
   width: 100vh;
   overflow: auto;
