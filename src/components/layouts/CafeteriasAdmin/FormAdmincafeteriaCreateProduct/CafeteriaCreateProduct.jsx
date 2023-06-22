@@ -38,7 +38,8 @@ export const CafeteriaCreateProduct = () => {
   const [idAdmin, setIdAdmin] = useState(""); 
   const [dataProduct,setDataProduct]=useState([])
   useEffect(()=>{
-    let coffee=JSON.parse(localStorage.getItem('id_coffee'))
+    setTimeout(()=>{
+      let coffee=JSON.parse(localStorage.getItem('id_coffee'))
    
     //obtener el id de la cafeteria y pasarlo para filtrar los productos de una cafeteria
     if(coffee){
@@ -61,6 +62,7 @@ export const CafeteriaCreateProduct = () => {
 
     }
     setDataProduct([])
+    },1500)
     
      
       
@@ -155,6 +157,14 @@ export const CafeteriaCreateProduct = () => {
     .then(data => {
         setDataProduct(data.list[0]) 
       })
+      fetch(`https://apimainejetravel.azurewebsites.net/api/Admin/Lista/1/${coffee}`)
+      .then(response => response.json())
+      .then(data => {
+
+          setIdAdmin(data.list[0][0].id_admin) 
+          console.log(data.list[0][0].id_admin)
+
+        })
       
 
     }
