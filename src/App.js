@@ -22,7 +22,8 @@ import { EditarPerfilUsuario } from './components/layouts/UsuarioAdmin/EditarPer
 import { CafeteriaCreateMenuProduct } from './components/layouts/CafeteriasAdmin/crearProductoMenu/CafeteriaCreateProduct';
 import { ChatModal } from './components/layouts/chat';
 import { Compras } from './components/pages/verCompras';
-
+import { Recuperar } from './components/layouts/RecuperarContraseña/Recuperar';
+import { Verificar } from './components/layouts/RecuperarContraseña/Verificar/Verificar';
 function App() {
   return (
   <div> 
@@ -48,6 +49,8 @@ function App() {
       <Route path='/EditarPerfilAdmin' element={<EditarPerfilAdmin></EditarPerfilAdmin>}></Route>
       <Route path='/CrearAdministradorCafeteria' element={<CrearAdministradorCafeteria></CrearAdministradorCafeteria>}></Route>
       <Route path='/EditarPerfilUsuario' element={<EditarPerfilUsuario></EditarPerfilUsuario>}></Route>
+      <Route path='/Recuperar' element={<Recuperar></Recuperar>}></Route>
+      <Route path='/Verificar' element={<Verificar></Verificar>}></Route>
     </Routes>   
   </div>
 
