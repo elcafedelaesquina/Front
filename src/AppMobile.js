@@ -44,7 +44,6 @@ export const AppMobile = () => {
         <Route path="/Farm" element={ <Farm /> } />
 
         <Route path="/AdminFinca" element={ <AdminFinca />} />
-
         <Route path="/Fincas" element={ <Fincas />} />
         <Route path="/Fincas/Finca" element={ <Finca/>} />
 
