@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Style from "./ProductosCafeteria.module.css";
-import { HeaderAdminCafeterias } from "../../../layouts/layoutsAdminCafeterias/HeaderAdminCafeterias/HeaderAdminCafeterias";
 import { CardProductosAdmin } from "../../../layouts/layoutsAdminCafeterias/CardProductosAdmin/CardProductosAdmin";
 import { GridProductsAdmin } from "../../../layouts/layoutsAdminCafeterias/GridProductsAdmin/GridProductsAdmin";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { FormAdmincafeteriaCreateProduct } from "../../../layouts/layoutsAdminCafeterias/FormAdmincafeteriaCreateProduct/FormAdmincafeteriaCreateProduct";
+import { NavBar } from "../../../layouts/navbar/Navbar";
 
 export const ProductosCafeteria = () => {
   let items = JSON.parse(localStorage.getItem("id_coffee")); // ${items.id_coffee}
@@ -51,7 +51,7 @@ export const ProductosCafeteria = () => {
 
   return (
     <>
-      <HeaderAdminCafeterias />
+      <NavBar />
       <main className={Style.main}>
         <div className={Style.adminContainerCreateProduct}>
           <button className={Style.btnAdminCreateProduct} onClick={() => setCreateNewProduct(!createNewProduct)}>Crea un nuevo producto</button>
