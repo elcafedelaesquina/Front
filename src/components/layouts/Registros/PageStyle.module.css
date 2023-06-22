@@ -1,11 +1,104 @@
-.cn{
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  background: #ffa844;
+section {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
+  background: #ffa84400;
+}
+
+
+section .color {
+  position: absolute;
+  filter: blur(150px);
+}
+
+section .color:nth-child(1) {
+  top: -350px;
+  width: 600px;
+  height: 600px;
+
+}
+
+section .color:nth-child(2) {
+  top: 150px;
+  left: -155px;
+  width: 120px;
+  height: 120px;
+  z-index: 2;
+}
+
+section .color:nth-child(3) {
+  bottom: 50px;
+  right: 100px;
+  width: 300px;
+  height: 300px;
+}
+
+.jk {
+  position: relative;
+}
+
+.jk .square {
+  position: absolute;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  animation: animate 10s linear infinite;
+  animation-delay: calc(-1s * var(--i));
+}
+
+@keyframes animate {
+
+  0%,
+  100% {
+      transform: translateY(-40px);
+  }
+
+  50% {
+      transform: translateY(40px);
+  }
+}
+
+.jk .square:nth-child(1) {
+  top: -50px;
+  right: -95px;
+  width: 100px;
+  height: 100px;
+}
+
+.jk .square:nth-child(2) {
+  top: 150px;
+  left: -125px;
+  width: 120px;
+  height: 120px;
+  z-index: 2;
+}
+
+.jk .square:nth-child(3) {
+  bottom: 50px;
+  right: -85px;
+  width: 80px;
+  height: 80px;
+  z-index: 2;
+}
+
+
+.jk .square:nth-child(4) {
+  bottom: -80px;
+  left: 100px;
+  width: 50px;
+  height: 50px;
+}
+
+.jk .square:nth-child(5) {
+  top: -80px;
+  left: 100px;
+  width: 60px;
+  height: 60px;
 }
 
 .container{
