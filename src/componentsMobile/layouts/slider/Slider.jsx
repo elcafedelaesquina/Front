@@ -43,7 +43,6 @@ export const Slider = () => {
             <div className={index === currentSlide ? `${Style.slide} ${Style.current}` : `${Style.slide}`} key={index} >
               {index === currentSlide && (
                 <div className={Style.card}>
-                  <img src={slide.img} alt="slide" />
                   <div className={Style.content}>
                     <h2 className={Style.title}>{slide.title}</h2>
                     <p className={Style.text}>{slide.text}</p>

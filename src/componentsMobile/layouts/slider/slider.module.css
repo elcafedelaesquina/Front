@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  background-image: url('./patterns.svg');
 }
 
 .slide {
@@ -96,41 +96,13 @@
   border: none;
   margin:20px 0 0 0px;
   border-radius: 5px;
-  font-weight: bold;
   letter-spacing: 5px;
-  text-transform: uppercase;
-  color: #fda623;
-  transition: all 1000ms;
+  color: #000;
   font-size: 15px;
   overflow: hidden;
-  outline: 2px solid #fda623;
-  background-color: #ffffff;
+  background-color: #fcb722;
 }
 
-.btnStart:hover {
-  color: #ffffff;
-  transform: scale(1.1);
-  outline: 2px solid #fda623;
-  box-shadow: 4px 5px 17px -4px #ffb923;
-  cursor: pointer;
-}
-
-.btnStart::before {
-  content: "";
-  position: absolute;
-  left: -50px;
-  top: 0;
-  width: 0;
-  height: 100%;
-  background-color: #fda623;
-  transform: skewX(45deg);
-  z-index: -1;
-  transition: width 1000ms;
-}
-
-.btnStart:hover::before {
-  width: 250%;
-}
 @keyframes show {
   0%{
       transform: translateY(-1000px)

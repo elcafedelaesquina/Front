@@ -23,7 +23,7 @@ export const CardProducts = ({ card, setIsVisible, isVisible }) => {
       localStorage.setItem('carrito', JSON.stringify(createLocal));
       console.log(createLocal);
       Swal.fire({
-          position: 'top-end',
+          position: 'top',
           icon: 'success',
           title: 'Producto Agregado al Carrito',
           showConfirmButton: false,
@@ -47,10 +47,10 @@ export const CardProducts = ({ card, setIsVisible, isVisible }) => {
             <h2 className={Style.h2}>{card.name}</h2>
             <p className={Style.price}>Precio: ${card.price}</p>
             <p className={Style.description}>{card.description}</p>
-            {data.length>0 &&  data.map(product=>(
+            {data.length>0 && data.map(product=>(
                 <div className={Style['card-button']} onClick={()=>{putCarrito(product)}}>
-                <ion-icon name="bag-add-outline"></ion-icon>
-              </div>
+                  <ion-icon name="bag-add-outline" />
+                </div>
             ))} 
           </div>
         </div>
