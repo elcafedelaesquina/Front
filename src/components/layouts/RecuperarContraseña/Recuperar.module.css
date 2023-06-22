@@ -1,0 +1,249 @@
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #ffa844;
+  background: linear-gradient(to bottom,#ffa844,#333);
+}
+
+section .color {
+  position: absolute;
+  filter: blur(150px);
+}
+
+section .color:nth-child(1) {
+  top: -350px;
+  width: 600px;
+  height: 600px;
+
+}
+
+section .color:nth-child(2) {
+  top: 150px;
+  left: -155px;
+  width: 120px;
+  height: 120px;
+  z-index: 2;
+}
+
+section .color:nth-child(3) {
+  bottom: 50px;
+  right: 100px;
+  width: 300px;
+  height: 300px;
+}
+
+.box {
+  position: relative;
+}
+
+.box .square {
+  position: absolute;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  animation: animate 10s linear infinite;
+  animation-delay: calc(-1s * var(--i));
+}
+
+@keyframes animate {
+
+  0%,
+  100% {
+    transform: translateY(-40px);
+  }
+
+  50% {
+    transform: translateY(40px);
+  }
+}
+
+.box .square:nth-child(1) {
+  top: -50px;
+  right: -95px;
+  width: 100px;
+  height: 100px;
+}
+
+.box .square:nth-child(2) {
+  top: 150px;
+  left: -125px;
+  width: 120px;
+  height: 120px;
+  z-index: 2;
+}
+
+.box .square:nth-child(3) {
+  bottom: 50px;
+  right: -85px;
+  width: 80px;
+  height: 80px;
+  z-index: 2;
+}
+
+
+.box .square:nth-child(4) {
+  bottom: -80px;
+  left: 100px;
+  width: 50px;
+  height: 50px;
+}
+
+.box .square:nth-child(5) {
+  top: -80px;
+  left: 100px;
+  width: 60px;
+  height: 60px;
+}
+
+
+
+.container {
+  position: relative;
+  width: 460px;
+  min-height: 400px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.form {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+}
+
+.form h2 {
+  position: relative;
+  color: #000000;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+.form h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 80px;
+  height: 4px;
+  background: #262626;
+}
+
+.form .inputBox {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin-top: 10px 0;
+}
+
+.form .inputBox input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 2px solid #ffa844;
+  transition: all 0.3s ease;
+}
+
+
+.form .inputBox input::placeholder {
+  color: #757575;
+}
+
+
+
+.form .inputBox input:hover {
+  color: #fff;
+
+}
+
+.forget {
+  margin-top: 5px;
+  color: #000000;
+}
+
+.forget a {
+  color: #0004ff;
+}
+
+.form .inputBox i{
+  position: absolute;
+  color: #ffa844;
+  font-size: 17px;
+}
+
+.button-form{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 0 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.button-form:focus,
+.button-form:valid{
+    border-color: #ffa844;
+}
+
+.button{
+  color: #fff;
+  margin-top: 40px;
+}
+
+.button{
+  height: 40px;
+  color: #fff;
+  background: #0004ff;
+  border-radius: 6px;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.button-form,.buttonDiv-form{
+  color: #fff;
+  background: #262626;
+  border-radius: 6px;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.button-form:hover,.buttonDiv-form:hover{
+  background: #ffa844;
+}
+
+.iconX> a ion-icon{
+  font-size: 30px;
+  cursor: pointer;
+  color: black;
+}
+
+.iconX{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-left: 20px;
+  padding: 20px;
+}
