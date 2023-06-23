@@ -1,15 +1,30 @@
 import React, {useState} from 'react'
 import Style from './chat.module.css'
 
-export const Chat = () => {
-
+export const Chat = (id_chat) => {
+    const id = id_chat;
+    
+    const [data, setData] = useState([]);
     const [isOpen, setIsOpen] = useState(true);
     const [message, setMessage] = useState('');
 
-    const toggleModal = () => {
-        setIsOpen(!isOpen);
-    };
+    const getDetailsChats = async (id) => {
+        await fetch(`https://apimainejetravel.azurewebsites.net/api/Chat/AdminChats/${id}`)
+          .then((response) => response.json())
+          .then((data) => {
+              const { list } = data;
+              setData(list[0]);
+              console.log(data);
+          });
+      };
 
+
+    const toggleModal = () => {
+        getDetailsChats();
+        setIsOpen(!isOpen);
+
+        };
+    
     const handleChange = (event) => {
         setMessage(event.target.value);
     };
@@ -25,7 +40,7 @@ export const Chat = () => {
         <div className={Style.chat}>
             <button onClick={toggleModal}>Abrir chat</button>
 
-            {isOpen && (
+            {!isOpen && (
                 <div className={Style.modal}>
                     <div className={Style.modalContent}>
                         <div className={Style.modalHeader}>

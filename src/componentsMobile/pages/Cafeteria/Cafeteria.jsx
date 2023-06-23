@@ -5,7 +5,7 @@ import { HomeCafeteria } from "../../layouts/layoutsCafeteria/homeCafeteria/Home
 import { CategoriesProducts } from "../../layouts/layoutsCafeteria/CategoriesProducts/CategoriesProducts";
 import { FeaturedProducts } from "../../layouts/layoutsCafeteria/featuredproducts/FeaturedProducts";
 import { CarProducts } from "../../layouts/layoutsCafeteria/CarProducts/CarProducts";
-import { Menu } from "../../layouts/layoutsCafeteria/MenuProducts/MenuProducts"
+import { MenuProducts } from "../../layouts/layoutsCafeteria/MenuProducts/MenuProducts"
 import { FooterCafeteria } from "../../layouts/layoutsCafeteria/footercafeteria/FooterCafeteria";
 import { Chat } from "../../layouts/layoutsCafeteria/Chat/Chat";
 import { GridProducts } from "../../layouts/layoutsCafeteria/GridProducts/GridProducts";
