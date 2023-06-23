@@ -150,6 +150,9 @@
     outline: 2px solid #fda623;
     background-color: #ffffff;
   }
+  .button>a{
+    color: #ffb923;
+  }
   
   .button:hover {
     color: #ffffff;
