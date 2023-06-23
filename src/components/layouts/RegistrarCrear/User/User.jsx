@@ -314,10 +314,8 @@ export function User() {
                         />
                       </div>
                       <div className={styles.text}>
-                        {" "}
-                        <Link to={"/Recuperar"}>
-                          <label>¿Olvidaste la contraseña?</label>
-                        </Link>{" "}
+                        
+                        
                       </div>
                       <div
                         className={`${styles["button"]} ${styles["input-box"]}`}

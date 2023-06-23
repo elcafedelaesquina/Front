@@ -16,7 +16,7 @@ const ContentHome = () => {
   },[])
   return (
     <div className="content-home">
-              <Link to={'/cafeterias/cafeteria'} ><div className={styles.whatsapp}><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/479px-WhatsApp_icon.png' alt=''className={styles.whatsappImg} ></img></div></Link>
+              <Link to={'https://wa.me/3006147619'} ><div className={styles.whatsapp}><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/479px-WhatsApp_icon.png' alt=''className={styles.whatsappImg} ></img></div></Link>
         <div className={styles.imgInicio}>
             <div className={styles.filtro}>
                 <h2 className={styles.h2}>Crea tu Tienda virtual con nosotros</h2> 
