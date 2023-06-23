@@ -48,17 +48,16 @@ export const CarProducts = () => {
   return (
     <>
     <div className={Style.carrito}>
-        <div className={Style.cerrar}><Link to={`/cafeterias/cafeteria/products`}><ion-icon name="close-outline"></ion-icon></Link></div>
         <h2 className={Style.titleCarrito}>Carrito</h2>
         <div className={Style.itemsCarrito}>
             {carrito.map((product,index)=>{
                
                 return(
-                    <div className={Style.itemCarrito} onLoad={()=>{calculate(product.price)}}>
+                <div className={Style.itemCarrito} onLoad={()=>{calculate(product.price)}}>
                     <img src={product.image} alt='' className={Style.imgItem}></img>
                     <div className={Style.infoItem}>
                         <h4 className={Style.name}>{product.name}</h4>
-                        <p className={Style.description}>Descripción:  <span>{product.description}</span></p>
+                        {/* <p className={Style.description}>Descripción:  <span>{product.description}</span></p> */}
                         <p>Cantidad: 
                             <select className={Style.quantity}>
                                 <option value={1}>1</option>
@@ -67,10 +66,10 @@ export const CarProducts = () => {
                                 <option value={4}>4</option>
                             </select>
                         </p>
-                        <p>Precio: $<span >{product.price}</span></p>
-                        
-                        <div className={Style.btnDelete} onClick={()=>{deleteItem(index)
-                         }}><ion-icon name="trash-outline"></ion-icon></div>
+                        <p className={Style.price}>Precio: $<span >{product.price}</span></p>
+                        <div className={Style.btnDelete} onClick={()=>{deleteItem(index)}}>
+                            <ion-icon name="trash-outline" />
+                        </div>
                     </div>
                 </div>
                 )

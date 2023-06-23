@@ -1,0 +1,12 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.containerMain{
+    width: 100%;
+    height: auto;
+    margin-top: 110px;
+    /* position: absolute; */
+}
