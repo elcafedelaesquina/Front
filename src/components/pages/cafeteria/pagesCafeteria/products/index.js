@@ -19,13 +19,7 @@ const ProductsCafeteria= () => {
 
         <div className={styles.container}>
             <h2 className={styles.title}>Nuestros Mejores Productos</h2>
-            <h3>Filtrar los Productos por:</h3>
-            <ul className={styles.ul}> 
-                <li className={styles.li}>Todos</li>
-                <li className={styles.li}>Categoria</li>
-                <li className={styles.li}>Nombre</li>
-                <li className={styles.li}>Precio</li>
-            </ul>
+            
             <div className={styles.ProductsContainer}>
                 <ProductCafeteria key={1}></ProductCafeteria>
                 

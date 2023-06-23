@@ -29,7 +29,7 @@ const LogoUser= (props) => {
         {id_coffee && (
           <div className='menuContainer'>
             <ul className='menuUser'>
-              <Link to={'/CrearAdministradorCafeteria'}><li className='itemMenu'>Crear Administrador</li></Link>
+            <Link to={'/ordenes'}><li className='itemMenu'>Mis Ordenes</li></Link>
               <Link to={'/CafeteriaCreateProduct'}><li className='itemMenu'>Mis Productos</li></Link>
               <Link to={'/CrearMenuProducto'}><li className='itemMenu'>Menú</li></Link>
               <Link to={'/EditarPerfilAdmin'}><li className='itemMenu'>Editar Perfil</li></Link>

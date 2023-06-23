@@ -24,11 +24,16 @@ import { ChatModal } from './components/layouts/chat';
 import { Compras } from './components/pages/verCompras';
 import { Recuperar } from './components/layouts/RecuperarContraseña/Recuperar';
 import { Verificar } from './components/layouts/RecuperarContraseña/Verificar/Verificar';
+
+import { Ordenes } from './components/layouts/CafeteriasAdmin/verOrdenes';
+import { ChatAdmin } from './components/layouts/CafeteriasAdmin/chatAdmin';
 function App() {
   return (
   <div> 
     <Routes>
+    <Route path="/ordenes" element={<Ordenes></Ordenes>}></Route>
     <Route path="/compras" element={<Compras></Compras>}></Route>
+    <Route path="/chatAdmin" element={<ChatAdmin></ChatAdmin>}></Route>
     <Route path="/chat" element={<ChatModal></ChatModal>}></Route>
     <Route path="/CrearMenuProducto" element={<CafeteriaCreateMenuProduct></CafeteriaCreateMenuProduct>}></Route>
       <Route path="/cafeterias" element={<Cafeterias></Cafeterias>}></Route>

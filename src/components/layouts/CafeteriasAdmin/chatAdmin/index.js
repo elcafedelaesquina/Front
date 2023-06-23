@@ -1,30 +1,34 @@
 import React, { useEffect, useState,useRef } from 'react';
 import styles from './style.module.css';
-import { Compras } from '../../pages/verCompras';
+import { Ordenes } from '../verOrdenes';
 import { Link, useNavigate } from 'react-router-dom';
 import { HubConnectionBuilder } from '@microsoft/signalr';
 
-const ChatModal = (props) => {
+
+const ChatAdmin = (props) => {
   const [isOpen, setIsOpen] = useState(true);
   const [messages,setMessages] = useState([])
   const navigate = useNavigate();
   const [load,setLoad]=useState([]);
   const containerRef = useRef(null);
-  const [image_admin,setImage_admin] = useState('');
-  const [name_admin,setName_admin] = useState('');
+  const [image_customer,setImage_customer] = useState('');
+  const [name_customer,setName_customer] = useState('');
+  
 
 
 useEffect(()=>{
     try{
       //obtener el id de la cafeteria y pasarlo para filtrar los productos de una cafeteria
-      setTimeout(()=>{
+      
+     
         let id_chat=JSON.parse(localStorage.getItem("id_chat"))
-        let image=JSON.parse(localStorage.getItem("image_admin"))
-        let name=JSON.parse(localStorage.getItem("name_admin"))
+        let image=JSON.parse(localStorage.getItem("image_customer"))
+        let name=JSON.parse(localStorage.getItem("name_customer"))
+        setImage_customer(image)
+        setName_customer(name)
         
-        setImage_admin(image)
-        setName_admin(name)
-          
+        
+      
         fetch(`https://apimainejetravel.azurewebsites.net/api/Chat/DetailsChats/${id_chat}`)
         .then(response => response.json())
         .then(data => {
@@ -32,7 +36,7 @@ useEffect(()=>{
             /* setData(data)  */
         })
 
-      },1000)
+      
 
   }
   catch(e){
@@ -52,10 +56,11 @@ useEffect(()=>{
   const dataAddGroup = {Id_admin: id_admin,Id_customer: JSON.parse(id_customer)}
   const dataMessage={
     Message:textMessage,
-    Type_user:2,
+    Type_user:1,
     Id_admin: id_admin,
     Id_costumer:JSON.parse(id_customer)
   }
+  console.log(dataMessage)
   useEffect(() => {
     
     const connection = new HubConnectionBuilder()
@@ -122,7 +127,7 @@ useEffect(()=>{
 
   const toggleModal = () => {
     localStorage.removeItem("id_chat")
-    navigate('/compras')
+    navigate('/ordenes')
     setIsOpen(!isOpen);
   };
   
@@ -194,10 +199,10 @@ connection.on('SendMessageCustomer', message => {
       <div className={styles.modal}>
         <div className={styles.modalContent}>
             <div className={styles.modalHeader}>
-            <img src={image_admin} className={styles.imgChat} alt=''></img> 
-            <h2 className={styles.titleChat}>{name_admin} </h2>
+            <img src={image_customer} className={styles.imgChat} alt=''></img> 
+            <h2 className={styles.titleChat}>{name_customer}</h2>
             <button className={styles.closeBtn} onClick={toggleModal} >
-            <Link to={'/compras'}><ion-icon name="close"></ion-icon></Link>
+              <Link to={'ordenes'}><ion-icon name="close"></ion-icon></Link>
             </button>
 
             </div>
@@ -211,7 +216,7 @@ connection.on('SendMessageCustomer', message => {
                   {message.type_message===1 && message.type_user===2 && (
                     
                     <div key={message.details_chat} ref={containerRef} className={styles.messagePurchase}>
-                      <h3>Orden de Compra:<span>#01</span></h3>
+                      <h3>Orden de Compra:<span></span></h3>
                       <div className={styles.containerItems}>
                        
                         {JSON.parse(message.message).map((product)=>{
@@ -233,8 +238,8 @@ connection.on('SendMessageCustomer', message => {
                     </div>
 
                   )}
-                  { message.type_message===2 &&message.type_user===1   &&(
-                    <div key={message.details_chat} ref={containerRef}  className={styles.messageOne}>
+                  { message.type_message===2 &&message.type_user===2   &&(
+                    <div key={message.details_chat} ref={containerRef} className={styles.messageOne}>
                       <div className={styles.message}>
                         <p className={styles.messageText}>{message.message}</p>
                         <p className={styles.dateMessage}>{newDate[1]}</p>
@@ -244,7 +249,7 @@ connection.on('SendMessageCustomer', message => {
 
                   )}
                   
-                  { message.type_message===2 && message.type_user===2 &&(
+                  { message.type_message===2 && message.type_user===1 &&(
                     <div key={message.details_chat} ref={containerRef} className={styles.messageTwo}>
                       <div className={styles.message}>
                         <p className={styles.messageTextTwo}>{message.message}</p>
@@ -284,10 +289,10 @@ connection.on('SendMessageCustomer', message => {
 
 
 
-              <Compras></Compras>
+              <Ordenes></Ordenes>
   </>
 
   );
 };
 
-export {ChatModal};
+export {ChatAdmin};

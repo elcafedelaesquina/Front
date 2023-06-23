@@ -6,8 +6,10 @@ import { Link } from 'react-router-dom'
   const [coffee,setCoffee]=useState({image:'',name:''})
   useEffect(()=>{
 
-      let data=JSON.parse(localStorage.getItem('coffee'))
-      setCoffee(data)
+      setTimeout(()=>{
+        let data=JSON.parse(localStorage.getItem('coffee'))
+        setCoffee(data)
+      },1000)
     
     
 
