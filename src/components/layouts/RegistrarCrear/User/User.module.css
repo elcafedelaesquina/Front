@@ -239,7 +239,7 @@ form .form-content .title::before {
 }
 
 .iconX {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     padding-left: 20px;
