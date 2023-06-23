@@ -226,6 +226,13 @@ export function Farm() {
   
   return (
     <div className={styles.cn}>
+      <section>
+        <div className={styles.jk}>
+          <div className={styles.square}></div>
+          <div className={styles.square}></div>
+          <div className={styles.square}></div>
+          <div className={styles.square}></div>
+          <div className={styles.square}></div>
       <div className={styles.iconX}>
        <Link to={'/PageRegistros'}><ion-icon name="close"></ion-icon></Link>
       </div>
@@ -351,6 +358,8 @@ export function Farm() {
 </div>
 </form>
 </div>}
+</div>
+</section>
 </div>
     )
 }

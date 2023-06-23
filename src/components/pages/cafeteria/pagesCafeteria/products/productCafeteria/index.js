@@ -23,7 +23,7 @@ const  ProductCafeteria= () => {
          
           
       },[])
-      const [quantity,setQuantity]=useState('')
+      const [quantity,setQuantity]=useState(1)
        const selectQuantity=(e)=>{
         setQuantity(e.target.value)
 
@@ -81,7 +81,7 @@ const  ProductCafeteria= () => {
                             </div>
                             <div className={styles['card-footer']}>
                                 <span className={styles['text-title']}>${product.price}</span>
-                                <select onChange={selectQuantity} className={styles.quantity} >
+                                <select onChange={selectQuantity} className={styles.quantity} defaultValue={1} >
                                 <option value={1}>1</option>
                                 <option value={2}>2</option>
                                 <option value={3}>3</option>

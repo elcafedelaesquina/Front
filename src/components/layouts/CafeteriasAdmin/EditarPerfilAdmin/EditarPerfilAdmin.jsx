@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import styles from "./EditarPerfilAdmin.module.css"
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import {faCloudArrowUp} from '@fortawesome/free-solid-svg-icons'
@@ -10,6 +10,7 @@ import { Loader } from "../../loader";
 
 export const EditarPerfilAdmin = () => {
   const Swal = require('sweetalert2')
+  const navigate = useNavigate();
 
   const [loader,setLoader]=useState(false)
 
@@ -41,9 +42,6 @@ export const EditarPerfilAdmin = () => {
           setDescription(data[0][0].description);
           setAddress(data[0][0].address);
           setPhone(data[0][0].phone);
-
-
-          setImage(data[0][0].image);
         
         }
           );
@@ -88,7 +86,17 @@ export const EditarPerfilAdmin = () => {
         localStorage.setItem('name',JSON.stringify(name))
         localStorage.setItem('image',JSON.stringify(image))
         localStorage.setItem('id_coffee',JSON.stringify(id_coffee))
+      }else{
+        Swal.fire({
+          position: 'top-center',
+          icon: 'warning',
+          title: 'Selecciona una imagen',
+          showConfirmButton: false,
+          timer: 1500
+        })
+
       }
+     
       
       console.log(data)
       if (response.ok) {
@@ -97,11 +105,13 @@ export const EditarPerfilAdmin = () => {
         setLoader(false);
       } else {
         // Error al actualizar los datos
+        setImage(image)
         console.log("Error al actualizar los datos");
         setLoader(false);
       }
     }
     )
+    navigate('/EditarPerfilAdmin')
 
 
     /* */
@@ -175,11 +185,16 @@ export const EditarPerfilAdmin = () => {
             <div className={styles['container-file']}>
               <div className={`${styles['input-boxx']} ${styles.box}`} onClick={handleButtonClick}>
               <i className={styles['icon']} ><FontAwesomeIcon icon={faCloudArrowUp} /></i>
-                <input type="file" name='Image' hidden placeholder="Choose your image" ref={fileInputRef} id="image" onLoad={(e) => { setImage(e.target.value); handleImageInputChange(e)}} onChange={(e) => { setImage(e.target.value); handleImageInputChange(e);}} />
+                <input type="file" name='Image' hidden placeholder="Choose your image"  ref={fileInputRef} id="image" onLoad={(e) => { setImage(e.target.value); handleImageInputChange(e)}} onChange={(e) => { setImage(e.target.value); handleImageInputChange(e);}} />
                 {image && (
                   <div className={styles['image-preview']}>
                     <img className={styles.imgPreview} src={image} alt="Imagen seleccionada" />
                     <button className={styles.btnPreview} onClick={handleImageClear}><i className={styles.iconX} ><FontAwesomeIcon icon={faCircleXmark} /></i></button>
+                  </div>
+                )}
+                {!image && (
+                  <div className={styles['image-preview']}>
+                    
                   </div>
                 )}
               </div>

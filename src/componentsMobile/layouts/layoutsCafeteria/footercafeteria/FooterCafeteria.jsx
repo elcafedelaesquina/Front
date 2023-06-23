@@ -1,6 +1,5 @@
 import React from 'react'
 import Style from './footercafeteria.module.css'
-import { Link } from 'react-router-dom'
 
 export const FooterCafeteria = () => {
   return (

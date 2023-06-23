@@ -67,7 +67,7 @@ const Carrito = () => {
         let lista=JSON.parse(localStorage.getItem('carrito')) || []
         console.log(lista)
         
-       console.log( lista)
+       
         const packPurchase = {room: idAdmin+idCustomer,
                       ObjSale: {Id_user: 1,Id_coffee: 2,Iva: 19},
                       ListDetailsSale: lista
@@ -103,6 +103,7 @@ const Carrito = () => {
                 showConfirmButton: false,
                 timer: 2500
             })
+            
             })
             .catch(error => {
                console.error('Error al enviar el mensaje:', error);
@@ -123,14 +124,14 @@ const Carrito = () => {
             console.log('Mensaje recibido:', message);
             // Actualizar el estado de tu componente o realizar acciones adicionales con el mensaje recibido
           });
+          localStorage.removeItem("carrito")
     
 
 
     }
     useEffect(()=>{
         let car=JSON.parse(localStorage.getItem('carrito'))
-        
-        if(car.length !==0){
+        if(car && car.length !==0){
             let suma=0
             for (let item of car  ){
                 console.log(item.price)
@@ -162,7 +163,7 @@ const Carrito = () => {
         <div className={styles.cerrar}>{<Link to={`/cafeterias/cafeteria/productos`}><ion-icon name="close-outline"></ion-icon></Link>}</div>
         <h2 className={styles.titleCarrito}>Carrito</h2>
         <div className={styles.itemsCarrito}>
-            {carrito.map((product,index)=>{
+            {carrito && carrito.map((product,index)=>{
                
                 return(
                     <div className={styles.itemCarrito} /* onLoad={()=>{calculate(product.price)}} */>
@@ -181,7 +182,7 @@ const Carrito = () => {
                 </div>
                 )
             })}
-            {carrito.length===0 &&  <>
+            {carrito.length===0  &&  <>
                                     <h2 className={styles.itemsAd}>¡Carrito vacio! Agrega un Producto</h2>
                                      <div aria-label="Orange and tan hamster running in a metal wheel" role="img" className={styles['wheel-and-hamster']}>
                                         <div className={styles.wheel}></div>
@@ -220,8 +221,8 @@ const Carrito = () => {
             </div>
         </div>
         <p className={styles.infoPay}>El pago del envío se ajustará a la compra</p>
-        {carrito.length>0 && <button className={styles.button} onClick={purchase}>Realizar Compra</button>}
-        {!carrito.length>0 && <button className={styles.button} onClick={showAlert}>Realizar Compra</button>}
+        {carrito && carrito.length>0 && <button className={styles.button} onClick={purchase}><Link to={`/compras`}>Realizar Compra</Link></button>}
+        { !carrito.length>0 && <button className={styles.button} onClick={showAlert}>Realizar Compra</button>}
 
 
     </div>

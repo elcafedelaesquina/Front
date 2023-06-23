@@ -23,6 +23,7 @@ const ComponentsHeader = () => {
       localStorage.removeItem('image')
       localStorage.removeItem('id_customer')
       localStorage.removeItem('id_coffee')
+      localStorage.removeItem('id_admin')
       
       setValidateToken(false)
   }

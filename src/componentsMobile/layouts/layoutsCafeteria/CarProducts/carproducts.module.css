@@ -1,32 +1,10 @@
 .carrito{
     width:100%;
-    height: 100vh;
-    /* position:fixed; */
-    /* z-index: 10; */
-    right: 0;
-    border-left: 2px solid #808080;
+    height: 90vh;
     background-color:#ffffff;
-    backdrop-filter: brightness(10%);
-    animation: show 1.5s ease-out;
-}
-
-.cerrar{
-    margin: 15px;
-    font-size:30px ;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    transition: all 0.5s;
-}
-
-.cerrar> a ion-icon {
-    color: #000000;
-}
-
-.cerrar:hover{
-    transform:rotate(360deg);
-    color: #000000;
-
+    /* position: fixed; */
+    /* z-index: 1; */
+    /* top: 80px; */
 }
 
 .titleCarrito{
@@ -49,7 +27,7 @@
 }
 
 .itemCarrito{
-    width: 100%;
+    width: 100vw;
     height: 130px;
     display: flex;
     padding: 10px;
@@ -61,10 +39,20 @@
 }
 
 .imgItem{
-    width: 110px;
+    width: 25%;
     height: 110px;
     border-radius: 10px;
-    
+}
+
+.infoItem{
+    width: 100%;
+    height: auto;
+}
+
+.infoItem p{
+    color: #464646;
+    font-weight: 500;
+    max-width: 100%;
 }
 
 .name{
@@ -73,23 +61,24 @@
     max-height: 35px ;
     color: #ffa500;
     overflow: hidden;
+    margin-bottom: 8px;
 }
-
+/* 
 .description{
     width: 80%;
     height: auto;
     max-height: 45px ;
     margin-bottom: 4px;
-}
+} */
 
 .btnDelete{
-    position:relative;
-    top: -80px;
-    right:-230px;
+    position: relative;
+    /* top: -35px; */
+    right:-220px;
     font-size: 23px;
     cursor: pointer;
     color: #ffa500;
-    width: 25px;
+    width: 20%;
     transition: all 0.2s;
 }
 
@@ -102,13 +91,7 @@
     width: 40px;
     height: 20px;
     margin-left: 5px;
-}
-
-.infoItem p{
-    color: #464646;
-    font-weight: 500;
-    max-width: 100%;
-    overflow: hidden;
+    border: none;
 }
 
 .total{
