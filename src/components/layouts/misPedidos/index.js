@@ -1,4 +1,4 @@
-/* 
+
 import React, { useRef, useState,useEffect } from "react";
 import styles from "./style.module.css"
 import { Link } from "react-router-dom";
@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export const OrdersCostumer = () => {
   const Swal = require('sweetalert2')
 
-useEffect(()=>{
+/* useEffect(()=>{
     let id=JSON.parse(localStorage.getItem('id_customer'))
     fetch(`https://apimainejetravel.azurewebsites.net/api/Product/Eliminar/${id}`,
     { method: "GET"} )
@@ -21,7 +21,7 @@ const sendMessage=()=>{
      .then(response => response.json())
      .then(data => {data})
 
-}
+} */
 
   return (
     <div className={styles.cn}>
@@ -29,9 +29,9 @@ const sendMessage=()=>{
     
     {<>
           <div className={styles.ProductsContainer}>
-            <h2 className={styles.titleContainerProducts} onClick={updateProduct}>Mis Pedidos</h2>
+            <h2 className={styles.titleContainerProducts}/*  onClick={updateProduct} */>Mis Pedidos</h2>
 
-               {dataChats.length>0 && dataProduct.map(product=>{
+           {/*     {dataChats.length>0 && dataProduct.map(product=>{
                 return(<>
                 </>)
                  
@@ -39,7 +39,7 @@ const sendMessage=()=>{
               }
               {!dataProduct.length>0 &&
                 <h2>Todavia no tienes Pedidos</h2>
-              }
+              } */}
             
 
          </div>
@@ -53,4 +53,3 @@ const sendMessage=()=>{
   </div>
   );
 };
- */

@@ -8,6 +8,7 @@ import {Link} from 'react-router-dom'
 
   useEffect(()=>{
       
+     setTimeout(()=>{
       let data=JSON.parse(localStorage.getItem('coffee'))
       setCoffee(data)
       let validation=JSON.parse(localStorage.getItem('id_customer'))
@@ -16,6 +17,7 @@ import {Link} from 'react-router-dom'
       }else{
         setToken(false)
       }
+     },1000)
       
       
   },[])

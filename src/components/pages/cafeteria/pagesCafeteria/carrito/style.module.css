@@ -48,7 +48,7 @@
   }
 .itemCarrito{
     width: 100%;
-    height: 130px;
+    height: auto;
     display: flex;
     padding: 10px;
     border-bottom-left-radius: 8px;
@@ -56,6 +56,7 @@
     box-shadow: 0px 0px 4px rgb(212, 212, 212);
     gap: 10px;
     margin-top: 8px;
+    overflow: hidden;
 }
 .imgItem{
     width: 110px;

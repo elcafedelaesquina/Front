@@ -1,26 +1,40 @@
 import React, { useEffect, useState } from 'react'
 import styles from './style.module.css'
-import { ChatModal } from '../../layouts/chat'
 import { Link } from 'react-router-dom';
 
-const Compras = () => {
+const Ordenes = () => {
   const [chats,setChats]=useState([]);
   const [id_chat,setId_chat]=useState('')
+  const [id_admin,setId_admin]=useState('')
     /* const [data,setData]=useState([]) */
     useEffect(()=>{
         try{
-            let customer=JSON.parse(localStorage.getItem('id_customer'))
+            let id_coffee=JSON.parse(localStorage.getItem('id_coffee'))
+            
+
+            fetch(`https://apimainejetravel.azurewebsites.net/api/Admin/Lista/1/${id_coffee}`)
+            .then(response => response.json())
+            .then(data => {
+    
+              localStorage.setItem('id_admin', JSON.stringify(data.list[0][0].id_admin))
+              setId_admin(data.list[0][0].id_admin)
+              console.log(data.list[0][0].id_admin)
+    
+            })
 
             //obtener el id de la cafeteria y pasarlo para filtrar los productos de una cafeteria
-            if(customer){
-              fetch(`https://apimainejetravel.azurewebsites.net/api/Chat/CustomerChats/${customer}`)
+           setTimeout(()=>{
+              let id=JSON.parse(localStorage.getItem('id_admin'))
+            fetch(`https://apimainejetravel.azurewebsites.net/api/Chat/AdminChats/${id}`)
             .then(response => response.json())
             .then(data => {
               console.log(data)
               setChats(data.list[0])
                 /* setData(data)  */
               
-            })}
+            })
+
+           },1000)
 
         }
         catch(e){
@@ -31,21 +45,24 @@ const Compras = () => {
    /*  const toggleModal = () => {
       setIsOpen(!isOpen);
     }; */
-    const showChat=(id,id_admin,image,name)=>{
+    const showChat=(id,id_customer,image,name)=>{
+    
+
+
       localStorage.setItem(
         "id_chat",
         JSON.stringify(id)
       );
       localStorage.setItem(
-        "id_admin",
-        JSON.stringify(id_admin)
+        "id_customer",
+        JSON.stringify(id_customer)
       );
       localStorage.setItem(
-        "image_admin",
+        "image_customer",
         JSON.stringify(image)
       );
       localStorage.setItem(
-        "name_admin",
+        "name_customer",
         JSON.stringify(name)
       );
       setId_chat(id)
@@ -73,7 +90,7 @@ const Compras = () => {
                     </div>
                     <p className={styles.job}>Chat Con:</p>
                     <span>{chat.name}</span>
-                   <button className={styles.button} onClick={()=>showChat(chat.id_chat,chat.id_admin,chat.image,chat.name)}><Link to={'/chat'} >Ver Chat</Link> </button>
+                   <button className={styles.button} onClick={()=>showChat(chat.id_chat,chat.id_customer,chat.image,chat.name)}><Link to={'/chatAdmin'} >Ver Chat</Link> </button>
                     
                   </div>
                 )
@@ -89,4 +106,4 @@ const Compras = () => {
   )
 }
 
-export {Compras}
+export {Ordenes}
