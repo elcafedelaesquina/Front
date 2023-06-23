@@ -343,7 +343,7 @@ const showAlert=()=>{
               <input type="password" name='Password' placeholder='Contraseña'  />
 
             </div>
-            <div className={styles.text}><a href=''>¿Olvidaste la contraseña?</a></div>
+           
             <div className={`${styles['button']} ${styles['input-box']}`}>
               <i className={`fas fa-envelope ${styles['icon']}`}></i>
 

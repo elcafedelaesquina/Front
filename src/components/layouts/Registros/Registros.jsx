@@ -92,13 +92,13 @@ export function Registros() {
                     iniciar sesión para que puedas descubrir y explorar todos
                     los servicios que nuestras fincas tiene para ofrecer.
                   </p>
-                  <Link to={"/Farm"}>
+                  
                     <button
                       className={`${PageStyle.boton} ${PageStyle.buttons}`}
                     >
                       <span className={PageStyle.spanface}>Hazlo Ya!</span>
                     </button>
-                  </Link>
+                  
                 </div>
               </div>
             </div>
