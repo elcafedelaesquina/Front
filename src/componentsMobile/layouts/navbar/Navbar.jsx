@@ -9,7 +9,7 @@ import { CiCoffeeCup } from "react-icons/ci";
 import { GiFarmer } from "react-icons/gi";
 import { FaDoorOpen } from "react-icons/fa";
 import { GoPencil } from "react-icons/go";
-import { AiOutlineShopping } from "react-icons/ai";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 import { AiOutlineUser } from "react-icons/ai";
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
@@ -103,17 +103,17 @@ export const NavBar = () => {
                   <>
                     <li className={Style.li}>
                       <GoPencil className={ Style.iconMenu } />
-                      <Link className={Style.link} to="/">Editar Perfil</Link>
+                      <Link className={Style.link} to="/EditarPerfilUser">Editar Perfil</Link>
                     </li>
 
                     <li className={Style.li}>
-                      <AiOutlineShopping className={ Style.iconMenu } />
-                      <Link className={Style.link} to="/">Ver Compras</Link>
+                      <AiOutlineShoppingCart className={ Style.iconMenu } />
+                      <Link className={Style.link} to="/cafeterias/cafeteria/carrito">Mi carrito</Link>
                     </li>
 
                     <li className={Style.li}>
                       <IoChatbubblesSharp className={ Style.iconMenu } />
-                      <Link className={Style.link} to="/">Mis Chat</Link>
+                      <Link className={Style.link} to="/ChatsUser">Mis Chat</Link>
                     </li>
                   </> 
                 )}

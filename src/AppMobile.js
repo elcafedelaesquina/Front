@@ -23,6 +23,8 @@ import { AdminFinca } from "./componentsMobile/pages/AdminFinca/AdminFinca";
 
 import { Fincas } from "./componentsMobile/pages/Fincas/Fincas";
 import { Finca } from "./componentsMobile/pages/Finca/Finca";
+import EditarPerfilUsuario from "./componentsMobile/pages/EditarPerfilUsuario/EditarPerfilUsuario";
+import { UserChats } from "./componentsMobile/pages/UserChats/UserChats";
 
 
 export const AppMobile = () => {
@@ -36,6 +38,9 @@ export const AppMobile = () => {
         <Route path="/cafeterias/cafeteria/products" element={<Products />} />
         <Route path="/cafeterias/cafeteria/carrito" element={<Carrito />} />
         
+        <Route path="/EditarPerfilUser" element={<EditarPerfilUsuario />} />
+        <Route path="/ChatsUser" element={ <UserChats /> } />
+
         <Route path="/EditarPerfilAdmin" element={ <PerfilCafeteria /> } />
         <Route path="/CreateAdminCafeteria" element={ <AdministradorCafeteria /> } />
         <Route path="/CreateProductsCarta" element={ <ProductosCartaCafeteria /> } />
