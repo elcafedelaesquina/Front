@@ -79,9 +79,7 @@ const Cafeterias = () => {
         </div>
       </div>
       <div className={styles.itemsContainer}>       
-        <div className={styles.filter}>
-        <FilterCafeterias data={data}></FilterCafeterias>
-        </div>
+        
         <div className={styles.container}>
           {data.map(item=>{
             return (<Item 
