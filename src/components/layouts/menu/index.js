@@ -26,7 +26,7 @@ const Menu = () => {
     <div className={styles.itemMenu}>
         <img src='https://img.rezdy.com/PRODUCT_IMAGE/146961/Selina_Quindio_RoadTrip_03_2021__chrisgarzoncph__1__lg.jpg' alt=""></img>
         <div className={styles.link}>
-        <Link to={`/Fincas`}><h2>Fincas</h2></Link>
+        <h2>Fincas</h2>
             <p>
             Explora nuestras fincas y sumérgete 
             en la belleza de la naturaleza. Descubre entornos tranquilos
