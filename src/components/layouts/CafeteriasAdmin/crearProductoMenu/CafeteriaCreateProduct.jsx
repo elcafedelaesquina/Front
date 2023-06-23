@@ -297,8 +297,8 @@ export const CafeteriaCreateMenuProduct = () => {
                 <div className={styles['form-content']}>
                   <div className={styles['form-create']}>
                     <div className={styles.titleContainer}><h4 className={styles.title}>Crear Productos </h4><div className={styles.iconX}>
-       <Link to={'/'}><ion-icon name="close"></ion-icon></Link>
-      </div></div>
+                    <Link to={'/'}><ion-icon name="close"></ion-icon></Link>
+                    </div></div>
                         <input type="number" className={styles['input-admin']} name='Id_coffee' id="stock" value={idCoffee} onChange={()=>{}}  />
 
                       <div className={styles['input-box']}>
